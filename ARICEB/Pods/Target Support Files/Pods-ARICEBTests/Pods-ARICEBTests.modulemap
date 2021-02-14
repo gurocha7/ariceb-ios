@@ -1,0 +1,6 @@
+framework module Pods_ARICEBTests {
+  umbrella header "Pods-ARICEBTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

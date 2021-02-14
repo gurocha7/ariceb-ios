@@ -1,0 +1,758 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		027DB4CE60D2C5BFFDE6C965 /* Pods_ARICEBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */; };
+		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
+		3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1225D9A8F00022AF8F /* art.scnassets */; };
+		3670FC1A25D9A8F30022AF8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1925D9A8F30022AF8F /* Assets.xcassets */; };
+		3670FC1D25D9A8F30022AF8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1B25D9A8F30022AF8F /* LaunchScreen.storyboard */; };
+		3670FC2825D9A8F40022AF8F /* ARICEBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC2725D9A8F40022AF8F /* ARICEBTests.swift */; };
+		3670FC3325D9A8F40022AF8F /* ARICEBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC3225D9A8F40022AF8F /* ARICEBUITests.swift */; };
+		3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4325D9BA5C0022AF8F /* Coordinator.swift */; };
+		3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4825D9BAF50022AF8F /* Storyboarded.swift */; };
+		3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */; };
+		3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC7F25D9C5E40022AF8F /* MainViewController.swift */; };
+		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
+		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
+		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3670FC2425D9A8F40022AF8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3670FC0525D9A8EF0022AF8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3670FC0C25D9A8EF0022AF8F;
+			remoteInfo = ARICEB;
+		};
+		3670FC2F25D9A8F40022AF8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3670FC0525D9A8EF0022AF8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3670FC0C25D9A8EF0022AF8F;
+			remoteInfo = ARICEB;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17CC7AAB7E37CD7D488A7168 /* Pods-ARICEBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.release.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.release.xcconfig"; sourceTree = "<group>"; };
+		295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEB_ARICEBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		323F7E2379F9103E2CD28923 /* Pods-ARICEB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB.release.xcconfig"; path = "Target Support Files/Pods-ARICEB/Pods-ARICEB.release.xcconfig"; sourceTree = "<group>"; };
+		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3670FC1025D9A8F00022AF8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3670FC1225D9A8F00022AF8F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		3670FC1925D9A8F30022AF8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3670FC1C25D9A8F30022AF8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3670FC1E25D9A8F30022AF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3670FC2325D9A8F40022AF8F /* ARICEBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARICEBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3670FC2725D9A8F40022AF8F /* ARICEBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARICEBTests.swift; sourceTree = "<group>"; };
+		3670FC2925D9A8F40022AF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3670FC2E25D9A8F40022AF8F /* ARICEBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARICEBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3670FC3225D9A8F40022AF8F /* ARICEBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARICEBUITests.swift; sourceTree = "<group>"; };
+		3670FC3425D9A8F40022AF8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3670FC4325D9BA5C0022AF8F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3670FC4825D9BAF50022AF8F /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		3670FC7F25D9C5E40022AF8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C10D2DE8A88306595460E38E /* Pods-ARICEB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB/Pods-ARICEB.debug.xcconfig"; sourceTree = "<group>"; };
+		D220F82E421BC02589727239 /* Pods-ARICEB-ARICEBUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.release.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3670FC0A25D9A8EF0022AF8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3670FC2025D9A8F40022AF8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027DB4CE60D2C5BFFDE6C965 /* Pods_ARICEBTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3670FC2B25D9A8F40022AF8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3670FC0425D9A8EF0022AF8F = {
+			isa = PBXGroup;
+			children = (
+				3670FC0F25D9A8EF0022AF8F /* ARICEB */,
+				3670FC2625D9A8F40022AF8F /* ARICEBTests */,
+				3670FC3125D9A8F40022AF8F /* ARICEBUITests */,
+				3670FC0E25D9A8EF0022AF8F /* Products */,
+				E9C6D24AA4C27A7448DA4FF9 /* Pods */,
+				924D230B0AB1D985DA2BDF71 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3670FC0E25D9A8EF0022AF8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3670FC0D25D9A8EF0022AF8F /* ARICEB.app */,
+				3670FC2325D9A8F40022AF8F /* ARICEBTests.xctest */,
+				3670FC2E25D9A8F40022AF8F /* ARICEBUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3670FC0F25D9A8EF0022AF8F /* ARICEB */ = {
+			isa = PBXGroup;
+			children = (
+				3670FC1025D9A8F00022AF8F /* AppDelegate.swift */,
+				3670FC1225D9A8F00022AF8F /* art.scnassets */,
+				3670FC1925D9A8F30022AF8F /* Assets.xcassets */,
+				3670FC1B25D9A8F30022AF8F /* LaunchScreen.storyboard */,
+				3670FC1E25D9A8F30022AF8F /* Info.plist */,
+				3670FC4325D9BA5C0022AF8F /* Coordinator.swift */,
+				3670FC7F25D9C5E40022AF8F /* MainViewController.swift */,
+				3670FC8025D9C5E40022AF8F /* MainViewController.xib */,
+				3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */,
+				3670FC4825D9BAF50022AF8F /* Storyboarded.swift */,
+			);
+			path = ARICEB;
+			sourceTree = "<group>";
+		};
+		3670FC2625D9A8F40022AF8F /* ARICEBTests */ = {
+			isa = PBXGroup;
+			children = (
+				3670FC2725D9A8F40022AF8F /* ARICEBTests.swift */,
+				3670FC2925D9A8F40022AF8F /* Info.plist */,
+			);
+			path = ARICEBTests;
+			sourceTree = "<group>";
+		};
+		3670FC3125D9A8F40022AF8F /* ARICEBUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3670FC3225D9A8F40022AF8F /* ARICEBUITests.swift */,
+				3670FC3425D9A8F40022AF8F /* Info.plist */,
+			);
+			path = ARICEBUITests;
+			sourceTree = "<group>";
+		};
+		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */,
+				2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */,
+				7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9C6D24AA4C27A7448DA4FF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C10D2DE8A88306595460E38E /* Pods-ARICEB.debug.xcconfig */,
+				323F7E2379F9103E2CD28923 /* Pods-ARICEB.release.xcconfig */,
+				54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */,
+				D220F82E421BC02589727239 /* Pods-ARICEB-ARICEBUITests.release.xcconfig */,
+				789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */,
+				17CC7AAB7E37CD7D488A7168 /* Pods-ARICEBTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3670FC0C25D9A8EF0022AF8F /* ARICEB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3670FC3725D9A8F40022AF8F /* Build configuration list for PBXNativeTarget "ARICEB" */;
+			buildPhases = (
+				652F51836B11468E9621DF21 /* [CP] Check Pods Manifest.lock */,
+				3670FC0925D9A8EF0022AF8F /* Sources */,
+				3670FC0A25D9A8EF0022AF8F /* Frameworks */,
+				3670FC0B25D9A8EF0022AF8F /* Resources */,
+				AA3CF390C4BF0EF0A2DEC928 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARICEB;
+			productName = ARICEB;
+			productReference = 3670FC0D25D9A8EF0022AF8F /* ARICEB.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3670FC2225D9A8F40022AF8F /* ARICEBTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3670FC3A25D9A8F40022AF8F /* Build configuration list for PBXNativeTarget "ARICEBTests" */;
+			buildPhases = (
+				821CF362F4E7A2CE0E6E6B16 /* [CP] Check Pods Manifest.lock */,
+				3670FC1F25D9A8F40022AF8F /* Sources */,
+				3670FC2025D9A8F40022AF8F /* Frameworks */,
+				3670FC2125D9A8F40022AF8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3670FC2525D9A8F40022AF8F /* PBXTargetDependency */,
+			);
+			name = ARICEBTests;
+			productName = ARICEBTests;
+			productReference = 3670FC2325D9A8F40022AF8F /* ARICEBTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3670FC2D25D9A8F40022AF8F /* ARICEBUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3670FC3D25D9A8F40022AF8F /* Build configuration list for PBXNativeTarget "ARICEBUITests" */;
+			buildPhases = (
+				E2AE19522C3A2B5DCC33FCD1 /* [CP] Check Pods Manifest.lock */,
+				3670FC2A25D9A8F40022AF8F /* Sources */,
+				3670FC2B25D9A8F40022AF8F /* Frameworks */,
+				3670FC2C25D9A8F40022AF8F /* Resources */,
+				AF7C1DEA0744B4736ABDB5CC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3670FC3025D9A8F40022AF8F /* PBXTargetDependency */,
+			);
+			name = ARICEBUITests;
+			productName = ARICEBUITests;
+			productReference = 3670FC2E25D9A8F40022AF8F /* ARICEBUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3670FC0525D9A8EF0022AF8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					3670FC0C25D9A8EF0022AF8F = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					3670FC2225D9A8F40022AF8F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 3670FC0C25D9A8EF0022AF8F;
+					};
+					3670FC2D25D9A8F40022AF8F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 3670FC0C25D9A8EF0022AF8F;
+					};
+				};
+			};
+			buildConfigurationList = 3670FC0825D9A8EF0022AF8F /* Build configuration list for PBXProject "ARICEB" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3670FC0425D9A8EF0022AF8F;
+			productRefGroup = 3670FC0E25D9A8EF0022AF8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3670FC0C25D9A8EF0022AF8F /* ARICEB */,
+				3670FC2225D9A8F40022AF8F /* ARICEBTests */,
+				3670FC2D25D9A8F40022AF8F /* ARICEBUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3670FC0B25D9A8EF0022AF8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */,
+				3670FC1D25D9A8F30022AF8F /* LaunchScreen.storyboard in Resources */,
+				3670FC1A25D9A8F30022AF8F /* Assets.xcassets in Resources */,
+				3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3670FC2125D9A8F40022AF8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3670FC2C25D9A8F40022AF8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		652F51836B11468E9621DF21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARICEB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		821CF362F4E7A2CE0E6E6B16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARICEBTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA3CF390C4BF0EF0A2DEC928 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARICEB/Pods-ARICEB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARICEB/Pods-ARICEB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARICEB/Pods-ARICEB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF7C1DEA0744B4736ABDB5CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2AE19522C3A2B5DCC33FCD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARICEB-ARICEBUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3670FC0925D9A8EF0022AF8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */,
+				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
+				3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */,
+				3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */,
+				3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3670FC1F25D9A8F40022AF8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3670FC2825D9A8F40022AF8F /* ARICEBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3670FC2A25D9A8F40022AF8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3670FC3325D9A8F40022AF8F /* ARICEBUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3670FC2525D9A8F40022AF8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3670FC0C25D9A8EF0022AF8F /* ARICEB */;
+			targetProxy = 3670FC2425D9A8F40022AF8F /* PBXContainerItemProxy */;
+		};
+		3670FC3025D9A8F40022AF8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3670FC0C25D9A8EF0022AF8F /* ARICEB */;
+			targetProxy = 3670FC2F25D9A8F40022AF8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3670FC1B25D9A8F30022AF8F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3670FC1C25D9A8F30022AF8F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3670FC3525D9A8F40022AF8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3670FC3625D9A8F40022AF8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3670FC3825D9A8F40022AF8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C10D2DE8A88306595460E38E /* Pods-ARICEB.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RMZ9N2YZ23;
+				INFOPLIST_FILE = ARICEB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavorocha.ARICEB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3670FC3925D9A8F40022AF8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 323F7E2379F9103E2CD28923 /* Pods-ARICEB.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RMZ9N2YZ23;
+				INFOPLIST_FILE = ARICEB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavorocha.ARICEB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3670FC3B25D9A8F40022AF8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RMZ9N2YZ23;
+				INFOPLIST_FILE = ARICEBTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavorocha.ARICEBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARICEB.app/ARICEB";
+			};
+			name = Debug;
+		};
+		3670FC3C25D9A8F40022AF8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17CC7AAB7E37CD7D488A7168 /* Pods-ARICEBTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RMZ9N2YZ23;
+				INFOPLIST_FILE = ARICEBTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavorocha.ARICEBTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARICEB.app/ARICEB";
+			};
+			name = Release;
+		};
+		3670FC3E25D9A8F40022AF8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RMZ9N2YZ23;
+				INFOPLIST_FILE = ARICEBUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavorocha.ARICEBUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARICEB;
+			};
+			name = Debug;
+		};
+		3670FC3F25D9A8F40022AF8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D220F82E421BC02589727239 /* Pods-ARICEB-ARICEBUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RMZ9N2YZ23;
+				INFOPLIST_FILE = ARICEBUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gustavorocha.ARICEBUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARICEB;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3670FC0825D9A8EF0022AF8F /* Build configuration list for PBXProject "ARICEB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3670FC3525D9A8F40022AF8F /* Debug */,
+				3670FC3625D9A8F40022AF8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3670FC3725D9A8F40022AF8F /* Build configuration list for PBXNativeTarget "ARICEB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3670FC3825D9A8F40022AF8F /* Debug */,
+				3670FC3925D9A8F40022AF8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3670FC3A25D9A8F40022AF8F /* Build configuration list for PBXNativeTarget "ARICEBTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3670FC3B25D9A8F40022AF8F /* Debug */,
+				3670FC3C25D9A8F40022AF8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3670FC3D25D9A8F40022AF8F /* Build configuration list for PBXNativeTarget "ARICEBUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3670FC3E25D9A8F40022AF8F /* Debug */,
+				3670FC3F25D9A8F40022AF8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3670FC0525D9A8EF0022AF8F /* Project object */;
+}
