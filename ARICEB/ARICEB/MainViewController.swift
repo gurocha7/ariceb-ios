@@ -28,8 +28,13 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1215686275, green: 0.7254901961, blue: 0.4235294118, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         view.backgroundColor = .white
-        imageBanner.backgroundColor = .orange
+        setupBanner()
         configMneu()
+    }
+    
+    private func setupBanner(){
+        imageBanner.backgroundColor = .orange
+        imageBanner.applyBorder(corner: 18)
     }
     
     private func configMneu(){

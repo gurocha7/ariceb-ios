@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */; };
 		3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC7F25D9C5E40022AF8F /* MainViewController.swift */; };
 		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
+		3670FCB325D9EAD10022AF8F /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FCB225D9EAD10022AF8F /* Extensions+UIImageView.swift */; };
 		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
 		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3670FC7F25D9C5E40022AF8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3670FCB225D9EAD10022AF8F /* Extensions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImageView.swift"; sourceTree = "<group>"; };
 		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 		3670FC0F25D9A8EF0022AF8F /* ARICEB */ = {
 			isa = PBXGroup;
 			children = (
+				3670FCAB25D9EAB90022AF8F /* Extensions */,
 				3670FC1025D9A8F00022AF8F /* AppDelegate.swift */,
 				3670FC1225D9A8F00022AF8F /* art.scnassets */,
 				3670FC1925D9A8F30022AF8F /* Assets.xcassets */,
@@ -152,6 +155,14 @@
 				3670FC3425D9A8F40022AF8F /* Info.plist */,
 			);
 			path = ARICEBUITests;
+			sourceTree = "<group>";
+		};
+		3670FCAB25D9EAB90022AF8F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3670FCB225D9EAD10022AF8F /* Extensions+UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {
@@ -416,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3670FCB325D9EAD10022AF8F /* Extensions+UIImageView.swift in Sources */,
 				3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */,
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
 				3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */,
