@@ -26,18 +26,41 @@
                         <constraint firstAttribute="height" constant="150" id="cKk-sr-4um"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QrCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI8-ja-k93">
+                    <rect key="frame" x="39.999999999999993" y="260" width="66.333333333333314" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="yIB-0U-DB2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrj-6X-Lhu">
+                    <rect key="frame" x="40" y="281" width="124" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="Q1h-dN-tiJ"/>
+                        <constraint firstAttribute="width" constant="124" id="imY-XP-g9r"/>
+                    </constraints>
+                    <state key="normal" image="main-qrcode"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="yI8-ja-k93" firstAttribute="top" secondItem="eUp-CZ-tty" secondAttribute="bottom" constant="50" id="6j3-zY-ojS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eUp-CZ-tty" secondAttribute="trailing" constant="40" id="DCu-HV-Q1N"/>
+                <constraint firstItem="eUp-CZ-tty" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TDc-uO-OR2"/>
+                <constraint firstItem="Jrj-6X-Lhu" firstAttribute="top" secondItem="yI8-ja-k93" secondAttribute="bottom" constant="1" id="Wxw-FI-ZVY"/>
                 <constraint firstItem="eUp-CZ-tty" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="lLg-yP-fPs"/>
+                <constraint firstItem="Jrj-6X-Lhu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="m7g-Zq-yHn"/>
+                <constraint firstItem="yI8-ja-k93" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="sut-wh-Re5"/>
                 <constraint firstItem="eUp-CZ-tty" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="two-LU-8Ty"/>
             </constraints>
             <point key="canvasLocation" x="-146" y="92"/>
         </view>
     </objects>
     <resources>
+        <image name="main-qrcode" width="124" height="86"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
