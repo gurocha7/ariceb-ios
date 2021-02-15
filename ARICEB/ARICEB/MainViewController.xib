@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="ARICEB" customModuleProvider="target">
             <connections>
+                <outlet property="buttonQrCode" destination="Jrj-6X-Lhu" id="pPJ-lE-eOG"/>
                 <outlet property="imageBanner" destination="eUp-CZ-tty" id="Pk6-Ol-cxI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,17 +43,30 @@
                         <constraint firstAttribute="width" constant="124" id="imY-XP-g9r"/>
                     </constraints>
                     <state key="normal" image="main-qrcode"/>
+                    <connections>
+                        <action selector="buttonQrCodeAction:" destination="-1" eventType="touchUpInside" id="i4g-hJ-W2U"/>
+                    </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clicando no QrCode ao lado você poderá escanear um QRCode da sua localização atual." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d11-M9-gXm">
+                    <rect key="frame" x="179" y="281" width="195" height="85"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="yI8-ja-k93" firstAttribute="top" secondItem="eUp-CZ-tty" secondAttribute="bottom" constant="50" id="6j3-zY-ojS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eUp-CZ-tty" secondAttribute="trailing" constant="40" id="DCu-HV-Q1N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d11-M9-gXm" secondAttribute="trailing" constant="40" id="FXd-Kz-LxZ"/>
                 <constraint firstItem="eUp-CZ-tty" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TDc-uO-OR2"/>
                 <constraint firstItem="Jrj-6X-Lhu" firstAttribute="top" secondItem="yI8-ja-k93" secondAttribute="bottom" constant="1" id="Wxw-FI-ZVY"/>
+                <constraint firstItem="d11-M9-gXm" firstAttribute="leading" secondItem="Jrj-6X-Lhu" secondAttribute="trailing" constant="15" id="ZjY-fc-lPE"/>
                 <constraint firstItem="eUp-CZ-tty" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="lLg-yP-fPs"/>
                 <constraint firstItem="Jrj-6X-Lhu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="m7g-Zq-yHn"/>
+                <constraint firstItem="d11-M9-gXm" firstAttribute="height" secondItem="Jrj-6X-Lhu" secondAttribute="height" id="nfy-pD-LG6"/>
+                <constraint firstItem="d11-M9-gXm" firstAttribute="top" secondItem="Jrj-6X-Lhu" secondAttribute="top" id="qNA-Qp-rIW"/>
                 <constraint firstItem="yI8-ja-k93" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="sut-wh-Re5"/>
                 <constraint firstItem="eUp-CZ-tty" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="two-LU-8Ty"/>
             </constraints>

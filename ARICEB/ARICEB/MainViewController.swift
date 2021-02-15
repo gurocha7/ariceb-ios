@@ -13,7 +13,13 @@ class MainViewController: UIViewController {
     //MARK: - Properties
     
     @IBOutlet weak var imageBanner: UIImageView!
+    @IBOutlet weak var buttonQrCode: UIButton!
     
+    //MARK: - IBOutlets Actions
+    
+    @IBAction func buttonQrCodeAction(_ sender: Any) {
+        
+    }
     //MARK: - Overrides
 
     override func viewDidLoad() {
