@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     
     
     let travelView: TravelView = TravelView.loadFromNib()
+    let bannerView: BannerView = BannerView.loadFromNib()
     
     //MARK: - Overrides
 
@@ -31,14 +32,25 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1215686275, green: 0.7254901961, blue: 0.4235294118, alpha: 1)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         view.backgroundColor = .white
-        setupBanner()
+        setupStack()
         configMneu()
     }
     
-    private func setupBanner(){
+    private func setupStack(){
+        setupTravelView()
+        setupBannerView()
+    }
+    
+    private func setupTravelView(){
         travelView.translatesAutoresizingMaskIntoConstraints = false
         travelView.heightAnchor.constraint(equalToConstant: 250).isActive = true
         stackView.addArrangedSubview(travelView)
+    }
+    
+    private func setupBannerView(){
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        stackView.addArrangedSubview(bannerView)
     }
     
     private func configMneu(){
