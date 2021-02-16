@@ -1,4 +1,5 @@
 PODS:
+  - FittedSheets (2.4.0)
   - Reusable (4.1.1):
     - Reusable/Storyboard (= 4.1.1)
     - Reusable/View (= 4.1.1)
@@ -7,18 +8,21 @@ PODS:
   - SideMenuSwift (2.0.7)
 
 DEPENDENCIES:
+  - FittedSheets
   - Reusable
   - SideMenuSwift
 
 SPEC REPOS:
   trunk:
+    - FittedSheets
     - Reusable
     - SideMenuSwift
 
 SPEC CHECKSUMS:
+  FittedSheets: 470a7740a083156d711ab6ccd37d1d539005e6aa
   Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
 
-PODFILE CHECKSUM: 7ce835297c54a1b2c32929b9cac5786028725b54
+PODFILE CHECKSUM: ece8c2a55b8265a45f916ce9ee94689aff3cc402
 
 COCOAPODS: 1.8.4

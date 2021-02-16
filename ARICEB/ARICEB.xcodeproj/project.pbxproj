@@ -192,10 +192,8 @@
 		36B929A725DC3F7C00133E65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3670FC7F25D9C5E40022AF8F /* MainViewController.swift */,
-				3670FC8025D9C5E40022AF8F /* MainViewController.xib */,
-				36B929A525DC3F4100133E65 /* Travel */,
-				36B929AB25DC4F9200133E65 /* Banner */,
+				36B929B625DC513E00133E65 /* Main */,
+				36B929B725DC518100133E65 /* Travel */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +205,40 @@
 				36B929B125DC4FEC00133E65 /* BannerView.xib */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		36B929B625DC513E00133E65 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				36B929A525DC3F4100133E65 /* Travel */,
+				36B929AB25DC4F9200133E65 /* Banner */,
+				3670FC7F25D9C5E40022AF8F /* MainViewController.swift */,
+				3670FC8025D9C5E40022AF8F /* MainViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		36B929B725DC518100133E65 /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				36B929B825DC518D00133E65 /* Origin */,
+				36B929B925DC519600133E65 /* Destiny */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		36B929B825DC518D00133E65 /* Origin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Origin;
+			sourceTree = "<group>";
+		};
+		36B929B925DC519600133E65 /* Destiny */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Destiny;
 			sourceTree = "<group>";
 		};
 		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {
