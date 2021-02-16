@@ -28,23 +28,47 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgs-5G-lKl">
+                    <rect key="frame" x="60" y="167" width="294" height="40"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="xlL-w9-PGN"/>
+                    </constraints>
+                    <state key="normal" title="Mostrar caminho"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8r5-OD-zcY">
+                    <rect key="frame" x="0.0" y="249" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="IuD-cL-V4r"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="8r5-OD-zcY" secondAttribute="bottom" id="0zI-ji-eNt"/>
+                <constraint firstItem="8r5-OD-zcY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2T6-7p-8br"/>
+                <constraint firstItem="Rgs-5G-lKl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="2ot-ST-NVX"/>
                 <constraint firstItem="cxR-7e-bjy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="6Xf-T3-sgG"/>
                 <constraint firstItem="apb-m5-ojW" firstAttribute="leading" secondItem="cxR-7e-bjy" secondAttribute="leading" id="EqO-S5-0RI"/>
+                <constraint firstItem="Rgs-5G-lKl" firstAttribute="top" secondItem="apb-m5-ojW" secondAttribute="bottom" constant="55" id="GAI-vM-msG"/>
                 <constraint firstItem="apb-m5-ojW" firstAttribute="top" secondItem="cxR-7e-bjy" secondAttribute="bottom" constant="40" id="Hbs-AO-UTL"/>
                 <constraint firstItem="apb-m5-ojW" firstAttribute="trailing" secondItem="cxR-7e-bjy" secondAttribute="trailing" id="TFO-i1-nTA"/>
                 <constraint firstItem="cxR-7e-bjy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="VQO-o8-FUN"/>
                 <constraint firstAttribute="trailing" secondItem="cxR-7e-bjy" secondAttribute="trailing" constant="20" id="f4B-6k-Dyb"/>
+                <constraint firstAttribute="trailing" secondItem="Rgs-5G-lKl" secondAttribute="trailing" constant="60" id="lUX-Uu-c8Y"/>
+                <constraint firstAttribute="trailing" secondItem="8r5-OD-zcY" secondAttribute="trailing" id="pQr-fP-7Xe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="142" y="98"/>
+            <point key="canvasLocation" x="140.57971014492756" y="97.767857142857139"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
