@@ -12,14 +12,11 @@ class MainViewController: UIViewController {
     
     //MARK: - Properties
     
-    @IBOutlet weak var imageBanner: UIImageView!
-    @IBOutlet weak var buttonQrCode: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     
-    //MARK: - IBOutlets Actions
     
-    @IBAction func buttonQrCodeAction(_ sender: Any) {
-        
-    }
+    let travelView: TravelView = TravelView.loadFromNib()
+    
     //MARK: - Overrides
 
     override func viewDidLoad() {
@@ -39,8 +36,9 @@ class MainViewController: UIViewController {
     }
     
     private func setupBanner(){
-        imageBanner.backgroundColor = .orange
-        imageBanner.applyBorder(corner: 18)
+        travelView.translatesAutoresizingMaskIntoConstraints = false
+        travelView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        stackView.addArrangedSubview(travelView)
     }
     
     private func configMneu(){

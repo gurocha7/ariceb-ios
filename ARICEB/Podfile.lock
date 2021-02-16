@@ -1,16 +1,24 @@
 PODS:
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
   - SideMenuSwift (2.0.7)
 
 DEPENDENCIES:
+  - Reusable
   - SideMenuSwift
 
 SPEC REPOS:
   trunk:
+    - Reusable
     - SideMenuSwift
 
 SPEC CHECKSUMS:
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   SideMenuSwift: ffbbc88d23741932177ad1320df837cedfb3bc5e
 
-PODFILE CHECKSUM: da96c0656266c620e4b05cc6fdb2249e33d7e3bf
+PODFILE CHECKSUM: 7ce835297c54a1b2c32929b9cac5786028725b54
 
 COCOAPODS: 1.8.4
