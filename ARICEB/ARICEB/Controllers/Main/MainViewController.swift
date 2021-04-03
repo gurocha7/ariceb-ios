@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     
-    let travelView: TravelView = TravelView.loadFromNib()
+    var travelView: TravelView = TravelView.loadFromNib()
     let bannerView: BannerView = BannerView.loadFromNib()
     
     //MARK: - Overrides
@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
     
     private func setup(){
         title = "ARICEB"
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1215686275, green: 0.7254901961, blue: 0.4235294118, alpha: 1)
+        navigationController?.navigationBar.barTintColor = mainColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         view.backgroundColor = .white
         setupStack()
@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
     
     private func setupTravelView(){
         travelView.translatesAutoresizingMaskIntoConstraints = false
-        travelView.heightAnchor.constraint(equalToConstant: 250).isActive = true
+        travelView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         stackView.addArrangedSubview(travelView)
     }
     

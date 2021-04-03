@@ -19,11 +19,12 @@
 		3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */; };
 		3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC7F25D9C5E40022AF8F /* MainViewController.swift */; };
 		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
-		3670FCB325D9EAD10022AF8F /* Extensions+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FCB225D9EAD10022AF8F /* Extensions+UIImageView.swift */; };
 		36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9298D25DC3B2A00133E65 /* TravelView.swift */; };
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
 		36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929B125DC4FEC00133E65 /* BannerView.xib */; };
+		36D593E92617DC260034BC69 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593E82617DC260034BC69 /* CustomColor.swift */; };
+		36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */; };
 		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
 		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
 /* End PBXBuildFile section */
@@ -67,11 +68,12 @@
 		3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3670FC7F25D9C5E40022AF8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		3670FCB225D9EAD10022AF8F /* Extensions+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIImageView.swift"; sourceTree = "<group>"; };
 		36B9298D25DC3B2A00133E65 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		36B929B125DC4FEC00133E65 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
+		36D593E82617DC260034BC69 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,9 +137,8 @@
 				36B929A725DC3F7C00133E65 /* Controllers */,
 				36B929A625DC3F6900133E65 /* Coordinator */,
 				3670FCAB25D9EAB90022AF8F /* Extensions */,
+				36D593E72617DBE70034BC69 /* Resources */,
 				3670FC1025D9A8F00022AF8F /* AppDelegate.swift */,
-				3670FC1225D9A8F00022AF8F /* art.scnassets */,
-				3670FC1925D9A8F30022AF8F /* Assets.xcassets */,
 				3670FC1B25D9A8F30022AF8F /* LaunchScreen.storyboard */,
 				3670FC1E25D9A8F30022AF8F /* Info.plist */,
 				3670FC4825D9BAF50022AF8F /* Storyboarded.swift */,
@@ -166,7 +167,7 @@
 		3670FCAB25D9EAB90022AF8F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3670FCB225D9EAD10022AF8F /* Extensions+UIImageView.swift */,
+				36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,6 +240,16 @@
 			children = (
 			);
 			path = Destiny;
+			sourceTree = "<group>";
+		};
+		36D593E72617DBE70034BC69 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3670FC1925D9A8F30022AF8F /* Assets.xcassets */,
+				3670FC1225D9A8F00022AF8F /* art.scnassets */,
+				36D593E82617DC260034BC69 /* CustomColor.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {
@@ -505,9 +516,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3670FCB325D9EAD10022AF8F /* Extensions+UIImageView.swift in Sources */,
 				3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */,
+				36D593E92617DC260034BC69 /* CustomColor.swift in Sources */,
 				36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */,
+				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
 				36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */,
 				3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */,
