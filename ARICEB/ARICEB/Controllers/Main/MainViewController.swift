@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
     
     private func setupBannerView(){
         bannerView.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        bannerView.heightAnchor.constraint(equalToConstant: 160).isActive = true
         stackView.addArrangedSubview(bannerView)
     }
     
