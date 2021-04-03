@@ -10,6 +10,9 @@ import Reusable
 
 class TravelView: UIView, NibLoadable {
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var imageMaps: UIImageView!
+    @IBOutlet weak var labelTitle: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +24,7 @@ class TravelView: UIView, NibLoadable {
         contentView.applyCorner(corner: 30)
         contentView.applyBorder(borderWidth: 1, borderColor: UIColor.black.cgColor)
         contentView.applyShadow(opacity: 0.2, shadowRadius: 5)
+        imageMaps.image = UIImage(named: "icon-maps-color")?.withRenderingMode(.alwaysOriginal)
     }
 
 }
