@@ -25,6 +25,8 @@
 		36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929B125DC4FEC00133E65 /* BannerView.xib */; };
 		36D593E92617DC260034BC69 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593E82617DC260034BC69 /* CustomColor.swift */; };
 		36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */; };
+		36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593FF2617EEB20034BC69 /* QRCodeView.swift */; };
+		36D594052617EED70034BC69 /* QRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D594042617EED70034BC69 /* QRCodeView.xib */; };
 		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
 		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		36B929B125DC4FEC00133E65 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
 		36D593E82617DC260034BC69 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		36D593FF2617EEB20034BC69 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		36D594042617EED70034BC69 /* QRCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeView.xib; sourceTree = "<group>"; };
 		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +217,7 @@
 			children = (
 				36B929A525DC3F4100133E65 /* Travel */,
 				36B929AB25DC4F9200133E65 /* Banner */,
+				36D593FE2617EE920034BC69 /* QrCode */,
 				3670FC7F25D9C5E40022AF8F /* MainViewController.swift */,
 				3670FC8025D9C5E40022AF8F /* MainViewController.xib */,
 			);
@@ -250,6 +255,15 @@
 				36D593E82617DC260034BC69 /* CustomColor.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		36D593FE2617EE920034BC69 /* QrCode */ = {
+			isa = PBXGroup;
+			children = (
+				36D593FF2617EEB20034BC69 /* QRCodeView.swift */,
+				36D594042617EED70034BC69 /* QRCodeView.xib */,
+			);
+			path = QrCode;
 			sourceTree = "<group>";
 		};
 		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {
@@ -383,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
 				3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */,
 				36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */,
@@ -518,6 +533,7 @@
 			files = (
 				3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */,
 				36D593E92617DC260034BC69 /* CustomColor.swift in Sources */,
+				36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */,
 				36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */,
 				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
