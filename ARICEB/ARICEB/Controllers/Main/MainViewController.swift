@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SideMenuSwift
+//import SideMenuSwift
 
 class MainViewController: UIViewController {
     
@@ -36,7 +36,6 @@ class MainViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         view.backgroundColor = .white
         setupStack()
-        configMneu()
         bindEvents()
     }
     
@@ -76,21 +75,5 @@ class MainViewController: UIViewController {
         fastButtonsView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         stackView.addArrangedSubview(fastButtonsView)
     }
-    
-    private func configMneu(){
-        sideMenuController?.delegate = self
-        sideMenuController?.revealMenu()
-        SideMenuController.preferences.basic.menuWidth = 240
-        SideMenuController.preferences.basic.statusBarBehavior = .hideOnMenu
-        SideMenuController.preferences.basic.position = .above
-        SideMenuController.preferences.basic.direction = .left
-        SideMenuController.preferences.basic.enablePanGesture = true
-        SideMenuController.preferences.basic.supportedOrientations = .portrait
-        SideMenuController.preferences.basic.shouldRespectLanguageDirection = true
-    }
 
-}
-
-extension MainViewController: SideMenuControllerDelegate{
-    
 }

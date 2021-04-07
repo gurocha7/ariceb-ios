@@ -7,7 +7,7 @@ target 'ARICEB' do
 
   # Pods for ARICEB
   
-  pod 'SideMenuSwift'
+#  pod 'SideMenuSwift'
   pod 'Reusable'
   pod 'FittedSheets'
 
