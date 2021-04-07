@@ -13,6 +13,9 @@ class TravelView: UIView, NibLoadable {
     @IBOutlet weak var imageMaps: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     
+    @IBAction func buttonTravelAction(_ sender: Any) {
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
