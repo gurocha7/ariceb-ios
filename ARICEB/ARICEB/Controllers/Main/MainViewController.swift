@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     let travelView: TravelView = TravelView.loadFromNib()
     let bannerView: BannerView = BannerView.loadFromNib()
     let qrCodeView: QRCodeView = QRCodeView.loadFromNib()
+    let fastButtonsView: FastButtonsView = FastButtonsView.loadFromNib()
     
     //MARK: - Overrides
 
@@ -41,6 +42,7 @@ class MainViewController: UIViewController {
         setupTravelView()
         setupBannerView()
         setupQrCodeView()
+        setupFastButtonsView()
     }
     
     private func setupTravelView(){
@@ -59,6 +61,12 @@ class MainViewController: UIViewController {
         qrCodeView.translatesAutoresizingMaskIntoConstraints = false
         qrCodeView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         stackView.addArrangedSubview(qrCodeView)
+    }
+    
+    private func setupFastButtonsView(){
+        fastButtonsView.translatesAutoresizingMaskIntoConstraints = false
+        fastButtonsView.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        stackView.addArrangedSubview(fastButtonsView)
     }
     
     private func configMneu(){
