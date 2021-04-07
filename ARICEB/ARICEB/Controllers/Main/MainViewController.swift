@@ -12,8 +12,9 @@ class MainViewController: UIViewController {
     
     //MARK: - Properties
     
-    @IBOutlet weak var stackView: UIStackView!
+    var coordinator: MainCoordinator?
     
+    @IBOutlet weak var stackView: UIStackView!
     
     let travelView: TravelView = TravelView.loadFromNib()
     let bannerView: BannerView = BannerView.loadFromNib()
@@ -36,6 +37,13 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         setupStack()
         configMneu()
+        bindEvents()
+    }
+    
+    private func bindEvents(){
+        travelView.selectOriginAndDestiny = { [weak self] in
+            self?.coordinator?.showSelectTravel()
+        }
     }
     
     private func setupStack(){

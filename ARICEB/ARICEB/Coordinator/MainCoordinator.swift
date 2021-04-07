@@ -17,6 +17,13 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = MainViewController(nibName: "MainViewController", bundle: nil)
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func showSelectTravel(){
+        let vc = UIViewController()
+        vc.view.backgroundColor = .orange
         navigationController.pushViewController(vc, animated: false)
     }
     

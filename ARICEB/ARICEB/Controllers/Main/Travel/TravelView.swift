@@ -9,13 +9,16 @@ import UIKit
 import Reusable
 
 class TravelView: UIView, NibLoadable {
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var imageMaps: UIImageView!
     @IBOutlet weak var labelTitle: UILabel!
     
     @IBAction func buttonTravelAction(_ sender: Any) {
-        
+        selectOriginAndDestiny?()
     }
+    
+    var selectOriginAndDestiny: (()-> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
