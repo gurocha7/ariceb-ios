@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import SideMenuSwift
 
 class MainViewController: UIViewController {
     
@@ -37,6 +36,11 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         setupStack()
         bindEvents()
+        setupMenuIcon()
+    }
+    
+    private func setupMenuIcon(){
+    
     }
     
     private func bindEvents(){

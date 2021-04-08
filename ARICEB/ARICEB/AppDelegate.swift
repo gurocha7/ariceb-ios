@@ -11,21 +11,18 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var coordinator: MainCoordinator?
+    var coordinator: MenuCoordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let nav = UINavigationController()
-        coordinator = MainCoordinator(navigationController: nav)
-        coordinator?.start()
-        
+        coordinator = MenuCoordinator()
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = nav
+        window?.rootViewController = coordinator?.rootVC
         window?.makeKeyAndVisible()
-        
         return true
     }
+    
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

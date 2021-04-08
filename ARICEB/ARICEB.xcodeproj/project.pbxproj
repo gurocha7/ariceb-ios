@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		027DB4CE60D2C5BFFDE6C965 /* Pods_ARICEBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */; };
+		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
+		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
 		3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1225D9A8F00022AF8F /* art.scnassets */; };
 		3670FC1A25D9A8F30022AF8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1925D9A8F30022AF8F /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEB_ARICEBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		323F7E2379F9103E2CD28923 /* Pods-ARICEB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB.release.xcconfig"; path = "Target Support Files/Pods-ARICEB/Pods-ARICEB.release.xcconfig"; sourceTree = "<group>"; };
+		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
+		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3670FC1025D9A8F00022AF8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3670FC1225D9A8F00022AF8F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -117,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36355CD9261E87670081BAD9 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		3670FC0425D9A8EF0022AF8F = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +215,7 @@
 			children = (
 				3670FC4325D9BA5C0022AF8F /* Coordinator.swift */,
 				3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */,
+				36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -228,6 +241,7 @@
 		36B929B625DC513E00133E65 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				36355CD9261E87670081BAD9 /* Menu */,
 				36B929A525DC3F4100133E65 /* Travel */,
 				36B929AB25DC4F9200133E65 /* Banner */,
 				36D593FE2617EE920034BC69 /* QrCode */,
@@ -554,8 +568,10 @@
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
 				36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */,
 				3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */,
+				36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */,
 				3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */,
 				3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */,
+				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
