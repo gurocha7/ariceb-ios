@@ -20,6 +20,9 @@ class MainViewController: UIViewController {
     let qrCodeView: QRCodeView = QRCodeView.loadFromNib()
     let fastButtonsView: FastButtonsView = FastButtonsView.loadFromNib()
     
+    
+    var selectOriginAndDestiny: (()-> Void)?
+    
     //MARK: - Overrides
 
     override func viewDidLoad() {
@@ -45,7 +48,8 @@ class MainViewController: UIViewController {
     
     private func bindEvents(){
         travelView.selectOriginAndDestiny = { [weak self] in
-            self?.coordinator?.showSelectTravel()
+//            self?.coordinator?.showSelectTravel()
+            self?.selectOriginAndDestiny?()
         }
     }
     
