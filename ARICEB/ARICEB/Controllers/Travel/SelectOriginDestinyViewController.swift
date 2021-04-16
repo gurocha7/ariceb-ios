@@ -8,9 +8,18 @@
 import UIKit
 
 class SelectOriginDestinyViewController: BaseViewController {
+    
+    let customView: SelectOriginDestinyView = SelectOriginDestinyView.loadFromNib()
+    
+    override func loadView() {
+        super.loadView()
+        title = "Caminho"
+        view = customView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
 }
