@@ -39,16 +39,10 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         setupStack()
         bindEvents()
-        setupMenuIcon()
-    }
-    
-    private func setupMenuIcon(){
-    
     }
     
     private func bindEvents(){
         travelView.selectOriginAndDestiny = { [weak self] in
-//            self?.coordinator?.showSelectTravel()
             self?.selectOriginAndDestiny?()
         }
     }
