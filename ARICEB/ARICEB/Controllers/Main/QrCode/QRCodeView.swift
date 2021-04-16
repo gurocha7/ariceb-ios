@@ -19,7 +19,7 @@ class QRCodeView: UIView, NibLoadable{
     }
     
     private func setupLayout(){
-        contentView.backgroundColor = mainColor
+        contentView.backgroundColor = #colorLiteral(red: 0.01176470588, green: 0.662745098, blue: 0.9568627451, alpha: 1)
         contentView.applyCorner(corner: 15)
         contentView.applyBorder(borderWidth: 0.5, borderColor: UIColor.gray.cgColor)
         imageQRCode.image = UIImage(named: "icon-qrcode")?.withRenderingMode(.alwaysOriginal)

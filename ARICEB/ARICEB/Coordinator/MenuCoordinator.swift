@@ -46,8 +46,7 @@ class MenuCoordinator: NSObject {
     }
     
     func showSelectTravel(){
-        let vc = UIViewController()
-        vc.view.backgroundColor = .orange
+        let vc = SelectOriginDestinyViewController()
         self.homeNavController.pushViewController(vc, animated: false)
     }
 }

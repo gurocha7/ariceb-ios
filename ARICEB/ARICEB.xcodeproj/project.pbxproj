@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		027DB4CE60D2C5BFFDE6C965 /* Pods_ARICEBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */; };
+		3619B5A1262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */; };
+		3619B5A7262A2F1D0094CEA6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619B5A6262A2F1D0094CEA6 /* BaseViewController.swift */; };
 		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
@@ -57,6 +59,8 @@
 		295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEB_ARICEBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		323F7E2379F9103E2CD28923 /* Pods-ARICEB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB.release.xcconfig"; path = "Target Support Files/Pods-ARICEB/Pods-ARICEB.release.xcconfig"; sourceTree = "<group>"; };
+		3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOriginDestinyViewController.swift; sourceTree = "<group>"; };
+		3619B5A6262A2F1D0094CEA6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3619B5A5262A2F120094CEA6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3619B5A6262A2F1D0094CEA6 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		36355CD9261E87670081BAD9 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,7 @@
 		3670FC0F25D9A8EF0022AF8F /* ARICEB */ = {
 			isa = PBXGroup;
 			children = (
+				3619B5A5262A2F120094CEA6 /* Base */,
 				36B929A725DC3F7C00133E65 /* Controllers */,
 				36B929A625DC3F6900133E65 /* Coordinator */,
 				3670FCAB25D9EAB90022AF8F /* Extensions */,
@@ -257,6 +270,7 @@
 			children = (
 				36B929B825DC518D00133E65 /* Origin */,
 				36B929B925DC519600133E65 /* Destiny */,
+				3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -563,7 +577,9 @@
 				3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */,
 				36D593E92617DC260034BC69 /* CustomColor.swift in Sources */,
 				36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */,
+				3619B5A1262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift in Sources */,
 				36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */,
+				3619B5A7262A2F1D0094CEA6 /* BaseViewController.swift in Sources */,
 				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
 				36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */,
