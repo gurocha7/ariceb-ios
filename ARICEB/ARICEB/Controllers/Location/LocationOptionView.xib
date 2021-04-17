@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,10 +13,59 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LocationOptionView" customModule="ARICEB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVg-Tc-0PP">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qd1-UB-oTW">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                            <connections>
+                                <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="hDj-V6-QdX"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBF-ps-7zS">
+                            <rect key="frame" x="15" y="22.5" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="5JM-k2-GOA"/>
+                                <constraint firstAttribute="height" constant="35" id="UWn-Ah-Prc"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h89-gJ-gEY">
+                            <rect key="frame" x="58" y="29.5" width="331" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Qd1-UB-oTW" firstAttribute="top" secondItem="GVg-Tc-0PP" secondAttribute="top" id="Cgs-uZ-D97"/>
+                        <constraint firstItem="Qd1-UB-oTW" firstAttribute="leading" secondItem="GVg-Tc-0PP" secondAttribute="leading" id="POc-n7-cZz"/>
+                        <constraint firstItem="gBF-ps-7zS" firstAttribute="leading" secondItem="GVg-Tc-0PP" secondAttribute="leading" constant="15" id="TBW-2E-WbW"/>
+                        <constraint firstAttribute="trailing" secondItem="h89-gJ-gEY" secondAttribute="trailing" constant="25" id="Uuc-te-eI8"/>
+                        <constraint firstItem="h89-gJ-gEY" firstAttribute="leading" secondItem="gBF-ps-7zS" secondAttribute="trailing" constant="8" id="fi5-ZG-pRB"/>
+                        <constraint firstItem="h89-gJ-gEY" firstAttribute="centerY" secondItem="gBF-ps-7zS" secondAttribute="centerY" id="l0G-tV-wgj"/>
+                        <constraint firstItem="gBF-ps-7zS" firstAttribute="centerY" secondItem="GVg-Tc-0PP" secondAttribute="centerY" id="pFQ-l2-n7s"/>
+                        <constraint firstAttribute="trailing" secondItem="Qd1-UB-oTW" secondAttribute="trailing" id="rOX-OC-BiK"/>
+                        <constraint firstAttribute="bottom" secondItem="Qd1-UB-oTW" secondAttribute="bottom" id="uOv-0Z-rdV"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="GVg-Tc-0PP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PQH-or-wcE"/>
+                <constraint firstAttribute="bottom" secondItem="GVg-Tc-0PP" secondAttribute="bottom" id="VcE-va-qqU"/>
+                <constraint firstItem="GVg-Tc-0PP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lDP-mF-r68"/>
+                <constraint firstAttribute="trailing" secondItem="GVg-Tc-0PP" secondAttribute="trailing" id="yzl-wZ-qgX"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="141" y="98"/>
+            <connections>
+                <outlet property="button" destination="Qd1-UB-oTW" id="krp-cP-Dut"/>
+                <outlet property="contentView" destination="GVg-Tc-0PP" id="LvH-8M-FCE"/>
+                <outlet property="image" destination="gBF-ps-7zS" id="3pD-au-cIG"/>
+                <outlet property="label" destination="h89-gJ-gEY" id="EMV-dS-nxy"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="97.767857142857139"/>
         </view>
     </objects>
     <resources>

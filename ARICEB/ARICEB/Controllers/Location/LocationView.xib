@@ -75,6 +75,11 @@
             </constraints>
             <connections>
                 <outlet property="contentView" destination="Dqk-Xx-edc" id="ycK-Wm-nvs"/>
+                <outlet property="gpsView" destination="8eo-z0-4Jw" id="YnE-8o-zHH"/>
+                <outlet property="labelTitle" destination="aux-4d-7FI" id="Nag-Fn-DHh"/>
+                <outlet property="manualView" destination="kan-mm-TVG" id="4vD-Yq-ZHb"/>
+                <outlet property="qrCodeView" destination="vfm-dI-Bdy" id="dCA-WU-Seb"/>
+                <outlet property="stack" destination="YM4-Sn-llv" id="oMz-8w-fqJ"/>
             </connections>
             <point key="canvasLocation" x="141" y="92"/>
         </view>
