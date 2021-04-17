@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,19 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcH-9p-zYI">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rIj-4b-dkC">
+                            <rect key="frame" x="0.0" y="180" width="414" height="556"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" red="0.3803921569" green="0.77647058820000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="rIj-4b-dkC" firstAttribute="top" secondItem="BcH-9p-zYI" secondAttribute="top" constant="180" id="Ecn-3B-Oi3"/>
+                        <constraint firstItem="rIj-4b-dkC" firstAttribute="leading" secondItem="BcH-9p-zYI" secondAttribute="leading" id="XdN-uB-ckc"/>
+                        <constraint firstAttribute="trailing" secondItem="rIj-4b-dkC" secondAttribute="trailing" id="gEd-tO-wv5"/>
+                        <constraint firstAttribute="bottom" secondItem="rIj-4b-dkC" secondAttribute="bottom" id="j6O-pR-J3B"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="UA3-8l-jFR"/>
@@ -27,7 +40,15 @@
                 <constraint firstAttribute="bottom" secondItem="BcH-9p-zYI" secondAttribute="bottom" id="jwX-gv-Rr7"/>
                 <constraint firstItem="BcH-9p-zYI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mWb-9a-b5z"/>
             </constraints>
+            <connections>
+                <outlet property="tableView" destination="rIj-4b-dkC" id="1w6-V5-vxz"/>
+            </connections>
             <point key="canvasLocation" x="119" y="92"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
