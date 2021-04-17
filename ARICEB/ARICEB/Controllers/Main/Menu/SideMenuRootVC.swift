@@ -8,7 +8,7 @@
 import UIKit
 import SideMenuController
 
-class SideMenuRootVC: SideMenuController{
+public class SideMenuRootVC: SideMenuController{
 
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "icon-menu")
@@ -23,5 +23,4 @@ class SideMenuRootVC: SideMenuController{
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
 }
