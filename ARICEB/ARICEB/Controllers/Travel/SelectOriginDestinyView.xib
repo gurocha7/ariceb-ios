@@ -22,8 +22,11 @@
                             <rect key="frame" x="35" y="30" width="344" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5F-PI-Dk3">
-                                    <rect key="frame" x="283" y="15" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="299" y="16" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="E1g-O6-1Gn"/>
+                                        <constraint firstAttribute="width" constant="30" id="fFG-dU-dSK"/>
+                                    </constraints>
                                     <connections>
                                         <action selector="didTapButtonArrowOrigin:" destination="iN0-l3-epB" eventType="touchUpInside" id="H2R-0u-j3H"/>
                                     </connections>
@@ -48,7 +51,7 @@
                                 <constraint firstItem="U5F-PI-Dk3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TJS-m6-8Ns" secondAttribute="trailing" constant="10" id="DZQ-pX-yE4"/>
                                 <constraint firstAttribute="height" constant="58" id="LWk-R2-Ylp"/>
                                 <constraint firstItem="TJS-m6-8Ns" firstAttribute="leading" secondItem="61d-sr-w4u" secondAttribute="trailing" constant="10" id="Zd3-JO-MxN"/>
-                                <constraint firstItem="U5F-PI-Dk3" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" constant="15" id="ezG-wV-9Xu"/>
+                                <constraint firstItem="U5F-PI-Dk3" firstAttribute="centerY" secondItem="TJS-m6-8Ns" secondAttribute="centerY" id="mkE-qc-uzh"/>
                                 <constraint firstItem="61d-sr-w4u" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" constant="20" id="uaF-Et-VHn"/>
                                 <constraint firstAttribute="trailing" secondItem="U5F-PI-Dk3" secondAttribute="trailing" constant="15" id="xaw-eF-sFP"/>
                                 <constraint firstItem="TJS-m6-8Ns" firstAttribute="centerY" secondItem="61d-sr-w4u" secondAttribute="centerY" id="yFV-5H-ggg"/>
@@ -65,8 +68,11 @@
                                     </constraints>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRF-dI-FqC">
-                                    <rect key="frame" x="283" y="15" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                    <rect key="frame" x="299" y="16" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="8T6-GK-5V5"/>
+                                        <constraint firstAttribute="width" constant="30" id="PzJ-PX-ch1"/>
+                                    </constraints>
                                     <connections>
                                         <action selector="buttonArrowDestiny:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sjj-C8-qJW"/>
                                     </connections>
@@ -83,15 +89,15 @@
                                 <constraint firstItem="wvU-2h-sN6" firstAttribute="centerY" secondItem="QGM-Iu-NLK" secondAttribute="centerY" id="5dt-zz-Nty"/>
                                 <constraint firstItem="QGM-Iu-NLK" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" constant="24" id="DQG-py-cD4"/>
                                 <constraint firstItem="QGM-Iu-NLK" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" constant="20" id="JAF-EA-5v5"/>
+                                <constraint firstItem="iRF-dI-FqC" firstAttribute="centerY" secondItem="QGM-Iu-NLK" secondAttribute="centerY" id="Qhl-I8-DPp"/>
                                 <constraint firstAttribute="height" constant="58" id="d8Z-cE-CG7"/>
                                 <constraint firstItem="iRF-dI-FqC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wvU-2h-sN6" secondAttribute="trailing" constant="10" id="h84-Y5-c8J"/>
                                 <constraint firstAttribute="trailing" secondItem="iRF-dI-FqC" secondAttribute="trailing" constant="15" id="iUd-iQ-vI6"/>
                                 <constraint firstItem="wvU-2h-sN6" firstAttribute="leading" secondItem="QGM-Iu-NLK" secondAttribute="trailing" constant="10" id="l4F-z1-jJ1"/>
-                                <constraint firstItem="iRF-dI-FqC" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" constant="15" id="v2l-HK-8UV"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="uR2-PR-pDp" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="bottom" constant="35" id="HFG-y1-oAr"/>
                         <constraint firstItem="R6n-9o-0eH" firstAttribute="leading" secondItem="3Ng-pd-AFX" secondAttribute="leading" constant="35" id="Hxe-Xi-IPq"/>
@@ -129,9 +135,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

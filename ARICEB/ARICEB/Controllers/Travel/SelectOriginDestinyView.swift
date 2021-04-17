@@ -62,12 +62,26 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         originView.applyCorner(corner: 30)
         originView.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
         imageOrigin.image = UIImage(named: "icon-origin")
+        let att = NSMutableAttributedString()
+        att.append(NSAttributedString(string: "Selecione sua ",
+                                      attributes: [NSAttributedString.Key.font : UIFont(name: "Lato-regular", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .regular), NSAttributedString.Key.foregroundColor : UIColor.black.cgColor ]))
+        att.append(NSAttributedString(string: "origem",
+                                      attributes: [NSAttributedString.Key.font :UIFont(name: "Lato-bold", size: 18) ??  UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.black.cgColor ]))
+        labelOriginTitle.attributedText = att
+        buttonArrowOrigin.setImage(UIImage(named: "arrow"), for: .normal)
     }
     
     private func setupDestinyView(){
         destinyView.applyCorner(corner: 30)
         destinyView.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
         imageDestiny.image = UIImage(named: "icon-destiny")
+        let att = NSMutableAttributedString()
+        att.append(NSAttributedString(string: "Selecione seu ",
+                                      attributes: [NSAttributedString.Key.font : UIFont(name: "Lato-regular", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .regular), NSAttributedString.Key.foregroundColor : UIColor.black.cgColor ]))
+        att.append(NSAttributedString(string: "destino",
+                                      attributes: [NSAttributedString.Key.font :UIFont(name: "Lato-bold", size: 18) ??  UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.black.cgColor ]))
+        labelDestinyTitle.attributedText = att
+        buttonArrowDestiny.setImage(UIImage(named: "arrow"), for: .normal)
     }
     
     private func updateOriginView(){
