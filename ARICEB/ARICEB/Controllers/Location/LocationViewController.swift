@@ -9,21 +9,16 @@ import UIKit
 
 class LocationViewController: BaseViewController {
     
-    var isOrigin: Bool = true
+    let customView: LocationView = LocationView.loadFromNib()
+    
+    override func loadView() {
+        super.loadView()
+        title = "Origem"
+        view = customView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-        title = isOrigin ? "Origem" : "Destino"
-    }
-    
-    init(isOrigin: Bool = true) {
-        super.init(nibName: nil, bundle: nil)
-        self.isOrigin = isOrigin
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
     }
     
 }

@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -128,13 +127,12 @@
                     </constraints>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3Ng-pd-AFX" secondAttribute="trailing" id="7hF-nW-VWY"/>
-                <constraint firstItem="3Ng-pd-AFX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="IAO-53-3gD"/>
-                <constraint firstItem="3Ng-pd-AFX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZPy-gy-4Ds"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3Ng-pd-AFX" secondAttribute="bottom" id="lHG-Z4-4hh"/>
+                <constraint firstAttribute="trailing" secondItem="3Ng-pd-AFX" secondAttribute="trailing" id="7hF-nW-VWY"/>
+                <constraint firstItem="3Ng-pd-AFX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IAO-53-3gD"/>
+                <constraint firstItem="3Ng-pd-AFX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZPy-gy-4Ds"/>
+                <constraint firstAttribute="bottom" secondItem="3Ng-pd-AFX" secondAttribute="bottom" id="lHG-Z4-4hh"/>
             </constraints>
             <connections>
                 <outlet property="buttonArrowDestiny" destination="iRF-dI-FqC" id="5VI-yX-N7c"/>

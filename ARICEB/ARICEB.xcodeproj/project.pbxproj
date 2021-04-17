@@ -28,6 +28,8 @@
 		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
 		36A5B9AF261D39EA00A4EACB /* FastButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A5B9AE261D39EA00A4EACB /* FastButtonsView.xib */; };
 		36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A5B9B6261D39F700A4EACB /* FastButtonsView.swift */; };
+		36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7EF98262B29A300CCFDEB /* LocationView.swift */; };
+		36B7EF9E262B2A6900CCFDEB /* LocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B7EF9D262B2A6900CCFDEB /* LocationView.xib */; };
 		36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9298D25DC3B2A00133E65 /* TravelView.swift */; };
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
@@ -88,6 +90,8 @@
 		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		36A5B9AE261D39EA00A4EACB /* FastButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FastButtonsView.xib; sourceTree = "<group>"; };
 		36A5B9B6261D39F700A4EACB /* FastButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastButtonsView.swift; sourceTree = "<group>"; };
+		36B7EF98262B29A300CCFDEB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		36B7EF9D262B2A6900CCFDEB /* LocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationView.xib; sourceTree = "<group>"; };
 		36B9298D25DC3B2A00133E65 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				3619B5BA262A82DB0094CEA6 /* LocationViewController.swift */,
+				36B7EF98262B29A300CCFDEB /* LocationView.swift */,
+				36B7EF9D262B2A6900CCFDEB /* LocationView.xib */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
+				36B7EF9E262B2A6900CCFDEB /* LocationView.xib in Resources */,
 				3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */,
 				36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */,
 				36A5B9AF261D39EA00A4EACB /* FastButtonsView.xib in Resources */,
@@ -599,6 +606,7 @@
 				3619B5BB262A82DB0094CEA6 /* LocationViewController.swift in Sources */,
 				36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */,
 				3619B5A7262A2F1D0094CEA6 /* BaseViewController.swift in Sources */,
+				36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */,
 				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
 				36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */,

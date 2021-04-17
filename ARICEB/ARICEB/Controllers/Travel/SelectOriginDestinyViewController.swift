@@ -32,8 +32,8 @@ class SelectOriginDestinyViewController: BaseViewController {
         }
     }
     
-    private func showLocation(isOrigin: Bool = true){
-        let vc = LocationViewController(isOrigin: isOrigin)
+    private func showLocation(){
+        let vc = LocationViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
