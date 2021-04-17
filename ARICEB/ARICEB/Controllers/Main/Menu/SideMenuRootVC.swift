@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SideMenuController
 
 public class SideMenuRootVC: SideMenuController{
 
@@ -22,5 +21,11 @@ public class SideMenuRootVC: SideMenuController{
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+}
+
+extension SideMenuRootVC{
+    func hideMenu(){
+        self.animate(toReveal: false)
     }
 }

@@ -9,7 +9,6 @@ target 'ARICEB' do
   
   pod 'Reusable'
   pod 'FittedSheets'
-  pod 'SideMenuController'
 
   target 'ARICEBTests' do
     inherit! :search_paths

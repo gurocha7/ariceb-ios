@@ -7,6 +7,7 @@
 //
 
 // MARK: - Extension for implementing the custom nested types
+import UIKit
 public extension SideMenuController {
     public enum SidePanelPosition {
         case underCenterPanelLeft

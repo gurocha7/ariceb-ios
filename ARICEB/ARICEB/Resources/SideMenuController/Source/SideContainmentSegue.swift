@@ -1,5 +1,5 @@
 //
-//  CenterContainmentSegue.swift
+//  SideContainmentSegue.swift
 //
 //  Copyright (c) 2015 Teodor Patraş
 //
@@ -20,15 +20,13 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+import UIKit
 
-open class CenterContainmentSegue: UIStoryboardSegue{
+open class SideContainmentSegue: UIStoryboardSegue{
     
     override open func perform() {
         if let sideController = self.source as? SideMenuController {
-            guard let destinationController = destination as? UINavigationController else {
-                fatalError("Destination controller needs to be an instance of UINavigationController")
-            }
-            sideController.embed(centerViewController: destinationController)
+            sideController.embed(sideViewController: destination)
         } else {
             fatalError("This type of segue must only be used from a SideMenuController")
         }

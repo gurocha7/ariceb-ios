@@ -22,6 +22,7 @@
 //  SOFTWARE.
 
 // MARK: - Extension for implementing the specific functionality for when side panel is positioned under the center
+import UIKit
 extension SideMenuController {
     
     // MARK: - Methods -

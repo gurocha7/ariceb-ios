@@ -8,7 +8,12 @@
 import UIKit
 import Reusable
 
+protocol MenuViewDelegate: class {
+    func menuView(view: MenuView, option: String?)
+}
+
 class MenuView: UIView, NibLoadable {
+    weak var delegate: MenuViewDelegate?
     var viewModel: MenuViewModel?
     
 //    @IBOutlet weak var headerView: HeaderMenuView!
@@ -42,6 +47,8 @@ extension MenuView: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        guard let item = viewModel?.getItemForIndex(index: indexPath.row) else {return}
+        delegate?.menuView(view: self, option: item)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

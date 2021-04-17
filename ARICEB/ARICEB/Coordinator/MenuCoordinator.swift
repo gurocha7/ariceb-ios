@@ -8,7 +8,6 @@
 
 
 import UIKit
-import SideMenuController
 
 class MenuCoordinator: NSObject {
    
@@ -38,6 +37,11 @@ class MenuCoordinator: NSObject {
         vc.selectOriginAndDestiny = { [weak self] in
             self?.showSelectTravel()
         }
+        
+        sideMenu.hideMenu = { [weak self] in
+            self?.rootVC.hideMenu()
+            self?.showFAQ()
+        }
     }
     
     private func setup(){
@@ -47,6 +51,12 @@ class MenuCoordinator: NSObject {
     func showSelectTravel(){
         let vc = SelectOriginDestinyViewController()
         self.homeNavController.pushViewController(vc, animated: false)
+    }
+    
+    private func showFAQ(){
+        let vc = UIViewController()
+        vc.view.backgroundColor = .orange
+        self.homeNavController.pushViewController(vc, animated: true)
     }
 }
 
