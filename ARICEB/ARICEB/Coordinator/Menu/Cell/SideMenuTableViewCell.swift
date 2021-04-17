@@ -19,6 +19,7 @@ class SideMenuTableViewCell: UITableViewCell, NibReusable {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.selectedBackgroundView = UIView()
     }
     
     private func setup(){
@@ -27,7 +28,17 @@ class SideMenuTableViewCell: UITableViewCell, NibReusable {
     }
     
     func setupTitle(title: String?){
-        label.text = title
+        guard let _title = title else {return}
+        label.textColor = .black
+        label.font = UIFont(name: "Helvetica Neue Bold", size: 20)
+        label.text = _title
+    }
+    
+    func setupFAQTitle(title: String?){
+        insideView.backgroundColor = .clear
+        insideView.applyBorder(borderWidth: 0, borderColor: UIColor.clear.cgColor)
+        guard let _title = title else {return}
+        label.attributedText = NSAttributedString(string: _title, attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Regular", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .regular)  ,NSAttributedString.Key.foregroundColor : UIColor.white])
     }
     
 }

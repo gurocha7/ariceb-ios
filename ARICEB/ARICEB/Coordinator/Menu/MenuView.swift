@@ -39,6 +39,11 @@ class MenuView: UIView, NibLoadable {
 }
 
 extension MenuView: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.getNumberOfItems() ?? 0
     }
@@ -46,7 +51,7 @@ extension MenuView: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let item = viewModel?.getItemForIndex(index: indexPath.row) else {return UITableViewCell()}
         let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell", for: indexPath) as! SideMenuTableViewCell
-        cell.setupTitle(title: item)
+        item == "FAQ" ? cell.setupFAQTitle(title: item) : cell.setupTitle(title: item)
         return cell
     }
 }
