@@ -28,34 +28,70 @@
                                         <action selector="didTapButtonArrowOrigin:" destination="iN0-l3-epB" eventType="touchUpInside" id="H2R-0u-j3H"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJS-m6-8Ns">
+                                    <rect key="frame" x="56" y="20.666666666666664" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61d-sr-w4u">
+                                    <rect key="frame" x="24" y="20" width="22" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="XYO-ya-E6G"/>
+                                        <constraint firstAttribute="width" constant="22" id="rvf-x6-e5f"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="61d-sr-w4u" firstAttribute="leading" secondItem="R6n-9o-0eH" secondAttribute="leading" constant="24" id="72q-jD-8FB"/>
+                                <constraint firstItem="U5F-PI-Dk3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TJS-m6-8Ns" secondAttribute="trailing" constant="10" id="DZQ-pX-yE4"/>
                                 <constraint firstAttribute="height" constant="58" id="LWk-R2-Ylp"/>
+                                <constraint firstItem="TJS-m6-8Ns" firstAttribute="leading" secondItem="61d-sr-w4u" secondAttribute="trailing" constant="10" id="Zd3-JO-MxN"/>
                                 <constraint firstItem="U5F-PI-Dk3" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" constant="15" id="ezG-wV-9Xu"/>
+                                <constraint firstItem="61d-sr-w4u" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" constant="20" id="uaF-Et-VHn"/>
                                 <constraint firstAttribute="trailing" secondItem="U5F-PI-Dk3" secondAttribute="trailing" constant="15" id="xaw-eF-sFP"/>
+                                <constraint firstItem="TJS-m6-8Ns" firstAttribute="centerY" secondItem="61d-sr-w4u" secondAttribute="centerY" id="yFV-5H-ggg"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-PR-pDp">
                             <rect key="frame" x="35" y="123" width="344" height="58"/>
                             <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QGM-Iu-NLK">
+                                    <rect key="frame" x="24" y="20" width="22" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="7Q9-TM-KeN"/>
+                                        <constraint firstAttribute="width" constant="22" id="zrD-R7-0Yi"/>
+                                    </constraints>
+                                </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRF-dI-FqC">
                                     <rect key="frame" x="283" y="15" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
-                                        <action selector="buttonArrowDestiny:" destination="iN0-l3-epB" eventType="touchUpInside" id="54e-kc-Poa"/>
+                                        <action selector="buttonArrowDestiny:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sjj-C8-qJW"/>
                                     </connections>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvU-2h-sN6">
+                                    <rect key="frame" x="56" y="20.666666666666657" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="wvU-2h-sN6" firstAttribute="centerY" secondItem="QGM-Iu-NLK" secondAttribute="centerY" id="5dt-zz-Nty"/>
+                                <constraint firstItem="QGM-Iu-NLK" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" constant="24" id="DQG-py-cD4"/>
+                                <constraint firstItem="QGM-Iu-NLK" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" constant="20" id="JAF-EA-5v5"/>
                                 <constraint firstAttribute="height" constant="58" id="d8Z-cE-CG7"/>
+                                <constraint firstItem="iRF-dI-FqC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wvU-2h-sN6" secondAttribute="trailing" constant="10" id="h84-Y5-c8J"/>
                                 <constraint firstAttribute="trailing" secondItem="iRF-dI-FqC" secondAttribute="trailing" constant="15" id="iUd-iQ-vI6"/>
+                                <constraint firstItem="wvU-2h-sN6" firstAttribute="leading" secondItem="QGM-Iu-NLK" secondAttribute="trailing" constant="10" id="l4F-z1-jJ1"/>
                                 <constraint firstItem="iRF-dI-FqC" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" constant="15" id="v2l-HK-8UV"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
                     <constraints>
                         <constraint firstItem="uR2-PR-pDp" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="bottom" constant="35" id="HFG-y1-oAr"/>
                         <constraint firstItem="R6n-9o-0eH" firstAttribute="leading" secondItem="3Ng-pd-AFX" secondAttribute="leading" constant="35" id="Hxe-Xi-IPq"/>
@@ -75,22 +111,27 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3Ng-pd-AFX" secondAttribute="bottom" id="lHG-Z4-4hh"/>
             </constraints>
             <connections>
+                <outlet property="buttonArrowDestiny" destination="iRF-dI-FqC" id="5VI-yX-N7c"/>
                 <outlet property="buttonArrowOrigin" destination="U5F-PI-Dk3" id="tfn-EK-SBg"/>
                 <outlet property="constDestinyViewHeight" destination="d8Z-cE-CG7" id="F1F-FT-pi6"/>
                 <outlet property="constOriginViewHeight" destination="LWk-R2-Ylp" id="Us0-Je-EQv"/>
                 <outlet property="contentView" destination="3Ng-pd-AFX" id="vfe-fH-kWw"/>
                 <outlet property="destinyView" destination="uR2-PR-pDp" id="777-et-q91"/>
+                <outlet property="imageDestiny" destination="QGM-Iu-NLK" id="788-MH-eJK"/>
+                <outlet property="imageOrigin" destination="61d-sr-w4u" id="5YP-rt-JSl"/>
+                <outlet property="labelDestinyTitle" destination="wvU-2h-sN6" id="wpQ-3G-Hq1"/>
+                <outlet property="labelOriginTitle" destination="TJS-m6-8Ns" id="AAG-lW-IDU"/>
                 <outlet property="originView" destination="R6n-9o-0eH" id="oT9-tI-a4J"/>
             </connections>
-            <point key="canvasLocation" x="-146" y="92"/>
+            <point key="canvasLocation" x="-146.37681159420291" y="91.304347826086968"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

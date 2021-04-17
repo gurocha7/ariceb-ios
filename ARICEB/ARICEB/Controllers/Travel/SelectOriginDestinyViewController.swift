@@ -19,6 +19,10 @@ class SelectOriginDestinyViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindEvents()
+    }
+    
+    private func bindEvents(){
         
     }
 
