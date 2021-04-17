@@ -22,11 +22,16 @@ class LocationView: UIView, NibLoadable {
     }
     
     private func setup(){
+        setupTitle()
         clearStack()
-        labelTitle.text = "Você pode determinar seu ponto de origem utilizando  um dos métodos a seguir:"
         setupStack()
     }
     
+    private func setupTitle(){
+        let att = NSMutableAttributedString()
+        att.append(NSAttributedString(string: "Você pode determinar seu ponto de origem\n utilizando um dos métodos a seguir:", attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Bold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.black.cgColor ]))
+        labelTitle.attributedText = att
+    }
     
     private func setupStack(){
         gpsView = LocationOptionView.loadFromNib()
@@ -38,9 +43,9 @@ class LocationView: UIView, NibLoadable {
         stack.addArrangedSubview(gpsView)
         stack.addArrangedSubview(qrCodeView)
         stack.addArrangedSubview(manualView)
-        gpsView.setup()
-        qrCodeView.setup()
-        manualView.setup()
+        gpsView.setup(type: .gps)
+        qrCodeView.setup(type: .qrcode)
+        manualView.setup(type: .manual)
     }
     
     private func clearStack(){
