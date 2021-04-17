@@ -10,16 +10,16 @@ import Reusable
 
 class SelectOriginDestinyView: UIView, NibLoadable{
     
+    let smallHeight = 58
+    let bigHeight = 190
+    
+    //ORIGIN
     enum OriginViewState{
         case open
         case closed
     }
     
-    let smallHeight = 58
-    let bigHeight = 190
-    
-    var originViewState: OriginViewState = .open
-    
+    var originViewState: OriginViewState = .closed
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var originView: UIView!
     @IBOutlet weak var buttonArrowOrigin: UIButton!
@@ -27,7 +27,21 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         updateOriginView()
     }
     
+    
+    //DESTINY
+    enum DestinyViewState{
+        case open
+        case closed
+    }
+    
+    var destinyViewState: DestinyViewState = .closed
     @IBOutlet weak var constOriginViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var destinyView: UIView!
+    @IBAction func buttonArrowDestiny(_ sender: Any) {
+        updateDestinyView()
+    }
+
+    @IBOutlet weak var constDestinyViewHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +52,15 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         originViewState = isClosed ? .open : .closed
         UIView.animate(withDuration: 0.4) { [weak self] in
             self?.constOriginViewHeight.constant = isClosed ? 190 : 58
+            self?.layoutIfNeeded()
+        }
+    }
+    
+    private func updateDestinyView(){
+        let isClosed = destinyViewState == DestinyViewState.closed
+        destinyViewState = isClosed ? .open : .closed
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            self?.constDestinyViewHeight.constant = isClosed ? 190 : 58
             self?.layoutIfNeeded()
         }
     }

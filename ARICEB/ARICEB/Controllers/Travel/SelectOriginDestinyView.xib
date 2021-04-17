@@ -19,10 +19,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6n-9o-0eH">
-                            <rect key="frame" x="35" y="30" width="344" height="190"/>
+                            <rect key="frame" x="35" y="30" width="344" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5F-PI-Dk3">
-                                    <rect key="frame" x="277" y="23" width="46" height="30"/>
+                                    <rect key="frame" x="283" y="15" width="46" height="30"/>
                                     <state key="normal" title="Button"/>
                                     <connections>
                                         <action selector="didTapButtonArrowOrigin:" destination="iN0-l3-epB" eventType="touchUpInside" id="H2R-0u-j3H"/>
@@ -31,15 +31,36 @@
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="190" id="LWk-R2-Ylp"/>
-                                <constraint firstItem="U5F-PI-Dk3" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" constant="23" id="ezG-wV-9Xu"/>
-                                <constraint firstAttribute="trailing" secondItem="U5F-PI-Dk3" secondAttribute="trailing" constant="21" id="xaw-eF-sFP"/>
+                                <constraint firstAttribute="height" constant="58" id="LWk-R2-Ylp"/>
+                                <constraint firstItem="U5F-PI-Dk3" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" constant="15" id="ezG-wV-9Xu"/>
+                                <constraint firstAttribute="trailing" secondItem="U5F-PI-Dk3" secondAttribute="trailing" constant="15" id="xaw-eF-sFP"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uR2-PR-pDp">
+                            <rect key="frame" x="35" y="123" width="344" height="58"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRF-dI-FqC">
+                                    <rect key="frame" x="283" y="15" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="buttonArrowDestiny:" destination="iN0-l3-epB" eventType="touchUpInside" id="54e-kc-Poa"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="58" id="d8Z-cE-CG7"/>
+                                <constraint firstAttribute="trailing" secondItem="iRF-dI-FqC" secondAttribute="trailing" constant="15" id="iUd-iQ-vI6"/>
+                                <constraint firstItem="iRF-dI-FqC" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" constant="15" id="v2l-HK-8UV"/>
                             </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
+                        <constraint firstItem="uR2-PR-pDp" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="bottom" constant="35" id="HFG-y1-oAr"/>
                         <constraint firstItem="R6n-9o-0eH" firstAttribute="leading" secondItem="3Ng-pd-AFX" secondAttribute="leading" constant="35" id="Hxe-Xi-IPq"/>
+                        <constraint firstItem="uR2-PR-pDp" firstAttribute="leading" secondItem="R6n-9o-0eH" secondAttribute="leading" id="IGm-8T-phI"/>
+                        <constraint firstItem="uR2-PR-pDp" firstAttribute="trailing" secondItem="R6n-9o-0eH" secondAttribute="trailing" id="Tt9-C2-Bdr"/>
                         <constraint firstAttribute="trailing" secondItem="R6n-9o-0eH" secondAttribute="trailing" constant="35" id="mTY-05-MZZ"/>
                         <constraint firstItem="R6n-9o-0eH" firstAttribute="top" secondItem="3Ng-pd-AFX" secondAttribute="top" constant="30" id="rwx-u0-hmW"/>
                     </constraints>
@@ -55,8 +76,10 @@
             </constraints>
             <connections>
                 <outlet property="buttonArrowOrigin" destination="U5F-PI-Dk3" id="tfn-EK-SBg"/>
+                <outlet property="constDestinyViewHeight" destination="d8Z-cE-CG7" id="F1F-FT-pi6"/>
                 <outlet property="constOriginViewHeight" destination="LWk-R2-Ylp" id="Us0-Je-EQv"/>
                 <outlet property="contentView" destination="3Ng-pd-AFX" id="vfe-fH-kWw"/>
+                <outlet property="destinyView" destination="uR2-PR-pDp" id="777-et-q91"/>
                 <outlet property="originView" destination="R6n-9o-0eH" id="oT9-tI-a4J"/>
             </connections>
             <point key="canvasLocation" x="-146" y="92"/>
