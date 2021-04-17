@@ -89,6 +89,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         originViewState = isClosed ? .open : .closed
         UIView.animate(withDuration: 0.4) { [weak self] in
             self?.constOriginViewHeight.constant = isClosed ? 190 : 58
+            self?.buttonArrowOrigin.transform = isClosed ? CGAffineTransform(rotationAngle: .pi) : CGAffineTransform(rotationAngle: 0.0)
             self?.layoutIfNeeded()
         }
     }
@@ -98,6 +99,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         destinyViewState = isClosed ? .open : .closed
         UIView.animate(withDuration: 0.4) { [weak self] in
             self?.constDestinyViewHeight.constant = isClosed ? 190 : 58
+            self?.buttonArrowDestiny.transform = isClosed ? CGAffineTransform(rotationAngle: .pi) : CGAffineTransform(rotationAngle: 0.0)
             self?.layoutIfNeeded()
         }
     }
