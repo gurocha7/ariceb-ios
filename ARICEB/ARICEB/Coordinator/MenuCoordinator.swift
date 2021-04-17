@@ -14,7 +14,7 @@ class MenuCoordinator: NSObject {
    
     var childCoordnators:  [Coordinator] = []
     let vc = MainViewController(nibName: "MainViewController", bundle: nil)
-    let sideMenu = UIViewController()
+    let sideMenu = MenuViewController()
     
     private lazy var homeNavController: UINavigationController = {
         return UINavigationController(rootViewController: self.vc)
@@ -23,7 +23,6 @@ class MenuCoordinator: NSObject {
     lazy var rootVC: SideMenuRootVC = {
         let rootMenuVC = SideMenuRootVC()
         rootMenuVC.delegate = self
-        sideMenu.view.backgroundColor = .red
         rootMenuVC.embed(centerViewController: homeNavController)
         rootMenuVC.embed(sideViewController: sideMenu)
         return rootMenuVC

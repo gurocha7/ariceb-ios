@@ -21,10 +21,10 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
-    func showSelectTravel(){
-        let vc = UIViewController()
-        vc.view.backgroundColor = .orange
-        navigationController.pushViewController(vc, animated: false)
-    }
+//    func showSelectTravel(){
+//        let vc = UIViewController()
+//        vc.view.backgroundColor = .orange
+//        navigationController.pushViewController(vc, animated: false)
+//    }
     
 }
