@@ -19,6 +19,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         case closed
     }
     
+    var shouldSelectOrigin: (() -> Void)?
     var originViewState: OriginViewState = .closed
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var originView: UIView!
@@ -29,6 +30,10 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         updateOriginView()
     }
     
+    @IBAction func didTapToSelectOrigin(_ sender: Any) {
+        shouldSelectOrigin?()
+    }
+    
     
     //DESTINY
     enum DestinyViewState{
@@ -36,6 +41,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         case closed
     }
     
+    var shouldSelectDestiny: (() -> Void)?
     var destinyViewState: DestinyViewState = .closed
     @IBOutlet weak var constOriginViewHeight: NSLayoutConstraint!
     @IBOutlet weak var destinyView: UIView!
@@ -45,7 +51,10 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     @IBAction func buttonArrowDestiny(_ sender: Any) {
         updateDestinyView()
     }
-
+    @IBAction func didTapToSelectDestiny(_ sender: Any) {
+        shouldSelectDestiny?()
+    }
+    
     @IBOutlet weak var constDestinyViewHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
@@ -69,6 +78,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
                                       attributes: [NSAttributedString.Key.font :UIFont(name: "Lato-bold", size: 18) ??  UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.black.cgColor ]))
         labelOriginTitle.attributedText = att
         buttonArrowOrigin.setImage(UIImage(named: "arrow"), for: .normal)
+        buttonArrowOrigin.isHidden = true
     }
     
     private func setupDestinyView(){
@@ -82,6 +92,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
                                       attributes: [NSAttributedString.Key.font :UIFont(name: "Lato-bold", size: 18) ??  UIFont.systemFont(ofSize: 18, weight: .bold), NSAttributedString.Key.foregroundColor : UIColor.black.cgColor ]))
         labelDestinyTitle.attributedText = att
         buttonArrowDestiny.setImage(UIImage(named: "arrow"), for: .normal)
+        buttonArrowDestiny.isHidden = true
     }
     
     private func updateOriginView(){

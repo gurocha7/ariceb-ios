@@ -23,7 +23,18 @@ class SelectOriginDestinyViewController: BaseViewController {
     }
     
     private func bindEvents(){
+        customView.shouldSelectOrigin = { [weak self] in
+            self?.showLocation()
+        }
         
+        customView.shouldSelectDestiny = { [weak self] in
+            
+        }
+    }
+    
+    private func showLocation(isOrigin: Bool = true){
+        let vc = LocationViewController(isOrigin: isOrigin)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
