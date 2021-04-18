@@ -9,10 +9,28 @@ import Foundation
 
 class SubmenuViewModel {
     
-    private let itemsClasses: [String] = []
+    private let itemsClasses: [String] = ["DEACL - Departamento de analises clinicas",
+                                          "DEALI - Departamento de Alimentos",
+                                          "DEAMB - Departamento de Engenharia Ambiental",
+                                          "DEART - Departamento de Artes",
+                                          "DEBIO - Departamento de Biodiversidade, Evolução e Meio Ambiente",
+                                          "DECAD - Departamento de Ciencias Administrativas",
+                                          "DECOM - Departamento de Computação",
+                                          "DEDIR - Departamento de Direito",
+                                          "DEEST - Departamento de Estatística"]
+    
     private let itemsBuildinga: [String] = []
     private let itemsBathrooms: [String] = []
-    private let itemsDepartment: [String] = []
+    
+    private let itemsDepartment: [String] = ["DEACL - Departamento de analises clinicas",
+                                                "DEALI - Departamento de Alimentos",
+                                                "DEAMB - Departamento de Engenharia Ambiental",
+                                                "DEART - Departamento de Artes",
+                                                "DEBIO - Departamento de Biodiversidade, Evolução e Meio Ambiente",
+                                                "DECAD - Departamento de Ciencias Administrativas",
+                                                "DECOM - Departamento de Computação",
+                                                "DEDIR - Departamento de Direito",
+                                                "DEEST - Departamento de Estatística"]
     private let itemsAuditoriums: [String] = []
     private let itemsLaboratories: [String] = []
     
