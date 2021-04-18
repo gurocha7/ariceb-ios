@@ -25,7 +25,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.36862745098039218" green="0.63529411764705879" blue="0.81568627450980391" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.36862745098039218" green="0.63529411764705879" blue="0.81568627450980391" alpha="0.50649207746478875" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="yoH-LY-V4l" firstAttribute="leading" secondItem="wyF-jh-kbj" secondAttribute="leading" constant="5" id="HXF-WO-ee5"/>
                         <constraint firstAttribute="height" constant="75" id="X81-RD-snT"/>
@@ -43,27 +43,27 @@
                     <state key="normal" title="Button"/>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bqo-f5-Taw">
-                    <rect key="frame" x="43" y="147" width="328" height="166"/>
+                    <rect key="frame" x="23" y="147" width="368" height="175"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-Me-7K1" customClass="AddressView" customModule="ARICEB" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="328" height="42"/>
+                            <rect key="frame" x="0.0" y="0.0" width="368" height="45"/>
                             <color key="backgroundColor" systemColor="systemRedColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="42" id="hXl-UO-RGG"/>
+                                <constraint firstAttribute="height" constant="45" id="hXl-UO-RGG"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oob-T7-JID" customClass="AddressView" customModule="ARICEB" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="62" width="328" height="42"/>
+                            <rect key="frame" x="0.0" y="65" width="368" height="45"/>
                             <color key="backgroundColor" systemColor="systemPinkColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="42" id="MUJ-NF-sbN"/>
+                                <constraint firstAttribute="height" constant="45" id="MUJ-NF-sbN"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVq-zi-G1x" customClass="AddressView" customModule="ARICEB" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="124" width="328" height="42"/>
+                            <rect key="frame" x="0.0" y="130" width="368" height="45"/>
                             <color key="backgroundColor" systemColor="systemPinkColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="42" id="EF2-1u-eAF"/>
+                                <constraint firstAttribute="height" constant="45" id="EF2-1u-eAF"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -74,13 +74,13 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bqo-f5-Taw" secondAttribute="trailing" constant="43" id="0JQ-2B-RzK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bqo-f5-Taw" secondAttribute="trailing" constant="23" id="0JQ-2B-RzK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="O0R-fh-dAD" secondAttribute="bottom" constant="18" id="Afo-RA-7vj"/>
                 <constraint firstItem="wyF-jh-kbj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Qlz-g1-iJF"/>
                 <constraint firstItem="wyF-jh-kbj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="RZ7-mZ-kAQ"/>
-                <constraint firstItem="bqo-f5-Taw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="43" id="W0H-jp-WNh"/>
+                <constraint firstItem="bqo-f5-Taw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="23" id="W0H-jp-WNh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wyF-jh-kbj" secondAttribute="trailing" constant="20" id="YeG-4Z-pya"/>
                 <constraint firstItem="O0R-fh-dAD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="Yog-yD-Yf6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="O0R-fh-dAD" secondAttribute="trailing" constant="18" id="asD-ze-Or5"/>
@@ -99,9 +99,6 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

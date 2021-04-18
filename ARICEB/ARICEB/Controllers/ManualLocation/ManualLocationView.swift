@@ -43,12 +43,15 @@ class ManualLocationView: UIView, NibLoadable {
         firstAddressView = AddressView.loadFromNib()
         secondAddressView = AddressView.loadFromNib()
         thirdAddressView = AddressView.loadFromNib()
-        firstAddressView.heightAnchor.constraint(equalToConstant: 42).isActive = true
-        secondAddressView.heightAnchor.constraint(equalToConstant: 42).isActive = true
-        thirdAddressView.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        firstAddressView.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        secondAddressView.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        thirdAddressView.heightAnchor.constraint(equalToConstant: 45).isActive = true
         stack.addArrangedSubview(firstAddressView)
         stack.addArrangedSubview(secondAddressView)
         stack.addArrangedSubview(thirdAddressView)
+        firstAddressView.setup()
+        secondAddressView.setup()
+        thirdAddressView.setup()
     }
     
     private func setupButton(){
