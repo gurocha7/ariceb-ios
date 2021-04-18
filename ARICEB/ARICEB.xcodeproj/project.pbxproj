@@ -17,6 +17,8 @@
 		36205CFA262CD09900BF0D3B /* SubmenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205CF8262CD09900BF0D3B /* SubmenuViewController.swift */; };
 		36205CFB262CD09900BF0D3B /* SubmenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205CF9262CD09900BF0D3B /* SubmenuViewController.xib */; };
 		36205D00262CD22B00BF0D3B /* SubmenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205CFF262CD22B00BF0D3B /* SubmenuViewModel.swift */; };
+		36205D0A262CD8D900BF0D3B /* SubmenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205D08262CD8D900BF0D3B /* SubmenuTableViewCell.swift */; };
+		36205D0B262CD8D900BF0D3B /* SubmenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205D09262CD8D900BF0D3B /* SubmenuTableViewCell.xib */; };
 		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
@@ -104,6 +106,8 @@
 		36205CF8262CD09900BF0D3B /* SubmenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmenuViewController.swift; sourceTree = "<group>"; };
 		36205CF9262CD09900BF0D3B /* SubmenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmenuViewController.xib; sourceTree = "<group>"; };
 		36205CFF262CD22B00BF0D3B /* SubmenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmenuViewModel.swift; sourceTree = "<group>"; };
+		36205D08262CD8D900BF0D3B /* SubmenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmenuTableViewCell.swift; sourceTree = "<group>"; };
+		36205D09262CD8D900BF0D3B /* SubmenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmenuTableViewCell.xib; sourceTree = "<group>"; };
 		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,11 +224,21 @@
 		36205CF7262CD06C00BF0D3B /* Submenu */ = {
 			isa = PBXGroup;
 			children = (
+				36205D07262CD8B300BF0D3B /* Cell */,
 				36205CF8262CD09900BF0D3B /* SubmenuViewController.swift */,
 				36205CF9262CD09900BF0D3B /* SubmenuViewController.xib */,
 				36205CFF262CD22B00BF0D3B /* SubmenuViewModel.swift */,
 			);
 			path = Submenu;
+			sourceTree = "<group>";
+		};
+		36205D07262CD8B300BF0D3B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36205D08262CD8D900BF0D3B /* SubmenuTableViewCell.swift */,
+				36205D09262CD8D900BF0D3B /* SubmenuTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		36355CD9261E87670081BAD9 /* Menu */ = {
@@ -623,6 +637,7 @@
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
 				36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */,
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
+				36205D0B262CD8D900BF0D3B /* SubmenuTableViewCell.xib in Resources */,
 				36B7F05A262BD4A600CCFDEB /* SheetOptionsViewController.xib in Resources */,
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
@@ -773,6 +788,7 @@
 				3619B5A1262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift in Sources */,
 				3619B5BB262A82DB0094CEA6 /* LocationViewController.swift in Sources */,
 				36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */,
+				36205D0A262CD8D900BF0D3B /* SubmenuTableViewCell.swift in Sources */,
 				3619B5A7262A2F1D0094CEA6 /* BaseViewController.swift in Sources */,
 				36B7EFE2262B7C7C00CCFDEB /* SideMenuTableViewCell.swift in Sources */,
 				36B7F044262BC6AF00CCFDEB /* ManualLocationViewModel.swift in Sources */,

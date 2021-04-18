@@ -23,6 +23,8 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
+        tableView.rowHeight = 70
+        tableView.register(cellType: SubmenuTableViewCell.self)
         searchBar.delegate = self
         searchBar.placeholder = "Procurar"
     }
@@ -32,8 +34,8 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "row \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SubmenuTableViewCell", for: indexPath) as! SubmenuTableViewCell
+        cell.setupInfo(name: "row \(indexPath.row)")
         return cell
     }
     

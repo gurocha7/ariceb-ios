@@ -8,7 +8,7 @@
 import UIKit
 import Reusable
 
-class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     enum SheetOptions{
         case buildings
@@ -53,6 +53,7 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         tableView.applyCorner(corner: 15)
         buttonClose.setImage(UIImage(named: "icon-close")?.withRenderingMode(.alwaysOriginal), for: .normal)
         labelHeaderView.text = getTitle()
+        searchBar.delegate = self
     }
     
     private func getTitle() -> String{
@@ -80,6 +81,10 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         let cell = UITableViewCell()
         cell.textLabel?.text = items[indexPath.row]
         return cell
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 
 }
