@@ -36,6 +36,10 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         viewModel?.modelOrigin  != nil ? shouldEditOrigin?() : shouldSelectOrigin?()
     }
     
+    @IBOutlet weak var lineOriginView: UIView!
+    @IBOutlet weak var labelDescriptionOrigin: UILabel!
+    
+    @IBOutlet weak var constLineViewOriginHeight: NSLayoutConstraint!
     
     //DESTINY
     enum DestinyViewState{
@@ -121,8 +125,26 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         UIView.animate(withDuration: 0.4) { [weak self] in
             self?.constOriginViewHeight.constant = isClosed ? 190 : 58
             self?.buttonArrowOrigin.transform = isClosed ? CGAffineTransform(rotationAngle: .pi) : CGAffineTransform(rotationAngle: 0.0)
+            isClosed ? self?.loadLayoutForOpenOrigin() : self?.loadLayoutForCloseOrigin()
             self?.layoutIfNeeded()
         }
+    }
+    
+    private func loadLayoutForCloseOrigin(){
+        lineOriginView.backgroundColor = .clear
+        constLineViewOriginHeight.constant = 0
+        labelDescriptionOrigin.text = ""
+    }
+    
+    private func loadLayoutForOpenOrigin(){
+        lineOriginView.backgroundColor = #colorLiteral(red: 0.7058823529, green: 0.7058823529, blue: 0.7058823529, alpha: 1)
+        constLineViewOriginHeight.constant = 2
+        labelDescriptionOrigin.backgroundColor = .white
+        guard let descriptionText = viewModel?.getModelOriginDescription() else {return}
+        labelDescriptionOrigin.textAlignment = .center
+        labelDescriptionOrigin.text = descriptionText
+        labelDescriptionOrigin.font = UIFont(name: "Helvetica Neue Bold", size: 18)
+        labelDescriptionOrigin.textColor = .black
     }
     
     private func updateDestinyView(){

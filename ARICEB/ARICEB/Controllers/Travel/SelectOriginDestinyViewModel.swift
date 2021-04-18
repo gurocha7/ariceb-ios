@@ -25,6 +25,11 @@ class SelectOriginDestinyViewModel {
         updateDestinyLayout?()
     }
     
+    func getModelOriginDescription() -> String?{
+        guard let _text = modelOrigin else {return nil}
+        return _text
+    }
+    
     func getModelOrigin() -> String?{
         guard let _text = modelOrigin else {return nil}
         let final = String(_text.split(separator: ",").last ?? "")
