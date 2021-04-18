@@ -11,6 +11,7 @@ import Reusable
 class ManualLocationView: UIView, NibLoadable {
     
     @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var labelInfo: UILabel!
     @IBOutlet weak var stack: UIStackView!
     @IBOutlet weak var buttonConfirm: UIButton!
     @IBOutlet weak var firstAddressView: AddressView!
@@ -23,9 +24,15 @@ class ManualLocationView: UIView, NibLoadable {
     }
     
     private func setup(){
+        setupInfoView()
         clearStack()
         setupStack()
         setupButton()
+    }
+    
+    private func setupInfoView(){
+        infoView.applyCorner(corner: 10)
+        labelInfo.attributedText = NSAttributedString(string: "Selecione o local que você se encontra neste momento. Ex: ICEB - Departamento de Matemática, Sala 9", attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Regular", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .regular), NSAttributedString.Key.foregroundColor : UIColor.black])
     }
 
     private func clearStack(){

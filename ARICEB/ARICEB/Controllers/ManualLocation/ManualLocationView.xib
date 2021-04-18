@@ -17,9 +17,21 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyF-jh-kbj">
                     <rect key="frame" x="20" y="20" width="374" height="75"/>
-                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoH-LY-V4l">
+                            <rect key="frame" x="5" y="5" width="364" height="65"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.36862745098039218" green="0.63529411764705879" blue="0.81568627450980391" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="yoH-LY-V4l" firstAttribute="leading" secondItem="wyF-jh-kbj" secondAttribute="leading" constant="5" id="HXF-WO-ee5"/>
                         <constraint firstAttribute="height" constant="75" id="X81-RD-snT"/>
+                        <constraint firstAttribute="bottom" secondItem="yoH-LY-V4l" secondAttribute="bottom" constant="5" id="b9D-n1-wNd"/>
+                        <constraint firstItem="yoH-LY-V4l" firstAttribute="top" secondItem="wyF-jh-kbj" secondAttribute="top" constant="5" id="lx6-8E-zB0"/>
+                        <constraint firstAttribute="trailing" secondItem="yoH-LY-V4l" secondAttribute="trailing" constant="5" id="wHp-Bg-KKR"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-fh-dAD">
@@ -78,6 +90,7 @@
                 <outlet property="buttonConfirm" destination="O0R-fh-dAD" id="7PZ-zb-qrv"/>
                 <outlet property="firstAddressView" destination="a5J-Me-7K1" id="9nl-MY-fGP"/>
                 <outlet property="infoView" destination="wyF-jh-kbj" id="Wns-tI-rrT"/>
+                <outlet property="labelInfo" destination="yoH-LY-V4l" id="xNm-bp-uyD"/>
                 <outlet property="secondAddressView" destination="Oob-T7-JID" id="g0j-ix-zyD"/>
                 <outlet property="stack" destination="bqo-f5-Taw" id="mQb-Jc-76U"/>
                 <outlet property="thirdAddressView" destination="PVq-zi-G1x" id="HOe-fa-taG"/>
@@ -88,9 +101,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
