@@ -30,55 +30,57 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-Me-7K1">
-                    <rect key="frame" x="43" y="147" width="328" height="42"/>
-                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bqo-f5-Taw">
+                    <rect key="frame" x="43" y="147" width="328" height="166"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a5J-Me-7K1" customClass="AddressView" customModule="ARICEB" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="328" height="42"/>
+                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="hXl-UO-RGG"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oob-T7-JID" customClass="AddressView" customModule="ARICEB" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="62" width="328" height="42"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="MUJ-NF-sbN"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVq-zi-G1x" customClass="AddressView" customModule="ARICEB" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="124" width="328" height="42"/>
+                            <color key="backgroundColor" systemColor="systemPinkColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="EF2-1u-eAF"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="42" id="hXl-UO-RGG"/>
+                        <constraint firstItem="PVq-zi-G1x" firstAttribute="height" secondItem="Oob-T7-JID" secondAttribute="height" id="V5N-50-asz"/>
+                        <constraint firstItem="Oob-T7-JID" firstAttribute="height" secondItem="a5J-Me-7K1" secondAttribute="height" id="rCx-a4-ED1"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oob-T7-JID">
-                    <rect key="frame" x="43" y="209" width="328" height="42"/>
-                    <color key="backgroundColor" systemColor="systemPinkColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="MUJ-NF-sbN"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVq-zi-G1x">
-                    <rect key="frame" x="43" y="271" width="328" height="42"/>
-                    <color key="backgroundColor" systemColor="systemPinkColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="EF2-1u-eAF"/>
-                    </constraints>
-                </view>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bqo-f5-Taw" secondAttribute="trailing" constant="43" id="0JQ-2B-RzK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="O0R-fh-dAD" secondAttribute="bottom" constant="18" id="Afo-RA-7vj"/>
-                <constraint firstItem="PVq-zi-G1x" firstAttribute="top" secondItem="Oob-T7-JID" secondAttribute="bottom" constant="20" id="GEt-xl-N3o"/>
-                <constraint firstItem="PVq-zi-G1x" firstAttribute="height" secondItem="Oob-T7-JID" secondAttribute="height" id="JpO-MT-Pem"/>
-                <constraint firstItem="a5J-Me-7K1" firstAttribute="top" secondItem="wyF-jh-kbj" secondAttribute="bottom" constant="52" id="Lyh-nB-h0m"/>
-                <constraint firstItem="PVq-zi-G1x" firstAttribute="leading" secondItem="Oob-T7-JID" secondAttribute="leading" id="Ni4-SA-PCe"/>
-                <constraint firstItem="Oob-T7-JID" firstAttribute="trailing" secondItem="a5J-Me-7K1" secondAttribute="trailing" id="Oug-6P-dCm"/>
                 <constraint firstItem="wyF-jh-kbj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Qlz-g1-iJF"/>
                 <constraint firstItem="wyF-jh-kbj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="RZ7-mZ-kAQ"/>
-                <constraint firstItem="a5J-Me-7K1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="43" id="UKa-b5-RTP"/>
+                <constraint firstItem="bqo-f5-Taw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="43" id="W0H-jp-WNh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wyF-jh-kbj" secondAttribute="trailing" constant="20" id="YeG-4Z-pya"/>
                 <constraint firstItem="O0R-fh-dAD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="Yog-yD-Yf6"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="O0R-fh-dAD" secondAttribute="trailing" constant="18" id="asD-ze-Or5"/>
-                <constraint firstItem="PVq-zi-G1x" firstAttribute="trailing" secondItem="Oob-T7-JID" secondAttribute="trailing" id="cpk-13-pgn"/>
-                <constraint firstItem="Oob-T7-JID" firstAttribute="height" secondItem="a5J-Me-7K1" secondAttribute="height" id="j8S-PI-bI2"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="a5J-Me-7K1" secondAttribute="trailing" constant="43" id="l8J-mb-zOa"/>
-                <constraint firstItem="Oob-T7-JID" firstAttribute="leading" secondItem="a5J-Me-7K1" secondAttribute="leading" id="trs-Ep-6zR"/>
-                <constraint firstItem="Oob-T7-JID" firstAttribute="top" secondItem="a5J-Me-7K1" secondAttribute="bottom" constant="20" id="yDy-xb-RGl"/>
+                <constraint firstItem="bqo-f5-Taw" firstAttribute="top" secondItem="wyF-jh-kbj" secondAttribute="bottom" constant="52" id="esg-Xl-jFC"/>
             </constraints>
             <connections>
                 <outlet property="buttonConfirm" destination="O0R-fh-dAD" id="7PZ-zb-qrv"/>
-                <outlet property="firstAddress" destination="a5J-Me-7K1" id="M7E-mL-KJL"/>
+                <outlet property="firstAddressView" destination="a5J-Me-7K1" id="9nl-MY-fGP"/>
                 <outlet property="infoView" destination="wyF-jh-kbj" id="Wns-tI-rrT"/>
-                <outlet property="secondAddress" destination="Oob-T7-JID" id="JEk-ik-kg9"/>
-                <outlet property="thirdAddress" destination="PVq-zi-G1x" id="wBP-3E-xOf"/>
+                <outlet property="secondAddressView" destination="Oob-T7-JID" id="g0j-ix-zyD"/>
+                <outlet property="stack" destination="bqo-f5-Taw" id="mQb-Jc-76U"/>
+                <outlet property="thirdAddressView" destination="PVq-zi-G1x" id="HOe-fa-taG"/>
             </connections>
             <point key="canvasLocation" x="119" y="98"/>
         </view>
@@ -92,6 +94,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

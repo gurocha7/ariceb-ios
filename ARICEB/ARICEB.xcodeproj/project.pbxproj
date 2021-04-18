@@ -52,6 +52,8 @@
 		36B7F028262BB1CC00CCFDEB /* QRCodeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F027262BB1CC00CCFDEB /* QRCodeLocationViewController.swift */; };
 		36B7F030262BB64C00CCFDEB /* ManualLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F02F262BB64C00CCFDEB /* ManualLocationView.swift */; };
 		36B7F035262BB67F00CCFDEB /* ManualLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B7F034262BB67F00CCFDEB /* ManualLocationView.xib */; };
+		36B7F03A262BB92700CCFDEB /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F039262BB92700CCFDEB /* AddressView.swift */; };
+		36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B7F03E262BB93000CCFDEB /* AddressView.xib */; };
 		36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9298D25DC3B2A00133E65 /* TravelView.swift */; };
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
@@ -136,6 +138,8 @@
 		36B7F027262BB1CC00CCFDEB /* QRCodeLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeLocationViewController.swift; sourceTree = "<group>"; };
 		36B7F02F262BB64C00CCFDEB /* ManualLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationView.swift; sourceTree = "<group>"; };
 		36B7F034262BB67F00CCFDEB /* ManualLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualLocationView.xib; sourceTree = "<group>"; };
+		36B7F039262BB92700CCFDEB /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		36B7F03E262BB93000CCFDEB /* AddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressView.xib; sourceTree = "<group>"; };
 		36B9298D25DC3B2A00133E65 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 				36B7F021262BB18B00CCFDEB /* ManualLocationViewController.swift */,
 				36B7F02F262BB64C00CCFDEB /* ManualLocationView.swift */,
 				36B7F034262BB67F00CCFDEB /* ManualLocationView.xib */,
+				36B7F039262BB92700CCFDEB /* AddressView.swift */,
+				36B7F03E262BB93000CCFDEB /* AddressView.xib */,
 			);
 			path = ManualLocation;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
+				36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */,
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
@@ -723,6 +730,7 @@
 				36B7F003262BA4E700CCFDEB /* TransitionAnimator.swift in Sources */,
 				36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */,
 				36B7F001262BA4E700CCFDEB /* CenterContainmentSegue.swift in Sources */,
+				36B7F03A262BB92700CCFDEB /* AddressView.swift in Sources */,
 				3619B5A1262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift in Sources */,
 				3619B5BB262A82DB0094CEA6 /* LocationViewController.swift in Sources */,
 				36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */,
