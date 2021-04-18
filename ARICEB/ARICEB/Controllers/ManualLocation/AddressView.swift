@@ -14,24 +14,38 @@ class AddressView: UIView, NibLoadable {
     @IBOutlet weak var imageArrow: UIImageView!
     
     @IBAction func didTap(_ sender: Any) {
-        
+        if canEditAddress {
+            didTap?()
+        }
     }
+    
+    var didTap:(() -> Void)?
+    
+    var canEditAddress: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func setup(){
+    func setup(canEdit: Bool = false){
+        canEditAddress = canEdit
         borderView.applyCorner(corner: 20)
-        borderView.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
+        borderView.applyBorder(borderWidth: 1, borderColor: canEditAddress ? UIColor.darkGray.cgColor : UIColor.lightGray.cgColor)
         imageArrow.image = UIImage(named: "arrow")?.withRenderingMode(.alwaysTemplate)
-        imageArrow.tintColor = .darkGray
+        imageArrow.tintColor = canEditAddress ? .darkGray : .lightGray
     }
     
     func setupPlaceholder(placeholder: String?){
         label.attributedText = NSAttributedString(string: placeholder ?? "",
                                                   attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold),
-                                                               NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+                                                               NSAttributedString.Key.foregroundColor : canEditAddress ? UIColor.darkGray : UIColor.lightGray])
+        self.layoutIfNeeded()
+    }
+    
+    func updateToEdit(){
+        canEditAddress = true
+        borderView.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor )
+        imageArrow.tintColor = .darkGray
         self.layoutIfNeeded()
     }
 

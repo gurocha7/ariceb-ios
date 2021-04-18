@@ -51,7 +51,7 @@ class ManualLocationView: UIView, NibLoadable {
         stack.addArrangedSubview(firstAddressView)
         stack.addArrangedSubview(secondAddressView)
         stack.addArrangedSubview(thirdAddressView)
-        firstAddressView.setup()
+        firstAddressView.setup(canEdit: true)
         secondAddressView.setup()
         thirdAddressView.setup()
     }
@@ -66,10 +66,32 @@ class ManualLocationView: UIView, NibLoadable {
                                                                          NSAttributedString.Key.foregroundColor : UIColor.white]), for: .normal)
     }
     
+    private func bindEvents(){
+        firstAddressView.didTap {
+            
+        }
+        
+        secondAddressView.didTap {
+            
+        }
+        
+        thirdAddressView.didTap {
+            
+        }
+    }
+    
     func setupPlaceholders(){
         firstAddressView.setupPlaceholder(placeholder: viewModel?.getFirstPlaceholder())
         secondAddressView.setupPlaceholder(placeholder: viewModel?.getSecondPlaceholder())
         thirdAddressView.setupPlaceholder(placeholder: viewModel?.getThirdPlaceholder())
+    }
+    
+    func enableSecondAddresToEdit(){
+        secondAddressView.updateToEdit()
+    }
+    
+    func enableThirdAddresToEdit(){
+        thirdAddressView.updateToEdit()
     }
     
 }
