@@ -47,8 +47,19 @@ class SubmenuViewModel {
                                                 "DECOM - Departamento de Computação",
                                                 "DEDIR - Departamento de Direito",
                                                 "DEEST - Departamento de Estatística"]
-    private let itemsAuditoriums: [String] = []
-    private let itemsLaboratories: [String] = []
+    private let itemsAuditoriums: [String] = [ "Auditório 1 - Bloco de Sala de Aulas",
+                                                  "Auditório 1 - Escola de Farmácia",
+                                                  "Auditório 1 -  Escola de Medicina",
+                                                  "Auditório 1 -  Escola de Minas",
+                                                  "Auditório 1 -  Instituto de Ciências Exatas e Biológicas",
+                                                  "Auditório 1 -  Departamento de Geologia"]
+    private let itemsLaboratories: [String] = ["GAID",
+                                                  "GOAL",
+                                                  "HPC",
+                                                  "iMobilis",
+                                                  "Lasca",
+                                                  "TerraLab",
+                                                  "XR4GOOD"]
     
     private let classesDescription: String = "Selecione o departamento que sua aula pertence:"
     private let buildingsDescription: String = "Selecione o prédio que deseja encontrar:"
