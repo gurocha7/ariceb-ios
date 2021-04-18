@@ -9,8 +9,15 @@ import UIKit
 import Reusable
 
 class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+    
+    enum SheetOptions{
+        case buildings
+        case sector
+        case subsector
+    }
 
-    var titleVC = "Selecione"
+    var typeSheet: SheetOptions = .buildings
+    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var labelHeaderView: UILabel!
     @IBOutlet weak var buttonClose: UIButton!
@@ -21,10 +28,12 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     }
     
     var dismissSheet: (() -> Void)?
+    var items: [String] = []
     
-    init(title: String?) {
+    init(option: SheetOptions = .buildings, model: [String]) {
         super.init(nibName: nil, bundle: nil)
-        titleVC = title ?? "Selecione"
+        typeSheet = option
+        items = model
     }
 
     required init?(coder: NSCoder) {
@@ -36,21 +45,34 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         setup()
     }
     
-    func setup(){
+    private func setup(){
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.applyCorner(corner: 15)
         buttonClose.setImage(UIImage(named: "icon-close")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        labelHeaderView.text = titleVC
+        labelHeaderView.text = getTitle()
+    }
+    
+    private func getTitle() -> String{
+        switch typeSheet {
+        case .buildings:
+            return "Selecione o prédio"
+        case .sector:
+            return "Selecione o prédio"
+        case .subsector:
+            return "Selecione o prédio"
+        }
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "row \(indexPath.row)"
+        cell.textLabel?.text = items[indexPath.row]
         return cell
     }
 

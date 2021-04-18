@@ -20,6 +20,16 @@ class ManualLocationViewModel{
     var thirdAddress = ""
     
     
+    var itemsBuildings = ["Bloco de Sala de Aulas",
+                          "Centro Desportivo",
+                          "DEGEO - Departamento de Geologia",
+                          "DEMIN - Departamento de Engenharia de Minas",
+                          "EFAR - Escola de Farmácia",
+                          "EM - Escola de Minas",
+                          "ICEB - Instituto de Ciências Exatas e Biológicas",
+                          "RU - Restaurante Universitário"]
+    
+    
     func getFirstPlaceholder() -> String{
         return placeholderFirstAddres
     }
@@ -30,5 +40,9 @@ class ManualLocationViewModel{
 
     func getThirdPlaceholder() -> String{
         return placeholderThirdAddres
+    }
+    
+    func getModelForFirst() -> [String]{
+        return itemsBuildings
     }
 }

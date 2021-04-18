@@ -52,7 +52,7 @@ class ManualLocationViewController: BaseViewController {
     }
     
     private func goToFirstOptions(){
-        let vc = SheetOptionsViewController(title: "Selecione o prédio")
+        let vc = SheetOptionsViewController(option: .buildings, model: viewModel.getModelForFirst())
         vc.modalPresentationStyle = .formSheet
         vc.dismissSheet = {
             vc.dismiss(animated: true, completion: nil)
