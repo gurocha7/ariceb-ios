@@ -9,6 +9,15 @@ import UIKit
 
 class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    enum SubmenuTypeController: String{
+        case classes = "aulas"
+        case buldings = "prédios"
+        case bathroom = "banheiros"
+        case department = "departamentos"
+        case auditoriums = "auditórios"
+        case laboratories = "laboratórios"
+    }
+    
     var viewModel: SubmenuViewModel = SubmenuViewModel()
     var option: String?
     
@@ -29,6 +38,7 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupDescription()
     }
     
     private func setup(){
@@ -41,6 +51,27 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
         tableView.applyBorder(borderWidth: 0.5, borderColor: UIColor.darkGray.cgColor)
         searchBar.delegate = self
         searchBar.placeholder = "Procurar"
+    }
+    
+    private func setupDescription(){
+        guard let _option = option else {return}
+        switch _option.lowercased() {
+        case SubmenuTypeController.classes.rawValue:
+            labelTitle.text = viewModel.getClassesDescription()
+        case SubmenuTypeController.buldings.rawValue:
+            labelTitle.text = viewModel.getBuildingsDescription()
+        case SubmenuTypeController.bathroom.rawValue:
+            labelTitle.text = viewModel.getBathroomsDescription()
+        case SubmenuTypeController.department.rawValue:
+            labelTitle.text = viewModel.getDepartmentDescription()
+        case SubmenuTypeController.auditoriums.rawValue:
+            labelTitle.text = viewModel.getAuditoriumDescription()
+        case SubmenuTypeController.laboratories.rawValue:
+            labelTitle.text = viewModel.getLaboratoriesDescription()
+        default:
+            break
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

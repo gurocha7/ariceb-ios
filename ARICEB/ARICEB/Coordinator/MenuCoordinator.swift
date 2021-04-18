@@ -79,6 +79,7 @@ class MenuCoordinator: NSObject {
         case MenuTypeController.laboratories.rawValue:
             showSubmenu(option: option)
         case MenuTypeController.ru.rawValue:
+            break
         case MenuTypeController.faq.rawValue:
             showFAQ()
         default:
