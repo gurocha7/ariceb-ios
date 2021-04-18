@@ -19,6 +19,7 @@ class SubmenuTableViewCell: UITableViewCell, NibReusable {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.selectedBackgroundView = UIView()
     }
     
     private func setup(){
