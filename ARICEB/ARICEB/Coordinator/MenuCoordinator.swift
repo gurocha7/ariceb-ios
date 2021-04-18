@@ -94,7 +94,7 @@ class MenuCoordinator: NSObject {
     }
     
     private func showSubmenu(option: String){
-        let vc = SubmenuViewController()
+        let vc = SubmenuViewController(option: option)
         self.homeNavController.pushViewController(vc, animated: true)
     }
     

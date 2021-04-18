@@ -17,4 +17,7 @@ class SubmenuViewModel {
     let itemsLaboratories: [String] = []
     
     
+    
+    
+    
 }
