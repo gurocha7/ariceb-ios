@@ -67,26 +67,19 @@ class MenuCoordinator: NSObject {
     private func chekController(option: String){
         switch option.lowercased() {
         case MenuTypeController.classes.rawValue:
-            print("clicou em aulas")
+            showSubmenu(option: option)
         case MenuTypeController.buldings.rawValue:
-            print("clicou em ",MenuTypeController.buldings.rawValue)
             showSubmenu(option: option)
         case MenuTypeController.bathroom.rawValue:
-            print("clicou em ",MenuTypeController.bathroom.rawValue)
             showSubmenu(option: option)
         case MenuTypeController.department.rawValue:
-            print("clicou em",MenuTypeController.department.rawValue)
             showSubmenu(option: option)
         case MenuTypeController.auditoriums.rawValue:
-            print("clicou em ", MenuTypeController.auditoriums.rawValue)
             showSubmenu(option: option)
         case MenuTypeController.laboratories.rawValue:
-            print("clicou em ",MenuTypeController.laboratories.rawValue)
             showSubmenu(option: option)
         case MenuTypeController.ru.rawValue:
-            print("clicou em ",MenuTypeController.ru.rawValue)
         case MenuTypeController.faq.rawValue:
-            print("clicou em ",MenuTypeController.faq.rawValue)
             showFAQ()
         default:
             break
