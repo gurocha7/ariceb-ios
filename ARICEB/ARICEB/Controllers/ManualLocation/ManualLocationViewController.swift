@@ -12,6 +12,7 @@ class ManualLocationViewController: BaseViewController {
     var isOrigin: Bool = false
     
     let customView: ManualLocationView = ManualLocationView.loadFromNib()
+    let viewModel:ManualLocationViewModel = ManualLocationViewModel()
     
     init(isOrigin: Bool = true) {
         super.init(nibName: nil, bundle: nil)
@@ -26,10 +27,12 @@ class ManualLocationViewController: BaseViewController {
         super.loadView()
         title = isOrigin ? "Origem" : "Destino"
         view = customView
+        customView.viewModel = self.viewModel
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customView.setupPlaceholders()
     }
 
 }

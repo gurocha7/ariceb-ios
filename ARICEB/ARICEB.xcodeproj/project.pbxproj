@@ -54,6 +54,7 @@
 		36B7F035262BB67F00CCFDEB /* ManualLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B7F034262BB67F00CCFDEB /* ManualLocationView.xib */; };
 		36B7F03A262BB92700CCFDEB /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F039262BB92700CCFDEB /* AddressView.swift */; };
 		36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B7F03E262BB93000CCFDEB /* AddressView.xib */; };
+		36B7F044262BC6AF00CCFDEB /* ManualLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F043262BC6AF00CCFDEB /* ManualLocationViewModel.swift */; };
 		36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9298D25DC3B2A00133E65 /* TravelView.swift */; };
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
@@ -140,6 +141,7 @@
 		36B7F034262BB67F00CCFDEB /* ManualLocationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManualLocationView.xib; sourceTree = "<group>"; };
 		36B7F039262BB92700CCFDEB /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		36B7F03E262BB93000CCFDEB /* AddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressView.xib; sourceTree = "<group>"; };
+		36B7F043262BC6AF00CCFDEB /* ManualLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationViewModel.swift; sourceTree = "<group>"; };
 		36B9298D25DC3B2A00133E65 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				36B7F021262BB18B00CCFDEB /* ManualLocationViewController.swift */,
+				36B7F043262BC6AF00CCFDEB /* ManualLocationViewModel.swift */,
 				36B7F02F262BB64C00CCFDEB /* ManualLocationView.swift */,
 				36B7F034262BB67F00CCFDEB /* ManualLocationView.xib */,
 				36B7F039262BB92700CCFDEB /* AddressView.swift */,
@@ -736,6 +739,7 @@
 				36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */,
 				3619B5A7262A2F1D0094CEA6 /* BaseViewController.swift in Sources */,
 				36B7EFE2262B7C7C00CCFDEB /* SideMenuTableViewCell.swift in Sources */,
+				36B7F044262BC6AF00CCFDEB /* ManualLocationViewModel.swift in Sources */,
 				36B7EFBF262B5BD800CCFDEB /* MenuView.swift in Sources */,
 				36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */,
 				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,

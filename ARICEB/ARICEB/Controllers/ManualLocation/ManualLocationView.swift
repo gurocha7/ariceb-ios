@@ -10,6 +10,8 @@ import Reusable
 
 class ManualLocationView: UIView, NibLoadable {
     
+    var viewModel: ManualLocationViewModel?
+    
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var labelInfo: UILabel!
     @IBOutlet weak var stack: UIStackView!
@@ -62,6 +64,12 @@ class ManualLocationView: UIView, NibLoadable {
         buttonConfirm.setAttributedTitle(NSAttributedString(string: "CONFIRMAR",
                                                             attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Bold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold),
                                                                          NSAttributedString.Key.foregroundColor : UIColor.white]), for: .normal)
+    }
+    
+    func setupPlaceholders(){
+        firstAddressView.setupPlaceholder(placeholder: viewModel?.getFirstPlaceholder())
+        secondAddressView.setupPlaceholder(placeholder: viewModel?.getSecondPlaceholder())
+        thirdAddressView.setupPlaceholder(placeholder: viewModel?.getThirdPlaceholder())
     }
     
 }

@@ -24,7 +24,15 @@ class AddressView: UIView, NibLoadable {
     func setup(){
         borderView.applyCorner(corner: 20)
         borderView.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
-        imageArrow.image = UIImage(named: "arrow")
+        imageArrow.image = UIImage(named: "arrow")?.withRenderingMode(.alwaysTemplate)
+        imageArrow.tintColor = .darkGray
+    }
+    
+    func setupPlaceholder(placeholder: String?){
+        label.attributedText = NSAttributedString(string: placeholder ?? "",
+                                                  attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold),
+                                                               NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+        self.layoutIfNeeded()
     }
 
 }
