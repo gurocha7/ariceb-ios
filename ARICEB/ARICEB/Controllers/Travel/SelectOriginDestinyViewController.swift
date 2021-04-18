@@ -48,11 +48,21 @@ class SelectOriginDestinyViewController: BaseViewController {
     
     private func editOrigin(){
         let vc = ManualLocationViewController(isOrigin: true)
+        vc.didTapConfirmAddres = { [weak self] (model) in
+            guard self != nil else {return}
+            self?.viewModel.insertModelOrigin(model: model)
+            self?.navigationController?.popToViewController(self!, animated: true)
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     
     private func editDestiny(){
         let vc = ManualLocationViewController(isOrigin: false)
+        vc.didTapConfirmAddres = { [weak self] (model) in
+            guard self != nil else {return}
+            self?.viewModel.insertModelDestiny(model: model)
+            self?.navigationController?.popToViewController(self!, animated: true)
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -74,6 +74,17 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     private func setup(){
         setupOriginView()
         setupDestinyView()
+        setupButton()
+    }
+    
+    private func setupButton(){
+        buttonConfirmTravel.isEnabled = false
+        buttonConfirmTravel.backgroundColor = #colorLiteral(red: 0.7058823529, green: 0.7058823529, blue: 0.7058823529, alpha: 1)
+        buttonConfirmTravel.applyCorner(corner: 28)
+        buttonConfirmTravel.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
+        buttonConfirmTravel.setAttributedTitle(NSAttributedString(string: "MOSTRAR CAMINHO",
+                                                            attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Bold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold),
+                                                                         NSAttributedString.Key.foregroundColor : UIColor.white]), for: .normal)
     }
     
     private func setupOriginView(){
@@ -139,6 +150,11 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         if viewModel?.modelOrigin != nil && viewModel?.modelDestiny != nil {
             
         }
+    }
+    
+    private func enableButtonConfirm(){
+        buttonConfirmTravel.isEnabled = true
+        buttonConfirmTravel.backgroundColor = #colorLiteral(red: 0.01176470588, green: 0.662745098, blue: 0.9568627451, alpha: 1)
     }
     
 }

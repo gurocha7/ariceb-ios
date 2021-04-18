@@ -13,6 +13,7 @@ class SelectOriginDestinyViewModel {
     var modelDestiny: String?
     
     var updateOriginLayout: (() -> Void)?
+    var updateDestinyLayout: (() -> Void)?
     
     func insertModelOrigin(model: String?){
         modelOrigin = model
@@ -21,6 +22,7 @@ class SelectOriginDestinyViewModel {
     
     func insertModelDestiny(model: String?){
         modelDestiny = model
+        updateDestinyLayout?()
     }
     
     func getModelOrigin() -> String?{
