@@ -10,11 +10,13 @@ import UIKit
 class SelectOriginDestinyViewController: BaseViewController {
     
     let customView: SelectOriginDestinyView = SelectOriginDestinyView.loadFromNib()
+    let viewModel:  SelectOriginDestinyViewModel = SelectOriginDestinyViewModel()
     
     override func loadView() {
         super.loadView()
         title = "Caminho"
         view = customView
+        customView.viewModel = self.viewModel
     }
 
     override func viewDidLoad() {
@@ -30,12 +32,17 @@ class SelectOriginDestinyViewController: BaseViewController {
         customView.shouldSelectDestiny = { [weak self] in
             
         }
+        
+        viewModel.updateOriginLayout = { [weak self] in
+            self?.customView.updateOriginLayout()
+        }
     }
     
     private func showLocation(){
         let vc = LocationViewController()
         vc.didTapConfirmAddres = { [weak self] (model) in
             guard self != nil else {return}
+            self?.viewModel.insertModelOrigin(model: model)
             self?.navigationController?.popToViewController(self!, animated: true)
         }
         navigationController?.pushViewController(vc, animated: true)

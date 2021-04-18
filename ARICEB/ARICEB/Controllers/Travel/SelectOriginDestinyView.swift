@@ -10,6 +10,7 @@ import Reusable
 
 class SelectOriginDestinyView: UIView, NibLoadable{
     
+    var viewModel: SelectOriginDestinyViewModel?
     let smallHeight = 58
     let bigHeight = 190
     
@@ -113,6 +114,16 @@ class SelectOriginDestinyView: UIView, NibLoadable{
             self?.buttonArrowDestiny.transform = isClosed ? CGAffineTransform(rotationAngle: .pi) : CGAffineTransform(rotationAngle: 0.0)
             self?.layoutIfNeeded()
         }
+    }
+    
+    func updateOriginLayout(){
+        guard let originText = viewModel?.getModelOrigin() else {return}
+        originView.applyBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.01176470588, green: 0.662745098, blue: 0.9568627451, alpha: 1))
+        buttonArrowOrigin.isHidden = false
+        labelOriginTitle.text = originText
+        labelOriginTitle.font = UIFont(name: "Lato-regular", size: 18)
+        labelOriginTitle.textColor = .black
+        self.layoutIfNeeded()
     }
     
 }

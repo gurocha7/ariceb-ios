@@ -41,7 +41,7 @@ class ManualLocationViewModel{
                          "Laboratório X",
                          "Portaria",
                          "Sala 20",
-                         "Secetrária"]
+                         "Secretaria"]
     
     func insertFirstAddress(name: String){
         firstAddress = name

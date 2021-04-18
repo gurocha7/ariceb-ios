@@ -13,6 +13,7 @@
 		3619B5AC262A33770094CEA6 /* SelectOriginDestinyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619B5AB262A33770094CEA6 /* SelectOriginDestinyView.swift */; };
 		3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */; };
 		3619B5BB262A82DB0094CEA6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619B5BA262A82DB0094CEA6 /* LocationViewController.swift */; };
+		36205CF0262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */; };
 		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
@@ -96,6 +97,7 @@
 		3619B5AB262A33770094CEA6 /* SelectOriginDestinyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOriginDestinyView.swift; sourceTree = "<group>"; };
 		3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOriginDestinyView.xib; sourceTree = "<group>"; };
 		3619B5BA262A82DB0094CEA6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOriginDestinyViewModel.swift; sourceTree = "<group>"; };
 		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -426,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */,
+				36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */,
 				3619B5AB262A33770094CEA6 /* SelectOriginDestinyView.swift */,
 				3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */,
 				36B929B825DC518D00133E65 /* Origin */,
@@ -763,6 +766,7 @@
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
 				36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */,
 				36B7EFB7262B5B8700CCFDEB /* MenuViewController.swift in Sources */,
+				36205CF0262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift in Sources */,
 				36B7F030262BB64C00CCFDEB /* ManualLocationView.swift in Sources */,
 				36B7F008262BA4E700CCFDEB /* SideMenuController+SideOver.swift in Sources */,
 				3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */,
