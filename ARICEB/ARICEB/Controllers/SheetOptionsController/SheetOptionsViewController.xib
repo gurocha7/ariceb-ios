@@ -39,6 +39,9 @@
                                 <constraint firstAttribute="height" constant="44" id="SO2-Kn-fEx"/>
                                 <constraint firstAttribute="width" constant="44" id="jjE-hC-Glw"/>
                             </constraints>
+                            <connections>
+                                <action selector="buttonCloseAction:" destination="-1" eventType="touchUpInside" id="chf-y3-8LA"/>
+                            </connections>
                         </button>
                         <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Procurar" translatesAutoresizingMaskIntoConstraints="NO" id="KUW-BS-7Vh">
                             <rect key="frame" x="20" y="61" width="374" height="56"/>
