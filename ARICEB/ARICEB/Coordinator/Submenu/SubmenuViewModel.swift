@@ -19,7 +19,13 @@ class SubmenuViewModel {
                                           "DEDIR - Departamento de Direito",
                                           "DEEST - Departamento de Estatística"]
     
-    private let itemsBuildinga: [String] = []
+    private let itemsBuildinga: [String] = [ "Bloco de Sala de Aulas",
+                                               "Centro Desportivo",
+                                               "Escola de Farmácia",
+                                               "Escola de Medicina",
+                                               "Escola de Minas",
+                                               "Instituto de Ciências Exatas e Biológicas",
+                                               "Restaurante Universitário"]
     private let itemsBathrooms: [String] = []
     
     private let itemsDepartment: [String] = ["DEACL - Departamento de analises clinicas",
