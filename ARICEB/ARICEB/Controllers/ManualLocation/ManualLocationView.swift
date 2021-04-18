@@ -16,6 +16,8 @@ class ManualLocationView: UIView, NibLoadable {
     var didTapSecondAddress: (() -> Void)?
     var didTapThirdAddress: (() -> Void)?
     
+    var didTapConfirmAddress: ((String?) -> Void)?
+    
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var labelInfo: UILabel!
     @IBOutlet weak var stack: UIStackView!
@@ -23,6 +25,12 @@ class ManualLocationView: UIView, NibLoadable {
     @IBOutlet weak var firstAddressView: AddressView!
     @IBOutlet weak var secondAddressView: AddressView!
     @IBOutlet weak var thirdAddressView: AddressView!
+    
+    @IBAction func buttonConfirmAction(_ sender: Any) {
+        guard let _model = viewModel?.getModel() else {return}
+        didTapConfirmAddress?(_model)
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

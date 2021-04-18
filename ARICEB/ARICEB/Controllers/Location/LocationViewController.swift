@@ -9,6 +9,8 @@ import UIKit
 
 class LocationViewController: BaseViewController {
     
+    var didTapConfirmAddres: ((String?) -> Void)?
+    
     let customView: LocationView = LocationView.loadFromNib()
     
     override func loadView() {
@@ -38,6 +40,9 @@ class LocationViewController: BaseViewController {
     
     private func goToManual(){
         let vc = ManualLocationViewController()
+        vc.didTapConfirmAddres = { [weak self] (model) in
+            self?.didTapConfirmAddres?(model)
+        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

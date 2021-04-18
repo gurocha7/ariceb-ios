@@ -34,6 +34,10 @@ class SelectOriginDestinyViewController: BaseViewController {
     
     private func showLocation(){
         let vc = LocationViewController()
+        vc.didTapConfirmAddres = { [weak self] (model) in
+            guard self != nil else {return}
+            self?.navigationController?.popToViewController(self!, animated: true)
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
 

@@ -11,6 +11,7 @@ import FittedSheets
 class ManualLocationViewController: BaseViewController {
     
     var isOrigin: Bool = false
+    var didTapConfirmAddres: ((String?) -> Void)?
     
     let customView: ManualLocationView = ManualLocationView.loadFromNib()
     let viewModel:ManualLocationViewModel = ManualLocationViewModel()
@@ -48,6 +49,10 @@ class ManualLocationViewController: BaseViewController {
         
         customView.didTapThirdAddress = { [weak self] in
             self?.goToThirdOptions()
+        }
+        
+        customView.didTapConfirmAddress = { [weak self] (model) in
+            self?.didTapConfirmAddres?(model)
         }
     }
     

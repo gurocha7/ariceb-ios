@@ -13,7 +13,7 @@ class ManualLocationViewModel{
     let placeholderSecondAddres = "Departamento/Andar/Corredor"
     let placeholderThirdAddres = "Sala/Laboratório/Auditório"
     
-    var fullAddres = ""
+    var fullAddres: String?
     
     var firstAddress: String?
     var secondAddress: String?
@@ -89,5 +89,14 @@ class ManualLocationViewModel{
     
     func getModelForThird() -> [String]{
         return itemsSubsectors
+    }
+    
+    func getModel() -> String?{
+        guard let _first = firstAddress else { return "" }
+        guard let _second = secondAddress else { return "" }
+        guard let _third = thirdAddress else { return "" }
+        let _fullAddress = _first + " - " + _second + ", " + _third
+        fullAddres = _fullAddress
+        return _fullAddress
     }
 }
