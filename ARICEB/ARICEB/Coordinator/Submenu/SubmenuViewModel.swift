@@ -26,7 +26,17 @@ class SubmenuViewModel {
                                                "Escola de Minas",
                                                "Instituto de Ciências Exatas e Biológicas",
                                                "Restaurante Universitário"]
-    private let itemsBathrooms: [String] = []
+    
+    private let itemsBathrooms: [String] = [
+                                            "Banheiro Feminino, 1º Andar - Escola de Minas",
+                                            "Banheiro Feminino, 1º Andar - Escola de Farmácia",
+                                            "Banheiro Feminino, ICEB I - Instituto de Ciências Exatas e Biológicas",
+                                            "Banheiro Feminino, 2º Andar - Escola de Minas",
+                                            "Banheiro Masculino, 1º Andar - Escola de Minas",
+                                            "Banheiro Masculino, 2º Andar - Escola de Minas",
+                                            "Banheiro Masculino, 1º Andar - Escola de Farmácia",
+                                            "Banheiro Masculino, ICEB I - Instituto de Ciências Exatas e Biológicas"
+                                            ]
     
     private let itemsDepartment: [String] = ["DEACL - Departamento de analises clinicas",
                                                 "DEALI - Departamento de Alimentos",
