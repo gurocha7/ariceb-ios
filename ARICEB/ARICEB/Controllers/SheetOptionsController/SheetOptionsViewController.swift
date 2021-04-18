@@ -60,9 +60,9 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         case .buildings:
             return "Selecione o prédio"
         case .sector:
-            return "Selecione o prédio"
+            return "Selecione o ambiente"
         case .subsector:
-            return "Selecione o prédio"
+            return "Selecione o local"
         }
     }
     

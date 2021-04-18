@@ -29,6 +29,14 @@ class ManualLocationViewModel{
                           "ICEB - Instituto de Ciências Exatas e Biológicas",
                           "RU - Restaurante Universitário"]
     
+    var itemsSectors = ["Auditório 1",
+                         "Auditório 2",
+                         "Empresa Júnior",
+                         "Laboratório X",
+                         "Portaria",
+                         "Sala 20",
+                         "Secetrária"]
+    
     func insertFirstAddress(name: String){
         firstAddress = name
     }
@@ -67,5 +75,9 @@ class ManualLocationViewModel{
     
     func getModelForFirst() -> [String]{
         return itemsBuildings
+    }
+    
+    func getModelForSecond() -> [String]{
+        return itemsSectors
     }
 }
