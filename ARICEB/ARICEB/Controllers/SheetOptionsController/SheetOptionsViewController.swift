@@ -27,6 +27,7 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         dismissSheet?()
     }
     
+    var didSelectItem: ((String) -> Void)?
     var dismissSheet: (() -> Void)?
     var items: [String] = []
     
@@ -65,6 +66,11 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let item = items[indexPath.row]
+        didSelectItem?(item)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count

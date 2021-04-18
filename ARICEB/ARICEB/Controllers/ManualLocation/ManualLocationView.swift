@@ -99,4 +99,21 @@ class ManualLocationView: UIView, NibLoadable {
         thirdAddressView.updateToEdit()
     }
     
+    func updateLayoutWithModel(){
+        guard let _firstAddress = viewModel?.getFirstAddress() else {return}
+        firstAddressView.setupPlaceholder(placeholder: _firstAddress)
+        secondAddressView.updateToEdit()
+        guard let _secondAddress = viewModel?.getSecondAddress() else {return}
+        secondAddressView.setupPlaceholder(placeholder: _secondAddress)
+        thirdAddressView.updateToEdit()
+        guard let _thirdAddress = viewModel?.getThirdAddress() else {return}
+        thirdAddressView.setupPlaceholder(placeholder: _thirdAddress)
+        enableConfirmButton()
+    }
+    
+    private func enableConfirmButton(){
+        buttonConfirm.isEnabled = true
+        buttonConfirm.setTitleColor(#colorLiteral(red: 0.01176470588, green: 0.662745098, blue: 0.9568627451, alpha: 1), for: .normal)
+    }
+    
 }

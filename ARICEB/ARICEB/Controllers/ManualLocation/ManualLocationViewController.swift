@@ -54,6 +54,13 @@ class ManualLocationViewController: BaseViewController {
     private func goToFirstOptions(){
         let vc = SheetOptionsViewController(option: .buildings, model: viewModel.getModelForFirst())
         vc.modalPresentationStyle = .formSheet
+        vc.didSelectItem = { [weak self] (item) in
+            self?.viewModel.insertFirstAddress(name: item)
+            DispatchQueue.main.async {
+                self?.customView.updateLayoutWithModel()
+            }
+            vc.dismiss(animated: true, completion: nil)
+        }
         vc.dismissSheet = {
             vc.dismiss(animated: true, completion: nil)
         }
@@ -65,6 +72,10 @@ class ManualLocationViewController: BaseViewController {
     }
     
     private func goToThirdOptions(){
+        
+    }
+    
+    private func updateLayout(){
         
     }
 

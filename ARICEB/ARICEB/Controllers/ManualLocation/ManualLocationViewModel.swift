@@ -15,9 +15,9 @@ class ManualLocationViewModel{
     
     var fullAddres = ""
     
-    var firstAddress = ""
-    var secondAddress = ""
-    var thirdAddress = ""
+    var firstAddress: String?
+    var secondAddress: String?
+    var thirdAddress: String?
     
     
     var itemsBuildings = ["Bloco de Sala de Aulas",
@@ -29,6 +29,29 @@ class ManualLocationViewModel{
                           "ICEB - Instituto de Ciências Exatas e Biológicas",
                           "RU - Restaurante Universitário"]
     
+    func insertFirstAddress(name: String){
+        firstAddress = name
+    }
+    
+    func insertSecondAddress(name: String){
+        secondAddress = name
+    }
+    
+    func insertThirdAddress(name: String){
+        thirdAddress = name
+    }
+    
+    func getFirstAddress() -> String?{
+        return firstAddress
+    }
+    
+    func getSecondAddress() -> String?{
+        return secondAddress
+    }
+    
+    func getThirdAddress() -> String?{
+        return thirdAddress
+    }
     
     func getFirstPlaceholder() -> String{
         return placeholderFirstAddres
