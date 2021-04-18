@@ -44,6 +44,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     }
     
     var shouldSelectDestiny: (() -> Void)?
+    var shouldEditDestiny: (() -> Void)?
     var destinyViewState: DestinyViewState = .closed
     @IBOutlet weak var constOriginViewHeight: NSLayoutConstraint!
     @IBOutlet weak var destinyView: UIView!
@@ -54,10 +55,16 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         updateDestinyView()
     }
     @IBAction func didTapToSelectDestiny(_ sender: Any) {
-        shouldSelectDestiny?()
+        viewModel?.modelDestiny != nil ? shouldEditDestiny?() : shouldSelectDestiny?()
     }
     
     @IBOutlet weak var constDestinyViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var buttonConfirmTravel: UIButton!
+    @IBAction func buttonConfirmTravel(_ sender: Any) {
+        
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -124,7 +131,14 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         labelOriginTitle.text = originText
         labelOriginTitle.font = UIFont(name: "Lato-regular", size: 18)
         labelOriginTitle.textColor = .black
+        checkIfCompleted()
         self.layoutIfNeeded()
+    }
+    
+    private func checkIfCompleted(){
+        if viewModel?.modelOrigin != nil && viewModel?.modelDestiny != nil {
+            
+        }
     }
     
 }

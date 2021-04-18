@@ -117,13 +117,26 @@
                                 <constraint firstItem="wvU-2h-sN6" firstAttribute="leading" secondItem="QGM-Iu-NLK" secondAttribute="trailing" constant="10" id="l4F-z1-jJ1"/>
                             </constraints>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-sx-YKp">
+                            <rect key="frame" x="18" y="663" width="378" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="Cab-5u-vel"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="buttonConfirmTravel:" destination="iN0-l3-epB" eventType="touchUpInside" id="LIi-Nh-xGl"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="uR2-PR-pDp" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="bottom" constant="35" id="HFG-y1-oAr"/>
                         <constraint firstItem="R6n-9o-0eH" firstAttribute="leading" secondItem="3Ng-pd-AFX" secondAttribute="leading" constant="35" id="Hxe-Xi-IPq"/>
                         <constraint firstItem="uR2-PR-pDp" firstAttribute="leading" secondItem="R6n-9o-0eH" secondAttribute="leading" id="IGm-8T-phI"/>
+                        <constraint firstAttribute="bottom" secondItem="zw8-sx-YKp" secondAttribute="bottom" constant="18" id="IUA-uD-twJ"/>
+                        <constraint firstAttribute="trailing" secondItem="zw8-sx-YKp" secondAttribute="trailing" constant="18" id="LJk-oV-nBB"/>
                         <constraint firstItem="uR2-PR-pDp" firstAttribute="trailing" secondItem="R6n-9o-0eH" secondAttribute="trailing" id="Tt9-C2-Bdr"/>
+                        <constraint firstItem="zw8-sx-YKp" firstAttribute="leading" secondItem="3Ng-pd-AFX" secondAttribute="leading" constant="18" id="Zzi-T3-AVw"/>
                         <constraint firstAttribute="trailing" secondItem="R6n-9o-0eH" secondAttribute="trailing" constant="35" id="mTY-05-MZZ"/>
                         <constraint firstItem="R6n-9o-0eH" firstAttribute="top" secondItem="3Ng-pd-AFX" secondAttribute="top" constant="30" id="rwx-u0-hmW"/>
                     </constraints>
@@ -139,6 +152,7 @@
             <connections>
                 <outlet property="buttonArrowDestiny" destination="iRF-dI-FqC" id="5VI-yX-N7c"/>
                 <outlet property="buttonArrowOrigin" destination="U5F-PI-Dk3" id="tfn-EK-SBg"/>
+                <outlet property="buttonConfirmTravel" destination="zw8-sx-YKp" id="4Wv-NZ-T4l"/>
                 <outlet property="constDestinyViewHeight" destination="d8Z-cE-CG7" id="F1F-FT-pi6"/>
                 <outlet property="constOriginViewHeight" destination="LWk-R2-Ylp" id="Us0-Je-EQv"/>
                 <outlet property="contentView" destination="3Ng-pd-AFX" id="vfe-fH-kWw"/>

@@ -34,7 +34,11 @@ class SelectOriginDestinyViewController: BaseViewController {
         }
         
         customView.shouldSelectDestiny = { [weak self] in
-            
+            self?.editDestiny()
+        }
+        
+        customView.shouldEditDestiny = { [weak self] in
+            self?.editDestiny()
         }
         
         viewModel.updateOriginLayout = { [weak self] in
@@ -44,6 +48,11 @@ class SelectOriginDestinyViewController: BaseViewController {
     
     private func editOrigin(){
         let vc = ManualLocationViewController(isOrigin: true)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func editDestiny(){
+        let vc = ManualLocationViewController(isOrigin: false)
         navigationController?.pushViewController(vc, animated: true)
     }
     
