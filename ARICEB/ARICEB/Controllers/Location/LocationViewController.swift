@@ -19,6 +19,26 @@ class LocationViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindEvents()
+    }
+    
+    private func bindEvents(){
+        customView.didTapGPSOption = {
+            
+        }
+        
+        customView.didTapQRCodeOption = {
+            
+        }
+        
+        customView.didTapManualOption = {[weak self] in
+            self?.goToManual()
+        }
+    }
+    
+    private func goToManual(){
+        let vc = ManualLocationViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

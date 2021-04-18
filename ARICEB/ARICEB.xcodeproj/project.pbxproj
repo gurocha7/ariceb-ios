@@ -48,6 +48,8 @@
 		36B7F006262BA4E700CCFDEB /* SideMenuController+SideUnder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7EFFC262BA4E600CCFDEB /* SideMenuController+SideUnder.swift */; };
 		36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7EFFD262BA4E600CCFDEB /* SideMenuController.swift */; };
 		36B7F008262BA4E700CCFDEB /* SideMenuController+SideOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7EFFE262BA4E600CCFDEB /* SideMenuController+SideOver.swift */; };
+		36B7F022262BB18B00CCFDEB /* ManualLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F021262BB18B00CCFDEB /* ManualLocationViewController.swift */; };
+		36B7F028262BB1CC00CCFDEB /* QRCodeLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F027262BB1CC00CCFDEB /* QRCodeLocationViewController.swift */; };
 		36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9298D25DC3B2A00133E65 /* TravelView.swift */; };
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
@@ -128,6 +130,8 @@
 		36B7EFFC262BA4E600CCFDEB /* SideMenuController+SideUnder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SideMenuController+SideUnder.swift"; sourceTree = "<group>"; };
 		36B7EFFD262BA4E600CCFDEB /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		36B7EFFE262BA4E600CCFDEB /* SideMenuController+SideOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SideMenuController+SideOver.swift"; sourceTree = "<group>"; };
+		36B7F021262BB18B00CCFDEB /* ManualLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationViewController.swift; sourceTree = "<group>"; };
+		36B7F027262BB1CC00CCFDEB /* QRCodeLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeLocationViewController.swift; sourceTree = "<group>"; };
 		36B9298D25DC3B2A00133E65 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -318,6 +322,22 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		36B7F020262BB16000CCFDEB /* ManualLocation */ = {
+			isa = PBXGroup;
+			children = (
+				36B7F021262BB18B00CCFDEB /* ManualLocationViewController.swift */,
+			);
+			path = ManualLocation;
+			sourceTree = "<group>";
+		};
+		36B7F026262BB1A700CCFDEB /* QrCodeLocation */ = {
+			isa = PBXGroup;
+			children = (
+				36B7F027262BB1CC00CCFDEB /* QRCodeLocationViewController.swift */,
+			);
+			path = QrCodeLocation;
+			sourceTree = "<group>";
+		};
 		36B929A525DC3F4100133E65 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +364,8 @@
 				36B929B625DC513E00133E65 /* Main */,
 				36B929B725DC518100133E65 /* Travel */,
 				3619B5B9262A82B70094CEA6 /* Location */,
+				36B7F026262BB1A700CCFDEB /* QrCodeLocation */,
+				36B7F020262BB16000CCFDEB /* ManualLocation */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -709,8 +731,10 @@
 				36B7EFB7262B5B8700CCFDEB /* MenuViewController.swift in Sources */,
 				36B7F008262BA4E700CCFDEB /* SideMenuController+SideOver.swift in Sources */,
 				3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */,
+				36B7F022262BB18B00CCFDEB /* ManualLocationViewController.swift in Sources */,
 				36B7EFE8262B814000CCFDEB /* HeaderMenuView.swift in Sources */,
 				36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */,
+				36B7F028262BB1CC00CCFDEB /* QRCodeLocationViewController.swift in Sources */,
 				36B7F006262BA4E700CCFDEB /* SideMenuController+SideUnder.swift in Sources */,
 				3619B5AC262A33770094CEA6 /* SelectOriginDestinyView.swift in Sources */,
 				3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */,

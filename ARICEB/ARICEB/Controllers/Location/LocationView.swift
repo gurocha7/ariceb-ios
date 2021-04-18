@@ -9,6 +9,11 @@ import UIKit
 import Reusable
 
 class LocationView: UIView, NibLoadable {
+    
+    var didTapGPSOption:(() -> Void)?
+    var didTapQRCodeOption:(() -> Void)?
+    var didTapManualOption:(() -> Void)?
+    
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var stack: UIStackView!
@@ -25,6 +30,7 @@ class LocationView: UIView, NibLoadable {
         setupTitle()
         clearStack()
         setupStack()
+        bindEvents()
     }
     
     private func setupTitle(){
@@ -50,5 +56,19 @@ class LocationView: UIView, NibLoadable {
     
     private func clearStack(){
         stack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    }
+    
+    private func bindEvents(){
+        gpsView.didTapOption = { [weak self] in
+            self?.didTapGPSOption?()
+        }
+        
+        qrCodeView.didTapOption = { [weak self] in
+            self?.didTapQRCodeOption?()
+        }
+        
+        manualView.didTapOption = { [weak self] in
+            self?.didTapManualOption?()
+        }
     }
 }

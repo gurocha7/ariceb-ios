@@ -21,10 +21,11 @@ class LocationOptionView: UIView, NibLoadable {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBAction func buttonAction(_ sender: Any) {
-        
+        didTapOption?()
     }
     
     var typeLocation: TypeLocationOption = .manual
+    var didTapOption: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
