@@ -84,7 +84,19 @@ class ManualLocationViewController: BaseViewController {
     }
     
     private func goToThirdOptions(){
-        
+        let vc = SheetOptionsViewController(option: .subsector, model: viewModel.getModelForThird())
+        vc.modalPresentationStyle = .formSheet
+        vc.didSelectItem = { [weak self] (item) in
+            self?.viewModel.insertThirdAddress(name: item)
+            DispatchQueue.main.async {
+                self?.customView.updateLayoutWithModel()
+            }
+            vc.dismiss(animated: true, completion: nil)
+        }
+        vc.dismissSheet = {
+            vc.dismiss(animated: true, completion: nil)
+        }
+        self.present(vc, animated: true, completion: nil)
     }
     
     private func updateLayout(){

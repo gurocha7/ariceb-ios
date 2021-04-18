@@ -29,7 +29,13 @@ class ManualLocationViewModel{
                           "ICEB - Instituto de Ciências Exatas e Biológicas",
                           "RU - Restaurante Universitário"]
     
-    var itemsSectors = ["Auditório 1",
+    var itemsSectors = ["Andar 1",
+                         "Andar 2",
+                         "Corredor 3",
+                         "Corredor 4",
+                         "Subsolo"]
+    
+    var itemsSubsectors = ["Auditório 1",
                          "Auditório 2",
                          "Empresa Júnior",
                          "Laboratório X",
@@ -79,5 +85,9 @@ class ManualLocationViewModel{
     
     func getModelForSecond() -> [String]{
         return itemsSectors
+    }
+    
+    func getModelForThird() -> [String]{
+        return itemsSubsectors
     }
 }
