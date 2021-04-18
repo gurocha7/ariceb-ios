@@ -44,6 +44,10 @@ class SelectOriginDestinyViewController: BaseViewController {
         viewModel.updateOriginLayout = { [weak self] in
             self?.customView.updateOriginLayout()
         }
+        
+        viewModel.updateDestinyLayout = { [weak self] in
+            self?.customView.updateDestinyLayout()
+        }
     }
     
     private func editOrigin(){

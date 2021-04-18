@@ -31,4 +31,10 @@ class SelectOriginDestinyViewModel {
         return final
     }
     
+    func getModelDestiny() -> String?{
+        guard let _text = modelDestiny else {return nil}
+        let final = String(_text.split(separator: ",").last ?? "")
+        return final
+    }
+    
 }

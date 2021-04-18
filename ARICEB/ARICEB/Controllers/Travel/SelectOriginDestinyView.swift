@@ -146,9 +146,20 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         self.layoutIfNeeded()
     }
     
+    func updateDestinyLayout(){
+        guard let originText = viewModel?.getModelDestiny() else {return}
+        destinyView.applyBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.01176470588, green: 0.662745098, blue: 0.9568627451, alpha: 1))
+        buttonArrowDestiny.isHidden = false
+        labelDestinyTitle.text = originText
+        labelDestinyTitle.font = UIFont(name: "Lato-regular", size: 18)
+        labelDestinyTitle.textColor = .black
+        checkIfCompleted()
+        self.layoutIfNeeded()
+    }
+    
     private func checkIfCompleted(){
         if viewModel?.modelOrigin != nil && viewModel?.modelDestiny != nil {
-            
+            enableButtonConfirm()
         }
     }
     
