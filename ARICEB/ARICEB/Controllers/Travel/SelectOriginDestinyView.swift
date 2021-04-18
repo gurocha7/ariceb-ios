@@ -185,6 +185,11 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         labelOriginTitle.text = originText
         labelOriginTitle.font = UIFont(name: "Lato-regular", size: 18)
         labelOriginTitle.textColor = .black
+        let isOpened = originViewState == OriginViewState.open
+        if isOpened {
+            guard let descriptionText = viewModel?.getModelOriginDescription() else {return}
+            labelDescriptionOrigin.text = descriptionText
+        }
         checkIfCompleted()
         self.layoutIfNeeded()
     }
@@ -196,6 +201,11 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         labelDestinyTitle.text = originText
         labelDestinyTitle.font = UIFont(name: "Lato-regular", size: 18)
         labelDestinyTitle.textColor = .black
+        let isOpened = destinyViewState == DestinyViewState.open
+        if isOpened {
+            guard let descriptionText = viewModel?.getModelDestinyDescription() else {return}
+            labelDescriptionDestinyView.text = descriptionText
+        }
         checkIfCompleted()
         self.layoutIfNeeded()
     }
