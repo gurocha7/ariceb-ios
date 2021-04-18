@@ -69,6 +69,9 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         
     }
     
+    @IBOutlet weak var lineDestinyView: UIView!
+    @IBOutlet weak var labelDescriptionDestinyView: UILabel!
+    @IBOutlet weak var constLineViewDestinyHeight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -153,8 +156,26 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         UIView.animate(withDuration: 0.4) { [weak self] in
             self?.constDestinyViewHeight.constant = isClosed ? 190 : 58
             self?.buttonArrowDestiny.transform = isClosed ? CGAffineTransform(rotationAngle: .pi) : CGAffineTransform(rotationAngle: 0.0)
+            isClosed ? self?.loadLayoutForOpenDestiny() : self?.loadLayoutForCloseDestiny()
             self?.layoutIfNeeded()
         }
+    }
+    
+    private func loadLayoutForCloseDestiny(){
+        lineDestinyView.backgroundColor = .clear
+        constLineViewDestinyHeight.constant = 0
+        labelDescriptionDestinyView.text = ""
+    }
+    
+    private func loadLayoutForOpenDestiny(){
+        lineDestinyView.backgroundColor = #colorLiteral(red: 0.7058823529, green: 0.7058823529, blue: 0.7058823529, alpha: 1)
+        constLineViewDestinyHeight.constant = 2
+        labelDescriptionDestinyView.backgroundColor = .white
+        guard let descriptionText = viewModel?.getModelDestinyDescription() else {return}
+        labelDescriptionDestinyView.textAlignment = .center
+        labelDescriptionDestinyView.text = descriptionText
+        labelDescriptionDestinyView.font = UIFont(name: "Helvetica Neue Bold", size: 18)
+        labelDescriptionDestinyView.textColor = .black
     }
     
     func updateOriginLayout(){

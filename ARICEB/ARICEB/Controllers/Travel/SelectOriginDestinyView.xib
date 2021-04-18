@@ -57,7 +57,7 @@
                                         <constraint firstAttribute="height" id="0sC-F4-vsC"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QK-OL-yyF">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QK-OL-yyF">
                                     <rect key="frame" x="15" y="53.333333333333329" width="314" height="0.0"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -121,21 +121,42 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvG-uV-850">
+                                    <rect key="frame" x="7" y="51.666666666666657" width="330" height="0.0"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" id="YXx-vE-FKi"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDj-ID-Z2S">
+                                    <rect key="frame" x="15" y="53.666666666666657" width="314" height="0.0"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="iRF-dI-FqC" firstAttribute="leading" secondItem="Wza-sV-Y6Y" secondAttribute="trailing" constant="5" id="3tc-dX-0nb"/>
                                 <constraint firstItem="wvU-2h-sN6" firstAttribute="centerY" secondItem="QGM-Iu-NLK" secondAttribute="centerY" id="5dt-zz-Nty"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CDj-ID-Z2S" secondAttribute="bottom" priority="250" constant="4" id="Af0-p5-56E"/>
                                 <constraint firstItem="QGM-Iu-NLK" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" constant="24" id="DQG-py-cD4"/>
+                                <constraint firstAttribute="trailing" secondItem="QvG-uV-850" secondAttribute="trailing" constant="7" id="Ixp-27-AXu"/>
                                 <constraint firstItem="QGM-Iu-NLK" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" constant="20" id="JAF-EA-5v5"/>
                                 <constraint firstItem="iRF-dI-FqC" firstAttribute="centerY" secondItem="QGM-Iu-NLK" secondAttribute="centerY" id="Qhl-I8-DPp"/>
+                                <constraint firstItem="QvG-uV-850" firstAttribute="top" secondItem="wvU-2h-sN6" secondAttribute="bottom" constant="10" id="WSu-XZ-qU4"/>
                                 <constraint firstAttribute="height" constant="58" id="d8Z-cE-CG7"/>
                                 <constraint firstAttribute="bottom" secondItem="Wza-sV-Y6Y" secondAttribute="bottom" id="e0i-g8-UmB"/>
                                 <constraint firstItem="Wza-sV-Y6Y" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" id="eRw-eW-QOt"/>
+                                <constraint firstItem="CDj-ID-Z2S" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" constant="15" id="fz7-rU-kDc"/>
                                 <constraint firstItem="Wza-sV-Y6Y" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" id="g9y-Ps-jzi"/>
+                                <constraint firstItem="QvG-uV-850" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" constant="7" id="gpo-hY-Ikl"/>
                                 <constraint firstItem="iRF-dI-FqC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wvU-2h-sN6" secondAttribute="trailing" constant="10" id="h84-Y5-c8J"/>
                                 <constraint firstAttribute="trailing" secondItem="iRF-dI-FqC" secondAttribute="trailing" constant="15" id="iUd-iQ-vI6"/>
                                 <constraint firstItem="wvU-2h-sN6" firstAttribute="leading" secondItem="QGM-Iu-NLK" secondAttribute="trailing" constant="10" id="l4F-z1-jJ1"/>
+                                <constraint firstAttribute="trailing" secondItem="CDj-ID-Z2S" secondAttribute="trailing" constant="15" id="w2m-go-yni"/>
+                                <constraint firstItem="CDj-ID-Z2S" firstAttribute="top" secondItem="QvG-uV-850" secondAttribute="bottom" constant="2" id="yUd-hq-jXC"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw8-sx-YKp">
@@ -175,15 +196,18 @@
                 <outlet property="buttonArrowOrigin" destination="U5F-PI-Dk3" id="tfn-EK-SBg"/>
                 <outlet property="buttonConfirmTravel" destination="zw8-sx-YKp" id="4Wv-NZ-T4l"/>
                 <outlet property="constDestinyViewHeight" destination="d8Z-cE-CG7" id="F1F-FT-pi6"/>
+                <outlet property="constLineViewDestinyHeight" destination="YXx-vE-FKi" id="W05-HF-Cuu"/>
                 <outlet property="constLineViewOriginHeight" destination="0sC-F4-vsC" id="nqf-S9-Xxp"/>
                 <outlet property="constOriginViewHeight" destination="LWk-R2-Ylp" id="Us0-Je-EQv"/>
                 <outlet property="contentView" destination="3Ng-pd-AFX" id="vfe-fH-kWw"/>
                 <outlet property="destinyView" destination="uR2-PR-pDp" id="777-et-q91"/>
                 <outlet property="imageDestiny" destination="QGM-Iu-NLK" id="788-MH-eJK"/>
                 <outlet property="imageOrigin" destination="61d-sr-w4u" id="5YP-rt-JSl"/>
+                <outlet property="labelDescriptionDestinyView" destination="CDj-ID-Z2S" id="r3O-DK-ddP"/>
                 <outlet property="labelDescriptionOrigin" destination="0QK-OL-yyF" id="GEF-cd-Pae"/>
                 <outlet property="labelDestinyTitle" destination="wvU-2h-sN6" id="wpQ-3G-Hq1"/>
                 <outlet property="labelOriginTitle" destination="TJS-m6-8Ns" id="AAG-lW-IDU"/>
+                <outlet property="lineDestinyView" destination="QvG-uV-850" id="Io2-ej-e3n"/>
                 <outlet property="lineOriginView" destination="VdJ-Ef-2kN" id="cq8-i5-a48"/>
                 <outlet property="originView" destination="R6n-9o-0eH" id="oT9-tI-a4J"/>
             </connections>
