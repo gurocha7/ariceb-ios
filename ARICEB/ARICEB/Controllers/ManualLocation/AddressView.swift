@@ -15,11 +15,11 @@ class AddressView: UIView, NibLoadable {
     
     @IBAction func didTap(_ sender: Any) {
         if canEditAddress {
-            didTap?()
+            didTapEdit?()
         }
     }
     
-    var didTap:(() -> Void)?
+    var didTapEdit:(() -> Void)?
     
     var canEditAddress: Bool = false
     

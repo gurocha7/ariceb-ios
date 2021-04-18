@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 class ManualLocationViewController: BaseViewController {
     
@@ -33,6 +34,35 @@ class ManualLocationViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customView.setupPlaceholders()
+        bindEvents()
+    }
+    
+    private func bindEvents(){
+        customView.didTapFirstAddress = { [weak self] in
+            self?.goToFirstOptions()
+        }
+        
+        customView.didTapSecondAddress = { [weak self] in
+            self?.goToSecondOptions()
+        }
+        
+        customView.didTapThirdAddress = { [weak self] in
+            self?.goToThirdOptions()
+        }
+    }
+    
+    private func goToFirstOptions(){
+        let vc = SheetOptionsViewController(title: "Selecione o prédio")
+        vc.modalPresentationStyle = .formSheet
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    private func goToSecondOptions(){
+        
+    }
+    
+    private func goToThirdOptions(){
+        
     }
 
 }

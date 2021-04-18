@@ -55,6 +55,8 @@
 		36B7F03A262BB92700CCFDEB /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F039262BB92700CCFDEB /* AddressView.swift */; };
 		36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B7F03E262BB93000CCFDEB /* AddressView.xib */; };
 		36B7F044262BC6AF00CCFDEB /* ManualLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F043262BC6AF00CCFDEB /* ManualLocationViewModel.swift */; };
+		36B7F059262BD4A600CCFDEB /* SheetOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7F057262BD4A600CCFDEB /* SheetOptionsViewController.swift */; };
+		36B7F05A262BD4A600CCFDEB /* SheetOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B7F058262BD4A600CCFDEB /* SheetOptionsViewController.xib */; };
 		36B9298E25DC3B2A00133E65 /* TravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9298D25DC3B2A00133E65 /* TravelView.swift */; };
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
@@ -142,6 +144,8 @@
 		36B7F039262BB92700CCFDEB /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		36B7F03E262BB93000CCFDEB /* AddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressView.xib; sourceTree = "<group>"; };
 		36B7F043262BC6AF00CCFDEB /* ManualLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationViewModel.swift; sourceTree = "<group>"; };
+		36B7F057262BD4A600CCFDEB /* SheetOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetOptionsViewController.swift; sourceTree = "<group>"; };
+		36B7F058262BD4A600CCFDEB /* SheetOptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetOptionsViewController.xib; sourceTree = "<group>"; };
 		36B9298D25DC3B2A00133E65 /* TravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelView.swift; sourceTree = "<group>"; };
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
@@ -353,6 +357,15 @@
 			path = QrCodeLocation;
 			sourceTree = "<group>";
 		};
+		36B7F04B262BCDF100CCFDEB /* SheetOptionsController */ = {
+			isa = PBXGroup;
+			children = (
+				36B7F057262BD4A600CCFDEB /* SheetOptionsViewController.swift */,
+				36B7F058262BD4A600CCFDEB /* SheetOptionsViewController.xib */,
+			);
+			path = SheetOptionsController;
+			sourceTree = "<group>";
+		};
 		36B929A525DC3F4100133E65 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +394,7 @@
 				3619B5B9262A82B70094CEA6 /* Location */,
 				36B7F026262BB1A700CCFDEB /* QrCodeLocation */,
 				36B7F020262BB16000CCFDEB /* ManualLocation */,
+				36B7F04B262BCDF100CCFDEB /* SheetOptionsController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -588,6 +602,7 @@
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
 				36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */,
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
+				36B7F05A262BD4A600CCFDEB /* SheetOptionsViewController.xib in Resources */,
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
 				36B7EF9E262B2A6900CCFDEB /* LocationView.xib in Resources */,
@@ -758,6 +773,7 @@
 				36B7F006262BA4E700CCFDEB /* SideMenuController+SideUnder.swift in Sources */,
 				3619B5AC262A33770094CEA6 /* SelectOriginDestinyView.swift in Sources */,
 				3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */,
+				36B7F059262BD4A600CCFDEB /* SheetOptionsViewController.swift in Sources */,
 				3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */,
 				36B7EFA8262B2F1000CCFDEB /* LocationOptionView.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,

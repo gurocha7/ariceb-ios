@@ -12,6 +12,10 @@ class ManualLocationView: UIView, NibLoadable {
     
     var viewModel: ManualLocationViewModel?
     
+    var didTapFirstAddress: (() -> Void)?
+    var didTapSecondAddress: (() -> Void)?
+    var didTapThirdAddress: (() -> Void)?
+    
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var labelInfo: UILabel!
     @IBOutlet weak var stack: UIStackView!
@@ -30,6 +34,7 @@ class ManualLocationView: UIView, NibLoadable {
         clearStack()
         setupStack()
         setupButton()
+        bindEvents()
     }
     
     private func setupInfoView(){
@@ -67,16 +72,16 @@ class ManualLocationView: UIView, NibLoadable {
     }
     
     private func bindEvents(){
-        firstAddressView.didTap {
-            
+        firstAddressView.didTapEdit = { [weak self] in
+            self?.didTapFirstAddress?()
         }
         
-        secondAddressView.didTap {
-            
+        secondAddressView.didTapEdit  = { [weak self] in
+            self?.didTapSecondAddress?()
         }
         
-        thirdAddressView.didTap {
-            
+        thirdAddressView.didTapEdit  = { [weak self] in
+            self?.didTapThirdAddress?()
         }
     }
     
