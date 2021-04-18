@@ -37,7 +37,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saQ-6i-asT">
-                                    <rect key="frame" x="0.0" y="0.0" width="344" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="289" height="58"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="didTapToSelectOrigin:" destination="iN0-l3-epB" eventType="touchUpInside" id="rMJ-Zz-Cvx"/>
                                     </connections>
@@ -59,7 +60,7 @@
                                 <constraint firstAttribute="height" constant="58" id="LWk-R2-Ylp"/>
                                 <constraint firstItem="TJS-m6-8Ns" firstAttribute="leading" secondItem="61d-sr-w4u" secondAttribute="trailing" constant="10" id="Zd3-JO-MxN"/>
                                 <constraint firstItem="saQ-6i-asT" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" id="hVZ-Pz-uHj"/>
-                                <constraint firstAttribute="trailing" secondItem="saQ-6i-asT" secondAttribute="trailing" id="hlm-JL-mIH"/>
+                                <constraint firstItem="U5F-PI-Dk3" firstAttribute="leading" secondItem="saQ-6i-asT" secondAttribute="trailing" constant="10" id="iAG-rn-vYc"/>
                                 <constraint firstItem="U5F-PI-Dk3" firstAttribute="centerY" secondItem="TJS-m6-8Ns" secondAttribute="centerY" id="mkE-qc-uzh"/>
                                 <constraint firstItem="61d-sr-w4u" firstAttribute="top" secondItem="R6n-9o-0eH" secondAttribute="top" constant="20" id="uaF-Et-VHn"/>
                                 <constraint firstAttribute="trailing" secondItem="U5F-PI-Dk3" secondAttribute="trailing" constant="15" id="xaw-eF-sFP"/>
@@ -70,7 +71,8 @@
                             <rect key="frame" x="35" y="123" width="344" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wza-sV-Y6Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="344" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="58"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="didTapToSelectDestiny:" destination="iN0-l3-epB" eventType="touchUpInside" id="eVB-no-QkV"/>
                                     </connections>
@@ -101,6 +103,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="iRF-dI-FqC" firstAttribute="leading" secondItem="Wza-sV-Y6Y" secondAttribute="trailing" constant="5" id="3tc-dX-0nb"/>
                                 <constraint firstItem="wvU-2h-sN6" firstAttribute="centerY" secondItem="QGM-Iu-NLK" secondAttribute="centerY" id="5dt-zz-Nty"/>
                                 <constraint firstItem="QGM-Iu-NLK" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" constant="24" id="DQG-py-cD4"/>
                                 <constraint firstItem="QGM-Iu-NLK" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" constant="20" id="JAF-EA-5v5"/>
@@ -108,7 +111,6 @@
                                 <constraint firstAttribute="height" constant="58" id="d8Z-cE-CG7"/>
                                 <constraint firstAttribute="bottom" secondItem="Wza-sV-Y6Y" secondAttribute="bottom" id="e0i-g8-UmB"/>
                                 <constraint firstItem="Wza-sV-Y6Y" firstAttribute="top" secondItem="uR2-PR-pDp" secondAttribute="top" id="eRw-eW-QOt"/>
-                                <constraint firstAttribute="trailing" secondItem="Wza-sV-Y6Y" secondAttribute="trailing" id="elB-jc-UNF"/>
                                 <constraint firstItem="Wza-sV-Y6Y" firstAttribute="leading" secondItem="uR2-PR-pDp" secondAttribute="leading" id="g9y-Ps-jzi"/>
                                 <constraint firstItem="iRF-dI-FqC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wvU-2h-sN6" secondAttribute="trailing" constant="10" id="h84-Y5-c8J"/>
                                 <constraint firstAttribute="trailing" secondItem="iRF-dI-FqC" secondAttribute="trailing" constant="15" id="iUd-iQ-vI6"/>
