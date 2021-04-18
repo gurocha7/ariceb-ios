@@ -69,7 +69,7 @@ class MenuCoordinator: NSObject {
         case MenuTypeController.classes.rawValue:
             print("clicou em aulas")
         case MenuTypeController.buldings.rawValue:
-            print("clicou em prédios")
+            print("clicou em ",MenuTypeController.buldings.rawValue)
             showSubmenu(option: option)
         case MenuTypeController.bathroom.rawValue:
             print("clicou em ",MenuTypeController.bathroom.rawValue)
