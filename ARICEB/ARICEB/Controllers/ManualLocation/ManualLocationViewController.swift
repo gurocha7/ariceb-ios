@@ -7,9 +7,11 @@
 
 import UIKit
 
-class ManualLocationViewController: UIViewController {
+class ManualLocationViewController: BaseViewController {
     
     var isOrigin: Bool = false
+    
+    let customView: ManualLocationView = ManualLocationView.loadFromNib()
     
     init(isOrigin: Bool = true) {
         super.init(nibName: nil, bundle: nil)
@@ -20,10 +22,14 @@ class ManualLocationViewController: UIViewController {
         super.init(coder: coder)
     }
     
+    override func loadView() {
+        super.loadView()
+        title = isOrigin ? "Origem" : "Destino"
+        view = customView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = isOrigin ? "Origem" : "Destino"
-        view.backgroundColor = .red
     }
 
 }
