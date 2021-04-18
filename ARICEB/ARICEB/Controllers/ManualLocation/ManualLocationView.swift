@@ -52,7 +52,13 @@ class ManualLocationView: UIView, NibLoadable {
     }
     
     private func setupButton(){
-        
+        buttonConfirm.isEnabled = false
+        buttonConfirm.setTitleColor(#colorLiteral(red: 0.7058823529, green: 0.7058823529, blue: 0.7058823529, alpha: 1), for: .normal)
+        buttonConfirm.applyCorner(corner: 30)
+        buttonConfirm.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor)
+        buttonConfirm.setAttributedTitle(NSAttributedString(string: "CONFIRMAR",
+                                                            attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Bold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold),
+                                                                         NSAttributedString.Key.foregroundColor : UIColor.white]), for: .normal)
     }
     
 }
