@@ -21,6 +21,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     }
     
     var shouldSelectOrigin: (() -> Void)?
+    var shouldEditOrigin: (() -> Void)?
     var originViewState: OriginViewState = .closed
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var originView: UIView!
@@ -32,7 +33,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     }
     
     @IBAction func didTapToSelectOrigin(_ sender: Any) {
-        shouldSelectOrigin?()
+        viewModel?.modelOrigin  != nil ? shouldEditOrigin?() : shouldSelectOrigin?()
     }
     
     
