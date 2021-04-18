@@ -12,7 +12,7 @@ class MenuViewController: UIViewController {
     let customView: MenuView = MenuView.loadFromNib()
     let viewModel: MenuViewModel = MenuViewModel()
     
-    var hideMenu: (() -> Void)?
+    var hideMenu: ((String) -> Void)?
     
     override func loadView() {
         super.loadView()
@@ -35,7 +35,7 @@ class MenuViewController: UIViewController {
     
     private func choiceController(item: String?){
         guard let _option = item else {return }
-        hideMenu?()
+        hideMenu?(_option)
     }
 }
 

@@ -14,6 +14,8 @@
 		3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */; };
 		3619B5BB262A82DB0094CEA6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619B5BA262A82DB0094CEA6 /* LocationViewController.swift */; };
 		36205CF0262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */; };
+		36205CFA262CD09900BF0D3B /* SubmenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205CF8262CD09900BF0D3B /* SubmenuViewController.swift */; };
+		36205CFB262CD09900BF0D3B /* SubmenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205CF9262CD09900BF0D3B /* SubmenuViewController.xib */; };
 		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
@@ -98,6 +100,8 @@
 		3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOriginDestinyView.xib; sourceTree = "<group>"; };
 		3619B5BA262A82DB0094CEA6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOriginDestinyViewModel.swift; sourceTree = "<group>"; };
+		36205CF8262CD09900BF0D3B /* SubmenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmenuViewController.swift; sourceTree = "<group>"; };
+		36205CF9262CD09900BF0D3B /* SubmenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmenuViewController.xib; sourceTree = "<group>"; };
 		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +213,15 @@
 				36B7EFA7262B2F1000CCFDEB /* LocationOptionView.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		36205CF7262CD06C00BF0D3B /* Submenu */ = {
+			isa = PBXGroup;
+			children = (
+				36205CF8262CD09900BF0D3B /* SubmenuViewController.swift */,
+				36205CF9262CD09900BF0D3B /* SubmenuViewController.xib */,
+			);
+			path = Submenu;
 			sourceTree = "<group>";
 		};
 		36355CD9261E87670081BAD9 /* Menu */ = {
@@ -383,6 +396,7 @@
 				3670FC4325D9BA5C0022AF8F /* Coordinator.swift */,
 				3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */,
 				36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */,
+				36205CF7262CD06C00BF0D3B /* Submenu */,
 				36B7EFB5262B5B7100CCFDEB /* Menu */,
 			);
 			path = Coordinator;
@@ -602,6 +616,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36205CFB262CD09900BF0D3B /* SubmenuViewController.xib in Resources */,
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
 				36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */,
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
@@ -766,6 +781,7 @@
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
 				36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */,
 				36B7EFB7262B5B8700CCFDEB /* MenuViewController.swift in Sources */,
+				36205CFA262CD09900BF0D3B /* SubmenuViewController.swift in Sources */,
 				36205CF0262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift in Sources */,
 				36B7F030262BB64C00CCFDEB /* ManualLocationView.swift in Sources */,
 				36B7F008262BA4E700CCFDEB /* SideMenuController+SideOver.swift in Sources */,
