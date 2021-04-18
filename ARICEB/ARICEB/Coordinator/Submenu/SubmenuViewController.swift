@@ -18,6 +18,7 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
         case laboratories = "laboratórios"
     }
     
+    var typeController: SubmenuTypeController = .classes
     var viewModel: SubmenuViewModel = SubmenuViewModel()
     var option: String?
     
@@ -57,16 +58,28 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
         guard let _option = option else {return}
         switch _option.lowercased() {
         case SubmenuTypeController.classes.rawValue:
+            viewModel.typeModel = .classes
+            typeController = .classes
             labelTitle.text = viewModel.getClassesDescription()
         case SubmenuTypeController.buldings.rawValue:
+            viewModel.typeModel = .buldings
+            typeController = .buldings
             labelTitle.text = viewModel.getBuildingsDescription()
         case SubmenuTypeController.bathroom.rawValue:
+            viewModel.typeModel = .bathroom
+            typeController = .bathroom
             labelTitle.text = viewModel.getBathroomsDescription()
         case SubmenuTypeController.department.rawValue:
+            viewModel.typeModel = .department
+            typeController = .department
             labelTitle.text = viewModel.getDepartmentDescription()
         case SubmenuTypeController.auditoriums.rawValue:
+            viewModel.typeModel = .auditoriums
+            typeController = .auditoriums
             labelTitle.text = viewModel.getAuditoriumDescription()
         case SubmenuTypeController.laboratories.rawValue:
+            viewModel.typeModel = .laboratories
+            typeController = .laboratories
             labelTitle.text = viewModel.getLaboratoriesDescription()
         default:
             break
@@ -75,12 +88,12 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getNumberOfModels()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SubmenuTableViewCell", for: indexPath) as! SubmenuTableViewCell
-        cell.setupInfo(name: "row \(indexPath.row)")
+        cell.setupInfo(name: viewModel.getItemAtIndex(index: indexPath.row))
         return cell
     }
     
