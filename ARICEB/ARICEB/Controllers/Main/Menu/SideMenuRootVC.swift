@@ -10,7 +10,7 @@ import UIKit
 public class SideMenuRootVC: SideMenuController{
 
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "icon-menu")
+        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "botao-menu")
         SideMenuController.preferences.drawing.sidePanelPosition = .underCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = UIScreen.main.bounds.width / 1.5
         SideMenuController.preferences.drawing.centerPanelShadow = true
