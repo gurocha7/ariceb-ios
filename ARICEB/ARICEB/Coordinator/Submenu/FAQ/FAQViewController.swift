@@ -8,6 +8,9 @@
 import UIKit
 
 class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var viewModel: FAQViewModel = FAQViewModel()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -20,15 +23,18 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.isScrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 70
+        tableView.separatorStyle = .none
+        tableView.register(cellType: FAQTableViewCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getNumberOfQuestions()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "row \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FAQTableViewCell", for: indexPath) as! FAQTableViewCell
+        cell.setupInfo(question: viewModel.getItemAtIndex(index: indexPath.row))
         return cell
     }
 

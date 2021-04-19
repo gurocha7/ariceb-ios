@@ -21,6 +21,9 @@
 		36205D0B262CD8D900BF0D3B /* SubmenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205D09262CD8D900BF0D3B /* SubmenuTableViewCell.xib */; };
 		36205D13262D22EC00BF0D3B /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205D11262D22EC00BF0D3B /* FAQViewController.swift */; };
 		36205D14262D22EC00BF0D3B /* FAQViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205D12262D22EC00BF0D3B /* FAQViewController.xib */; };
+		36205D1A262D246500BF0D3B /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205D19262D246500BF0D3B /* FAQViewModel.swift */; };
+		36205D23262D249B00BF0D3B /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36205D21262D249B00BF0D3B /* FAQTableViewCell.swift */; };
+		36205D24262D249B00BF0D3B /* FAQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205D22262D249B00BF0D3B /* FAQTableViewCell.xib */; };
 		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
@@ -112,6 +115,9 @@
 		36205D09262CD8D900BF0D3B /* SubmenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmenuTableViewCell.xib; sourceTree = "<group>"; };
 		36205D11262D22EC00BF0D3B /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		36205D12262D22EC00BF0D3B /* FAQViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQViewController.xib; sourceTree = "<group>"; };
+		36205D19262D246500BF0D3B /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
+		36205D21262D249B00BF0D3B /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
+		36205D22262D249B00BF0D3B /* FAQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQTableViewCell.xib; sourceTree = "<group>"; };
 		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +265,7 @@
 			children = (
 				36205D18262D243600BF0D3B /* cell */,
 				36205D11262D22EC00BF0D3B /* FAQViewController.swift */,
+				36205D19262D246500BF0D3B /* FAQViewModel.swift */,
 				36205D12262D22EC00BF0D3B /* FAQViewController.xib */,
 			);
 			path = FAQ;
@@ -267,6 +274,8 @@
 		36205D18262D243600BF0D3B /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				36205D21262D249B00BF0D3B /* FAQTableViewCell.swift */,
+				36205D22262D249B00BF0D3B /* FAQTableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -667,6 +676,7 @@
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
 				36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */,
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
+				36205D24262D249B00BF0D3B /* FAQTableViewCell.xib in Resources */,
 				36205D0B262CD8D900BF0D3B /* SubmenuTableViewCell.xib in Resources */,
 				36B7F05A262BD4A600CCFDEB /* SheetOptionsViewController.xib in Resources */,
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
@@ -847,6 +857,8 @@
 				3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */,
 				36B7F059262BD4A600CCFDEB /* SheetOptionsViewController.swift in Sources */,
 				3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */,
+				36205D1A262D246500BF0D3B /* FAQViewModel.swift in Sources */,
+				36205D23262D249B00BF0D3B /* FAQTableViewCell.swift in Sources */,
 				36B7EFA8262B2F1000CCFDEB /* LocationOptionView.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
