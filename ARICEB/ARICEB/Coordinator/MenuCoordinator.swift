@@ -93,8 +93,7 @@ class MenuCoordinator: NSObject {
     }
     
     private func showFAQ(){
-        let vc = UIViewController()
-        vc.view.backgroundColor = .orange
+        let vc = FAQViewController()
         self.homeNavController.pushViewController(vc, animated: true)
     }
 }
