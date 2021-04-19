@@ -61,7 +61,7 @@ class MenuCoordinator: NSObject {
     
     func showSelectTravel(){
         let vc = SelectOriginDestinyViewController()
-        self.homeNavController.pushViewController(vc, animated: false)
+        self.homeNavController.pushViewController(vc, animated: true)
     }
     
     private func chekController(option: String){
