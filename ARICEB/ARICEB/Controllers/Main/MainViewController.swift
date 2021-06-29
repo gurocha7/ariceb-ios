@@ -77,5 +77,4 @@ class MainViewController: BaseViewController {
         fastButtonsView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         stackView.addArrangedSubview(fastButtonsView)
     }
-
 }

@@ -20,6 +20,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
         case closed
     }
     
+    var shouldShowTravelLive: (() -> Void)?
     var shouldSelectOrigin: (() -> Void)?
     var shouldEditOrigin: (() -> Void)?
     var originViewState: OriginViewState = .closed
@@ -66,7 +67,7 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     
     @IBOutlet weak var buttonConfirmTravel: UIButton!
     @IBAction func buttonConfirmTravel(_ sender: Any) {
-        
+        shouldShowTravelLive?()
     }
     
     @IBOutlet weak var lineDestinyView: UIView!

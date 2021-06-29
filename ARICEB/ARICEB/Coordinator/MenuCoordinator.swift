@@ -5,8 +5,6 @@
 //  Created by Gustavo Rocha on 07/04/21.
 //
 
-
-
 import UIKit
 
 class MenuCoordinator: NSObject {

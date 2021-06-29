@@ -37,6 +37,9 @@
 		3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */; };
 		3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC7F25D9C5E40022AF8F /* MainViewController.swift */; };
 		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
+		3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4E5268AB470002903FD /* TravelLiveViewController.swift */; };
+		3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3693A4ED268AB486002903FD /* TravelLiveView.xib */; };
+		3693A4F3268AB492002903FD /* TravelLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4F2268AB492002903FD /* TravelLiveView.swift */; };
 		36A5B9AF261D39EA00A4EACB /* FastButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A5B9AE261D39EA00A4EACB /* FastButtonsView.xib */; };
 		36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A5B9B6261D39F700A4EACB /* FastButtonsView.swift */; };
 		36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7EF98262B29A300CCFDEB /* LocationView.swift */; };
@@ -137,6 +140,9 @@
 		3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3670FC7F25D9C5E40022AF8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3693A4E5268AB470002903FD /* TravelLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewController.swift; sourceTree = "<group>"; };
+		3693A4ED268AB486002903FD /* TravelLiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelLiveView.xib; sourceTree = "<group>"; };
+		3693A4F2268AB492002903FD /* TravelLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveView.swift; sourceTree = "<group>"; };
 		36A5B9AE261D39EA00A4EACB /* FastButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FastButtonsView.xib; sourceTree = "<group>"; };
 		36A5B9B6261D39F700A4EACB /* FastButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastButtonsView.swift; sourceTree = "<group>"; };
 		36B7EF98262B29A300CCFDEB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
@@ -352,6 +358,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3693A4E4268AB442002903FD /* TravelLive */ = {
+			isa = PBXGroup;
+			children = (
+				3693A4E5268AB470002903FD /* TravelLiveViewController.swift */,
+				3693A4ED268AB486002903FD /* TravelLiveView.xib */,
+				3693A4F2268AB492002903FD /* TravelLiveView.swift */,
+			);
+			path = TravelLive;
+			sourceTree = "<group>";
+		};
 		36A5B9AD261D39CC00A4EACB /* FastButtons */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +477,7 @@
 		36B929A725DC3F7C00133E65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3693A4E4268AB442002903FD /* TravelLive */,
 				36B929B625DC513E00133E65 /* Main */,
 				36B929B725DC518100133E65 /* Travel */,
 				3619B5B9262A82B70094CEA6 /* Location */,
@@ -684,6 +701,7 @@
 				36B7EF9E262B2A6900CCFDEB /* LocationView.xib in Resources */,
 				3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */,
 				36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */,
+				3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */,
 				36A5B9AF261D39EA00A4EACB /* FastButtonsView.xib in Resources */,
 				36B7F035262BB67F00CCFDEB /* ManualLocationView.xib in Resources */,
 				3670FC1D25D9A8F30022AF8F /* LaunchScreen.storyboard in Resources */,
@@ -856,10 +874,12 @@
 				3619B5AC262A33770094CEA6 /* SelectOriginDestinyView.swift in Sources */,
 				3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */,
 				36B7F059262BD4A600CCFDEB /* SheetOptionsViewController.swift in Sources */,
+				3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */,
 				3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */,
 				36205D1A262D246500BF0D3B /* FAQViewModel.swift in Sources */,
 				36205D23262D249B00BF0D3B /* FAQTableViewCell.swift in Sources */,
 				36B7EFA8262B2F1000CCFDEB /* LocationOptionView.swift in Sources */,
+				3693A4F3268AB492002903FD /* TravelLiveView.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,

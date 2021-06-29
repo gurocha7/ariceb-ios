@@ -41,6 +41,10 @@ class SelectOriginDestinyViewController: BaseViewController {
             self?.editDestiny()
         }
         
+        customView.shouldShowTravelLive = { [weak self] in
+            self?.showTravelLive()
+        }
+        
         viewModel.updateOriginLayout = { [weak self] in
             self?.customView.updateOriginLayout()
         }
@@ -78,6 +82,11 @@ class SelectOriginDestinyViewController: BaseViewController {
             self?.navigationController?.popToViewController(self!, animated: true)
         }
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showTravelLive() {
+        let controller = TravelLiveViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 
 }
