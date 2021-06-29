@@ -7,9 +7,13 @@
 
 import UIKit
 import Reusable
+import SceneKit
+import ARKit
 
 class TravelLiveView: UIView, NibLoadable {
-
+    
+    @IBOutlet weak var sceneView: ARSCNView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
