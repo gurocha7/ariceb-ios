@@ -30,7 +30,10 @@ class TravelLiveView: UIView, NibLoadable {
     
     private func addNodeBox() {
         let firstScene = SCNScene()
-        let box = SCNBox(width: 1, height: 1, length: 1, chamferRadius: 0.1)
+        let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
+        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
+        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
+        
         let nodeBox = SCNNode(geometry: box)
         nodeBox.position = SCNVector3(0, 0, -0.2)
         nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
