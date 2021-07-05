@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import ARCL
 
 class TravelLiveViewController: BaseViewController {
     
     //MARK: - Properties
     let customView: TravelLiveView = TravelLiveView.loadFromNib()
     private var viewModel: TravelLiveViewModel = TravelLiveViewModel()
+    private let sceneLocationView = SceneLocationView()
 
     //MARK: - Overrides
     override func loadView() {

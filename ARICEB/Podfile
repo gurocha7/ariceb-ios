@@ -9,6 +9,7 @@ target 'ARICEB' do
   
   pod 'Reusable'
   pod 'FittedSheets'
+  pod 'ARCL'
 
   target 'ARICEBTests' do
     inherit! :search_paths
