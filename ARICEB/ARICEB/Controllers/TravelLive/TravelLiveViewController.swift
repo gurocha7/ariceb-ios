@@ -16,6 +16,7 @@ class TravelLiveViewController: BaseViewController {
     let customView: TravelLiveView = TravelLiveView.loadFromNib()
     private var viewModel: TravelLiveViewModel = TravelLiveViewModel()
     private let sceneLocationView = SceneLocationView()
+    private var hasRouteToScene: Bool = false
 
     //MARK: - Overrides
     override func loadView() {
@@ -30,17 +31,18 @@ class TravelLiveViewController: BaseViewController {
         bindEvents()
         getMockLocation()
     }
-    
+        
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneLocationView.pause()
     }
 
     private func setupUI() {
-        sceneLocationView.showAxesNode = true
+        sceneLocationView.showAxesNode = false
         sceneLocationView.showFeaturePoints = false
         sceneLocationView.locationNodeTouchDelegate = self
 //        sceneLocationView.arViewDelegate  = self
+        sceneLocationView.sceneTrackingDelegate = self
         customView.addSubview(sceneLocationView)
         sceneLocationView.frame = customView.bounds
     }
@@ -67,7 +69,6 @@ class TravelLiveViewController: BaseViewController {
         if let routesValue = routes {
             print("ADDED ROUTES")
             sceneLocationView.addRoutes(routes: routesValue) { distance -> SCNBox in
-                print("SETANDO O BOX")
                 let box = SCNBox(width: 1.75, height: 0.5, length: distance, chamferRadius: 0.25)
                 box.firstMaterial?.diffuse.contents = UIColor.yellow
                 return box
@@ -78,6 +79,17 @@ class TravelLiveViewController: BaseViewController {
         }
         sceneLocationView.autoenablesDefaultLighting = true
     }
+}
+
+extension TravelLiveViewController: SceneTrackingDelegate {
+    func sessionWasInterrupted(_ session: ARSession) {
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    func sessionInterruptionEnded(_ session: ARSession) {}
+    func session(_ session: ARSession, didFailWithError error: Error) {}
+    func session(_ session: ARSession, cameraDidChangeTrackingState camera: ARCamera) {}
 }
 
 extension TravelLiveViewController: LNTouchDelegate {
