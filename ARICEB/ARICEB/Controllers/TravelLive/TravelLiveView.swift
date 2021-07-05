@@ -11,6 +11,7 @@ import ARKit
 
 class TravelLiveView: UIView, NibLoadable {
     //MARK: - Propeties
+    var viewModel: TravelLiveViewModel?
     private let arConfig = ARWorldTrackingConfiguration() //faz a utilização da camêra com AR e monitora a posicão e orientação do device
     
     //MARK: - OUTLETS
@@ -19,7 +20,7 @@ class TravelLiveView: UIView, NibLoadable {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        addNodeBox()
+//        addNodeBox()
     }
 
     private func setupUI() {

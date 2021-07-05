@@ -79,6 +79,7 @@
 		36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */; };
 		36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593FF2617EEB20034BC69 /* QRCodeView.swift */; };
 		36D594052617EED70034BC69 /* QRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D594042617EED70034BC69 /* QRCodeView.xib */; };
+		36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */; };
 		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
 		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
 /* End PBXBuildFile section */
@@ -182,6 +183,7 @@
 		36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		36D593FF2617EEB20034BC69 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		36D594042617EED70034BC69 /* QRCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeView.xib; sourceTree = "<group>"; };
+		36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewModel.swift; sourceTree = "<group>"; };
 		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,6 +366,7 @@
 				3693A4E5268AB470002903FD /* TravelLiveViewController.swift */,
 				3693A4ED268AB486002903FD /* TravelLiveView.xib */,
 				3693A4F2268AB492002903FD /* TravelLiveView.swift */,
+				36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */,
 			);
 			path = TravelLive;
 			sourceTree = "<group>";
@@ -884,6 +887,7 @@
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
+				36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */,
 				36B7F002262BA4E700CCFDEB /* SideContainmentSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
