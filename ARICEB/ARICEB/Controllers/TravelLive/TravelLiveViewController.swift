@@ -22,19 +22,19 @@ class TravelLiveViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         view = customView
-        setupUI()
+//        setupUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customView.viewModel = viewModel
-        bindEvents()
-        getMockLocation()
+//        customView.viewModel = viewModel
+//        bindEvents()
+//        getMockLocation()
     }
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        sceneLocationView.pause()
+//        sceneLocationView.pause()
     }
 
     private func setupUI() {

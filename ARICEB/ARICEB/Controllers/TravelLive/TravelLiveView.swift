@@ -20,12 +20,12 @@ class TravelLiveView: UIView, NibLoadable {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-//        addNodeBox()
+        addNodeBox()
     }
 
     private func setupUI() {
         sceneView.session.run(arConfig)
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         sceneView.autoenablesDefaultLighting = true //ARKit adiciona luz automaticamente no objeto renderizado
     }
     
@@ -38,7 +38,7 @@ class TravelLiveView: UIView, NibLoadable {
         let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(1, 0, 1), vector2: SCNVector3(1, 1, -1), vector3: SCNVector3(-1, 1, 1))
         
         let nodeBox = SCNNode(geometry: triangle)
-        nodeBox.position = SCNVector3(0, 0, -0.2)
+        nodeBox.position = SCNVector3(0,-0.5, -0.9)
         nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
         
         firstScene.rootNode.addChildNode(nodeBox)
