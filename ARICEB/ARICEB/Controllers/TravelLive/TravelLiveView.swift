@@ -36,12 +36,17 @@ class TravelLiveView: UIView, NibLoadable {
         box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
         
         let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(1, 0, 1), vector2: SCNVector3(1, 1, -1), vector3: SCNVector3(-1, 1, 1))
+        let triangle2 = SCNGeometry.triangleFrom(vector1: SCNVector3(1, 0, 1), vector2: SCNVector3(1, 1, -1), vector3: SCNVector3(-1, 1, 1))
         
         let nodeBox = SCNNode(geometry: triangle)
-        nodeBox.position = SCNVector3(0,-0.5, -0.9)
+        nodeBox.position = SCNVector3(0,-0.5, -1.50)
         nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
+        let nodeBox2 = SCNNode(geometry: triangle2)
+        nodeBox2.position = SCNVector3(0,-0.5, -0.9)
+        nodeBox2.scale = SCNVector3(0.1, 0.1, 0.1)
         
         firstScene.rootNode.addChildNode(nodeBox)
+        firstScene.rootNode.addChildNode(nodeBox2)
         sceneView.scene = firstScene
     }
 }
