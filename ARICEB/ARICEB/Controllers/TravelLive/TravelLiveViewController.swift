@@ -55,7 +55,7 @@ class TravelLiveViewController: BaseViewController {
     }
     
     private func getMockLocation() {
-        viewModel.getRoute(originLat: -20.153360, originLong: -44.903800, destinyLat: -20.153983, destinyLong: -44.903949)
+        viewModel.getRoute(originLat: -20.404285, originLong: -43.509755, destinyLat: -20.403843, destinyLong: -43.509369)
     }
     
     private func addRoutesToScene(routes: [MKRoute]? ) {
@@ -111,3 +111,15 @@ extension TravelLiveViewController: LNTouchDelegate {
         print("###Location node at \(coords), \(altitude) - \(tag)")
     }
 }
+
+/*
+ 
+ 1 - cenário com origem e destino indoor = abre a camera que ira utilizar um reconhecedorde QrCode
+     obs: testar a projeção de setas com dados mockados
+ 
+ 2 - cenario com origem e destino outdoo = ta pronta, passar apenas lat e long para o maps
+ 
+ 3 - Cenario com origem indoor e destino outdoor = começar com camera reonhecendo QrCode e vai ate a porta, quando podera clicar no botao "mostrar caminho externo",    que ira chamar lat e long do cenario 2
+ 
+ 4 - Cenario com origem outdoor e destino indoor = inverte a logica do cenario 3
+ */

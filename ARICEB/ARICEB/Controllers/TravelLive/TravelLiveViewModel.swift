@@ -11,8 +11,6 @@ class TravelLiveViewModel {
     
     private var routes: [MKRoute]?
     private var direction = MKDirections.Request()
-    
-    
     var didShowRoutes: (([MKRoute]?) -> Void)?
     
     func getRoute(originLat: Double?,originLong: Double?,
@@ -49,5 +47,4 @@ class TravelLiveViewModel {
             self?.didShowRoutes?(self?.routes)
         }
     }
-    
 }
