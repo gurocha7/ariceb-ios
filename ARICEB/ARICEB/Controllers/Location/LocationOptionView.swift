@@ -18,7 +18,7 @@ class LocationOptionView: UIView, NibLoadable {
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageIcon: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBAction func buttonAction(_ sender: Any) {
         didTapOption?()
@@ -51,7 +51,7 @@ class LocationOptionView: UIView, NibLoadable {
     }
     
     private func setupGPSLayout(){
-        image.image = UIImage(named: "icon-option-gps")
+        imageIcon.image = UIImage(named: "icon-option-gps")
         let att = NSMutableAttributedString()
         att.append(NSAttributedString(string: "GPS", attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .bold) , NSAttributedString.Key.foregroundColor : UIColor.black.cgColor]))
         att.append(NSAttributedString(string: "\nRecomendado para ambientes abertos.", attributes:  [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Regular", size: 12)  ?? UIFont.systemFont(ofSize: 12, weight: .regular) , NSAttributedString.Key.foregroundColor : UIColor.black.cgColor]))
@@ -59,7 +59,7 @@ class LocationOptionView: UIView, NibLoadable {
     }
     
     private func setupQRCodeLayout(){
-        image.image = UIImage(named: "icon-option-qrcode")
+        imageIcon.image = UIImage(named: "icon-option-qrcode")
         let att = NSMutableAttributedString()
         att.append(NSAttributedString(string: "Qr Code", attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .bold) , NSAttributedString.Key.foregroundColor : UIColor.black.cgColor]))
         att.append(NSAttributedString(string: "\nEscaneie o QrCode mais próximo para identificarmos sua localização.", attributes:  [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Regular", size: 12)  ?? UIFont.systemFont(ofSize: 12, weight: .regular) , NSAttributedString.Key.foregroundColor : UIColor.black.cgColor]))
@@ -67,7 +67,7 @@ class LocationOptionView: UIView, NibLoadable {
     }
     
     private func setupManualLayout(){
-        image.image = UIImage(named: "icon-option-manual")
+        imageIcon.image = UIImage(named: "icon-option-manual")
         let att = NSMutableAttributedString()
         att.append(NSAttributedString(string: "Manual", attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Bold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .bold) , NSAttributedString.Key.foregroundColor : UIColor.black.cgColor]))
         att.append(NSAttributedString(string: "\nInsira sua localização manualmente.", attributes:  [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Regular", size: 12)  ?? UIFont.systemFont(ofSize: 12, weight: .regular) , NSAttributedString.Key.foregroundColor : UIColor.black.cgColor]))

@@ -61,7 +61,7 @@
             <connections>
                 <outlet property="button" destination="Qd1-UB-oTW" id="krp-cP-Dut"/>
                 <outlet property="contentView" destination="GVg-Tc-0PP" id="LvH-8M-FCE"/>
-                <outlet property="image" destination="gBF-ps-7zS" id="3pD-au-cIG"/>
+                <outlet property="imageIcon" destination="gBF-ps-7zS" id="OAc-MR-53Y"/>
                 <outlet property="label" destination="h89-gJ-gEY" id="EMV-dS-nxy"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="97.767857142857139"/>
