@@ -20,7 +20,7 @@ class TravelLiveView: UIView, NibLoadable {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        addNodeBox()
+//        addNodeBox()
     }
 
     private func setupUI() {

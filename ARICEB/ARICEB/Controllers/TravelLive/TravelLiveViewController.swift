@@ -22,19 +22,19 @@ class TravelLiveViewController: BaseViewController {
     override func loadView() {
         super.loadView()
         view = customView
-//        setupUI()
+        setupUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        customView.viewModel = viewModel
-//        bindEvents()
-//        getMockLocation()
+        customView.viewModel = viewModel
+        bindEvents()
+        getMockLocation()
     }
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        sceneLocationView.pause()
+        sceneLocationView.pause() 
     }
 
     private func setupUI() {
@@ -117,7 +117,7 @@ extension TravelLiveViewController: LNTouchDelegate {
  1 - cenário com origem e destino indoor = abre a camera que ira utilizar um reconhecedorde QrCode
      obs: testar a projeção de setas com dados mockados
  
- 2 - cenario com origem e destino outdoo = ta pronta, passar apenas lat e long para o maps
+ 2 - cenario com origem e destino outdoor = ta pronta, passar apenas lat e long para o maps
  
  3 - Cenario com origem indoor e destino outdoor = começar com camera reonhecendo QrCode e vai ate a porta, quando podera clicar no botao "mostrar caminho externo",    que ira chamar lat e long do cenario 2
  

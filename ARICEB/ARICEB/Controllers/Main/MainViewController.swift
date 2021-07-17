@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainViewController: BaseViewController {
     
@@ -28,6 +29,11 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getRouteTest()
     }
     
     //MARK: - Methods
@@ -76,5 +82,17 @@ class MainViewController: BaseViewController {
         fastButtonsView.translatesAutoresizingMaskIntoConstraints = false
         fastButtonsView.heightAnchor.constraint(equalToConstant: 140).isActive = true
         stackView.addArrangedSubview(fastButtonsView)
+    }
+    
+    private func getRouteTest() {
+        AF.request("http://127.0.0.1:3000/v1/internalroute", method: .get, parameters: nil).responseJSON { response in
+            print("###RESPONSE: ",response)
+            guard let data = response.data else {return}
+            do {
+                print("DEU BOM!")
+            }catch {
+                print("DEU RUIM!")
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SelectOriginDestinyViewController: BaseViewController {
     
@@ -88,5 +89,18 @@ class SelectOriginDestinyViewController: BaseViewController {
         let controller = TravelLiveViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
-
+    
+    
+    private func getRouteTest() {
+        AF.request("http://127.0.0.1:3000/v1/internalroute", method: .get, parameters: nil).responseJSON { response in
+            print("###RESPONSE: ",response)
+            guard let data = response.data else {return}
+            do {
+                print("DEU BOM!")
+            }catch {
+                print("DEU RUIM!")
+            }
+        }
+    }
+    
 }
