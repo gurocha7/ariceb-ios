@@ -80,6 +80,8 @@
 		36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593FF2617EEB20034BC69 /* QRCodeView.swift */; };
 		36D594052617EED70034BC69 /* QRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D594042617EED70034BC69 /* QRCodeView.xib */; };
 		36E47E2C26A64E36003CA92D /* ManualLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E2B26A64E36003CA92D /* ManualLocationService.swift */; };
+		36E47E3C26A65869003CA92D /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E3B26A65869003CA92D /* BuildingsModel.swift */; };
+		36E47E4126A658D2003CA92D /* ListBuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */; };
 		36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */; };
 		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
 		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
@@ -185,6 +187,8 @@
 		36D593FF2617EEB20034BC69 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		36D594042617EED70034BC69 /* QRCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeView.xib; sourceTree = "<group>"; };
 		36E47E2B26A64E36003CA92D /* ManualLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationService.swift; sourceTree = "<group>"; };
+		36E47E3B26A65869003CA92D /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
+		36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuildingsModel.swift; sourceTree = "<group>"; };
 		36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewModel.swift; sourceTree = "<group>"; };
 		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -568,6 +572,8 @@
 		36E47E3A26A652B1003CA92D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				36E47E3B26A65869003CA92D /* BuildingsModel.swift */,
+				36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -890,9 +896,11 @@
 				3670FC4925D9BAF50022AF8F /* Storyboarded.swift in Sources */,
 				36B7F059262BD4A600CCFDEB /* SheetOptionsViewController.swift in Sources */,
 				3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */,
+				36E47E4126A658D2003CA92D /* ListBuildingsModel.swift in Sources */,
 				3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */,
 				36205D1A262D246500BF0D3B /* FAQViewModel.swift in Sources */,
 				36205D23262D249B00BF0D3B /* FAQTableViewCell.swift in Sources */,
+				36E47E3C26A65869003CA92D /* BuildingsModel.swift in Sources */,
 				36B7EFA8262B2F1000CCFDEB /* LocationOptionView.swift in Sources */,
 				3693A4F3268AB492002903FD /* TravelLiveView.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,

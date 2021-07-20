@@ -11,7 +11,7 @@ class ManualLocationViewModel{
     
     private var service: ManualLocationService = ManualLocationService()
     
-    var listBuildings: (() -> Void)?
+    var listBuildings: ((ListBuildingsModel) -> Void)?
     var shouldShowError: ((String) -> Void)?
     
     let placeholderFirstAddres = "Prédio"
@@ -107,7 +107,7 @@ class ManualLocationViewModel{
     
     func getBuildings() {
         service.getBuildings { (response) in
-//            self.listBuildings?(response)
+            self.listBuildings?(response)
         } failure: { (errorMSG) in
             self.shouldShowError?(errorMSG)
         }
