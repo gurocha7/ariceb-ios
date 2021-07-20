@@ -40,7 +40,7 @@ class ManualLocationViewController: BaseViewController {
     
     private func bindEvents(){
         customView.didTapFirstAddress = { [weak self] in
-            self?.goToFirstOptions()
+            self?.getBuildings()
         }
         
         customView.didTapSecondAddress = { [weak self] in
@@ -54,15 +54,21 @@ class ManualLocationViewController: BaseViewController {
         customView.didTapConfirmAddress = { [weak self] (model) in
             self?.didTapConfirmAddres?(model)
         }
+        
+        viewModel.listBuildings = { [weak self] (buildings) in
+            self?.goToFirstOptions(buildings)
+        }
     }
     
-    private func goToFirstOptions(){
+    private func getBuildings() {
         viewModel.getBuildings()
-        
+    }
+    
+    private func goToFirstOptions(_ buildings: ListBuildingsModel?){
         let vc = SheetOptionsViewController(option: .buildings, model: viewModel.getModelForFirst())
         vc.modalPresentationStyle = .formSheet
         vc.didSelectItem = { [weak self] (item) in
-            self?.viewModel.insertFirstAddress(name: item)
+//            self?.viewModel.insertFirstAddress(name: item)
             DispatchQueue.main.async {
                 self?.customView.updateLayoutWithModel()
             }
@@ -75,35 +81,35 @@ class ManualLocationViewController: BaseViewController {
     }
     
     private func goToSecondOptions(){
-        let vc = SheetOptionsViewController(option: .sector, model: viewModel.getModelForSecond())
-        vc.modalPresentationStyle = .formSheet
-        vc.didSelectItem = { [weak self] (item) in
-            self?.viewModel.insertSecondAddress(name: item)
-            DispatchQueue.main.async {
-                self?.customView.updateLayoutWithModel()
-            }
-            vc.dismiss(animated: true, completion: nil)
-        }
-        vc.dismissSheet = {
-            vc.dismiss(animated: true, completion: nil)
-        }
-        self.present(vc, animated: true, completion: nil)
+//        let vc = SheetOptionsViewController(option: .sector, model: viewModel.getModelForSecond())
+//        vc.modalPresentationStyle = .formSheet
+//        vc.didSelectItem = { [weak self] (item) in
+//            self?.viewModel.insertSecondAddress(name: item)
+//            DispatchQueue.main.async {
+//                self?.customView.updateLayoutWithModel()
+//            }
+//            vc.dismiss(animated: true, completion: nil)
+//        }
+//        vc.dismissSheet = {
+//            vc.dismiss(animated: true, completion: nil)
+//        }
+//        self.present(vc, animated: true, completion: nil)
     }
     
     private func goToThirdOptions(){
-        let vc = SheetOptionsViewController(option: .subsector, model: viewModel.getModelForThird())
-        vc.modalPresentationStyle = .formSheet
-        vc.didSelectItem = { [weak self] (item) in
-            self?.viewModel.insertThirdAddress(name: item)
-            DispatchQueue.main.async {
-                self?.customView.updateLayoutWithModel()
-            }
-            vc.dismiss(animated: true, completion: nil)
-        }
-        vc.dismissSheet = {
-            vc.dismiss(animated: true, completion: nil)
-        }
-        self.present(vc, animated: true, completion: nil)
+//        let vc = SheetOptionsViewController(option: .subsector, model: viewModel.getModelForThird())
+//        vc.modalPresentationStyle = .formSheet
+//        vc.didSelectItem = { [weak self] (item) in
+//            self?.viewModel.insertThirdAddress(name: item)
+//            DispatchQueue.main.async {
+//                self?.customView.updateLayoutWithModel()
+//            }
+//            vc.dismiss(animated: true, completion: nil)
+//        }
+//        vc.dismissSheet = {
+//            vc.dismiss(animated: true, completion: nil)
+//        }
+//        self.present(vc, animated: true, completion: nil)
     }
     
     private func updateLayout(){

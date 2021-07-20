@@ -27,11 +27,11 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         dismissSheet?()
     }
     
-    var didSelectItem: ((String) -> Void)?
+    var didSelectItem: ((BuildingsModel) -> Void)?
     var dismissSheet: (() -> Void)?
-    var items: [String] = []
+    var items: [BuildingsModel] = []
     
-    init(option: SheetOptions = .buildings, model: [String]) {
+    init(option: SheetOptions = .buildings, model: [BuildingsModel]) {
         super.init(nibName: nil, bundle: nil)
         typeSheet = option
         items = model
@@ -79,7 +79,7 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row].name
         return cell
     }
     

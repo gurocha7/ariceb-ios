@@ -11,6 +11,7 @@ class ManualLocationViewModel{
     
     private var service: ManualLocationService = ManualLocationService()
     
+    private var buildings: [BuildingsModel] = []
     var listBuildings: ((ListBuildingsModel) -> Void)?
     var shouldShowError: ((String) -> Void)?
     
@@ -84,8 +85,9 @@ class ManualLocationViewModel{
         return placeholderThirdAddres
     }
     
-    func getModelForFirst() -> [String]{
-        return itemsBuildings
+    func getModelForFirst() -> [BuildingsModel] {
+//        return itemsBuildings
+        return buildings
     }
     
     func getModelForSecond() -> [String]{
@@ -107,6 +109,7 @@ class ManualLocationViewModel{
     
     func getBuildings() {
         service.getBuildings { (response) in
+            self.buildings = response.buildings ?? []
             self.listBuildings?(response)
         } failure: { (errorMSG) in
             self.shouldShowError?(errorMSG)
