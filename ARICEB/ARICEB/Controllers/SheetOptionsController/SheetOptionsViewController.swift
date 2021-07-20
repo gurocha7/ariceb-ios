@@ -21,13 +21,12 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var labelHeaderView: UILabel!
     @IBOutlet weak var buttonClose: UIButton!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func buttonCloseAction(_ sender: Any) {
         dismissSheet?()
     }
     
-    var didSelectItem: ((BuildingsModel) -> Void)?
+    var didSelectBuidingItem: ((BuildingsModel) -> Void)?
     var dismissSheet: (() -> Void)?
     var items: [BuildingsModel] = []
     
@@ -49,11 +48,8 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     private func setup(){
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.applyCorner(corner: 15)
         buttonClose.setImage(UIImage(named: "icon-close")?.withRenderingMode(.alwaysOriginal), for: .normal)
         labelHeaderView.text = getTitle()
-        searchBar.delegate = self
     }
     
     private func getTitle() -> String{
@@ -70,7 +66,7 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let item = items[indexPath.row]
-        didSelectItem?(item)
+        didSelectBuidingItem?(item)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,9 +78,4 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         cell.textLabel?.text = items[indexPath.row].name
         return cell
     }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-
 }

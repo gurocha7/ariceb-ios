@@ -16,6 +16,8 @@ class ManualLocationViewController: BaseViewController {
     let customView: ManualLocationView = ManualLocationView.loadFromNib()
     let viewModel:ManualLocationViewModel = ManualLocationViewModel()
     
+    private var buildingSelected: BuildingsModel?
+    
     init(isOrigin: Bool = true) {
         super.init(nibName: nil, bundle: nil)
         self.isOrigin = isOrigin
@@ -44,7 +46,7 @@ class ManualLocationViewController: BaseViewController {
         }
         
         customView.didTapSecondAddress = { [weak self] in
-            self?.goToSecondOptions()
+            self?.getSector()
         }
         
         customView.didTapThirdAddress = { [weak self] in
@@ -64,11 +66,17 @@ class ManualLocationViewController: BaseViewController {
         viewModel.getBuildings()
     }
     
+    private func getSector() {
+        guard let buildingId = buildingSelected?.id else {return}
+        viewModel.getSector(buildingID: buildingId)
+    }
+    
     private func goToFirstOptions(_ buildings: ListBuildingsModel?){
         let vc = SheetOptionsViewController(option: .buildings, model: viewModel.getModelForFirst())
         vc.modalPresentationStyle = .formSheet
-        vc.didSelectItem = { [weak self] (item) in
-//            self?.viewModel.insertFirstAddress(name: item)
+        vc.didSelectBuidingItem = { [weak self] (item) in
+            self?.buildingSelected = item
+            self?.viewModel.insertFirstAddress(name: item.name ?? "")
             DispatchQueue.main.async {
                 self?.customView.updateLayoutWithModel()
             }
