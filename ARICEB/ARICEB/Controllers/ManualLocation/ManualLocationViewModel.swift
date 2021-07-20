@@ -9,6 +9,11 @@ import Foundation
 
 class ManualLocationViewModel{
     
+    private var service: ManualLocationService = ManualLocationService()
+    
+    var listBuildings: (() -> Void)?
+    var shouldShowError: ((String) -> Void)?
+    
     let placeholderFirstAddres = "Prédio"
     let placeholderSecondAddres = "Departamento/Andar/Corredor"
     let placeholderThirdAddres = "Sala/Laboratório/Auditório"
@@ -98,5 +103,13 @@ class ManualLocationViewModel{
         let _fullAddress = _first + " - " + _second + ", " + _third
         fullAddres = _fullAddress
         return _fullAddress
+    }
+    
+    func getBuildings() {
+        service.getBuildings { (response) in
+//            self.listBuildings?(response)
+        } failure: { (errorMSG) in
+            self.shouldShowError?(errorMSG)
+        }
     }
 }

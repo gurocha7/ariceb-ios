@@ -14,7 +14,6 @@ class BaseViewController: UIViewController {
         setupNavigationBar()
     }
 
-    
     func setupNavigationBar(){
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.isHidden = false
@@ -25,5 +24,4 @@ class BaseViewController: UIViewController {
                                                                      target: nil,
                                                                      action: nil)
     }
-    
 }

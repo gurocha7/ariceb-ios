@@ -31,7 +31,6 @@ class ManualLocationView: UIView, NibLoadable {
         didTapConfirmAddress?(_model)
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()

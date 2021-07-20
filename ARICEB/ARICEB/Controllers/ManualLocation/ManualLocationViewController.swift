@@ -57,6 +57,8 @@ class ManualLocationViewController: BaseViewController {
     }
     
     private func goToFirstOptions(){
+        viewModel.getBuildings()
+        
         let vc = SheetOptionsViewController(option: .buildings, model: viewModel.getModelForFirst())
         vc.modalPresentationStyle = .formSheet
         vc.didSelectItem = { [weak self] (item) in
