@@ -28,10 +28,12 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     
     var didSelectBuidingItem: ((BuildingsModel) -> Void)?
     var didSelectSectorItem: ((SectorModel) -> Void)?
+    var didSelectSubsectorItem: ((SubsectorModel) -> Void)?
     var dismissSheet: (() -> Void)?
     
     var items: [BuildingsModel] = []
     var sectorItems: [SectorModel] = []
+    var subsectorItems: [SubsectorModel] = []
     
     init(option: SheetOptions = .buildings, model: [BuildingsModel]) {
         super.init(nibName: nil, bundle: nil)
@@ -43,6 +45,12 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         super.init(nibName: nil, bundle: nil)
         typeSheet = option
         sectorItems = model
+    }
+    
+    init(option: SheetOptions = .subsector, model: [SubsectorModel]) {
+        super.init(nibName: nil, bundle: nil)
+        typeSheet = option
+        subsectorItems = model
     }
 
     required init?(coder: NSCoder) {
@@ -82,7 +90,8 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
             let item = sectorItems[indexPath.row]
             didSelectSectorItem?(item)
         case .subsector:
-            break
+            let item = subsectorItems[indexPath.row]
+            didSelectSubsectorItem?(item)
         }
     }
     
@@ -93,7 +102,7 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
         case .sector:
             return sectorItems.count
         case .subsector:
-            return 0
+            return subsectorItems.count
         }
         
     }
@@ -106,7 +115,7 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
             case .sector:
                 cell.textLabel?.text = sectorItems[indexPath.row].name
             case .subsector:
-                break
+                cell.textLabel?.text = subsectorItems[indexPath.row].name
         }
         return cell
     }

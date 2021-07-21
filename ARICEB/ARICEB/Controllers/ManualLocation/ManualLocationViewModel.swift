@@ -13,10 +13,11 @@ class ManualLocationViewModel{
     
     private var buildings: [BuildingsModel] = []
     private var sectors: [SectorModel] = []
+    private var subsectors: [SubsectorModel] = []
     
     var listBuildings: ((ListBuildingsModel) -> Void)?
     var listSectors: ((ListSectorsModel) -> Void)?
-    var listSubsectors: (() -> Void)?
+    var listSubsectors: ((ListSubsectorsModel) -> Void)?
     
     var shouldShowError: ((String) -> Void)?
     
@@ -98,8 +99,8 @@ class ManualLocationViewModel{
         return sectors
     }
     
-    func getModelForThird() -> [String]{
-        return itemsSubsectors
+    func getModelForThird() -> [SubsectorModel]{
+        return subsectors
     }
     
     func getModel() -> String?{
@@ -124,6 +125,15 @@ class ManualLocationViewModel{
         service.getSectors(buildingId: buildingID) { (response) in
             self.sectors = response.sectors ?? []
             self.listSectors?(response)
+        } failure: { (errorMSG) in
+            self.shouldShowError?(errorMSG)
+        }
+    }
+    
+    func getSubsector(sectorID: Int) {
+        service.getSubsectors(sectorId: sectorID) { (response) in
+            self.subsectors = response.subsectors ?? []
+            self.listSubsectors?(response)
         } failure: { (errorMSG) in
             self.shouldShowError?(errorMSG)
         }

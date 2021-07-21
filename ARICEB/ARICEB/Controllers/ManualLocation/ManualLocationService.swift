@@ -37,4 +37,17 @@ class ManualLocationService {
             }
         }
     }
+    
+    func getSubsectors(sectorId: Int,completion: @escaping ((ListSubsectorsModel) -> Void), failure: Failure?) {
+        AF.request("http://127.0.0.1:3000/v1/subsectors/\(sectorId)", method: .get).responseJSON { (response) in
+            print("###RESPONSE: ", response)
+            guard let data = response.data else {return}
+            do {
+                let model = try JSONDecoder().decode(ListSubsectorsModel.self, from: data)
+                completion(model)
+            }catch {
+                failure?("Ocorreu um erro inesperado, tente novamente mais tarde.")
+            }
+        }
+    }
 }

@@ -18,6 +18,7 @@ class ManualLocationViewController: BaseViewController {
     
     private var buildingSelected: BuildingsModel?
     private var sectorSelected: SectorModel?
+    private var subsectorSelected: SubsectorModel?
     
     init(isOrigin: Bool = true) {
         super.init(nibName: nil, bundle: nil)
@@ -51,7 +52,7 @@ class ManualLocationViewController: BaseViewController {
         }
         
         customView.didTapThirdAddress = { [weak self] in
-            self?.goToThirdOptions()
+            self?.getSubsector()
         }
         
         customView.didTapConfirmAddress = { [weak self] (model) in
@@ -65,6 +66,10 @@ class ManualLocationViewController: BaseViewController {
         viewModel.listSectors = { [weak self] (sectors) in
             self?.goToSecondOptions(sectors: sectors)
         }
+        
+        viewModel.listSubsectors = { [weak self] (subsectors) in
+            self?.goToThirdOptions(subsectors: subsectors)
+        }
     }
     
     private func getBuildings() {
@@ -74,6 +79,11 @@ class ManualLocationViewController: BaseViewController {
     private func getSector() {
         guard let buildingId = buildingSelected?.id else {return}
         viewModel.getSector(buildingID: buildingId)
+    }
+    
+    private func getSubsector(){
+        guard let sectorId = sectorSelected?.id else {return}
+        viewModel.getSubsector(sectorID: sectorId)
     }
     
     private func goToFirstOptions(_ buildings: ListBuildingsModel?){
@@ -110,24 +120,20 @@ class ManualLocationViewController: BaseViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    private func goToThirdOptions(){
-//        let vc = SheetOptionsViewController(option: .subsector, model: viewModel.getModelForThird())
-//        vc.modalPresentationStyle = .formSheet
-//        vc.didSelectItem = { [weak self] (item) in
-//            self?.viewModel.insertThirdAddress(name: item)
-//            DispatchQueue.main.async {
-//                self?.customView.updateLayoutWithModel()
-//            }
-//            vc.dismiss(animated: true, completion: nil)
-//        }
-//        vc.dismissSheet = {
-//            vc.dismiss(animated: true, completion: nil)
-//        }
-//        self.present(vc, animated: true, completion: nil)
+    private func goToThirdOptions(subsectors: ListSubsectorsModel?){
+        let vc = SheetOptionsViewController(option: .subsector, model: viewModel.getModelForThird())
+        vc.modalPresentationStyle = .formSheet
+        vc.didSelectSubsectorItem = { [weak self] (item) in
+            self?.subsectorSelected = item
+            self?.viewModel.insertThirdAddress(name: item.name ?? "")
+            DispatchQueue.main.async {
+                self?.customView.updateLayoutWithModel()
+            }
+            vc.dismiss(animated: true, completion: nil)
+        }
+        vc.dismissSheet = {
+            vc.dismiss(animated: true, completion: nil)
+        }
+        self.present(vc, animated: true, completion: nil)
     }
-    
-    private func updateLayout(){
-        
-    }
-
 }
