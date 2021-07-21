@@ -25,13 +25,13 @@ class ManualLocationService {
         }
     }
     
-    func getSectors(buildingId: Int,completion: @escaping ((String) -> Void), failure: Failure?) {
+    func getSectors(buildingId: Int,completion: @escaping ((ListSectorsModel) -> Void), failure: Failure?) {
         AF.request("http://127.0.0.1:3000/v1/sectors/\(buildingId)", method: .get).responseJSON { (response) in
             print("###RESPONSE: ", response)
             guard let data = response.data else {return}
             do {
-//                let model = try JSONDecoder().decode(ListBuildingsModel.self, from: data)
-                completion("")
+                let model = try JSONDecoder().decode(ListSectorsModel.self, from: data)
+                completion(model)
             }catch {
                 failure?("Ocorreu um erro inesperado, tente novamente mais tarde.")
             }

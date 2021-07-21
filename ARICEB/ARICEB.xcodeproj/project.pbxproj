@@ -75,6 +75,8 @@
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
 		36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929B125DC4FEC00133E65 /* BannerView.xib */; };
+		36D141F726A7980B00E72F97 /* ListSectorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D141F626A7980B00E72F97 /* ListSectorsModel.swift */; };
+		36D141FC26A7982800E72F97 /* SectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D141FB26A7982800E72F97 /* SectorModel.swift */; };
 		36D593E92617DC260034BC69 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593E82617DC260034BC69 /* CustomColor.swift */; };
 		36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */; };
 		36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593FF2617EEB20034BC69 /* QRCodeView.swift */; };
@@ -182,6 +184,8 @@
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		36B929B125DC4FEC00133E65 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
+		36D141F626A7980B00E72F97 /* ListSectorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectorsModel.swift; sourceTree = "<group>"; };
+		36D141FB26A7982800E72F97 /* SectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorModel.swift; sourceTree = "<group>"; };
 		36D593E82617DC260034BC69 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		36D593FF2617EEB20034BC69 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
@@ -574,6 +578,8 @@
 			children = (
 				36E47E3B26A65869003CA92D /* BuildingsModel.swift */,
 				36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */,
+				36D141FB26A7982800E72F97 /* SectorModel.swift */,
+				36D141F626A7980B00E72F97 /* ListSectorsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -871,6 +877,7 @@
 				3619B5A7262A2F1D0094CEA6 /* BaseViewController.swift in Sources */,
 				36B7EFE2262B7C7C00CCFDEB /* SideMenuTableViewCell.swift in Sources */,
 				36B7F044262BC6AF00CCFDEB /* ManualLocationViewModel.swift in Sources */,
+				36D141F726A7980B00E72F97 /* ListSectorsModel.swift in Sources */,
 				36B7EFBF262B5BD800CCFDEB /* MenuView.swift in Sources */,
 				36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */,
 				36205D00262CD22B00BF0D3B /* SubmenuViewModel.swift in Sources */,
@@ -897,6 +904,7 @@
 				36B7F059262BD4A600CCFDEB /* SheetOptionsViewController.swift in Sources */,
 				3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */,
 				36E47E4126A658D2003CA92D /* ListBuildingsModel.swift in Sources */,
+				36D141FC26A7982800E72F97 /* SectorModel.swift in Sources */,
 				3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */,
 				36205D1A262D246500BF0D3B /* FAQViewModel.swift in Sources */,
 				36205D23262D249B00BF0D3B /* FAQTableViewCell.swift in Sources */,

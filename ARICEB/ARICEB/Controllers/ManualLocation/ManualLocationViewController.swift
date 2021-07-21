@@ -17,6 +17,7 @@ class ManualLocationViewController: BaseViewController {
     let viewModel:ManualLocationViewModel = ManualLocationViewModel()
     
     private var buildingSelected: BuildingsModel?
+    private var sectorSelected: SectorModel?
     
     init(isOrigin: Bool = true) {
         super.init(nibName: nil, bundle: nil)
@@ -60,6 +61,10 @@ class ManualLocationViewController: BaseViewController {
         viewModel.listBuildings = { [weak self] (buildings) in
             self?.goToFirstOptions(buildings)
         }
+        
+        viewModel.listSectors = { [weak self] (sectors) in
+            self?.goToSecondOptions(sectors: sectors)
+        }
     }
     
     private func getBuildings() {
@@ -88,20 +93,21 @@ class ManualLocationViewController: BaseViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    private func goToSecondOptions(){
-//        let vc = SheetOptionsViewController(option: .sector, model: viewModel.getModelForSecond())
-//        vc.modalPresentationStyle = .formSheet
-//        vc.didSelectItem = { [weak self] (item) in
-//            self?.viewModel.insertSecondAddress(name: item)
-//            DispatchQueue.main.async {
-//                self?.customView.updateLayoutWithModel()
-//            }
-//            vc.dismiss(animated: true, completion: nil)
-//        }
-//        vc.dismissSheet = {
-//            vc.dismiss(animated: true, completion: nil)
-//        }
-//        self.present(vc, animated: true, completion: nil)
+    private func goToSecondOptions(sectors: ListSectorsModel?){
+        let vc = SheetOptionsViewController(option: .sector, model: viewModel.getModelForSecond())
+        vc.modalPresentationStyle = .formSheet
+        vc.didSelectSectorItem = { [weak self] (item) in
+            self?.sectorSelected = item
+            self?.viewModel.insertSecondAddress(name: item.name ?? "")
+            DispatchQueue.main.async {
+                self?.customView.updateLayoutWithModel()
+            }
+            vc.dismiss(animated: true, completion: nil)
+        }
+        vc.dismissSheet = {
+            vc.dismiss(animated: true, completion: nil)
+        }
+        self.present(vc, animated: true, completion: nil)
     }
     
     private func goToThirdOptions(){

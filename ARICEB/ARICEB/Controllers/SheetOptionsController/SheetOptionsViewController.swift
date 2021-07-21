@@ -27,13 +27,22 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     }
     
     var didSelectBuidingItem: ((BuildingsModel) -> Void)?
+    var didSelectSectorItem: ((SectorModel) -> Void)?
     var dismissSheet: (() -> Void)?
+    
     var items: [BuildingsModel] = []
+    var sectorItems: [SectorModel] = []
     
     init(option: SheetOptions = .buildings, model: [BuildingsModel]) {
         super.init(nibName: nil, bundle: nil)
         typeSheet = option
         items = model
+    }
+    
+    init(option: SheetOptions = .sector, model: [SectorModel]) {
+        super.init(nibName: nil, bundle: nil)
+        typeSheet = option
+        sectorItems = model
     }
 
     required init?(coder: NSCoder) {
@@ -65,17 +74,40 @@ class SheetOptionsViewController: UIViewController , UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let item = items[indexPath.row]
-        didSelectBuidingItem?(item)
+        switch typeSheet {
+        case .buildings:
+            let item = items[indexPath.row]
+            didSelectBuidingItem?(item)
+        case .sector:
+            let item = sectorItems[indexPath.row]
+            didSelectSectorItem?(item)
+        case .subsector:
+            break
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        switch typeSheet {
+        case .buildings:
+            return items.count
+        case .sector:
+            return sectorItems.count
+        case .subsector:
+            return 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = items[indexPath.row].name
+        switch typeSheet {
+            case .buildings:
+                cell.textLabel?.text = items[indexPath.row].name
+            case .sector:
+                cell.textLabel?.text = sectorItems[indexPath.row].name
+            case .subsector:
+                break
+        }
         return cell
     }
 }

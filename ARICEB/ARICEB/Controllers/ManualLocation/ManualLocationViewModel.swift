@@ -12,8 +12,10 @@ class ManualLocationViewModel{
     private var service: ManualLocationService = ManualLocationService()
     
     private var buildings: [BuildingsModel] = []
+    private var sectors: [SectorModel] = []
+    
     var listBuildings: ((ListBuildingsModel) -> Void)?
-    var listSectors: (() -> Void)?
+    var listSectors: ((ListSectorsModel) -> Void)?
     var listSubsectors: (() -> Void)?
     
     var shouldShowError: ((String) -> Void)?
@@ -29,21 +31,21 @@ class ManualLocationViewModel{
     var thirdAddress: String?
     
     
-    var itemsBuildings = ["Bloco de Sala de Aulas",
-                          "Centro Desportivo",
-                          "DEGEO - Departamento de Geologia",
-                          "DEMIN - Departamento de Engenharia de Minas",
-                          "EFAR - Escola de Farmácia",
-                          "EM - Escola de Minas",
-                          "ICEB - Instituto de Ciências Exatas e Biológicas",
-                          "RU - Restaurante Universitário"]
-    
+//    var itemsBuildings = ["Bloco de Sala de Aulas",
+//                          "Centro Desportivo",
+//                          "DEGEO - Departamento de Geologia",
+//                          "DEMIN - Departamento de Engenharia de Minas",
+//                          "EFAR - Escola de Farmácia",
+//                          "EM - Escola de Minas",
+//                          "ICEB - Instituto de Ciências Exatas e Biológicas",
+//                          "RU - Restaurante Universitário"]
+//
     var itemsSectors = ["Andar 1",
                          "Andar 2",
                          "Corredor 3",
                          "Corredor 4",
                          "Subsolo"]
-    
+
     var itemsSubsectors = ["Auditório 1",
                          "Auditório 2",
                          "Empresa Júnior",
@@ -92,8 +94,8 @@ class ManualLocationViewModel{
         return buildings
     }
     
-    func getModelForSecond() -> [String]{
-        return itemsSectors
+    func getModelForSecond() -> [SectorModel]{
+        return sectors
     }
     
     func getModelForThird() -> [String]{
@@ -120,7 +122,8 @@ class ManualLocationViewModel{
     
     func getSector(buildingID: Int) {
         service.getSectors(buildingId: buildingID) { (response) in
-            
+            self.sectors = response.sectors ?? []
+            self.listSectors?(response)
         } failure: { (errorMSG) in
             self.shouldShowError?(errorMSG)
         }
