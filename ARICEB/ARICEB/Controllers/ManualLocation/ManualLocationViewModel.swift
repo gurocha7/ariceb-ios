@@ -57,10 +57,13 @@ class ManualLocationViewModel{
     
     func insertFirstAddress(name: String){
         firstAddress = name
+        secondAddress = nil
+        thirdAddress = nil
     }
     
     func insertSecondAddress(name: String){
         secondAddress = name
+        thirdAddress = nil
     }
     
     func insertThirdAddress(name: String){

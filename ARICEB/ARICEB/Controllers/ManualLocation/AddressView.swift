@@ -23,6 +23,8 @@ class AddressView: UIView, NibLoadable {
     
     var canEditAddress: Bool = false
     
+    private var placeholderText: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -36,6 +38,7 @@ class AddressView: UIView, NibLoadable {
     }
     
     func setupPlaceholder(placeholder: String?){
+        placeholderText = placeholder
         label.attributedText = NSAttributedString(string: placeholder ?? "",
                                                   attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold),
                                                                NSAttributedString.Key.foregroundColor : canEditAddress ? UIColor.darkGray : UIColor.lightGray])
@@ -45,8 +48,20 @@ class AddressView: UIView, NibLoadable {
     func updateToEdit(){
         canEditAddress = true
         borderView.applyBorder(borderWidth: 1, borderColor: UIColor.darkGray.cgColor )
+        label.attributedText = NSAttributedString(string: placeholderText ?? "",
+                                                  attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold),
+                                                               NSAttributedString.Key.foregroundColor : canEditAddress ? UIColor.darkGray : UIColor.lightGray])
         imageArrow.tintColor = .darkGray
         self.layoutIfNeeded()
     }
-
+    
+    func updateToNotEdit(){
+        canEditAddress = false
+        borderView.applyBorder(borderWidth: 1, borderColor: UIColor.lightGray.cgColor )
+        label.attributedText = NSAttributedString(string: placeholderText ?? "",
+                                                  attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica Neue Semibold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .semibold),
+                                                               NSAttributedString.Key.foregroundColor : canEditAddress ? UIColor.darkGray : UIColor.lightGray])
+        imageArrow.tintColor = .lightGray
+        self.layoutIfNeeded()
+    }
 }

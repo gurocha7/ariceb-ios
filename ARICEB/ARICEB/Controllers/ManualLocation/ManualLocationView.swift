@@ -110,12 +110,20 @@ class ManualLocationView: UIView, NibLoadable {
         guard let _firstAddress = viewModel?.getFirstAddress() else {return}
         firstAddressView.setupPlaceholder(placeholder: _firstAddress)
         secondAddressView.updateToEdit()
-        guard let _secondAddress = viewModel?.getSecondAddress() else {return}
+        enableConfirmButton()
+        guard let _secondAddress = viewModel?.getSecondAddress() else {
+            secondAddressView.setupPlaceholder(placeholder: viewModel?.getSecondPlaceholder())
+            thirdAddressView.setupPlaceholder(placeholder: viewModel?.getThirdPlaceholder())
+            thirdAddressView.updateToNotEdit()
+            return
+        }
         secondAddressView.setupPlaceholder(placeholder: _secondAddress)
         thirdAddressView.updateToEdit()
-        guard let _thirdAddress = viewModel?.getThirdAddress() else {return}
+        guard let _thirdAddress = viewModel?.getThirdAddress() else {
+            thirdAddressView.setupPlaceholder(placeholder: viewModel?.getThirdPlaceholder())
+            return
+        }
         thirdAddressView.setupPlaceholder(placeholder: _thirdAddress)
-        enableConfirmButton()
     }
     
     private func enableConfirmButton(){
@@ -123,5 +131,4 @@ class ManualLocationView: UIView, NibLoadable {
         buttonConfirm.backgroundColor = #colorLiteral(red: 0.01176470588, green: 0.662745098, blue: 0.9568627451, alpha: 1)
         self.layoutIfNeeded()
     }
-    
 }
