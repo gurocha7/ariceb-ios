@@ -107,10 +107,16 @@ class ManualLocationViewModel{
     }
     
     func getModel() -> String?{
-        guard let _first = firstAddress else { return "" }
-        guard let _second = secondAddress else { return "" }
-        guard let _third = thirdAddress else { return "" }
-        let _fullAddress = _first + " - " + _second + ", " + _third
+        var _fullAddress = ""
+        if let _first = firstAddress {
+            _fullAddress += _first
+        }
+        if let _second = secondAddress {
+            _fullAddress += " - " + _second
+        }
+        if let _third = thirdAddress {
+            _fullAddress += ", " + _third
+        }
         fullAddres = _fullAddress
         return _fullAddress
     }
