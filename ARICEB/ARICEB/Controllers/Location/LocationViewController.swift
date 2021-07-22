@@ -40,7 +40,7 @@ class LocationViewController: BaseViewController {
     
     private func goToManual(){
         let vc = ManualLocationViewController()
-        vc.didTapConfirmAddres = { [weak self] (model) in
+        vc.didTapConfirmAddres = { [weak self] (model,buildingID,sectorID,subsectorID) in
             self?.didTapConfirmAddres?(model)
         }
         self.navigationController?.pushViewController(vc, animated: true)

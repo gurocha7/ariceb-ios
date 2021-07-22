@@ -37,6 +37,7 @@
 		3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */; };
 		3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC7F25D9C5E40022AF8F /* MainViewController.swift */; };
 		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
+		369375BD26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */; };
 		3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4E5268AB470002903FD /* TravelLiveViewController.swift */; };
 		3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3693A4ED268AB486002903FD /* TravelLiveView.xib */; };
 		3693A4F3268AB492002903FD /* TravelLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4F2268AB492002903FD /* TravelLiveView.swift */; };
@@ -148,6 +149,7 @@
 		3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3670FC7F25D9C5E40022AF8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOriginDestinyService.swift; sourceTree = "<group>"; };
 		3693A4E5268AB470002903FD /* TravelLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewController.swift; sourceTree = "<group>"; };
 		3693A4ED268AB486002903FD /* TravelLiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelLiveView.xib; sourceTree = "<group>"; };
 		3693A4F2268AB492002903FD /* TravelLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveView.swift; sourceTree = "<group>"; };
@@ -533,28 +535,13 @@
 		36B929B725DC518100133E65 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */,
 				3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */,
 				36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */,
 				3619B5AB262A33770094CEA6 /* SelectOriginDestinyView.swift */,
 				3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */,
-				36B929B825DC518D00133E65 /* Origin */,
-				36B929B925DC519600133E65 /* Destiny */,
 			);
 			path = Travel;
-			sourceTree = "<group>";
-		};
-		36B929B825DC518D00133E65 /* Origin */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Origin;
-			sourceTree = "<group>";
-		};
-		36B929B925DC519600133E65 /* Destiny */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Destiny;
 			sourceTree = "<group>";
 		};
 		36D593E72617DBE70034BC69 /* Resources */ = {
@@ -918,6 +905,7 @@
 				36E47E3C26A65869003CA92D /* BuildingsModel.swift in Sources */,
 				36B7EFA8262B2F1000CCFDEB /* LocationOptionView.swift in Sources */,
 				3693A4F3268AB492002903FD /* TravelLiveView.swift in Sources */,
+				369375BD26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift in Sources */,
 				36D1420D26A7AA2700E72F97 /* SubsectorModel.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,

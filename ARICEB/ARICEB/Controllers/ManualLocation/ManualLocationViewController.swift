@@ -11,7 +11,7 @@ import FittedSheets
 class ManualLocationViewController: BaseViewController {
     
     var isOrigin: Bool = false
-    var didTapConfirmAddres: ((String?) -> Void)?
+    var didTapConfirmAddres: ((String?,Int?,Int?,Int?) -> Void)?
     
     let customView: ManualLocationView = ManualLocationView.loadFromNib()
     let viewModel:ManualLocationViewModel = ManualLocationViewModel()
@@ -56,7 +56,7 @@ class ManualLocationViewController: BaseViewController {
         }
         
         customView.didTapConfirmAddress = { [weak self] (model) in
-            self?.didTapConfirmAddres?(model)
+            self?.sendAddressAndIds(model)
         }
         
         viewModel.listBuildings = { [weak self] (buildings) in
@@ -70,6 +70,31 @@ class ManualLocationViewController: BaseViewController {
         viewModel.listSubsectors = { [weak self] (subsectors) in
             self?.goToThirdOptions(subsectors: subsectors)
         }
+    }
+    
+    private func sendAddressAndIds(_ model: String?) {
+        var buildingID: Int? = nil
+        var sectorID: Int? = nil
+        var subsectorID: Int? = nil
+        
+        if let buildingModel = buildingSelected {
+            if let id = buildingModel.id {
+                buildingID = id
+            }
+        }
+        
+        if let secotrModel = sectorSelected {
+            if let id = secotrModel.id {
+                sectorID = id
+            }
+        }
+        
+        if let subsecotrModel = subsectorSelected {
+            if let id = subsecotrModel.id {
+                subsectorID = id
+            }
+        }
+        didTapConfirmAddres?(model,buildingID,sectorID,subsectorID)
     }
     
     private func getBuildings() {

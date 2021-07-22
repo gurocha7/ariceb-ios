@@ -57,7 +57,7 @@ class SelectOriginDestinyViewController: BaseViewController {
     
     private func editOrigin(){
         let vc = ManualLocationViewController(isOrigin: true)
-        vc.didTapConfirmAddres = { [weak self] (model) in
+        vc.didTapConfirmAddres = { [weak self] (model,buildingID,sectorID,subsectorID) in
             guard self != nil else {return}
             self?.viewModel.insertModelOrigin(model: model)
             self?.navigationController?.popToViewController(self!, animated: true)
@@ -67,7 +67,7 @@ class SelectOriginDestinyViewController: BaseViewController {
     
     private func editDestiny(){
         let vc = ManualLocationViewController(isOrigin: false)
-        vc.didTapConfirmAddres = { [weak self] (model) in
+        vc.didTapConfirmAddres = { [weak self] (model,buildingID,sectorID,subsectorID) in
             guard self != nil else {return}
             self?.viewModel.insertModelDestiny(model: model)
             self?.navigationController?.popToViewController(self!, animated: true)
@@ -89,17 +89,4 @@ class SelectOriginDestinyViewController: BaseViewController {
         let controller = TravelLiveViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
-    
-//    private func getRouteTest() {
-//        AF.request("http://127.0.0.1:3000/v1/internalroute", method: .get, parameters: nil).responseJSON { response in
-//            print("###RESPONSE: ",response)
-//            guard let data = response.data else {return}
-//            do {
-//                print("DEU BOM!")
-//            }catch {
-//                print("DEU RUIM!")
-//            }
-//        }
-//    }
-    
 }

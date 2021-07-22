@@ -15,6 +15,14 @@ class SelectOriginDestinyViewModel {
     var updateOriginLayout: (() -> Void)?
     var updateDestinyLayout: (() -> Void)?
     
+    private var originBuildingID: Int?
+    private var originSectorID: Int?
+    private var originSubsectorID: Int?
+    
+    private var destinyBuildingID: Int?
+    private var destinySectorID: Int?
+    private var destinySubsectorID: Int?
+    
     func insertModelOrigin(model: String?){
         modelOrigin = model
         updateOriginLayout?()
@@ -23,6 +31,24 @@ class SelectOriginDestinyViewModel {
     func insertModelDestiny(model: String?){
         modelDestiny = model
         updateDestinyLayout?()
+    }
+    
+    func insertOriginIds(_ buildingID: Int? = nil,sectorID: Int? = nil,subsectorID: Int? = nil) {
+        guard let buildingIDValue = buildingID else {return}
+        originBuildingID = buildingIDValue
+        guard let sectorIDValue = sectorID else {return}
+        originSectorID = sectorIDValue
+        guard let subsectorIDValue = subsectorID else {return}
+        originSubsectorID = subsectorIDValue
+    }
+    
+    func insertDestinyIds(_ buildingID: Int? = nil,sectorID: Int? = nil,subsectorID: Int? = nil) {
+        guard let buildingIDValue = buildingID else {return}
+        destinyBuildingID = buildingIDValue
+        guard let sectorIDValue = sectorID else {return}
+        destinySectorID = sectorIDValue
+        guard let subsectorIDValue = subsectorID else {return}
+        destinySubsectorID = subsectorIDValue
     }
     
     func getModelOriginDescription() -> String?{
