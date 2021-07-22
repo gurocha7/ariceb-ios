@@ -43,7 +43,8 @@ class SelectOriginDestinyViewController: BaseViewController {
         }
         
         customView.shouldShowTravelLive = { [weak self] in
-            self?.showTravelLive()
+//            self?.showTravelLive()
+            self?.viewModel.getRoute()
         }
         
         viewModel.updateOriginLayout = { [weak self] in
@@ -59,6 +60,7 @@ class SelectOriginDestinyViewController: BaseViewController {
         let vc = ManualLocationViewController(isOrigin: true)
         vc.didTapConfirmAddres = { [weak self] (model,buildingID,sectorID,subsectorID) in
             guard self != nil else {return}
+            self?.viewModel.insertOriginIds(buildingID, sectorID: sectorID, subsectorID: subsectorID)
             self?.viewModel.insertModelOrigin(model: model)
             self?.navigationController?.popToViewController(self!, animated: true)
         }
@@ -69,6 +71,7 @@ class SelectOriginDestinyViewController: BaseViewController {
         let vc = ManualLocationViewController(isOrigin: false)
         vc.didTapConfirmAddres = { [weak self] (model,buildingID,sectorID,subsectorID) in
             guard self != nil else {return}
+            self?.viewModel.insertDestinyIds(buildingID, sectorID: sectorID, subsectorID: subsectorID)
             self?.viewModel.insertModelDestiny(model: model)
             self?.navigationController?.popToViewController(self!, animated: true)
         }
@@ -77,8 +80,9 @@ class SelectOriginDestinyViewController: BaseViewController {
     
     private func showLocation(){
         let vc = LocationViewController()
-        vc.didTapConfirmAddres = { [weak self] (model) in
+        vc.didTapConfirmAddres = { [weak self] (model,buildingID,sectorID,subsectorID) in
             guard self != nil else {return}
+            self?.viewModel.insertOriginIds(buildingID, sectorID: sectorID, subsectorID: subsectorID)
             self?.viewModel.insertModelOrigin(model: model)
             self?.navigationController?.popToViewController(self!, animated: true)
         }

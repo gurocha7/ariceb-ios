@@ -9,11 +9,16 @@ import Foundation
 
 class SelectOriginDestinyViewModel {
     
+    private var service: SelectOriginDestinyService = SelectOriginDestinyService()
+    
     var modelOrigin: String?
     var modelDestiny: String?
     
     var updateOriginLayout: (() -> Void)?
     var updateDestinyLayout: (() -> Void)?
+    
+    var originIsExternal: Bool = false
+    var destinyIsExternal: Bool = false
     
     private var originBuildingID: Int?
     private var originSectorID: Int?
@@ -36,8 +41,10 @@ class SelectOriginDestinyViewModel {
     func insertOriginIds(_ buildingID: Int? = nil,sectorID: Int? = nil,subsectorID: Int? = nil) {
         guard let buildingIDValue = buildingID else {return}
         originBuildingID = buildingIDValue
+        originIsExternal = true
         guard let sectorIDValue = sectorID else {return}
         originSectorID = sectorIDValue
+        originIsExternal = false
         guard let subsectorIDValue = subsectorID else {return}
         originSubsectorID = subsectorIDValue
     }
@@ -45,8 +52,10 @@ class SelectOriginDestinyViewModel {
     func insertDestinyIds(_ buildingID: Int? = nil,sectorID: Int? = nil,subsectorID: Int? = nil) {
         guard let buildingIDValue = buildingID else {return}
         destinyBuildingID = buildingIDValue
+        destinyIsExternal = true
         guard let sectorIDValue = sectorID else {return}
         destinySectorID = sectorIDValue
+        destinyIsExternal = false
         guard let subsectorIDValue = subsectorID else {return}
         destinySubsectorID = subsectorIDValue
     }
@@ -73,4 +82,20 @@ class SelectOriginDestinyViewModel {
         return final
     }
     
+    func getRoute() {
+        var params: [String:Any] = [:]
+        if originIsExternal && destinyIsExternal {
+            //chamar rota externa
+            print("chamar rota externa")
+        } else if !originIsExternal && !destinyIsExternal {
+            //chamar rota interna
+            print("chamar rota interna")
+        } else if !originIsExternal && destinyIsExternal {
+            //chamar rota de interno para externo
+            print("chamar rota interno para externo")
+        }else {
+            //chamar rota de externo para interno
+            print("chamar rota externo para interno")
+        }
+    }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class LocationViewController: BaseViewController {
     
-    var didTapConfirmAddres: ((String?) -> Void)?
+    var didTapConfirmAddres: ((String?,Int?,Int?,Int?) -> Void)?
     
     let customView: LocationView = LocationView.loadFromNib()
     
@@ -41,7 +41,7 @@ class LocationViewController: BaseViewController {
     private func goToManual(){
         let vc = ManualLocationViewController()
         vc.didTapConfirmAddres = { [weak self] (model,buildingID,sectorID,subsectorID) in
-            self?.didTapConfirmAddres?(model)
+            self?.didTapConfirmAddres?(model,buildingID,sectorID,subsectorID)
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
