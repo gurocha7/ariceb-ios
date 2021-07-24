@@ -8,6 +8,8 @@
 import UIKit
 import netfox
 
+let generalIP: String = "192.168.2.5"
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
