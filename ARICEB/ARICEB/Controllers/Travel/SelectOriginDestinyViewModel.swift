@@ -12,6 +12,7 @@ class SelectOriginDestinyViewModel {
     private var service: SelectOriginDestinyService = SelectOriginDestinyService()
     
     var shouldShowErrorMSG: ((String) -> Void)?
+    var showExternalTravelLive: ((ExternalRoute) -> Void)?
     
     var modelOrigin: String?
     var modelDestiny: String?
@@ -105,7 +106,7 @@ class SelectOriginDestinyViewModel {
     
     func getExternalRoute() {
         service.getRoute(params: params) { (response) in
-            print("//: ", response)
+            self.showExternalTravelLive?(response)
         } failure: { (errorMSG) in
             self.shouldShowErrorMSG?(errorMSG)
         }

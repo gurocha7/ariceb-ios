@@ -54,6 +54,10 @@ class SelectOriginDestinyViewController: BaseViewController {
         viewModel.updateDestinyLayout = { [weak self] in
             self?.customView.updateDestinyLayout()
         }
+        
+        viewModel.showExternalTravelLive = { [weak self] (externalRoute) in
+            self?.showExternalTravelLive(route: externalRoute)
+        }
     }
     
     private func editOrigin(){
@@ -89,8 +93,9 @@ class SelectOriginDestinyViewController: BaseViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func showTravelLive() {
+    private func showExternalTravelLive(route: ExternalRoute) {
         let controller = TravelLiveViewController()
+        controller.setupExternalRoute(route: route)
         navigationController?.pushViewController(controller, animated: true)
     }
 }

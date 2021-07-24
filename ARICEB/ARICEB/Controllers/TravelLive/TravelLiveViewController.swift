@@ -12,11 +12,27 @@ import MapKit
 
 class TravelLiveViewController: BaseViewController {
     
+    enum RouteType {
+        case outToOut
+        case inToIn
+        case inToOut
+        case outToIn
+    }
+    
     //MARK: - Properties
     let customView: TravelLiveView = TravelLiveView.loadFromNib()
     private var viewModel: TravelLiveViewModel = TravelLiveViewModel()
     private let sceneLocationView = SceneLocationView()
     private var hasRouteToScene: Bool = false
+    
+    private var routeType: RouteType = .outToOut
+    
+    //Outdoor -> Outdoor
+    private var externalRoute: ExternalRoute? {
+        didSet {
+            routeType = .outToOut
+        }
+    }
 
     //MARK: - Overrides
     override func loadView() {
@@ -29,7 +45,7 @@ class TravelLiveViewController: BaseViewController {
         super.viewDidLoad()
         customView.viewModel = viewModel
         bindEvents()
-        getMockLocation()
+        getRoute()
     }
         
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,6 +67,23 @@ class TravelLiveViewController: BaseViewController {
         viewModel.didShowRoutes = { [weak self] (routes) in
             self?.sceneLocationView.run()
             self?.addRoutesToScene(routes: routes)
+        }
+    }
+    
+    func setupExternalRoute(route: ExternalRoute) {
+        externalRoute = route
+    }
+    
+    private func getRoute() {
+        switch routeType {
+        case .outToOut:
+            title = "Destino: " + (externalRoute?.buildingDestiny?.name ?? "")
+            viewModel.getRoute(originLat: externalRoute?.buildingOrigin?.lat,
+                               originLong: externalRoute?.buildingOrigin?.long,
+                               destinyLat: externalRoute?.buildingDestiny?.lat,
+                               destinyLong: externalRoute?.buildingDestiny?.long)
+        default:
+            break
         }
     }
     
