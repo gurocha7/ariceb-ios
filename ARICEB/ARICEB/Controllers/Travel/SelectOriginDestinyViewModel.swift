@@ -11,6 +11,8 @@ class SelectOriginDestinyViewModel {
     
     private var service: SelectOriginDestinyService = SelectOriginDestinyService()
     
+    var shouldShowErrorMSG: ((String) -> Void)?
+    
     var modelOrigin: String?
     var modelDestiny: String?
     
@@ -27,6 +29,8 @@ class SelectOriginDestinyViewModel {
     private var destinyBuildingID: Int?
     private var destinySectorID: Int?
     private var destinySubsectorID: Int?
+    
+    var params: [String:Any] = [:]
     
     func insertModelOrigin(model: String?){
         modelOrigin = model
@@ -83,10 +87,10 @@ class SelectOriginDestinyViewModel {
     }
     
     func getRoute() {
-        var params: [String:Any] = [:]
         if originIsExternal && destinyIsExternal {
-            //chamar rota externa
-            print("chamar rota externa")
+            params["originID"] = originBuildingID
+            params["destinyID"] = destinyBuildingID
+            getExternalRoute()
         } else if !originIsExternal && !destinyIsExternal {
             //chamar rota interna
             print("chamar rota interna")
@@ -96,6 +100,14 @@ class SelectOriginDestinyViewModel {
         }else {
             //chamar rota de externo para interno
             print("chamar rota externo para interno")
+        }
+    }
+    
+    func getExternalRoute() {
+        service.getRoute(params: params) { (response) in
+            print("//")
+        } failure: { (errorMSG) in
+            self.shouldShowErrorMSG?(errorMSG)
         }
     }
 }

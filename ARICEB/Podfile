@@ -11,6 +11,7 @@ target 'ARICEB' do
   pod 'FittedSheets'
   pod 'ARCL'
   pod 'Alamofire'
+  pod 'netfox'
 
   target 'ARICEBTests' do
     inherit! :search_paths

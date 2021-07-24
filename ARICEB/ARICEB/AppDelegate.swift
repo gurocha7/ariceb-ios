@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import netfox
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = coordinator?.rootVC
         window?.makeKeyAndVisible()
+        setupNFX()
         return true
+    }
+    
+    private func setupNFX() {
+        NFX.sharedInstance().start()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
