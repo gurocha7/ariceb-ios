@@ -105,7 +105,7 @@ class SelectOriginDestinyViewModel {
     
     func getExternalRoute() {
         service.getRoute(params: params) { (response) in
-            print("//")
+            print("//: ", response)
         } failure: { (errorMSG) in
             self.shouldShowErrorMSG?(errorMSG)
         }

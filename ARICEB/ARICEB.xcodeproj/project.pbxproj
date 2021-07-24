@@ -84,6 +84,7 @@
 		36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */; };
 		36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D593FF2617EEB20034BC69 /* QRCodeView.swift */; };
 		36D594052617EED70034BC69 /* QRCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36D594042617EED70034BC69 /* QRCodeView.xib */; };
+		36E264F426AC648800ADC9C9 /* ExternalRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E264F326AC648800ADC9C9 /* ExternalRoute.swift */; };
 		36E47E2C26A64E36003CA92D /* ManualLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E2B26A64E36003CA92D /* ManualLocationService.swift */; };
 		36E47E3C26A65869003CA92D /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E3B26A65869003CA92D /* BuildingsModel.swift */; };
 		36E47E4126A658D2003CA92D /* ListBuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */; };
@@ -196,6 +197,7 @@
 		36D593ED2617E07F0034BC69 /* Extensions+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		36D593FF2617EEB20034BC69 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		36D594042617EED70034BC69 /* QRCodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRCodeView.xib; sourceTree = "<group>"; };
+		36E264F326AC648800ADC9C9 /* ExternalRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalRoute.swift; sourceTree = "<group>"; };
 		36E47E2B26A64E36003CA92D /* ManualLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationService.swift; sourceTree = "<group>"; };
 		36E47E3B26A65869003CA92D /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
 		36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuildingsModel.swift; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 		36B929B725DC518100133E65 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				36E264F226AC647A00ADC9C9 /* Model */,
 				369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */,
 				3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */,
 				36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */,
@@ -562,6 +565,14 @@
 				36D594042617EED70034BC69 /* QRCodeView.xib */,
 			);
 			path = QrCode;
+			sourceTree = "<group>";
+		};
+		36E264F226AC647A00ADC9C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36E264F326AC648800ADC9C9 /* ExternalRoute.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		36E47E3A26A652B1003CA92D /* Model */ = {
@@ -858,6 +869,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */,
+				36E264F426AC648800ADC9C9 /* ExternalRoute.swift in Sources */,
 				36D593E92617DC260034BC69 /* CustomColor.swift in Sources */,
 				36B7F003262BA4E700CCFDEB /* TransitionAnimator.swift in Sources */,
 				36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */,

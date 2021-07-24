@@ -10,4 +10,6 @@ import Foundation
 struct BuildingsModel: Codable {
     let id: Int?
     let name: String?
+    let lat: Double?
+    let long: Double?
 }
