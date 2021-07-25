@@ -58,6 +58,10 @@ class SelectOriginDestinyViewController: BaseViewController {
         viewModel.showExternalTravelLive = { [weak self] (externalRoute) in
             self?.showExternalTravelLive(route: externalRoute)
         }
+        
+        viewModel.showInternalTravelLive = { [weak self] in
+            self?.showInternalTravelLive()
+        }
     }
     
     private func editOrigin(){
@@ -97,5 +101,13 @@ class SelectOriginDestinyViewController: BaseViewController {
         let controller = TravelLiveViewController()
         controller.setupExternalRoute(route: route)
         navigationController?.pushViewController(controller, animated: true)
+    }
+
+    private func showInternalTravelLive() {
+        let controller = ScannerViewController()
+        let nav = UINavigationController(rootViewController: controller)
+        controller.modalPresentationStyle = .overFullScreen
+        nav.modalPresentationStyle = .overFullScreen
+        navigationController?.present(nav, animated: true, completion: nil)
     }
 }

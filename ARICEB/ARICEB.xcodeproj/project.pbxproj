@@ -41,6 +41,7 @@
 		3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4E5268AB470002903FD /* TravelLiveViewController.swift */; };
 		3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3693A4ED268AB486002903FD /* TravelLiveView.xib */; };
 		3693A4F3268AB492002903FD /* TravelLiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4F2268AB492002903FD /* TravelLiveView.swift */; };
+		3694CF1A26ADEA62003B1A90 /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694CF1926ADEA62003B1A90 /* QRCodeScannerViewController.swift */; };
 		36A5B9AF261D39EA00A4EACB /* FastButtonsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A5B9AE261D39EA00A4EACB /* FastButtonsView.xib */; };
 		36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A5B9B6261D39F700A4EACB /* FastButtonsView.swift */; };
 		36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B7EF98262B29A300CCFDEB /* LocationView.swift */; };
@@ -154,6 +155,7 @@
 		3693A4E5268AB470002903FD /* TravelLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewController.swift; sourceTree = "<group>"; };
 		3693A4ED268AB486002903FD /* TravelLiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelLiveView.xib; sourceTree = "<group>"; };
 		3693A4F2268AB492002903FD /* TravelLiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveView.swift; sourceTree = "<group>"; };
+		3694CF1926ADEA62003B1A90 /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		36A5B9AE261D39EA00A4EACB /* FastButtonsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FastButtonsView.xib; sourceTree = "<group>"; };
 		36A5B9B6261D39F700A4EACB /* FastButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastButtonsView.swift; sourceTree = "<group>"; };
 		36B7EF98262B29A300CCFDEB /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
@@ -389,6 +391,14 @@
 			path = TravelLive;
 			sourceTree = "<group>";
 		};
+		3694CF1526ADEA32003B1A90 /* QrCodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+				3694CF1926ADEA62003B1A90 /* QRCodeScannerViewController.swift */,
+			);
+			path = QrCodeScanner;
+			sourceTree = "<group>";
+		};
 		36A5B9AD261D39CC00A4EACB /* FastButtons */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +547,7 @@
 		36B929B725DC518100133E65 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				3694CF1526ADEA32003B1A90 /* QrCodeScanner */,
 				36E264F226AC647A00ADC9C9 /* Model */,
 				369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */,
 				3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */,
@@ -895,6 +906,7 @@
 				36205CFA262CD09900BF0D3B /* SubmenuViewController.swift in Sources */,
 				36205D13262D22EC00BF0D3B /* FAQViewController.swift in Sources */,
 				36205CF0262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift in Sources */,
+				3694CF1A26ADEA62003B1A90 /* QRCodeScannerViewController.swift in Sources */,
 				36B7F030262BB64C00CCFDEB /* ManualLocationView.swift in Sources */,
 				36E47E2C26A64E36003CA92D /* ManualLocationService.swift in Sources */,
 				36B7F008262BA4E700CCFDEB /* SideMenuController+SideOver.swift in Sources */,

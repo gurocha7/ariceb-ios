@@ -13,6 +13,7 @@ class SelectOriginDestinyViewModel {
     
     var shouldShowErrorMSG: ((String) -> Void)?
     var showExternalTravelLive: ((ExternalRoute) -> Void)?
+    var showInternalTravelLive: (() -> Void)?
     
     var modelOrigin: String?
     var modelDestiny: String?
@@ -94,7 +95,7 @@ class SelectOriginDestinyViewModel {
             getExternalRoute()
         } else if !originIsExternal && !destinyIsExternal {
             //chamar rota interna
-            print("chamar rota interna")
+            showInternalTravelLive?()
         } else if !originIsExternal && destinyIsExternal {
             //chamar rota de interno para externo
             print("chamar rota interno para externo")
