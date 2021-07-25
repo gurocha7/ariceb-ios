@@ -34,6 +34,16 @@ class TravelLiveViewController: BaseViewController {
         }
     }
 
+    
+    lazy var buttonQrCode: UIButton = {
+        let button = UIButton()
+        button.setTitle("Escanear QrCode", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = mainColor
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
+    
     //MARK: - Overrides
     override func loadView() {
         super.loadView()
@@ -46,11 +56,26 @@ class TravelLiveViewController: BaseViewController {
         customView.viewModel = viewModel
         bindEvents()
         getRoute()
+//        getMockLocation()
+        addButton()
+        setupButtons()
     }
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneLocationView.pause() 
+    }
+    
+    private func addButton() {
+        sceneLocationView.addSubview(buttonQrCode)
+        buttonQrCode.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonQrCode.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        buttonQrCode.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+        buttonQrCode.widthAnchor.constraint(equalToConstant: 160).isActive = true
+    }
+    
+    private func setupButtons() {
+        buttonQrCode.layer.cornerRadius = 6
     }
 
     private func setupUI() {
@@ -77,6 +102,7 @@ class TravelLiveViewController: BaseViewController {
     private func getRoute() {
         switch routeType {
         case .outToOut:
+            buttonQrCode.isHidden = true
             title = "Destino: " + (externalRoute?.buildingDestiny?.name ?? "")
             viewModel.getRoute(originLat: externalRoute?.buildingOrigin?.lat,
                                originLong: externalRoute?.buildingOrigin?.long,
