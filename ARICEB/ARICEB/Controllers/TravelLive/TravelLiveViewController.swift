@@ -57,35 +57,26 @@ class TravelLiveViewController: BaseViewController {
         bindEvents()
         getRoute()
 //        getMockLocation()
-        addButton()
-        setupButtons()
     }
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneLocationView.pause() 
     }
-    
-    private func addButton() {
-        sceneLocationView.addSubview(buttonQrCode)
-        buttonQrCode.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonQrCode.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        buttonQrCode.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
-        buttonQrCode.widthAnchor.constraint(equalToConstant: 160).isActive = true
-    }
-    
-    private func setupButtons() {
-        buttonQrCode.layer.cornerRadius = 6
-    }
 
     private func setupUI() {
-        sceneLocationView.showAxesNode = false
-        sceneLocationView.showFeaturePoints = false
-        sceneLocationView.locationNodeTouchDelegate = self
-//        sceneLocationView.arViewDelegate  = self
-        sceneLocationView.sceneTrackingDelegate = self
-        customView.addSubview(sceneLocationView)
-        sceneLocationView.frame = customView.bounds
+        switch routeType {
+        case .outToOut:
+            sceneLocationView.showAxesNode = false
+            sceneLocationView.showFeaturePoints = false
+            sceneLocationView.locationNodeTouchDelegate = self
+    //        sceneLocationView.arViewDelegate  = self
+            sceneLocationView.sceneTrackingDelegate = self
+            customView.addSubview(sceneLocationView)
+            sceneLocationView.frame = customView.bounds
+        default:
+            break
+        }
     }
     
     private func bindEvents() {

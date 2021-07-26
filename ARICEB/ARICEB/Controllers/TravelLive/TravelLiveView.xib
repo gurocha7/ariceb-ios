@@ -17,16 +17,30 @@
                 <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yJZ-I1-Wj8">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                 </arscnView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bM2-hC-Oud">
+                    <rect key="frame" x="132" y="787" width="150" height="45"/>
+                    <color key="backgroundColor" red="0.36862745099999999" green="0.75686274509999996" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="VMC-Cn-QfT"/>
+                        <constraint firstAttribute="height" constant="45" id="h6m-uQ-2yB"/>
+                    </constraints>
+                    <state key="normal" title="Escanear QrCode">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yJZ-I1-Wj8" secondAttribute="trailing" id="8PP-8H-GaI"/>
                 <constraint firstItem="yJZ-I1-Wj8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CAe-I9-dff"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bM2-hC-Oud" secondAttribute="bottom" constant="30" id="Cle-AI-ItR"/>
                 <constraint firstItem="yJZ-I1-Wj8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="OoX-Iq-ajJ"/>
+                <constraint firstItem="bM2-hC-Oud" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fAZ-uH-Y4m"/>
                 <constraint firstAttribute="bottom" secondItem="yJZ-I1-Wj8" secondAttribute="bottom" id="xYm-2h-OXy"/>
             </constraints>
             <connections>
+                <outlet property="buttonQrCode" destination="bM2-hC-Oud" id="niK-zI-aao"/>
                 <outlet property="sceneView" destination="yJZ-I1-Wj8" id="PCy-iq-6hV"/>
             </connections>
             <point key="canvasLocation" x="-145" y="92"/>

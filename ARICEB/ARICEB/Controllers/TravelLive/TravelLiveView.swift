@@ -16,11 +16,17 @@ class TravelLiveView: UIView, NibLoadable {
     
     //MARK: - OUTLETS
     @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var buttonQrCode: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
 //        addNodeBox()
+        setupButtons()
+    }
+    
+    private func setupButtons() {
+        buttonQrCode.layer.cornerRadius = 6
     }
 
     private func setupUI() {
