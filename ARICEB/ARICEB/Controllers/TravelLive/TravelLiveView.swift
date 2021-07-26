@@ -14,9 +14,15 @@ class TravelLiveView: UIView, NibLoadable {
     var viewModel: TravelLiveViewModel?
     private let arConfig = ARWorldTrackingConfiguration() //faz a utilização da camêra com AR e monitora a posicão e orientação do device
     
+    var didTapQRCodeButton: (() -> Void)?
+    
     //MARK: - OUTLETS
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var buttonQrCode: UIButton!
+    
+    @IBAction func qrCodeButtonAction(_ sender: Any) {
+        didTapQRCodeButton?()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,11 +37,11 @@ class TravelLiveView: UIView, NibLoadable {
 
     private func setupUI() {
         sceneView.session.run(arConfig)
-        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+//        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         sceneView.autoenablesDefaultLighting = true //ARKit adiciona luz automaticamente no objeto renderizado
     }
     
-    private func addNodeBox() {
+    func addNodeBox() {
         let firstScene = SCNScene()
         let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
         box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela

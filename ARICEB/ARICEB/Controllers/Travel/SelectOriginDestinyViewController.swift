@@ -105,14 +105,10 @@ class SelectOriginDestinyViewController: BaseViewController {
 
     private func showInternalTravelLive() {
         let controller = TravelLiveViewController()
+        controller.setupInternalRoute()
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    private func scannerQrCode() {
-        let controller = ScannerViewController()
-        let nav = UINavigationController(rootViewController: controller)
-        controller.modalPresentationStyle = .overFullScreen
-        nav.modalPresentationStyle = .overFullScreen
-        navigationController?.present(nav, animated: true, completion: nil)
-    }
+    
+    
 }

@@ -12,6 +12,8 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
+    var showResultForQrCode: ((String) -> Void)?
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -107,12 +109,11 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             found(code: stringValue)
         }
-
-        dismiss(animated: true)
     }
 
     func found(code: String) {
         print(code)
+        showResultForQrCode?(code)
     }
 
     @objc

@@ -84,10 +84,18 @@ class TravelLiveViewController: BaseViewController {
             self?.sceneLocationView.run()
             self?.addRoutesToScene(routes: routes)
         }
+        
+        customView.didTapQRCodeButton = { [weak self] in
+            self?.scannerQrCode()
+        }
     }
     
     func setupExternalRoute(route: ExternalRoute) {
         externalRoute = route
+    }
+    
+    func setupInternalRoute() {
+        routeType = .inToIn
     }
     
     private func getRoute() {
@@ -102,6 +110,20 @@ class TravelLiveViewController: BaseViewController {
         default:
             break
         }
+    }
+    
+    private func scannerQrCode() {
+        let controller = ScannerViewController()
+        let nav = UINavigationController(rootViewController: controller)
+        controller.modalPresentationStyle = .overFullScreen
+        controller.showResultForQrCode = { [weak self] (code) in
+            DispatchQueue.main.async {
+                self?.customView.addNodeBox()
+            }
+            controller.dismiss(animated: true)
+        }
+        nav.modalPresentationStyle = .overFullScreen
+        navigationController?.present(nav, animated: true, completion: nil)
     }
     
     private func getMockLocation() {
