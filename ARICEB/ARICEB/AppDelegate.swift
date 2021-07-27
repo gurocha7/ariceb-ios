@@ -8,7 +8,8 @@
 import UIKit
 import netfox
 
-let generalIP: String = "192.168.2.5"
+//let generalIP: String = "192.168.2.5"
+let baseURL: String = "https://ariceb.herokuapp.com/"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
