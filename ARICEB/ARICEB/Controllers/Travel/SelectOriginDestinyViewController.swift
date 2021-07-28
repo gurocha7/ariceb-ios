@@ -43,7 +43,6 @@ class SelectOriginDestinyViewController: BaseViewController {
         }
         
         customView.shouldShowTravelLive = { [weak self] in
-//            self?.showTravelLive()
             self?.viewModel.getRoute()
         }
         
@@ -109,6 +108,10 @@ class SelectOriginDestinyViewController: BaseViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    
+    private func checkRotatePhone() {
+        let controller = RotatePhoneViewController()
+        controller.modalPresentationStyle = .overFullScreen
+        present(controller, animated: true, completion: nil)
+    }
     
 }

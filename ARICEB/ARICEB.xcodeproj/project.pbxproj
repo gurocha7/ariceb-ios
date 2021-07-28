@@ -37,6 +37,8 @@
 		3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */; };
 		3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC7F25D9C5E40022AF8F /* MainViewController.swift */; };
 		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
+		367AA72226B0D87000E61F57 /* RotatePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AA72126B0D87000E61F57 /* RotatePhoneViewController.swift */; };
+		367AA72A26B0D8D200E61F57 /* RotatePhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 367AA72926B0D8D200E61F57 /* RotatePhoneViewController.xib */; };
 		369375BD26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */; };
 		3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4E5268AB470002903FD /* TravelLiveViewController.swift */; };
 		3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3693A4ED268AB486002903FD /* TravelLiveView.xib */; };
@@ -151,6 +153,8 @@
 		3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3670FC7F25D9C5E40022AF8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		367AA72126B0D87000E61F57 /* RotatePhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatePhoneViewController.swift; sourceTree = "<group>"; };
+		367AA72926B0D8D200E61F57 /* RotatePhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotatePhoneViewController.xib; sourceTree = "<group>"; };
 		369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOriginDestinyService.swift; sourceTree = "<group>"; };
 		3693A4E5268AB470002903FD /* TravelLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewController.swift; sourceTree = "<group>"; };
 		3693A4ED268AB486002903FD /* TravelLiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelLiveView.xib; sourceTree = "<group>"; };
@@ -380,6 +384,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		367AA72026B0D85B00E61F57 /* RotatePhone */ = {
+			isa = PBXGroup;
+			children = (
+				367AA72126B0D87000E61F57 /* RotatePhoneViewController.swift */,
+				367AA72926B0D8D200E61F57 /* RotatePhoneViewController.xib */,
+			);
+			path = RotatePhone;
+			sourceTree = "<group>";
+		};
 		3693A4E4268AB442002903FD /* TravelLive */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,8 +523,8 @@
 		36B929A725DC3F7C00133E65 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3693A4E4268AB442002903FD /* TravelLive */,
 				36B929B625DC513E00133E65 /* Main */,
+				3693A4E4268AB442002903FD /* TravelLive */,
 				36B929B725DC518100133E65 /* Travel */,
 				3619B5B9262A82B70094CEA6 /* Location */,
 				36B7F026262BB1A700CCFDEB /* QrCodeLocation */,
@@ -547,6 +560,7 @@
 		36B929B725DC518100133E65 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				367AA72026B0D85B00E61F57 /* RotatePhone */,
 				3694CF1526ADEA32003B1A90 /* QrCodeScanner */,
 				36E264F226AC647A00ADC9C9 /* Model */,
 				369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */,
@@ -740,6 +754,7 @@
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
 				36B7EF9E262B2A6900CCFDEB /* LocationView.xib in Resources */,
+				367AA72A26B0D8D200E61F57 /* RotatePhoneViewController.xib in Resources */,
 				3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */,
 				36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */,
 				3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */,
@@ -936,6 +951,7 @@
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
 				36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */,
+				367AA72226B0D87000E61F57 /* RotatePhoneViewController.swift in Sources */,
 				36B7F002262BA4E700CCFDEB /* SideContainmentSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
