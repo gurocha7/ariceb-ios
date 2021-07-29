@@ -37,8 +37,6 @@
 		3670FC4E25D9BC100022AF8F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */; };
 		3670FC8125D9C5E40022AF8F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC7F25D9C5E40022AF8F /* MainViewController.swift */; };
 		3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC8025D9C5E40022AF8F /* MainViewController.xib */; };
-		367AA72226B0D87000E61F57 /* RotatePhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367AA72126B0D87000E61F57 /* RotatePhoneViewController.swift */; };
-		367AA72A26B0D8D200E61F57 /* RotatePhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 367AA72926B0D8D200E61F57 /* RotatePhoneViewController.xib */; };
 		369375BD26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */; };
 		3693A4E6268AB470002903FD /* TravelLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3693A4E5268AB470002903FD /* TravelLiveViewController.swift */; };
 		3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3693A4ED268AB486002903FD /* TravelLiveView.xib */; };
@@ -91,6 +89,8 @@
 		36E47E2C26A64E36003CA92D /* ManualLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E2B26A64E36003CA92D /* ManualLocationService.swift */; };
 		36E47E3C26A65869003CA92D /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E3B26A65869003CA92D /* BuildingsModel.swift */; };
 		36E47E4126A658D2003CA92D /* ListBuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */; };
+		36EEE3B026B22D6A0098DEC1 /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */; };
+		36EEE3B126B22D6A0098DEC1 /* RotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */; };
 		36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */; };
 		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
 		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
@@ -153,8 +153,6 @@
 		3670FC4D25D9BC100022AF8F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3670FC7F25D9C5E40022AF8F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3670FC8025D9C5E40022AF8F /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		367AA72126B0D87000E61F57 /* RotatePhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatePhoneViewController.swift; sourceTree = "<group>"; };
-		367AA72926B0D8D200E61F57 /* RotatePhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotatePhoneViewController.xib; sourceTree = "<group>"; };
 		369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOriginDestinyService.swift; sourceTree = "<group>"; };
 		3693A4E5268AB470002903FD /* TravelLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewController.swift; sourceTree = "<group>"; };
 		3693A4ED268AB486002903FD /* TravelLiveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelLiveView.xib; sourceTree = "<group>"; };
@@ -207,6 +205,8 @@
 		36E47E2B26A64E36003CA92D /* ManualLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationService.swift; sourceTree = "<group>"; };
 		36E47E3B26A65869003CA92D /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
 		36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuildingsModel.swift; sourceTree = "<group>"; };
+		36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
+		36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotateViewController.xib; sourceTree = "<group>"; };
 		36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewModel.swift; sourceTree = "<group>"; };
 		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -387,8 +387,8 @@
 		367AA72026B0D85B00E61F57 /* RotatePhone */ = {
 			isa = PBXGroup;
 			children = (
-				367AA72126B0D87000E61F57 /* RotatePhoneViewController.swift */,
-				367AA72926B0D8D200E61F57 /* RotatePhoneViewController.xib */,
+				36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */,
+				36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */,
 			);
 			path = RotatePhone;
 			sourceTree = "<group>";
@@ -560,14 +560,9 @@
 		36B929B725DC518100133E65 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				36EEE3B826B22EE40098DEC1 /* SelectedOriginAndDestiny */,
 				367AA72026B0D85B00E61F57 /* RotatePhone */,
 				3694CF1526ADEA32003B1A90 /* QrCodeScanner */,
-				36E264F226AC647A00ADC9C9 /* Model */,
-				369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */,
-				3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */,
-				36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */,
-				3619B5AB262A33770094CEA6 /* SelectOriginDestinyView.swift */,
-				3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -611,6 +606,19 @@
 				36D1420C26A7AA2700E72F97 /* SubsectorModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		36EEE3B826B22EE40098DEC1 /* SelectedOriginAndDestiny */ = {
+			isa = PBXGroup;
+			children = (
+				36E264F226AC647A00ADC9C9 /* Model */,
+				369375BC26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift */,
+				3619B5A0262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift */,
+				36205CEF262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift */,
+				3619B5AB262A33770094CEA6 /* SelectOriginDestinyView.swift */,
+				3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */,
+			);
+			path = SelectedOriginAndDestiny;
 			sourceTree = "<group>";
 		};
 		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {
@@ -754,11 +762,11 @@
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
 				36B7EF9E262B2A6900CCFDEB /* LocationView.xib in Resources */,
-				367AA72A26B0D8D200E61F57 /* RotatePhoneViewController.xib in Resources */,
 				3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */,
 				36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */,
 				3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */,
 				36A5B9AF261D39EA00A4EACB /* FastButtonsView.xib in Resources */,
+				36EEE3B126B22D6A0098DEC1 /* RotateViewController.xib in Resources */,
 				36B7F035262BB67F00CCFDEB /* ManualLocationView.xib in Resources */,
 				3670FC1D25D9A8F30022AF8F /* LaunchScreen.storyboard in Resources */,
 				36B7EFA3262B2EED00CCFDEB /* LocationOptionView.xib in Resources */,
@@ -913,6 +921,7 @@
 				36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */,
 				36205D00262CD22B00BF0D3B /* SubmenuViewModel.swift in Sources */,
 				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,
+				36EEE3B026B22D6A0098DEC1 /* RotateViewController.swift in Sources */,
 				36B7EFD1262B6C1C00CCFDEB /* MenuViewModel.swift in Sources */,
 				36B7F005262BA4E700CCFDEB /* SideMenuController+CustomTypes.swift in Sources */,
 				3670FC4425D9BA5C0022AF8F /* Coordinator.swift in Sources */,
@@ -951,7 +960,6 @@
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
 				36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */,
-				367AA72226B0D87000E61F57 /* RotatePhoneViewController.swift in Sources */,
 				36B7F002262BA4E700CCFDEB /* SideContainmentSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

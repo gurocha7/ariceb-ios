@@ -59,7 +59,8 @@ class SelectOriginDestinyViewController: BaseViewController {
         }
         
         viewModel.showInternalTravelLive = { [weak self] in
-            self?.showInternalTravelLive()
+//            self?.showInternalTravelLive()
+            self?.checkRotatePhone()
         }
     }
     
@@ -109,8 +110,8 @@ class SelectOriginDestinyViewController: BaseViewController {
     }
     
     private func checkRotatePhone() {
-        let controller = RotatePhoneViewController()
-        controller.modalPresentationStyle = .formSheet
+        let controller = RotateViewController()
+        controller.modalPresentationStyle = .overFullScreen
         self.present(controller, animated: true, completion: nil)
     }
     
