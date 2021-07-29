@@ -8,8 +8,8 @@
 import UIKit
 import netfox
 
-//let generalIP: String = "192.168.2.5"
-let baseURL: String = "https://ariceb-prod.herokuapp.com/"
+let baseURL: String = "http://127.0.0.1:3000/v1"
+//let baseURL: String = "https://ariceb-prod.herokuapp.com/"
 
 
 @main

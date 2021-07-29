@@ -11,7 +11,7 @@ import Alamofire
 class SelectOriginDestinyService {
     
     func getRoute(params: [String:Any] = [:],completion: @escaping ((ExternalRoute) -> Void), failure: Failure?) {
-        AF.request("\(baseURL)v1/route", method: .get, parameters: params).responseJSON { (response) in
+        AF.request("\(baseURL)/route", method: .get, parameters: params).responseJSON { (response) in
             print("###RESPONSE: ", response)
             guard let data = response.data else {return}
             do {

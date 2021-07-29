@@ -13,7 +13,7 @@ typealias Failure = ((String) -> Void)
 class ManualLocationService {
     
     func getBuildings(completion: @escaping ((ListBuildingsModel) -> Void), failure: Failure?) {
-        AF.request("\(baseURL)v1/buildings", method: .get).responseJSON { (response) in
+        AF.request("\(baseURL)/buildings", method: .get).responseJSON { (response) in
             print("###RESPONSE: ", response)
             guard let data = response.data else {return}
             do {
@@ -26,7 +26,7 @@ class ManualLocationService {
     }
     
     func getSectors(buildingId: Int,completion: @escaping ((ListSectorsModel) -> Void), failure: Failure?) {
-        AF.request("\(baseURL)v1/sectors/\(buildingId)", method: .get).responseJSON { (response) in
+        AF.request("\(baseURL)/sectors/\(buildingId)", method: .get).responseJSON { (response) in
             print("###RESPONSE: ", response)
             guard let data = response.data else {return}
             do {
@@ -39,7 +39,7 @@ class ManualLocationService {
     }
     
     func getSubsectors(sectorId: Int,completion: @escaping ((ListSubsectorsModel) -> Void), failure: Failure?) {
-        AF.request("\(baseURL)v1/subsectors/\(sectorId)", method: .get).responseJSON { (response) in
+        AF.request("\(baseURL)/subsectors/\(sectorId)", method: .get).responseJSON { (response) in
             print("###RESPONSE: ", response)
             guard let data = response.data else {return}
             do {

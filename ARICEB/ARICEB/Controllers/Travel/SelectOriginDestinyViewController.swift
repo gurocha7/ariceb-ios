@@ -110,8 +110,8 @@ class SelectOriginDestinyViewController: BaseViewController {
     
     private func checkRotatePhone() {
         let controller = RotatePhoneViewController()
-        controller.modalPresentationStyle = .overFullScreen
-        present(controller, animated: true, completion: nil)
+        controller.modalPresentationStyle = .formSheet
+        self.present(controller, animated: true, completion: nil)
     }
     
 }
