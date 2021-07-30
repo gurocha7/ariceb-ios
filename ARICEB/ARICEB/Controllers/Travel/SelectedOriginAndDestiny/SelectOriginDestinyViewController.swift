@@ -59,8 +59,8 @@ class SelectOriginDestinyViewController: BaseViewController {
         }
         
         viewModel.showInternalTravelLive = { [weak self] in
-//            self?.showInternalTravelLive()
-            self?.checkRotatePhone()
+            self?.showInternalTravelLive()
+//            self?.checkRotatePhone()
         }
     }
     

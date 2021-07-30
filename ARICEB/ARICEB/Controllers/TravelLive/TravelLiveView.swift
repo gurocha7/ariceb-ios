@@ -8,13 +8,21 @@
 import UIKit
 import Reusable
 import ARKit
+import CoreMotion
 
 class TravelLiveView: UIView, NibLoadable {
     //MARK: - Propeties
     var viewModel: TravelLiveViewModel?
     private let arConfig = ARWorldTrackingConfiguration() //faz a utilização da camêra com AR e monitora a posicão e orientação do device
     
+    private var managerMotion: CMMotionManager = CMMotionManager()
+    private var timer: Timer!
+    private var firstPosition: Double = 0.0
+    
     var didTapQRCodeButton: (() -> Void)?
+    
+    var rotateDegrees: Double = 85
+    private var canShowRote: Bool = false
     
     //MARK: - OUTLETS
     @IBOutlet weak var sceneView: ARSCNView!
@@ -39,6 +47,41 @@ class TravelLiveView: UIView, NibLoadable {
         sceneView.session.run(arConfig)
 //        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         sceneView.autoenablesDefaultLighting = true //ARKit adiciona luz automaticamente no objeto renderizado
+    }
+    
+    func startDeviceMotion() {
+        if managerMotion.isDeviceMotionAvailable {
+            self.managerMotion.deviceMotionUpdateInterval = 1.0 / 60.0
+            self.managerMotion.showsDeviceMovementDisplay = true
+            self.managerMotion.startDeviceMotionUpdates(using: .xMagneticNorthZVertical)
+            // Configure a timer to fetch the motion data.
+            self.timer = Timer(fire: Date(), interval: 5, repeats: true,
+                               block: { (timer) in
+                                if let data = self.managerMotion.deviceMotion {
+                                    // Get the attitude relative to the magnetic north reference frame.
+                                    debugPrint("==> DEGREES: ",data.heading)
+                                    debugPrint("==============================")
+                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
+                                    if self.firstPosition == 0.0 {
+                                        self.firstPosition = data.heading
+                                    }else {
+                                        let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
+                                        debugPrint("==> motionRightResult: ",motionRightResult)
+                                        let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
+                                        debugPrint("==> motionLeftResult: ",motionLeftResult)
+                                        if motionLeftResult || motionRightResult {
+                                            debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+                                            self.canShowRote = true
+                                            self.addNodeBox()
+                                            return
+                                        }
+                                    }
+                                    // Use the motion data in your app.
+                                }
+            })
+            // Add the timer to the current run loop.
+            RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
+        }
     }
     
     func addNodeBox() {

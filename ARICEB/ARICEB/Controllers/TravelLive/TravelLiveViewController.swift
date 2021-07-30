@@ -74,6 +74,8 @@ class TravelLiveViewController: BaseViewController {
             sceneLocationView.sceneTrackingDelegate = self
             customView.addSubview(sceneLocationView)
             sceneLocationView.frame = customView.bounds
+        case .inToIn:
+            customView.startDeviceMotion()
         default:
             break
         }
