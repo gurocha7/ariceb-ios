@@ -72,8 +72,12 @@ class TravelLiveView: UIView, NibLoadable {
                                         if motionLeftResult || motionRightResult {
                                             debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
                                             self.canShowRote = true
-                                            self.addNodeBox()
-                                            return
+                                            self.timer.invalidate()
+                                            DispatchQueue.main.async {
+                                                self.sceneView.session.run(self.arConfig,options: .resetTracking)
+                                                //call here function for draw route
+                                                self.addNodeBox()
+                                            }
                                         }
                                     }
                                     // Use the motion data in your app.
