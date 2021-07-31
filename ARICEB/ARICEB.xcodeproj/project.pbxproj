@@ -78,6 +78,9 @@
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
 		36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929B125DC4FEC00133E65 /* BannerView.xib */; };
 		36D03D7926B4D2760015317E /* mainLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 36D03D7826B4D2760015317E /* mainLoading.json */; };
+		36D03D8A26B4ED290015317E /* QRCodeScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D03D8926B4ED290015317E /* QRCodeScannerService.swift */; };
+		36D03D8F26B4ED460015317E /* QRCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D03D8E26B4ED460015317E /* QRCodeScannerViewModel.swift */; };
+		36D03D9526B4F7810015317E /* InternalRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D03D9426B4F7810015317E /* InternalRoute.swift */; };
 		36D141F726A7980B00E72F97 /* ListSectorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D141F626A7980B00E72F97 /* ListSectorsModel.swift */; };
 		36D141FC26A7982800E72F97 /* SectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D141FB26A7982800E72F97 /* SectorModel.swift */; };
 		36D1420526A7A9FF00E72F97 /* ListSubsectorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1420426A7A9FF00E72F97 /* ListSubsectorsModel.swift */; };
@@ -195,6 +198,9 @@
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		36B929B125DC4FEC00133E65 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
 		36D03D7826B4D2760015317E /* mainLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainLoading.json; sourceTree = "<group>"; };
+		36D03D8926B4ED290015317E /* QRCodeScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerService.swift; sourceTree = "<group>"; };
+		36D03D8E26B4ED460015317E /* QRCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewModel.swift; sourceTree = "<group>"; };
+		36D03D9426B4F7810015317E /* InternalRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalRoute.swift; sourceTree = "<group>"; };
 		36D141F626A7980B00E72F97 /* ListSectorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectorsModel.swift; sourceTree = "<group>"; };
 		36D141FB26A7982800E72F97 /* SectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorModel.swift; sourceTree = "<group>"; };
 		36D1420426A7A9FF00E72F97 /* ListSubsectorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSubsectorsModel.swift; sourceTree = "<group>"; };
@@ -410,7 +416,10 @@
 		3694CF1526ADEA32003B1A90 /* QrCodeScanner */ = {
 			isa = PBXGroup;
 			children = (
+				36D03D9326B4F7740015317E /* Model */,
 				3694CF1926ADEA62003B1A90 /* QRCodeScannerViewController.swift */,
+				36D03D8E26B4ED460015317E /* QRCodeScannerViewModel.swift */,
+				36D03D8926B4ED290015317E /* QRCodeScannerService.swift */,
 			);
 			path = QrCodeScanner;
 			sourceTree = "<group>";
@@ -568,6 +577,14 @@
 				3694CF1526ADEA32003B1A90 /* QrCodeScanner */,
 			);
 			path = Travel;
+			sourceTree = "<group>";
+		};
+		36D03D9326B4F7740015317E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36D03D9426B4F7810015317E /* InternalRoute.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		36D593E72617DBE70034BC69 /* Resources */ = {
@@ -961,9 +978,12 @@
 				36D1420D26A7AA2700E72F97 /* SubsectorModel.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
+				36D03D8F26B4ED460015317E /* QRCodeScannerViewModel.swift in Sources */,
+				36D03D9526B4F7810015317E /* InternalRoute.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
 				36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */,
+				36D03D8A26B4ED290015317E /* QRCodeScannerService.swift in Sources */,
 				36B7F002262BA4E700CCFDEB /* SideContainmentSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

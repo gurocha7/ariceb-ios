@@ -8,11 +8,13 @@
 import AVFoundation
 import UIKit
 
-class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
     var showResultForQrCode: ((String) -> Void)?
+    
+    private var viewModel: QRCodeScannerViewModel
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -21,15 +23,26 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-
+    
+    init(viewModel: QRCodeScannerViewModel = QRCodeScannerViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "QrCode"
+        bindEvents()
         setupNavBar()
         view.backgroundColor = .black
         captureSession = AVCaptureSession()
         captureVideo()
         configSession()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +58,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
 
         if (captureSession?.isRunning == true) {
             captureSession.stopRunning()
+        }
+    }
+    
+    private func bindEvents() {
+        viewModel.showSteps = { [weak self] in
+            self?.stopLoading()
+        }
+        
+        viewModel.shouldShowError = { [weak self] (errorMSG) in
+            self?.stopLoading()
         }
     }
 
@@ -91,14 +114,16 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         captureSession.startRunning()
     }
     
+    func insertDestinationTag(destinationTag: String?) {
+        viewModel.insertDestinationTag(tag: destinationTag)
+    }
+    
     func failed() {
         let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
         captureSession = nil
     }
-
-    
 
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureSession.stopRunning()
@@ -113,7 +138,9 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
 
     func found(code: String) {
         print(code)
-        showResultForQrCode?(code)
+        playLoading()
+        viewModel.getSteps(qrCode: code)
+//        showResultForQrCode?(code)
     }
 
     @objc

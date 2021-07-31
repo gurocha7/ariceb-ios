@@ -96,8 +96,9 @@ class TravelLiveViewController: BaseViewController {
         externalRoute = route
     }
     
-    func setupInternalRoute() {
+    func setupInternalRoute(destinationTag: String?) {
         routeType = .inToIn
+        viewModel.insertDestinationTag(destinationTag)
     }
     
     private func getRoute() {
@@ -124,6 +125,7 @@ class TravelLiveViewController: BaseViewController {
             }
             controller.dismiss(animated: true)
         }
+        controller.insertDestinationTag(destinationTag: viewModel.getDestinationTag())
         nav.modalPresentationStyle = .overFullScreen
         navigationController?.present(nav, animated: true, completion: nil)
     }
