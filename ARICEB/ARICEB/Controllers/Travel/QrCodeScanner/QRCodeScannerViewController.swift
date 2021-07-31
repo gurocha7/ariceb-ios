@@ -12,7 +12,7 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
-    var showResultForQrCode: ((String) -> Void)?
+    var showRouteByQrCode: ((NextStepsModel) -> Void)?
     
     private var viewModel: QRCodeScannerViewModel
     
@@ -62,8 +62,9 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     }
     
     private func bindEvents() {
-        viewModel.showSteps = { [weak self] in
+        viewModel.showSteps = { [weak self] (model) in
             self?.stopLoading()
+            self?.showRouteByQrCode?(model)
         }
         
         viewModel.shouldShowError = { [weak self] (errorMSG) in
@@ -140,7 +141,6 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
         print(code)
         playLoading()
         viewModel.getSteps(qrCode: code)
-//        showResultForQrCode?(code)
     }
 
     @objc

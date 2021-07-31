@@ -74,8 +74,6 @@ class TravelLiveViewController: BaseViewController {
             sceneLocationView.sceneTrackingDelegate = self
             customView.addSubview(sceneLocationView)
             sceneLocationView.frame = customView.bounds
-        case .inToIn:
-            customView.startDeviceMotion()
         default:
             break
         }
@@ -119,11 +117,12 @@ class TravelLiveViewController: BaseViewController {
         let controller = ScannerViewController()
         let nav = UINavigationController(rootViewController: controller)
         controller.modalPresentationStyle = .overFullScreen
-        controller.showResultForQrCode = { [weak self] (code) in
-            DispatchQueue.main.async {
-                self?.customView.addNodeBox()
-            }
+        controller.showRouteByQrCode = { [weak self] (model) in
             controller.dismiss(animated: true)
+            self?.viewModel.insertNextSteps(model)
+            DispatchQueue.main.async {
+                self?.customView.addFirstSteps()
+            }
         }
         controller.insertDestinationTag(destinationTag: viewModel.getDestinationTag())
         nav.modalPresentationStyle = .overFullScreen

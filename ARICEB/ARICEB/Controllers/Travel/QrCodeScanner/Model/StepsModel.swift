@@ -8,7 +8,7 @@
 import Foundation
 
 struct StepsModel: Codable {
-    let angle: Int?
+    let angle: Double?
     let distance: Double?
     let lastIndicator: String?
     let rotatePhone: String?
