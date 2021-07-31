@@ -12,6 +12,7 @@ target 'ARICEB' do
   pod 'ARCL'
   pod 'Alamofire'
   pod 'netfox'
+  pod 'lottie-ios'
 
   target 'ARICEBTests' do
     inherit! :search_paths

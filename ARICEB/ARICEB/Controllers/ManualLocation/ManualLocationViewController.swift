@@ -44,14 +44,17 @@ class ManualLocationViewController: BaseViewController {
     
     private func bindEvents(){
         customView.didTapFirstAddress = { [weak self] in
+            self?.playLoading()
             self?.getBuildings()
         }
         
         customView.didTapSecondAddress = { [weak self] in
+            self?.playLoading()
             self?.getSector()
         }
         
         customView.didTapThirdAddress = { [weak self] in
+            self?.playLoading()
             self?.getSubsector()
         }
         
@@ -60,14 +63,17 @@ class ManualLocationViewController: BaseViewController {
         }
         
         viewModel.listBuildings = { [weak self] (buildings) in
+            self?.stopLoading()
             self?.goToFirstOptions(buildings)
         }
         
         viewModel.listSectors = { [weak self] (sectors) in
+            self?.stopLoading()
             self?.goToSecondOptions(sectors: sectors)
         }
         
         viewModel.listSubsectors = { [weak self] (subsectors) in
+            self?.stopLoading()
             self?.goToThirdOptions(subsectors: subsectors)
         }
     }

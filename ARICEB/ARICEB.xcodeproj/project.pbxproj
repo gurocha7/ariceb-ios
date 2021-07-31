@@ -77,6 +77,7 @@
 		36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929A025DC3E9F00133E65 /* TravelView.xib */; };
 		36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B929AC25DC4FCD00133E65 /* BannerView.swift */; };
 		36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B929B125DC4FEC00133E65 /* BannerView.xib */; };
+		36D03D7926B4D2760015317E /* mainLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 36D03D7826B4D2760015317E /* mainLoading.json */; };
 		36D141F726A7980B00E72F97 /* ListSectorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D141F626A7980B00E72F97 /* ListSectorsModel.swift */; };
 		36D141FC26A7982800E72F97 /* SectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D141FB26A7982800E72F97 /* SectorModel.swift */; };
 		36D1420526A7A9FF00E72F97 /* ListSubsectorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1420426A7A9FF00E72F97 /* ListSubsectorsModel.swift */; };
@@ -193,6 +194,7 @@
 		36B929A025DC3E9F00133E65 /* TravelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelView.xib; sourceTree = "<group>"; };
 		36B929AC25DC4FCD00133E65 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		36B929B125DC4FEC00133E65 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
+		36D03D7826B4D2760015317E /* mainLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainLoading.json; sourceTree = "<group>"; };
 		36D141F626A7980B00E72F97 /* ListSectorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectorsModel.swift; sourceTree = "<group>"; };
 		36D141FB26A7982800E72F97 /* SectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorModel.swift; sourceTree = "<group>"; };
 		36D1420426A7A9FF00E72F97 /* ListSubsectorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSubsectorsModel.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				3670FCAB25D9EAB90022AF8F /* Extensions */,
 				36D593E72617DBE70034BC69 /* Resources */,
 				3670FC1025D9A8F00022AF8F /* AppDelegate.swift */,
+				36D03D7826B4D2760015317E /* mainLoading.json */,
 				3670FC1B25D9A8F30022AF8F /* LaunchScreen.storyboard */,
 				3670FC1E25D9A8F30022AF8F /* Info.plist */,
 				3670FC4825D9BAF50022AF8F /* Storyboarded.swift */,
@@ -763,6 +766,7 @@
 				36B929B225DC4FEC00133E65 /* BannerView.xib in Resources */,
 				36B7EF9E262B2A6900CCFDEB /* LocationView.xib in Resources */,
 				3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */,
+				36D03D7926B4D2760015317E /* mainLoading.json in Resources */,
 				36B929A125DC3E9F00133E65 /* TravelView.xib in Resources */,
 				3693A4EE268AB486002903FD /* TravelLiveView.xib in Resources */,
 				36A5B9AF261D39EA00A4EACB /* FastButtonsView.xib in Resources */,
