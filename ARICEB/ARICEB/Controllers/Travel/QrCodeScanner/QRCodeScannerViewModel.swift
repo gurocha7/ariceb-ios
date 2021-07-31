@@ -15,6 +15,8 @@ class QRCodeScannerViewModel {
     var showSteps: (() -> Void)?
     var shouldShowError: ((String) -> Void)?
     
+    var nextSteps: NextStepsModel?
+    
     init(service: QRCodeScannerService = QRCodeScannerService()) {
         self.service = service
     }
@@ -26,6 +28,7 @@ class QRCodeScannerViewModel {
     
     func getSteps(qrCode: String = "") {
         service.getStepsForInternalRoute(qrCode: qrCode, destinationTag: destinationTag) {[weak self] (response) in
+            self?.nextSteps = response
             self?.showSteps?()
         } failure: {[weak self] (errorMSG) in
             self?.shouldShowError?(errorMSG)

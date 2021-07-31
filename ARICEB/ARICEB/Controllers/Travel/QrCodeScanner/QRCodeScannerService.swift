@@ -10,7 +10,7 @@ import Alamofire
 
 class QRCodeScannerService {
     
-    func getStepsForInternalRoute(qrCode: String = "", destinationTag: String = "", completion: @escaping ((String) -> Void), failure: Failure?) {
+    func getStepsForInternalRoute(qrCode: String = "", destinationTag: String = "", completion: @escaping ((NextStepsModel) -> Void), failure: Failure?) {
         let url = "\(baseURL)/internalroute"
         let params: [String:Any] = ["qrcodeTag":qrCode,"destinationTag":destinationTag]
         debugPrint("==> URL:", url)
@@ -19,8 +19,8 @@ class QRCodeScannerService {
             print("###RESPONSE: ", response)
             guard let data = response.data else {return}
             do {
-//                let model = try JSONDecoder().decode(ExternalRoute.self, from: data)
-                completion("")
+                let model = try JSONDecoder().decode(NextStepsModel.self, from: data)
+                completion(model)
             }catch {
                 failure?("Ocorreu um erro inesperado, tente novamente mais tarde.")
             }

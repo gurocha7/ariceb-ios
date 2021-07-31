@@ -26,6 +26,8 @@
 		36205D24262D249B00BF0D3B /* FAQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205D22262D249B00BF0D3B /* FAQTableViewCell.xib */; };
 		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
+		36416DE526B57EBC0047B0D0 /* StepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36416DE426B57EBC0047B0D0 /* StepsModel.swift */; };
+		36416DEA26B57F4B0047B0D0 /* NextStepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36416DE926B57F4B0047B0D0 /* NextStepsModel.swift */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
 		3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1225D9A8F00022AF8F /* art.scnassets */; };
 		3670FC1A25D9A8F30022AF8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1925D9A8F30022AF8F /* Assets.xcassets */; };
@@ -140,6 +142,8 @@
 		36205D22262D249B00BF0D3B /* FAQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQTableViewCell.xib; sourceTree = "<group>"; };
 		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
+		36416DE426B57EBC0047B0D0 /* StepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsModel.swift; sourceTree = "<group>"; };
+		36416DE926B57F4B0047B0D0 /* NextStepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepsModel.swift; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3670FC1025D9A8F00022AF8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3670FC1225D9A8F00022AF8F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -583,6 +587,8 @@
 			isa = PBXGroup;
 			children = (
 				36D03D9426B4F7810015317E /* InternalRoute.swift */,
+				36416DE426B57EBC0047B0D0 /* StepsModel.swift */,
+				36416DE926B57F4B0047B0D0 /* NextStepsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -929,6 +935,7 @@
 				36B7F003262BA4E700CCFDEB /* TransitionAnimator.swift in Sources */,
 				36D594002617EEB20034BC69 /* QRCodeView.swift in Sources */,
 				36B7F001262BA4E700CCFDEB /* CenterContainmentSegue.swift in Sources */,
+				36416DE526B57EBC0047B0D0 /* StepsModel.swift in Sources */,
 				36B7F03A262BB92700CCFDEB /* AddressView.swift in Sources */,
 				3619B5A1262A2EC50094CEA6 /* SelectOriginDestinyViewController.swift in Sources */,
 				3619B5BB262A82DB0094CEA6 /* LocationViewController.swift in Sources */,
@@ -936,6 +943,7 @@
 				36205D0A262CD8D900BF0D3B /* SubmenuTableViewCell.swift in Sources */,
 				3619B5A7262A2F1D0094CEA6 /* BaseViewController.swift in Sources */,
 				36B7EFE2262B7C7C00CCFDEB /* SideMenuTableViewCell.swift in Sources */,
+				36416DEA26B57F4B0047B0D0 /* NextStepsModel.swift in Sources */,
 				36B7F044262BC6AF00CCFDEB /* ManualLocationViewModel.swift in Sources */,
 				36D141F726A7980B00E72F97 /* ListSectorsModel.swift in Sources */,
 				36B7EFBF262B5BD800CCFDEB /* MenuView.swift in Sources */,
