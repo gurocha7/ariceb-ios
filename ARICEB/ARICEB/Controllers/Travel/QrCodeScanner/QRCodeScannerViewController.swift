@@ -13,8 +13,10 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     var previewLayer: AVCaptureVideoPreviewLayer!
     
     var showRouteByQrCode: ((NextStepsModel) -> Void)?
+    var drawStepAtIndex: ((Int) -> Void)?
     
     private var viewModel: QRCodeScannerViewModel
+    private var existingSteps: [String]?
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -24,8 +26,9 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
         return .portrait
     }
     
-    init(viewModel: QRCodeScannerViewModel = QRCodeScannerViewModel()) {
+    init(viewModel: QRCodeScannerViewModel = QRCodeScannerViewModel(),existingSteps: [String]? = nil) {
         self.viewModel = viewModel
+        self.existingSteps = existingSteps
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -140,7 +143,22 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     func found(code: String) {
         print(code)
         playLoading()
-        viewModel.getSteps(qrCode: code)
+        if let currentSteps = existingSteps {
+            if currentSteps.contains(code) {
+                let count = currentSteps.count - 1
+                for i in 0...count {
+                    if currentSteps[i] == code {
+                        drawStepAtIndex?(i)
+                        stopLoading()
+                        return
+                    }
+                }
+            }else{
+                viewModel.getSteps(qrCode: code)
+            }
+        }else {
+          viewModel.getSteps(qrCode: code)
+        }
     }
 
     @objc

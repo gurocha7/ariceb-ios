@@ -31,22 +31,45 @@
                         <action selector="qrCodeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="BvL-ct-dGz"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gire o celular para direita" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1q-kD-ILb">
+                    <rect key="frame" x="30" y="69" width="354" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-Sr-njm">
+                    <rect key="frame" x="167" y="119.66666666666666" width="80" height="77"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="quk-ay-Z9R"/>
+                        <constraint firstAttribute="width" constant="80" id="sZu-3E-Phx"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="c1q-kD-ILb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="3Z3-jQ-Xu3"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yJZ-I1-Wj8" secondAttribute="trailing" id="8PP-8H-GaI"/>
                 <constraint firstItem="yJZ-I1-Wj8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CAe-I9-dff"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bM2-hC-Oud" secondAttribute="bottom" constant="30" id="Cle-AI-ItR"/>
                 <constraint firstItem="yJZ-I1-Wj8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="OoX-Iq-ajJ"/>
+                <constraint firstItem="c1q-kD-ILb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="SBc-tE-BVI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="c1q-kD-ILb" secondAttribute="trailing" constant="30" id="b5r-So-eLw"/>
                 <constraint firstItem="bM2-hC-Oud" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fAZ-uH-Y4m"/>
+                <constraint firstItem="5Ue-Sr-njm" firstAttribute="top" secondItem="c1q-kD-ILb" secondAttribute="bottom" constant="25" id="iUm-1G-YHI"/>
+                <constraint firstItem="5Ue-Sr-njm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="nz5-UM-mG2"/>
                 <constraint firstAttribute="bottom" secondItem="yJZ-I1-Wj8" secondAttribute="bottom" id="xYm-2h-OXy"/>
             </constraints>
             <connections>
                 <outlet property="buttonQrCode" destination="bM2-hC-Oud" id="niK-zI-aao"/>
+                <outlet property="imageArrow" destination="5Ue-Sr-njm" id="YLO-r6-sKT"/>
+                <outlet property="labelDirection" destination="c1q-kD-ILb" id="bU3-7w-OYi"/>
                 <outlet property="sceneView" destination="yJZ-I1-Wj8" id="PCy-iq-6hV"/>
             </connections>
             <point key="canvasLocation" x="-145" y="92"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>
+    </resources>
 </document>

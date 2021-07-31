@@ -28,6 +28,8 @@ class TravelLiveView: UIView, NibLoadable {
     
     //MARK: - OUTLETS
     @IBOutlet weak var sceneView: ARSCNView!
+    @IBOutlet weak var labelDirection: UILabel!
+    @IBOutlet weak var imageArrow: UIImageView!
     @IBOutlet weak var buttonQrCode: UIButton!
     
     @IBAction func qrCodeButtonAction(_ sender: Any) {
@@ -49,7 +51,28 @@ class TravelLiveView: UIView, NibLoadable {
         sceneView.session.run(arConfig)
 //        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         sceneView.autoenablesDefaultLighting = true //ARKit adiciona luz automaticamente no objeto renderizado
+        labelDirection.isHidden = true
+        imageArrow.isHidden = true
     }
+    
+//    private func messageAnimate() {
+//        if #available(iOS 13.0, *) {
+//            let arrowImage = UIImage(systemName: needRotateToRight ? "arrow.right.square.fill" : "arrow.left.square.fill")
+//            imageArrow.image = arrowImage
+//        } else {
+//            // Fallback on earlier versions
+//        }
+//        labelDirection.text = needRotateToRight ? "Gire o celular para direita" : "Gire o celular para esquerda"
+//        labelDirection.isHidden = false
+//        imageArrow.isHidden = false
+//        UIView.animate(withDuration: 0.5,delay: 0 ,options: [.autoreverse,.repeat]) { [weak self] in
+//            self?.imageArrow.center.x += 100
+//            self?.imageArrow.center.x -= 100
+//        } completion: { [weak self] _ in
+//            self?.labelDirection.isHidden = true
+//            self?.imageArrow.isHidden = true
+//        }
+//    }
     
     func startDeviceMotion() {
         if managerMotion.isDeviceMotionAvailable {
@@ -91,33 +114,34 @@ class TravelLiveView: UIView, NibLoadable {
         }
     }
     
-    func addNodeBox() {
-        let firstScene = SCNScene()
-        let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
-        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
-        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
-        
-        let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
-//        let triangle2 = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
-//        let triangle3 = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
-        
-        let nodeBox = SCNNode(geometry: triangle)
-        nodeBox.position = SCNVector3(0,-0.5, -1.50)
-        nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
-//        let nodeBox2 = SCNNode(geometry: triangle2)
-//        nodeBox2.position = SCNVector3(0,-0.5, -0.9)
-//        nodeBox2.scale = SCNVector3(0.1, 0.1, 0.1)
-//        let nodeBox3 = SCNNode(geometry: triangle3)
-//        nodeBox3.position = SCNVector3(0,-0.5, -0.5)
-//        nodeBox3.scale = SCNVector3(0.1, 0.1, 0.1)
-        
-        firstScene.rootNode.addChildNode(nodeBox)
-//        firstScene.rootNode.addChildNode(nodeBox2)
-//        firstScene.rootNode.addChildNode(nodeBox3)
-        sceneView.scene = firstScene
-    }
-    
+//    func addNodeBox() {
+//        let firstScene = SCNScene()
+//        let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
+//        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
+//        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
+//
+//        let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
+////        let triangle2 = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
+////        let triangle3 = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
+//
+//        let nodeBox = SCNNode(geometry: triangle)
+//        nodeBox.position = SCNVector3(0,-0.5, -1.50)
+//        nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
+////        let nodeBox2 = SCNNode(geometry: triangle2)
+////        nodeBox2.position = SCNVector3(0,-0.5, -0.9)
+////        nodeBox2.scale = SCNVector3(0.1, 0.1, 0.1)
+////        let nodeBox3 = SCNNode(geometry: triangle3)
+////        nodeBox3.position = SCNVector3(0,-0.5, -0.5)
+////        nodeBox3.scale = SCNVector3(0.1, 0.1, 0.1)
+//
+//        firstScene.rootNode.addChildNode(nodeBox)
+////        firstScene.rootNode.addChildNode(nodeBox2)
+////        firstScene.rootNode.addChildNode(nodeBox3)
+//        sceneView.scene = firstScene
+//    }
+//
     func addFirstSteps() {
+//        sceneView.session.run(self.arConfig)
         guard let step = viewModel?.getFirstSteps() else {return}
         guard let angle = step.angle else {return}
         guard let direction = step.rotatePhone else {return}
@@ -128,10 +152,28 @@ class TravelLiveView: UIView, NibLoadable {
         if let lastIndicator = step.lastIndicator {
             lastIndicatorToRight = lastIndicator.lowercased() == "r"
         }
+//        self.messageAnimate()
         startDeviceMotion()
     }
     
+    func addStepsByIndex(_ index: Int) {
+        guard let step = viewModel?.getStepsByIndex(index) else {return}
+        guard let angle = step.angle else {return}
+        guard let direction = step.rotatePhone else {return}
+        guard let distance = step.distance else {return}
+        rotateDegrees = angle
+        needRotateToRight = direction.lowercased() == "r"
+        distanceToDraw = distance
+        if let lastIndicator = step.lastIndicator {
+            lastIndicatorToRight = lastIndicator.lowercased() == "r"
+        }
+//        self.messageAnimate()
+//        self.startDeviceMotion()
+    }
+    
     func drawStepsForUser() {
+        labelDirection.isHidden = true
+        imageArrow.isHidden = true
         self.sceneView.session.run(self.arConfig,options: .resetTracking)
         let firstScene = SCNScene()
         let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)

@@ -114,7 +114,7 @@ class TravelLiveViewController: BaseViewController {
     }
     
     private func scannerQrCode() {
-        let controller = ScannerViewController()
+        let controller = ScannerViewController(existingSteps: viewModel.getNextQrCodeTags())
         let nav = UINavigationController(rootViewController: controller)
         controller.modalPresentationStyle = .overFullScreen
         controller.showRouteByQrCode = { [weak self] (model) in
@@ -122,6 +122,12 @@ class TravelLiveViewController: BaseViewController {
             self?.viewModel.insertNextSteps(model)
             DispatchQueue.main.async {
                 self?.customView.addFirstSteps()
+            }
+        }
+        controller.drawStepAtIndex = { [weak self] (index) in
+            controller.dismiss(animated: true)
+            DispatchQueue.main.async {
+                self?.customView.addStepsByIndex(index)
             }
         }
         controller.insertDestinationTag(destinationTag: viewModel.getDestinationTag())

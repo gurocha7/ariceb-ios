@@ -63,11 +63,24 @@ class TravelLiveViewModel {
         nextSteps = model
     }
     
+    func getNextQrCodeTags() -> [String]? {
+        return nextSteps?.nextqrcode_tags ?? nil
+    }
+    
     func getFirstSteps() -> StepsModel? {
         guard let step = nextSteps?.steps?.first else {
             // lançar mensagem de erro para escanear novamente o qrcode
             return nil
         }
         return step
+    }
+    
+    func getStepsByIndex(_ index: Int) -> StepsModel? {
+        guard let steps = nextSteps?.steps else { return nil}
+        if steps.count > index {
+            let stepById = steps[index]
+            return stepById
+        }
+        return nil
     }
 }
