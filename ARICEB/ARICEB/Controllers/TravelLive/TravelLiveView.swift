@@ -67,23 +67,30 @@ class TravelLiveView: UIView, NibLoadable {
                                     if self.firstPosition == 0.0 {
                                         self.firstPosition = data.heading
                                     }else {
-                                        let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
-                                        debugPrint("==> motionRightResult: ",motionRightResult)
-                                        let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
-                                        debugPrint("==> motionLeftResult: ",motionLeftResult)
-                                        if motionLeftResult || motionRightResult {
-                                            debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
-                                            self.timer.invalidate()
-                                            DispatchQueue.main.async {
-                                                self.sceneView.session.run(self.arConfig,options: .resetTracking)
-                                                //call here function for draw route
-                                                self.addNodeBox()
+                                        if self.needRotateToRight {
+                                            let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
+                                            if motionRightResult {
+                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+                                                self.timer.invalidate()
+                                                DispatchQueue.main.async {
+                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
+                                                    self.drawStepsForUser()
+                                                }
+                                            }
+                                        }else {
+                                            let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
+                                            if motionLeftResult {
+                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+                                                self.timer.invalidate()
+                                                DispatchQueue.main.async {
+                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
+                                                    self.drawStepsForUser()
+                                                }
                                             }
                                         }
                                     }
                                 }
             })
-            // Add the timer to the current run loop.
             RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
         }
     }
@@ -114,6 +121,22 @@ class TravelLiveView: UIView, NibLoadable {
         if let lastIndicator = step.lastIndicator {
             lastIndicatorToRight = lastIndicator.lowercased() == "r"
         }
+    }
+    
+    func drawStepsForUser() {
+        let firstScene = SCNScene()
+        let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
+        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
+        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
+        let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
+        let distanceInteger = Int(distanceToDraw ?? 0)
+        for i in 1...distanceInteger {
+            let nodeBox = SCNNode(geometry: triangle)
+            nodeBox.position = SCNVector3(0,-0.5, Double(-i))
+            nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
+            firstScene.rootNode.addChildNode(nodeBox)
+        }
+        sceneView.scene = firstScene
     }
 }
 
