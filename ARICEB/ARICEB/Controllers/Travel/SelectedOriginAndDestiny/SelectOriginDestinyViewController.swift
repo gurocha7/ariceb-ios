@@ -58,8 +58,8 @@ class SelectOriginDestinyViewController: BaseViewController {
             self?.showExternalTravelLive(route: externalRoute)
         }
         
-        viewModel.showInternalTravelLive = { [weak self] in
-            self?.showInternalTravelLive()
+        viewModel.showInternalTravelLive = { [weak self] (tag) in
+            self?.showInternalTravelLive(tag: tag)
         }
     }
     
@@ -102,9 +102,9 @@ class SelectOriginDestinyViewController: BaseViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    private func showInternalTravelLive() {
+    private func showInternalTravelLive(tag: String?) {
         let controller = TravelLiveViewController()
-        controller.setupInternalRoute(destiny: viewModel.getModelDestinyDescription() ?? "")
+        controller.setupInternalRoute(destiny: viewModel.getModelDestinyDescription() ?? "",destinationTag: tag ?? "")
         navigationController?.pushViewController(controller, animated: true)
     }
     

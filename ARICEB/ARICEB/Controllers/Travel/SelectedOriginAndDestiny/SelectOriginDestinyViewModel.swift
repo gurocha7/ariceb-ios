@@ -13,7 +13,7 @@ class SelectOriginDestinyViewModel {
     
     var shouldShowErrorMSG: ((String) -> Void)?
     var showExternalTravelLive: ((ExternalRoute) -> Void)?
-    var showInternalTravelLive: (() -> Void)?
+    var showInternalTravelLive: ((String) -> Void)?
     
     var modelOrigin: String?
     var modelDestiny: String?
@@ -89,12 +89,17 @@ class SelectOriginDestinyViewModel {
     }
     
     func getRoute() {
+        params.removeAll()
         if originIsExternal && destinyIsExternal {
             params["originID"] = originBuildingID
             params["destinyID"] = destinyBuildingID
             getExternalRoute()
         } else if !originIsExternal && !destinyIsExternal {
-            showInternalTravelLive?()
+            let b = "b" + "\(destinyBuildingID ?? 0)"
+            let s = "s" + "\(destinySectorID ?? 0)"
+            let ss = "ss" + "\(destinySubsectorID ?? 0)"
+            let tag = b + s + ss
+            showInternalTravelLive?(tag)
         } else if !originIsExternal && destinyIsExternal {
             //chamar rota de interno para externo
             print("chamar rota interno para externo")

@@ -13,6 +13,8 @@ class TravelLiveViewModel {
     private var direction = MKDirections.Request()
     var didShowRoutes: (([MKRoute]?) -> Void)?
     
+    var destinationTag: String?
+    
     func getRoute(originLat: Double?,originLong: Double?,
                   destinyLat:Double?,destinyLong: Double?) {
         
@@ -47,4 +49,14 @@ class TravelLiveViewModel {
             self?.didShowRoutes?(self?.routes)
         }
     }
+    
+    func insertDestinationTag(_ tag: String?) {
+        guard let tagValue = tag else {return}
+        destinationTag = tagValue
+    }
+    
+    func getDestinationTag() -> String? {
+        return destinationTag
+    }
+
 }

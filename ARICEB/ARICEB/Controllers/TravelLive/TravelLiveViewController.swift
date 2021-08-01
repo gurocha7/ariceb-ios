@@ -95,9 +95,10 @@ class TravelLiveViewController: BaseViewController {
         externalRoute = route
     }
     
-    func setupInternalRoute(destiny: String) {
+    func setupInternalRoute(destiny: String,destinationTag: String) {
         routeType = .inToIn
         title = "Destino:" + destiny
+        viewModel.insertDestinationTag(destinationTag)
     }
     
     private func getRoute() {
@@ -121,6 +122,7 @@ class TravelLiveViewController: BaseViewController {
         controller.showRouteByQrCode = { [weak self] (Model) in
             controller.dismiss(animated: true)
         }
+        controller.insertDestinationTag(destinationTag: viewModel.getDestinationTag())
         nav.modalPresentationStyle = .overFullScreen
         navigationController?.present(nav, animated: true, completion: nil)
     }
