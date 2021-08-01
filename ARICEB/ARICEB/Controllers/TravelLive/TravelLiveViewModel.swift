@@ -12,8 +12,8 @@ class TravelLiveViewModel {
     private var routes: [MKRoute]?
     private var direction = MKDirections.Request()
     var didShowRoutes: (([MKRoute]?) -> Void)?
-    
     var destinationTag: String?
+    var nextSteps: NextStepsModel?
     
     func getRoute(originLat: Double?,originLong: Double?,
                   destinyLat:Double?,destinyLong: Double?) {
@@ -55,8 +55,23 @@ class TravelLiveViewModel {
         destinationTag = tagValue
     }
     
+    func insertNextSteps(_ model: NextStepsModel) {
+        nextSteps = model
+    }
+    
     func getDestinationTag() -> String? {
         return destinationTag
     }
-
+    
+    func getNextQrCodeTags() -> [String]? {
+        return nextSteps?.nextqrcode_tags ?? nil
+    }
+    
+    func getFirstSteps() -> StepsModel? {
+        guard let step = nextSteps?.steps?.first else {
+            // lançar mensagem de erro para escanear novamente o qrcode
+            return nil
+        }
+        return step
+    }
 }

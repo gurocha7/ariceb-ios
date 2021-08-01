@@ -13,6 +13,8 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     
     var showRouteByQrCode: ((NextStepsModel) -> Void)?
     
+    var drawStepAtIndex: ((Int) -> Void)?
+    private var existingSteps: [String]?
     private var viewModel: QRCodeScannerViewModel
     
     override var prefersStatusBarHidden: Bool {
@@ -23,11 +25,12 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
         return .portrait
     }
     
-    init(viewModel: QRCodeScannerViewModel = QRCodeScannerViewModel()) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
+     init(viewModel: QRCodeScannerViewModel = QRCodeScannerViewModel(),existingSteps: [String]? = nil) {
+         self.viewModel = viewModel
+         self.existingSteps = existingSteps
+         super.init(nibName: nil, bundle: nil)
+     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -139,7 +142,22 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     func found(code: String) {
         print(code)
         playLoading()
-        viewModel.getSteps(qrCode: code)
+        if let currentSteps = existingSteps {
+            if currentSteps.contains(code) {
+                let count = currentSteps.count - 1
+                for i in 0...count {
+                    if currentSteps[i] == code {
+                        drawStepAtIndex?(i)
+                        stopLoading()
+                        return
+                    }
+                }
+            }else{
+                viewModel.getSteps(qrCode: code)
+            }
+        }else {
+          viewModel.getSteps(qrCode: code)
+        }
     }
 
     @objc

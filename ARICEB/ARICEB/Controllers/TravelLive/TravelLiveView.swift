@@ -22,7 +22,9 @@ class TravelLiveView: UIView, NibLoadable {
     var didTapQRCodeButton: (() -> Void)?
     
     var rotateDegrees: Double = 80
-    private var canShowRote: Bool = false
+    var needRotateToRight: Bool = false
+    var distanceToDraw: Double?
+    var lastIndicatorToRight: Bool = false
     
     //MARK: - OUTLETS
     @IBOutlet weak var sceneView: ARSCNView!
@@ -71,7 +73,6 @@ class TravelLiveView: UIView, NibLoadable {
                                         debugPrint("==> motionLeftResult: ",motionLeftResult)
                                         if motionLeftResult || motionRightResult {
                                             debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
-                                            self.canShowRote = true
                                             self.timer.invalidate()
                                             DispatchQueue.main.async {
                                                 self.sceneView.session.run(self.arConfig,options: .resetTracking)
@@ -80,7 +81,6 @@ class TravelLiveView: UIView, NibLoadable {
                                             }
                                         }
                                     }
-                                    // Use the motion data in your app.
                                 }
             })
             // Add the timer to the current run loop.
@@ -93,25 +93,27 @@ class TravelLiveView: UIView, NibLoadable {
         let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
         box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
         box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
-        
         let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
-        let triangle2 = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
-        let triangle3 = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
-        
         let nodeBox = SCNNode(geometry: triangle)
         nodeBox.position = SCNVector3(0,-0.5, -1.50)
         nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
-        let nodeBox2 = SCNNode(geometry: triangle2)
-        nodeBox2.position = SCNVector3(0,-0.5, -0.9)
-        nodeBox2.scale = SCNVector3(0.1, 0.1, 0.1)
-        let nodeBox3 = SCNNode(geometry: triangle3)
-        nodeBox3.position = SCNVector3(0,-0.5, -0.5)
-        nodeBox3.scale = SCNVector3(0.1, 0.1, 0.1)
-        
         firstScene.rootNode.addChildNode(nodeBox)
-        firstScene.rootNode.addChildNode(nodeBox2)
-        firstScene.rootNode.addChildNode(nodeBox3)
         sceneView.scene = firstScene
+    }
+    
+    func addFirstSteps() {
+        sceneView.session.run(arConfig,options: .resetTracking)
+        startDeviceMotion()
+        guard let step = viewModel?.getFirstSteps() else {return}
+        guard let angle = step.angle else {return}
+        guard let direction = step.rotatePhone else {return}
+        guard let distance = step.distance else {return}
+        rotateDegrees = angle
+        needRotateToRight = direction.lowercased() == "r"
+        distanceToDraw = distance
+        if let lastIndicator = step.lastIndicator {
+            lastIndicatorToRight = lastIndicator.lowercased() == "r"
+        }
     }
 }
 
