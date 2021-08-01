@@ -34,11 +34,23 @@ class TravelLiveView: UIView, NibLoadable {
         didTapQRCodeButton?()
     }
     
+    deinit {
+        removeAllNodes()
+        sceneView.session.run(arConfig,options: .resetTracking)
+        sceneView.session.pause()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
 //        addNodeBox()
         setupButtons()
+    }
+    
+    private func removeAllNodes() {
+        sceneView.scene.rootNode.childNodes.forEach { (child) in
+            child.removeFromParentNode()
+        }
     }
     
     private func setupButtons() {
@@ -52,6 +64,7 @@ class TravelLiveView: UIView, NibLoadable {
     }
     
     func startDeviceMotion() {
+        removeAllNodes()
         if managerMotion.isDeviceMotionAvailable {
             self.managerMotion.deviceMotionUpdateInterval = 1.0 / 60.0
             self.managerMotion.showsDeviceMovementDisplay = true
@@ -112,6 +125,17 @@ class TravelLiveView: UIView, NibLoadable {
         sceneView.session.run(arConfig,options: .resetTracking)
         startDeviceMotion()
         guard let step = viewModel?.getFirstSteps() else {return}
+        setStepsAndParams(step)
+    }
+    
+    func addStepsByIndex(_ index: Int) {
+//        sceneView.session.run(arConfig,options: .resetTracking)
+        guard let step = viewModel?.getStepsByIndex(index) else {return}
+        setStepsAndParams(step)
+        self.startDeviceMotion()
+    }
+    
+    private func setStepsAndParams(_ step: StepsModel) {
         guard let angle = step.angle else {return}
         guard let direction = step.rotatePhone else {return}
         guard let distance = step.distance else {return}
@@ -122,8 +146,9 @@ class TravelLiveView: UIView, NibLoadable {
             lastIndicatorToRight = lastIndicator.lowercased() == "r"
         }
     }
-    
+
     func drawStepsForUser() {
+        firstPosition = 0.0
         let firstScene = SCNScene()
         let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
         box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela

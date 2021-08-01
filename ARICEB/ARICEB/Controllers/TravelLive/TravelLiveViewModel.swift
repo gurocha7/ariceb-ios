@@ -74,4 +74,14 @@ class TravelLiveViewModel {
         }
         return step
     }
+    
+    func getStepsByIndex(_ index: Int) -> StepsModel? {
+        guard let steps = nextSteps?.steps else { return nil}
+        if steps.count > index {
+            let stepById = steps[index]
+            return stepById
+        }
+        return nil
+    }
+
 }

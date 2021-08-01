@@ -126,6 +126,12 @@ class TravelLiveViewController: BaseViewController {
                 self?.customView.addFirstSteps()
             }
         }
+        controller.drawStepAtIndex = { [weak self] (index) in
+            controller.dismiss(animated: true)
+            DispatchQueue.main.async {
+                self?.customView.addStepsByIndex(index)
+            }
+        }
         controller.insertDestinationTag(destinationTag: viewModel.getDestinationTag())
         nav.modalPresentationStyle = .overFullScreen
         navigationController?.present(nav, animated: true, completion: nil)
