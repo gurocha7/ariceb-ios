@@ -33,7 +33,6 @@ class TravelLiveViewController: BaseViewController {
             routeType = .outToOut
         }
     }
-
     
     lazy var buttonQrCode: UIButton = {
         let button = UIButton()
@@ -74,11 +73,11 @@ class TravelLiveViewController: BaseViewController {
             sceneLocationView.sceneTrackingDelegate = self
             customView.addSubview(sceneLocationView)
             sceneLocationView.frame = customView.bounds
-        case .inToIn:
-            customView.startDeviceMotion()
         default:
             break
         }
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .regular),
+                                                                    NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     private func bindEvents() {
@@ -96,15 +95,16 @@ class TravelLiveViewController: BaseViewController {
         externalRoute = route
     }
     
-    func setupInternalRoute() {
+    func setupInternalRoute(destiny: String) {
         routeType = .inToIn
+        title = "Destino:" + destiny
     }
     
     private func getRoute() {
         switch routeType {
         case .outToOut:
             buttonQrCode.isHidden = true
-            title = "Destino: " + (externalRoute?.buildingDestiny?.name ?? "")
+            title = "Destino:" + (externalRoute?.buildingDestiny?.name ?? "")
             viewModel.getRoute(originLat: externalRoute?.buildingOrigin?.lat,
                                originLong: externalRoute?.buildingOrigin?.long,
                                destinyLat: externalRoute?.buildingDestiny?.lat,

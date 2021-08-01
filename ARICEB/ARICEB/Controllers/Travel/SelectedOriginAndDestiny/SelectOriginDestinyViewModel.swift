@@ -94,7 +94,6 @@ class SelectOriginDestinyViewModel {
             params["destinyID"] = destinyBuildingID
             getExternalRoute()
         } else if !originIsExternal && !destinyIsExternal {
-            //chamar rota interna
             showInternalTravelLive?()
         } else if !originIsExternal && destinyIsExternal {
             //chamar rota de interno para externo

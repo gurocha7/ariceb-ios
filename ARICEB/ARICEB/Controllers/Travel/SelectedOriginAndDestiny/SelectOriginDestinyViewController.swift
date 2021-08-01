@@ -60,7 +60,6 @@ class SelectOriginDestinyViewController: BaseViewController {
         
         viewModel.showInternalTravelLive = { [weak self] in
             self?.showInternalTravelLive()
-//            self?.checkRotatePhone()
         }
     }
     
@@ -105,7 +104,7 @@ class SelectOriginDestinyViewController: BaseViewController {
 
     private func showInternalTravelLive() {
         let controller = TravelLiveViewController()
-        controller.setupInternalRoute()
+        controller.setupInternalRoute(destiny: viewModel.getModelDestinyDescription() ?? "")
         navigationController?.pushViewController(controller, animated: true)
     }
     
