@@ -118,7 +118,7 @@ class TravelLiveViewController: BaseViewController {
         let controller = ScannerViewController()
         let nav = UINavigationController(rootViewController: controller)
         controller.modalPresentationStyle = .overFullScreen
-        controller.showResultForQrCode = { [weak self] (code) in
+        controller.showRouteByQrCode = { [weak self] (Model) in
             controller.dismiss(animated: true)
         }
         nav.modalPresentationStyle = .overFullScreen
