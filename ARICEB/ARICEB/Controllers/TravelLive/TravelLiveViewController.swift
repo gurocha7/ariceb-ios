@@ -119,9 +119,6 @@ class TravelLiveViewController: BaseViewController {
         let nav = UINavigationController(rootViewController: controller)
         controller.modalPresentationStyle = .overFullScreen
         controller.showResultForQrCode = { [weak self] (code) in
-            DispatchQueue.main.async {
-                self?.customView.addNodeBox()
-            }
             controller.dismiss(animated: true)
         }
         nav.modalPresentationStyle = .overFullScreen

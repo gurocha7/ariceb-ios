@@ -21,7 +21,7 @@ class TravelLiveView: UIView, NibLoadable {
     
     var didTapQRCodeButton: (() -> Void)?
     
-    var rotateDegrees: Double = 85
+    var rotateDegrees: Double = 80
     private var canShowRote: Bool = false
     
     //MARK: - OUTLETS
@@ -55,7 +55,7 @@ class TravelLiveView: UIView, NibLoadable {
             self.managerMotion.showsDeviceMovementDisplay = true
             self.managerMotion.startDeviceMotionUpdates(using: .xMagneticNorthZVertical)
             // Configure a timer to fetch the motion data.
-            self.timer = Timer(fire: Date(), interval: 5, repeats: true,
+            self.timer = Timer(fire: Date(), interval: 1, repeats: true,
                                block: { (timer) in
                                 if let data = self.managerMotion.deviceMotion {
                                     // Get the attitude relative to the magnetic north reference frame.
