@@ -16,6 +16,7 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     var drawStepAtIndex: ((Int) -> Void)?
     private var existingSteps: [String]?
     private var viewModel: QRCodeScannerViewModel
+    var tapCloseController: (() -> Void)?
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -162,6 +163,6 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
 
     @objc
     func didTapCloseButton() {
-        dismiss(animated: true)
+        tapCloseController?()
     }
 }

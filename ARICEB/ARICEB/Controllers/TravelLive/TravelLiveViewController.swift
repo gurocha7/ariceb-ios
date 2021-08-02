@@ -20,12 +20,15 @@ class TravelLiveViewController: BaseViewController {
     }
     
     //MARK: - Properties
-    let customView: TravelLiveView = TravelLiveView.loadFromNib()
+    var customView: TravelLiveView = TravelLiveView.loadFromNib()
     private var viewModel: TravelLiveViewModel = TravelLiveViewModel()
     private let sceneLocationView = SceneLocationView()
     private var hasRouteToScene: Bool = false
-    
+    var willScannerWithTag: (([String]?) -> Void)?
     private var routeType: RouteType = .outToOut
+    private var indexOfStep: Int = 0
+    
+    var tapBackButton: (() -> Void)?
     
     //Outdoor -> Outdoor
     private var externalRoute: ExternalRoute? {
@@ -55,14 +58,43 @@ class TravelLiveViewController: BaseViewController {
         customView.viewModel = viewModel
         bindEvents()
         getRoute()
-//        getMockLocation()
+        setupNav()
     }
         
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         sceneLocationView.pause() 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        requestToDrawInternalRoute()
+    }
+    
+    deinit {
+        print("foi pro saco")
+    }
+    
+    private func requestToDrawInternalRoute() {
+        switch routeType {
+        case .inToIn:
+            indexOfStep == 0 ? customView.addFirstSteps() : customView.addStepsByIndex(indexOfStep)
+            customView.drawStepsForUser()
+        default:
+            break
+        }
+    }
 
+    private func setupNav() {
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .regular),
+                                                                    NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: "icon-back")?.withRenderingMode(.alwaysOriginal),
+                                          style: .plain,
+                                          target: self, action: #selector(didTapBackButton))
+        navigationController?.navigationItem.backBarButtonItem = backButton
+    }
+    
     private func setupUI() {
         switch routeType {
         case .outToOut:
@@ -76,8 +108,11 @@ class TravelLiveViewController: BaseViewController {
         default:
             break
         }
-        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .regular),
-                                                                    NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    @objc
+    func didTapBackButton() {
+        tapBackButton?()
     }
     
     private func bindEvents() {
@@ -87,7 +122,7 @@ class TravelLiveViewController: BaseViewController {
         }
         
         customView.didTapQRCodeButton = { [weak self] in
-            self?.scannerQrCode()
+            self?.willScannerWithTag?(self?.viewModel.getNextQrCodeTags())
         }
     }
     
@@ -95,10 +130,12 @@ class TravelLiveViewController: BaseViewController {
         externalRoute = route
     }
     
-    func setupInternalRoute(destiny: String,destinationTag: String) {
+    func setupInternalRoute(model: NextStepsModel?,destinationTitle: String?,index: Int? = 0) {
         routeType = .inToIn
-        title = "Destino:" + destiny
-        viewModel.insertDestinationTag(destinationTag)
+        indexOfStep = index ?? 0
+        title = "Destino:" + (destinationTitle ?? "")
+        guard let stepsValue = model else {return}
+        viewModel.insertNextSteps(stepsValue)
     }
     
     private func getRoute() {
@@ -122,19 +159,35 @@ class TravelLiveViewController: BaseViewController {
         controller.showRouteByQrCode = { [weak self] (model) in
             controller.dismiss(animated: true)
             self?.viewModel.insertNextSteps(model)
-            DispatchQueue.main.async {
-                self?.customView.addFirstSteps()
+            self?.checkRotatePhone(model.steps?.first) {
+                    DispatchQueue.main.async {
+                        self?.customView.addFirstSteps()
+                    }
             }
         }
         controller.drawStepAtIndex = { [weak self] (index) in
+            self?.customView = TravelLiveView.loadFromNib()
             controller.dismiss(animated: true)
-            DispatchQueue.main.async {
-                self?.customView.addStepsByIndex(index)
+            self?.checkRotatePhone(self?.viewModel.getStepsByIndex(index)) {
+                DispatchQueue.main.async {
+                    self?.customView.addStepsByIndex(index)
+                }
             }
         }
         controller.insertDestinationTag(destinationTag: viewModel.getDestinationTag())
         nav.modalPresentationStyle = .overFullScreen
         navigationController?.present(nav, animated: true, completion: nil)
+    }
+    
+    private func checkRotatePhone(_ steps: StepsModel?, completion: @escaping (() -> Void)) {
+        let controller = RotateViewController()
+        controller.setStepsAndParams(steps)
+        controller.modalPresentationStyle = .overFullScreen
+        controller.shouldShowStep = {
+            controller.dismiss(animated: true)
+            completion()
+        }
+        self.present(controller, animated: true, completion: nil)
     }
     
     private func getMockLocation() {

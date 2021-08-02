@@ -13,7 +13,7 @@ import CoreMotion
 class TravelLiveView: UIView, NibLoadable {
     //MARK: - Propeties
     var viewModel: TravelLiveViewModel?
-    private let arConfig = ARWorldTrackingConfiguration() //faz a utilização da camêra com AR e monitora a posicão e orientação do device
+    private var arConfig = ARWorldTrackingConfiguration() //faz a utilização da camêra com AR e monitora a posicão e orientação do device
     
     private var managerMotion: CMMotionManager = CMMotionManager()
     private var timer: Timer!
@@ -36,7 +36,6 @@ class TravelLiveView: UIView, NibLoadable {
     
     deinit {
         removeAllNodes()
-        sceneView.session.run(arConfig,options: .resetTracking)
         sceneView.session.pause()
     }
     
@@ -63,50 +62,49 @@ class TravelLiveView: UIView, NibLoadable {
         sceneView.autoenablesDefaultLighting = true //ARKit adiciona luz automaticamente no objeto renderizado
     }
     
-    func startDeviceMotion() {
-        removeAllNodes()
-        if managerMotion.isDeviceMotionAvailable {
-            self.managerMotion.deviceMotionUpdateInterval = 1.0 / 60.0
-            self.managerMotion.showsDeviceMovementDisplay = true
-            self.managerMotion.startDeviceMotionUpdates(using: .xMagneticNorthZVertical)
-            // Configure a timer to fetch the motion data.
-            self.timer = Timer(fire: Date(), interval: 1, repeats: true,
-                               block: { (timer) in
-                                if let data = self.managerMotion.deviceMotion {
-                                    // Get the attitude relative to the magnetic north reference frame.
-                                    debugPrint("==> DEGREES: ",data.heading)
-                                    debugPrint("==============================")
-                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
-                                    if self.firstPosition == 0.0 {
-                                        self.firstPosition = data.heading
-                                    }else {
-                                        if self.needRotateToRight {
-                                            let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
-                                            if motionRightResult {
-                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
-                                                self.timer.invalidate()
-                                                DispatchQueue.main.async {
-                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
-                                                    self.drawStepsForUser()
-                                                }
-                                            }
-                                        }else {
-                                            let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
-                                            if motionLeftResult {
-                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
-                                                self.timer.invalidate()
-                                                DispatchQueue.main.async {
-                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
-                                                    self.drawStepsForUser()
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-            })
-            RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
-        }
-    }
+//    func startDeviceMotion() {
+//        removeAllNodes()
+//        if managerMotion.isDeviceMotionAvailable {
+//            self.managerMotion.deviceMotionUpdateInterval = 1.0 / 60.0
+//            self.managerMotion.showsDeviceMovementDisplay = true
+//            self.managerMotion.startDeviceMotionUpdates(using: .xMagneticNorthZVertical)
+//            self.timer = Timer(fire: Date(), interval: 1, repeats: true,
+//                               block: { (timer) in
+//                                if let data = self.managerMotion.deviceMotion {
+//                                    // Get the attitude relative to the magnetic north reference frame.
+//                                    debugPrint("==> DEGREES: ",data.heading)
+//                                    debugPrint("==============================")
+//                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
+//                                    if self.firstPosition == 0.0 {
+//                                        self.firstPosition = data.heading
+//                                    }else {
+//                                        if self.needRotateToRight {
+//                                            let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
+//                                            if motionRightResult {
+//                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+//                                                self.timer.invalidate()
+//                                                DispatchQueue.main.async {
+//                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
+//                                                    self.drawStepsForUser()
+//                                                }
+//                                            }
+//                                        }else {
+//                                            let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
+//                                            if motionLeftResult {
+//                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+//                                                self.timer.invalidate()
+//                                                DispatchQueue.main.async {
+//                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
+//                                                    self.drawStepsForUser()
+//                                                }
+//                                            }
+//                                        }
+//                                    }
+//                                }
+//            })
+//            RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
+//        }
+//    }
     
     func addNodeBox() {
         let firstScene = SCNScene()
@@ -122,25 +120,27 @@ class TravelLiveView: UIView, NibLoadable {
     }
     
     func addFirstSteps() {
-        sceneView.session.run(arConfig,options: .resetTracking)
-        startDeviceMotion()
+//        sceneView.session.run(arConfig,options: .resetTracking)
         guard let step = viewModel?.getFirstSteps() else {return}
         setStepsAndParams(step)
+//        drawStepsForUser()
+//        startDeviceMotion()
     }
     
     func addStepsByIndex(_ index: Int) {
 //        sceneView.session.run(arConfig,options: .resetTracking)
         guard let step = viewModel?.getStepsByIndex(index) else {return}
         setStepsAndParams(step)
-        self.startDeviceMotion()
+//        drawStepsForUser()
+//        startDeviceMotion()
     }
     
     private func setStepsAndParams(_ step: StepsModel) {
-        guard let angle = step.angle else {return}
-        guard let direction = step.rotatePhone else {return}
+//        guard let angle = step.angle else {return}
+//        guard let direction = step.rotatePhone else {return}
         guard let distance = step.distance else {return}
-        rotateDegrees = angle
-        needRotateToRight = direction.lowercased() == "r"
+//        rotateDegrees = angle
+//        needRotateToRight = direction.lowercased() == "r"
         distanceToDraw = distance
         if let lastIndicator = step.lastIndicator {
             lastIndicatorToRight = lastIndicator.lowercased() == "r"
@@ -148,7 +148,7 @@ class TravelLiveView: UIView, NibLoadable {
     }
 
     func drawStepsForUser() {
-        firstPosition = 0.0
+//        firstPosition = 0.0
         let firstScene = SCNScene()
         let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
         box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
