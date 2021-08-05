@@ -87,6 +87,7 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
                     self.imgArrow.center.x += 100
                     self.imgArrow.center.x -= 100
                 }else {
+                    self.imgArrow.transform = CGAffineTransform(rotationAngle: .pi)
                     self.imgArrow.center.x -= 100
                     self.imgArrow.center.x += 100
                 }
