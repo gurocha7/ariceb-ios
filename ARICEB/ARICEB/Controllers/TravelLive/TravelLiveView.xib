@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,22 +32,94 @@
                         <action selector="qrCodeButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="BvL-ct-dGz"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-up-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="NJL-mX-a9h">
+                    <rect key="frame" x="368" y="188" width="45" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="PZW-T0-Wgc"/>
+                        <constraint firstAttribute="height" constant="50" id="fUS-4F-Ill"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="oUv-eR-vJW">
+                    <rect key="frame" x="368" y="253" width="45" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="J3R-LU-0nw"/>
+                        <constraint firstAttribute="height" constant="50" id="zi1-vS-sz7"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5y-y9-NbH">
+                    <rect key="frame" x="362" y="313" width="51" height="29"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="51" id="GY6-a2-9Fm"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Descer escadas">
+                            <attributes>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="AQc-a1-JoI">
+                    <rect key="frame" x="362" y="144" width="51" height="29"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="51" id="97A-lZ-U1R"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="Subir escadas">
+                            <attributes>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oUv-eR-vJW" secondAttribute="trailing" constant="1" id="6BO-PZ-d5L"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yJZ-I1-Wj8" secondAttribute="trailing" id="8PP-8H-GaI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NJL-mX-a9h" secondAttribute="trailing" constant="1" id="ABX-I3-tMr"/>
                 <constraint firstItem="yJZ-I1-Wj8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CAe-I9-dff"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bM2-hC-Oud" secondAttribute="bottom" constant="30" id="Cle-AI-ItR"/>
                 <constraint firstItem="yJZ-I1-Wj8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="OoX-Iq-ajJ"/>
+                <constraint firstItem="y5y-y9-NbH" firstAttribute="top" secondItem="oUv-eR-vJW" secondAttribute="bottom" constant="10" id="Rka-jn-A4b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="y5y-y9-NbH" secondAttribute="trailing" constant="1" id="eHY-eS-Mxa"/>
                 <constraint firstItem="bM2-hC-Oud" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fAZ-uH-Y4m"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AQc-a1-JoI" secondAttribute="trailing" constant="1" id="lUK-Q1-xwn"/>
+                <constraint firstItem="oUv-eR-vJW" firstAttribute="top" secondItem="NJL-mX-a9h" secondAttribute="bottom" constant="15" id="oR1-ZJ-FT1"/>
+                <constraint firstItem="AQc-a1-JoI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="uth-eG-N4q"/>
                 <constraint firstAttribute="bottom" secondItem="yJZ-I1-Wj8" secondAttribute="bottom" id="xYm-2h-OXy"/>
+                <constraint firstItem="NJL-mX-a9h" firstAttribute="top" secondItem="AQc-a1-JoI" secondAttribute="bottom" constant="15" id="yID-4i-FsG"/>
             </constraints>
             <connections>
                 <outlet property="buttonQrCode" destination="bM2-hC-Oud" id="niK-zI-aao"/>
+                <outlet property="imageArrowDown" destination="oUv-eR-vJW" id="Qyn-R5-EFw"/>
+                <outlet property="imageArrowUP" destination="NJL-mX-a9h" id="xX0-9z-ubb"/>
                 <outlet property="sceneView" destination="yJZ-I1-Wj8" id="PCy-iq-6hV"/>
             </connections>
             <point key="canvasLocation" x="-145" y="92"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon-down-arrow" width="512" height="512"/>
+        <image name="icon-up-arrow" width="512" height="512"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -11,6 +11,14 @@ import ARKit
 import CoreMotion
 
 class TravelLiveView: UIView, NibLoadable {
+    
+    enum LastIndicatorType: String {
+        case direita = "r"
+        case esquerda = "l"
+        case subir = "u"
+        case descer = "d"
+    }
+    
     //MARK: - Propeties
     var viewModel: TravelLiveViewModel?
     private var arConfig = ARWorldTrackingConfiguration() //faz a utilização da camêra com AR e monitora a posicão e orientação do device
@@ -25,10 +33,13 @@ class TravelLiveView: UIView, NibLoadable {
     var needRotateToRight: Bool = false
     var distanceToDraw: Double?
     var lastIndicatorToRight: Bool = false
+    var lastIndicatorTypeValue: LastIndicatorType = .direita
     
     //MARK: - OUTLETS
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var buttonQrCode: UIButton!
+    @IBOutlet weak var imageArrowUP: UIImageView!
+    @IBOutlet weak var imageArrowDown: UIImageView!
     
     @IBAction func qrCodeButtonAction(_ sender: Any) {
         didTapQRCodeButton?()
@@ -60,51 +71,15 @@ class TravelLiveView: UIView, NibLoadable {
         sceneView.session.run(arConfig)
 //        sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         sceneView.autoenablesDefaultLighting = true //ARKit adiciona luz automaticamente no objeto renderizado
+        setupArrowsColor()
     }
     
-//    func startDeviceMotion() {
-//        removeAllNodes()
-//        if managerMotion.isDeviceMotionAvailable {
-//            self.managerMotion.deviceMotionUpdateInterval = 1.0 / 60.0
-//            self.managerMotion.showsDeviceMovementDisplay = true
-//            self.managerMotion.startDeviceMotionUpdates(using: .xMagneticNorthZVertical)
-//            self.timer = Timer(fire: Date(), interval: 1, repeats: true,
-//                               block: { (timer) in
-//                                if let data = self.managerMotion.deviceMotion {
-//                                    // Get the attitude relative to the magnetic north reference frame.
-//                                    debugPrint("==> DEGREES: ",data.heading)
-//                                    debugPrint("==============================")
-//                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
-//                                    if self.firstPosition == 0.0 {
-//                                        self.firstPosition = data.heading
-//                                    }else {
-//                                        if self.needRotateToRight {
-//                                            let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
-//                                            if motionRightResult {
-//                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
-//                                                self.timer.invalidate()
-//                                                DispatchQueue.main.async {
-//                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
-//                                                    self.drawStepsForUser()
-//                                                }
-//                                            }
-//                                        }else {
-//                                            let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
-//                                            if motionLeftResult {
-//                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
-//                                                self.timer.invalidate()
-//                                                DispatchQueue.main.async {
-//                                                    self.sceneView.session.run(self.arConfig,options: .resetTracking)
-//                                                    self.drawStepsForUser()
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//            })
-//            RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
-//        }
-//    }
+    private func setupArrowsColor() {
+        imageArrowUP.image = UIImage(named: "icon-up-arrow")?.withRenderingMode(.alwaysTemplate)
+        imageArrowUP.tintColor = .green
+        imageArrowDown.image = UIImage(named: "icon-down-arrow")?.withRenderingMode(.alwaysTemplate)
+        imageArrowDown.tintColor = .red
+    }
     
     func addNodeBox() {
         let firstScene = SCNScene()
@@ -143,22 +118,44 @@ class TravelLiveView: UIView, NibLoadable {
 //        needRotateToRight = direction.lowercased() == "r"
         distanceToDraw = distance
         if let lastIndicator = step.lastIndicator {
-            lastIndicatorToRight = lastIndicator.lowercased() == "r"
+            switch lastIndicator.lowercased() {
+            case LastIndicatorType.direita.rawValue:
+                lastIndicatorToRight = true
+                lastIndicatorTypeValue = .direita
+            case LastIndicatorType.esquerda.rawValue:
+                lastIndicatorToRight = false
+                lastIndicatorTypeValue = .esquerda
+            case LastIndicatorType.descer.rawValue:
+                lastIndicatorTypeValue = .descer
+            case LastIndicatorType.subir.rawValue:
+                lastIndicatorTypeValue = .subir
+            default:
+                break
+            }
+//            lastIndicatorToRight = lastIndicator.lowercased() == "r"
         }
     }
 
     func drawStepsForUser() {
 //        firstPosition = 0.0
         let firstScene = SCNScene()
-        let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.1)
-        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
-        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
+//        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
+//        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
         let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
+        triangle.firstMaterial?.diffuse.contents = UIColor.orange
+        triangle.firstMaterial?.specular.contents = 0.7
         let distanceInteger = Int(distanceToDraw ?? 0)
         for i in 1...distanceInteger {
             let nodeBox = SCNNode(geometry: triangle)
             nodeBox.position = SCNVector3(0,-0.5, Double(-i))
             nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
+            if lastIndicatorTypeValue == .descer {
+                triangle.firstMaterial?.diffuse.contents = UIColor.red
+            }else if lastIndicatorTypeValue == .subir {
+                triangle.firstMaterial?.diffuse.contents = UIColor.green
+            }else {
+                
+            }
             firstScene.rootNode.addChildNode(nodeBox)
         }
         sceneView.scene = firstScene
