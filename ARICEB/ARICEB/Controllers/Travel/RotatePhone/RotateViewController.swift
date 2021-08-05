@@ -23,6 +23,7 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
     //MARK: - Outlets
     @IBOutlet weak var buttonClose: UIButton!
     @IBOutlet weak var labelMessage: UILabel!
+    @IBOutlet weak var imgArrow: UIImageView!
     
     //MARK: - Actions
     @IBAction func buttonCloseAction(_ sender: Any) {
@@ -41,6 +42,8 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
     }
         
     func startDeviceMotion() {
+        labelMessage.text = needRotateToRight ? "Gire o iPhone para a direita"  :  "Gire o iPhone para a esquerda"
+        animateArrow()
         if managerMotion.isDeviceMotionAvailable {
             self.managerMotion.deviceMotionUpdateInterval = 1.0 / 60.0
             self.managerMotion.showsDeviceMovementDisplay = true
@@ -74,6 +77,20 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
                                 }
             })
             RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
+        }
+    }
+    
+    private func animateArrow() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 1, delay: 0.0, options: [.repeat,.autoreverse]) {
+                if self.needRotateToRight {
+                    self.imgArrow.center.x += 100
+                    self.imgArrow.center.x -= 100
+                }else {
+                    self.imgArrow.center.x -= 100
+                    self.imgArrow.center.x += 100
+                }
+            }
         }
     }
     

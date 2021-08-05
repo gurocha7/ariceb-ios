@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RotateViewController" customModule="ARICEB" customModuleProvider="target">
             <connections>
                 <outlet property="buttonClose" destination="54Z-3e-Xgi" id="TBg-rr-mnA"/>
+                <outlet property="imgArrow" destination="e1F-Wb-Ib8" id="XZK-sr-lOv"/>
                 <outlet property="labelMessage" destination="tsq-Ew-iYm" id="NEq-Vq-D8p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,9 +22,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54Z-3e-Xgi">
-                    <rect key="frame" x="334" y="30" width="50" height="50"/>
+                    <rect key="frame" x="284" y="30" width="100" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="CDB-VM-l5J"/>
+                        <constraint firstAttribute="width" constant="100" id="CDB-VM-l5J"/>
                         <constraint firstAttribute="height" constant="50" id="Cbs-hZ-UKS"/>
                     </constraints>
                     <state key="normal" title="FECHAR">
@@ -39,16 +40,28 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-right-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="e1F-Wb-Ib8">
+                    <rect key="frame" x="162" y="212.66666666666663" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="3xj-6t-gGz"/>
+                        <constraint firstAttribute="width" constant="90" id="TZh-tB-XRf"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="54Z-3e-Xgi" secondAttribute="trailing" constant="30" id="2X0-0F-zHQ"/>
+                <constraint firstItem="tsq-Ew-iYm" firstAttribute="top" secondItem="e1F-Wb-Ib8" secondAttribute="bottom" constant="55" id="3nF-i3-qvA"/>
                 <constraint firstItem="tsq-Ew-iYm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="721-oO-qdQ"/>
+                <constraint firstItem="e1F-Wb-Ib8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NpU-xW-Yzr"/>
                 <constraint firstItem="tsq-Ew-iYm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RZM-JX-rsE"/>
                 <constraint firstItem="54Z-3e-Xgi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="stC-aM-OvE"/>
             </constraints>
             <point key="canvasLocation" x="119" y="92"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon-right-arrow" width="512" height="512"/>
+    </resources>
 </document>
