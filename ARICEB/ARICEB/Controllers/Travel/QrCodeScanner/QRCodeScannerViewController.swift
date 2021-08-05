@@ -38,14 +38,13 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "QrCode"
+        title = "Escaneie um QrCode"
         bindEvents()
         setupNavBar()
         view.backgroundColor = .black
         captureSession = AVCaptureSession()
         captureVideo()
         configSession()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
