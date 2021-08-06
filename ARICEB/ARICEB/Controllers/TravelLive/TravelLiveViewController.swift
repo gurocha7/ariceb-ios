@@ -72,7 +72,7 @@ class TravelLiveViewController: BaseViewController {
     }
     
     deinit {
-        print("foi pro saco")
+        print("controller desalocada")
     }
     
     private func requestToDrawInternalRoute() {

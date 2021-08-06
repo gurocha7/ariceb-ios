@@ -17,6 +17,7 @@ class TravelLiveView: UIView, NibLoadable {
         case esquerda = "l"
         case subir = "u"
         case descer = "d"
+        case subirAdireita = "ru"
     }
     
     //MARK: - Propeties
@@ -129,6 +130,8 @@ class TravelLiveView: UIView, NibLoadable {
                 lastIndicatorTypeValue = .descer
             case LastIndicatorType.subir.rawValue:
                 lastIndicatorTypeValue = .subir
+            case LastIndicatorType.subirAdireita.rawValue:
+                lastIndicatorTypeValue = .subirAdireita
             default:
                 break
             }
@@ -141,7 +144,7 @@ class TravelLiveView: UIView, NibLoadable {
         let firstScene = SCNScene()
 //        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
 //        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
-        let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
+        var triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
         triangle.firstMaterial?.diffuse.contents = UIColor.orange
         triangle.firstMaterial?.specular.contents = 0.7
         let distanceInteger = Int(distanceToDraw ?? 0)
@@ -151,8 +154,14 @@ class TravelLiveView: UIView, NibLoadable {
             nodeBox.scale = SCNVector3(0.1, 0.1, 0.1)
             if lastIndicatorTypeValue == .descer {
                 triangle.firstMaterial?.diffuse.contents = UIColor.red
-            }else if lastIndicatorTypeValue == .subir {
+            }else if lastIndicatorTypeValue == .subir || lastIndicatorTypeValue == .subirAdireita {
                 triangle.firstMaterial?.diffuse.contents = UIColor.green
+            }else if lastIndicatorTypeValue == .direita {
+                if i == distanceInteger {
+                    triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(0, 1, 1),
+                                                          vector2: SCNVector3(1, 0, 1),
+                                                          vector3: SCNVector3(0, 1, 1))
+                }
             }else {
                 
             }

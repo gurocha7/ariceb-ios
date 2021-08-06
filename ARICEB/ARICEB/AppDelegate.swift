@@ -8,7 +8,7 @@
 import UIKit
 import netfox
 
-let baseURL: String = "http://172.20.10.10:3000/v1"
+let baseURL: String = "http://192.168.2.7:3000/v1"
 //let baseURL: String = "https://ariceb-prod.herokuapp.com/v1"
 
 

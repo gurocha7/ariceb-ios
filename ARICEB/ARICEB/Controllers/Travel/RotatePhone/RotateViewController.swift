@@ -52,23 +52,23 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
                                block: { (timer) in
                                 if let data = self.managerMotion.deviceMotion {
                                     // Get the attitude relative to the magnetic north reference frame.
-//                                    debugPrint("==> DEGREES: ",data.heading)
-//                                    debugPrint("==============================")
-//                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
+                                    debugPrint("==> DEGREES: ",data.heading)
+                                    debugPrint("==============================")
+                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
                                     if self.firstPosition == 0.0 {
                                         self.firstPosition = data.heading
                                     }else {
                                         if self.needRotateToRight {
                                             let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
                                             if motionRightResult {
-//                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
                                                 self.timer.invalidate()
                                                 self.shouldShowStep?()
                                             }
                                         }else {
                                             let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
                                             if motionLeftResult {
-//                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
                                                 self.timer.invalidate()
                                                 self.shouldShowStep?()
                                             }
