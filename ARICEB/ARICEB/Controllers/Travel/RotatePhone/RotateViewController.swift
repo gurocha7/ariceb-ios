@@ -15,10 +15,18 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
     
     private var timer: Timer!
     private var firstPosition: Double = 0.0
-    var rotateDegrees: Double = 80
+    let rotateDegrees: Double = 80
     var needRotateToRight: Bool = false
     var dismissRotate: (() -> Void)?
     var shouldShowStep: (() -> Void)?
+    
+    var firstValueRange: Double = 0.0
+    var lastValueRange: Double = 0.0
+    
+    var extraFirstValueRange: Double = 0.0
+    var extraLastValueRange: Double = 0.0
+    
+    var isEspecialZone: Bool = false
     
     //MARK: - Outlets
     @IBOutlet weak var buttonClose: UIButton!
@@ -48,27 +56,61 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
             self.managerMotion.deviceMotionUpdateInterval = 1.0 / 60.0
             self.managerMotion.showsDeviceMovementDisplay = true
             self.managerMotion.startDeviceMotionUpdates(using: .xMagneticNorthZVertical)
-            self.timer = Timer(fire: Date(), interval: 1, repeats: true,
+            self.timer = Timer(fire: Date(), interval: 0.5, repeats: true,
                                block: { (timer) in
                                 if let data = self.managerMotion.deviceMotion {
                                     // Get the attitude relative to the magnetic north reference frame.
-                                    debugPrint("==> DEGREES: ",data.heading)
-                                    debugPrint("==============================")
-                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
+//                                    debugPrint("==> DEGREES: ",data.heading)
+//                                    debugPrint("==============================")
+//                                    debugPrint("==> FIRST VALUE: ",self.firstPosition)
                                     if self.firstPosition == 0.0 {
                                         self.firstPosition = data.heading
+                                        if self.firstPosition >= 90  && self.firstPosition <= 280 {
+                                            self.firstValueRange = self.needRotateToRight ? (self.firstPosition + self.rotateDegrees) : (self.firstPosition - self.rotateDegrees - 10)
+                                            self.lastValueRange = self.needRotateToRight ? (self.firstPosition + self.rotateDegrees + 10) : (self.firstPosition - self.rotateDegrees)
+                                        }else if self.firstPosition >= 81 && self.firstPosition < 90 {
+                                            self.isEspecialZone = true
+                                            if self.needRotateToRight {
+                                                self.firstValueRange = self.firstPosition + self.rotateDegrees
+                                                self.lastValueRange = self.firstPosition + self.rotateDegrees + 10
+                                            }else {
+                                                self.firstValueRange = 0
+                                                let restOfSub = self.firstPosition - self.rotateDegrees
+                                                self.lastValueRange = restOfSub
+                                                self.extraFirstValueRange = 360 - (10 - restOfSub)
+                                                self.extraLastValueRange = 360
+                                            }
+                                        }
+                                        else if self.firstPosition >= 0 && self.firstPosition <= 80 {
+                                            self.firstValueRange = self.needRotateToRight ? (self.firstPosition + self.rotateDegrees) : (350 - (self.rotateDegrees - self.firstPosition ))
+                                            self.lastValueRange = self.needRotateToRight ? (self.firstPosition + self.rotateDegrees + 10) : (360 - (self.rotateDegrees - self.firstPosition ))
+                                        }else {
+                                            self.firstValueRange = self.needRotateToRight ? (self.firstPosition + self.rotateDegrees - 360) : (self.firstPosition - self.rotateDegrees - 10)
+                                            self.lastValueRange = self.needRotateToRight ? (self.firstPosition + self.rotateDegrees - 350) : (self.firstPosition - self.rotateDegrees)
+                                        }
                                     }else {
-                                        if self.needRotateToRight {
-                                            let motionRightResult = data.heading >= (self.firstPosition + self.rotateDegrees)
-                                            if motionRightResult {
-                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
-                                                self.timer.invalidate()
-                                                self.shouldShowStep?()
+                                        
+                                        if self.isEspecialZone {
+                                            if self.needRotateToRight {
+                                                let range = self.firstValueRange...self.lastValueRange
+                                                if range.contains(data.heading) {
+//                                                    debugPrint("**PODE TRAÇAR A ROTA INTERNA PARA DIREITA**")
+                                                    self.timer.invalidate()
+                                                    self.shouldShowStep?()
+                                                }
+                                            }else {
+                                                let range = self.firstValueRange...self.lastValueRange
+                                                let secondRange = self.extraFirstValueRange...self.extraLastValueRange
+                                                if range.contains(data.heading) || secondRange.contains(data.heading) {
+//                                                    debugPrint("**PODE TRAÇAR A ROTA INTERNA PARA ESQUERDA**")
+                                                    self.timer.invalidate()
+                                                    self.shouldShowStep?()
+                                                }
                                             }
                                         }else {
-                                            let motionLeftResult = data.heading <= (self.firstPosition - self.rotateDegrees)
-                                            if motionLeftResult {
-                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA**")
+                                            let range = self.firstValueRange...self.lastValueRange
+                                            if range.contains(data.heading) {
+//                                                debugPrint("**PODE TRAÇAR A ROTA INTERNA PARA DIREITA**")
                                                 self.timer.invalidate()
                                                 self.shouldShowStep?()
                                             }
@@ -99,7 +141,7 @@ class RotateViewController: UIViewController,CLLocationManagerDelegate {
         guard let stepValue = step else {return}
         guard let angle = stepValue.angle else {return}
         guard let direction = stepValue.rotatePhone else {return}
-        rotateDegrees = angle
+//        rotateDegrees = angle
         needRotateToRight = direction.lowercased() == "r"
     }
 }
