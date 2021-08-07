@@ -156,13 +156,7 @@ class TravelLiveView: UIView, NibLoadable {
                 triangle.firstMaterial?.diffuse.contents = UIColor.red
             }else if lastIndicatorTypeValue == .subir || lastIndicatorTypeValue == .subirAdireita {
                 triangle.firstMaterial?.diffuse.contents = UIColor.green
-            }else if lastIndicatorTypeValue == .direita {
-                if i == distanceInteger {
-                    triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(0, 1, 1),
-                                                          vector2: SCNVector3(1, 0, 1),
-                                                          vector3: SCNVector3(0, 1, 1))
-                }
-            }else {
+            } else {
                 
             }
             firstScene.rootNode.addChildNode(nodeBox)
