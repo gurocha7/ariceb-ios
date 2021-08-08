@@ -33,7 +33,6 @@ class FAQDetailsViewController: UIViewController {
 
     private func setupNav() {
         title = viewModel.getTitleFor(index)
-        navigationController?.navigationBar.topItem?.title = ""
     }
     
     private func setupInfoFor() {

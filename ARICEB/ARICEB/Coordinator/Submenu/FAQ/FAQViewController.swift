@@ -19,12 +19,8 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         setup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        title = "FAQ"
-    }
-    
     private func setup(){
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         tableView.isScrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
