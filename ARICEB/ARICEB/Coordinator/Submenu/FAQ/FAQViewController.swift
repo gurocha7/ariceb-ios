@@ -19,6 +19,11 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         setup()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "FAQ"
+    }
+    
     private func setup(){
         tableView.isScrollEnabled = false
         tableView.delegate = self
@@ -26,6 +31,11 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.rowHeight = 70
         tableView.separatorStyle = .none
         tableView.register(cellType: FAQTableViewCell.self)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showFAQDetails(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,5 +47,9 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         cell.setupInfo(question: viewModel.getItemAtIndex(index: indexPath.row))
         return cell
     }
-
+    
+    func showFAQDetails(index: Int) {
+        let controler = FAQDetailsViewController(index)
+        navigationController?.pushViewController(controler, animated: true)
+    }
 }

@@ -13,7 +13,7 @@ class FAQViewModel{
     let itemsAnswers:[String] = ["Lorem Ipsum dolor","Lorem Ipsum dolor","Lorem Ipsum dolor"]
     
     
-    func getNumberOfQuestions() -> Int{
+    func getNumberOfQuestions() -> Int {
         return itemsQuestions.count
     }
     
