@@ -24,6 +24,7 @@ class FAQTableViewCell: UITableViewCell, NibReusable {
     
     private func setup(){
         buttonArrow.setImage(UIImage(named: "arrow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        buttonArrow.transform = CGAffineTransform(rotationAngle: .pi * 1.5)
         buttonArrow.tintColor = .darkGray
         insideView.applyCorner(corner: 10)
         insideView.applyBorder(borderWidth: 1, borderColor: UIColor.black.cgColor)
