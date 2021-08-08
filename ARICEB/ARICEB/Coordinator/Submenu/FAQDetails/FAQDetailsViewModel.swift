@@ -10,8 +10,8 @@ import Foundation
 class FAQDetailsViewModel {
     
     let titles: [String] = ["COMO USAR O APP?","COMO INSERIR MINHA ORIGEM?","COMO INSERIR MEU DESTINO?"]
-    let description: [String] = ["","",""]
-    let descriptionNameImage: [String] = ["","",""]
+    let description: [String] = ["Você pode usar pode utiizar o app para selecionar um ponto de origem e destino e o app iráprojetar o caminho com utilização da Realidade Aumentada e irá te ajudar a encontrar seu destino final com mais facilidade :)","",""]
+    let descriptionNameImage: [String] = ["print-1","",""]
     
     
     func getTitleFor(_ index: Int) -> String {

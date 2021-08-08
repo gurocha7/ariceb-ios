@@ -37,6 +37,19 @@ class FAQDetailsViewController: UIViewController {
     
     private func setupInfoFor() {
         labelTitle.text = viewModel.getDescriptionFor(index)
+        let imageName = viewModel.getDescriptionNameImageFor(index)
+        let image = UIImageView()
+        image.image = UIImage(named: imageName)
+        image.contentMode = .scaleAspectFill
+        image.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        clearStack()
+        stack.addArrangedSubview(image)
+    }
+    
+    private func clearStack() {
+        stack.arrangedSubviews.forEach { (subview) in
+            subview.removeFromSuperview()
+        }
     }
     
 }
