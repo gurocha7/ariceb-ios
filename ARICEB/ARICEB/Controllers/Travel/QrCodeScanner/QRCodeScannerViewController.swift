@@ -18,6 +18,10 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     private var viewModel: QRCodeScannerViewModel
     var tapCloseController: (() -> Void)?
     
+    var counter = 0.0
+    var timer = Timer()
+    var isPlaying = false
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -66,11 +70,14 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     private func bindEvents() {
         viewModel.showSteps = { [weak self] (model) in
             self?.stopLoading()
+            self?.invalidQRCodeTimer()
+            UserDefaults.standard.setValue(true, forKey: "getQRCodeByAPI")
             self?.showRouteByQrCode?(model)
         }
         
         viewModel.shouldShowError = { [weak self] (errorMSG) in
             self?.stopLoading()
+            self?.invalidQRCodeTimer()
         }
     }
 
@@ -129,6 +136,8 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
     }
 
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(UpdateTimer), userInfo: nil, repeats: true)
+        isPlaying = true
         captureSession.stopRunning()
 
         if let metadataObject = metadataObjects.first {
@@ -138,9 +147,19 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
             found(code: stringValue)
         }
     }
+    
+    @objc
+    func UpdateTimer() {
+        counter = counter + 0.1
+    }
+    
+    private func invalidQRCodeTimer() {
+        UserDefaults.standard.setValue(counter, forKey: "lastTimerForQrCode")
+        timer.invalidate()
+        isPlaying = false
+    }
 
     func found(code: String) {
-        print(code)
         playLoading()
         if let currentSteps = existingSteps {
             if currentSteps.contains(code) {
@@ -148,6 +167,8 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
                 for i in 0...count {
                     if currentSteps[i] == code {
                         drawStepAtIndex?(i)
+                        invalidQRCodeTimer()
+                        UserDefaults.standard.setValue(false, forKey: "getQRCodeByAPI")
                         stopLoading()
                         return
                     }

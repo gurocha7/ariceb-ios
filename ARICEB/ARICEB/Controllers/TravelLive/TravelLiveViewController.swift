@@ -122,7 +122,15 @@ class TravelLiveViewController: BaseViewController {
         }
         
         customView.didTapQRCodeButton = { [weak self] in
-            self?.willScannerWithTag?(self?.viewModel.getNextQrCodeTags())
+            DispatchQueue.main.async {
+                self?.willScannerWithTag?(self?.viewModel.getNextQrCodeTags())
+            }
+        }
+        
+        customView.didFinishTravel = { [weak self] in
+            DispatchQueue.main.async {
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
         }
     }
     

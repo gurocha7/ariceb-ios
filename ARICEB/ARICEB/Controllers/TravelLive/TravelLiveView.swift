@@ -29,6 +29,7 @@ class TravelLiveView: UIView, NibLoadable {
     private var firstPosition: Double = 0.0
     
     var didTapQRCodeButton: (() -> Void)?
+    var didFinishTravel: (() -> Void)?
     
     var rotateDegrees: Double = 80
     var needRotateToRight: Bool = false
@@ -39,11 +40,18 @@ class TravelLiveView: UIView, NibLoadable {
     //MARK: - OUTLETS
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var buttonQrCode: UIButton!
+    @IBOutlet weak var buttonFinish: UIButton!
     @IBOutlet weak var imageArrowUP: UIImageView!
     @IBOutlet weak var imageArrowDown: UIImageView!
+    @IBOutlet weak var timerView: UIView!
+    @IBOutlet weak var labelTimerView: UILabel!
     
     @IBAction func qrCodeButtonAction(_ sender: Any) {
         didTapQRCodeButton?()
+    }
+    
+    @IBAction func buttonFinish(_ sender: Any) {
+        didFinishTravel?()
     }
     
     deinit {
@@ -66,6 +74,7 @@ class TravelLiveView: UIView, NibLoadable {
     
     private func setupButtons() {
         buttonQrCode.layer.cornerRadius = 6
+        buttonFinish.layer.cornerRadius = 6
     }
 
     private func setupUI() {
@@ -135,16 +144,12 @@ class TravelLiveView: UIView, NibLoadable {
             default:
                 break
             }
-//            lastIndicatorToRight = lastIndicator.lowercased() == "r"
         }
     }
 
     func drawStepsForUser() {
-//        firstPosition = 0.0
         let firstScene = SCNScene()
-//        box.firstMaterial?.diffuse.contents = UIColor.purple //adiciona cor para o material desenhado na tela
-//        box.firstMaterial?.specular.contents = 0.7 //adiciona brilho ao material
-        var triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
+        let triangle = SCNGeometry.triangleFrom(vector1: SCNVector3(-1, 0, 1), vector2: SCNVector3(1, 0, 1), vector3: SCNVector3(0, 1, 1))
         triangle.firstMaterial?.diffuse.contents = UIColor.orange
         triangle.firstMaterial?.specular.contents = 0.7
         let distanceInteger = Int(distanceToDraw ?? 0)
@@ -162,6 +167,12 @@ class TravelLiveView: UIView, NibLoadable {
             firstScene.rootNode.addChildNode(nodeBox)
         }
         sceneView.scene = firstScene
+        if let timerValue =  UserDefaults.standard.value(forKey: "lastTimerForQrCode") as? Double {
+            labelTimerView.text = "\(timerValue)"
+            if let byAPI = UserDefaults.standard.value(forKey: "getQRCodeByAPI") as? Bool {
+                timerView.backgroundColor = byAPI ? .blue : .green
+            }
+        }
     }
 }
 
