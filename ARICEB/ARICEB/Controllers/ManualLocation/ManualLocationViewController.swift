@@ -76,6 +76,20 @@ class ManualLocationViewController: BaseViewController {
             self?.stopLoading()
             self?.goToThirdOptions(subsectors: subsectors)
         }
+        
+        viewModel.shouldShowError = { [weak self] (errorMSG) in
+            DispatchQueue.main.async {
+                self?.stopLoading()
+                self?.showAlertWithMessage(message: errorMSG)
+            }
+        }
+    }
+    
+    private func showAlertWithMessage(message: String) {
+        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
     private func sendAddressAndIds(_ model: String?) {
