@@ -429,7 +429,6 @@
 		368FDC3226C06BA700515A42 /* FAQDetails */ = {
 			isa = PBXGroup;
 			children = (
-				36F6ABA226C9F7EE00B50E12 /* Respostas */,
 				368FDC3326C06BBA00515A42 /* FAQDetailsViewController.swift */,
 				368FDC3426C06BBA00515A42 /* FAQDetailsViewController.xib */,
 				368FDC3D26C06F6C00515A42 /* FAQDetailsViewModel.swift */,
@@ -666,13 +665,6 @@
 				3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */,
 			);
 			path = SelectedOriginAndDestiny;
-			sourceTree = "<group>";
-		};
-		36F6ABA226C9F7EE00B50E12 /* Respostas */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Respostas;
 			sourceTree = "<group>";
 		};
 		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {

@@ -28,28 +28,11 @@ class FAQDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNav()
-        setupInfoFor()
+
     }
 
     private func setupNav() {
-        title = viewModel.getTitleFor(index)
-    }
-    
-    private func setupInfoFor() {
-        labelTitle.text = viewModel.getDescriptionFor(index)
-        let imageName = viewModel.getDescriptionNameImageFor(index)
-        let image = UIImageView()
-        image.image = UIImage(named: imageName)
-        image.contentMode = .scaleAspectFill
-        image.heightAnchor.constraint(equalToConstant: CGFloat(viewModel.getImageHeight(index: index))).isActive = true
-        clearStack()
-        stack.addArrangedSubview(image)
-    }
-    
-    private func clearStack() {
-        stack.arrangedSubviews.forEach { (subview) in
-            subview.removeFromSuperview()
-        }
+        title = "COMO USAR O APP?"
     }
     
 }

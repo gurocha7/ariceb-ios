@@ -25,26 +25,32 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHa-bN-QDm">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="195.33333333333334"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="426.66666666666669"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mm7-kR-SSp">
-                                    <rect key="frame" x="20" y="5" width="374" height="20.333333333333332"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mm7-kR-SSp">
+                                    <rect key="frame" x="20" y="5" width="374" height="101.66666666666667"/>
+                                    <string key="text">Você pode usar pode utiizar o app para selecionar um ponto de origem e destino e o app irá projetar o caminho com utilização da Realidade Aumentada e irá te ajudar a encontrar seu destino final com mais facilidade :)</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Ek-pZ-fWR">
-                                    <rect key="frame" x="10" y="45.333333333333343" width="394" height="150"/>
+                                    <rect key="frame" x="10" y="126.66666666666669" width="394" height="300"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqU-jC-xpC">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="150"/>
-                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="print-1" translatesAutoresizingMaskIntoConstraints="NO" id="wlg-YX-b22">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="150" id="dAM-tV-asc"/>
+                                                <constraint firstAttribute="height" constant="300" id="dt8-yb-tsP"/>
                                             </constraints>
-                                        </view>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="wlg-YX-b22" firstAttribute="top" secondItem="1Ek-pZ-fWR" secondAttribute="top" id="T10-0Y-U2d"/>
+                                        <constraint firstItem="wlg-YX-b22" firstAttribute="leading" secondItem="1Ek-pZ-fWR" secondAttribute="leading" id="Tz6-vV-tA3"/>
+                                        <constraint firstAttribute="trailing" secondItem="wlg-YX-b22" secondAttribute="trailing" id="V39-9j-91K"/>
+                                        <constraint firstAttribute="bottom" secondItem="wlg-YX-b22" secondAttribute="bottom" id="eLI-oE-Uds"/>
+                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,15 +83,13 @@
                 <constraint firstItem="tHa-bN-QDm" firstAttribute="height" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="250" id="sog-Jj-4DT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BZM-FW-4ar" secondAttribute="bottom" id="vnq-xV-nhR"/>
             </constraints>
-            <point key="canvasLocation" x="140.57971014492756" y="91.304347826086968"/>
+            <point key="canvasLocation" x="1106" y="91"/>
         </view>
     </objects>
     <resources>
+        <image name="print-1" width="333" height="260"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
