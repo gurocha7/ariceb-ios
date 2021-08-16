@@ -76,9 +76,20 @@ class ScannerViewController: BaseViewController, AVCaptureMetadataOutputObjectsD
         }
         
         viewModel.shouldShowError = { [weak self] (errorMSG) in
-            self?.stopLoading()
-            self?.invalidQRCodeTimer()
+            DispatchQueue.main.async {
+                self?.stopLoading()
+                self?.invalidQRCodeTimer()
+                self?.showAlertWithMessage(message: errorMSG)
+            }
+            
         }
+    }
+    
+    private func showAlertWithMessage(message: String) {
+        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
 
     private func setupNavBar() {

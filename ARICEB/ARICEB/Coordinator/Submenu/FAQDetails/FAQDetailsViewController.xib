@@ -33,8 +33,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Ek-pZ-fWR">
-                                    <rect key="frame" x="10" y="45.333333333333371" width="394" height="150"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Ek-pZ-fWR">
+                                    <rect key="frame" x="10" y="45.333333333333343" width="394" height="150"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqU-jC-xpC">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="150"/>

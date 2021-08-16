@@ -65,6 +65,20 @@ class SelectOriginDestinyViewController: BaseViewController {
             self?.destinationTag = tag
             self?.scannerQrCode()
         }
+        
+        viewModel.shouldShowErrorMSG = { [weak self] (errorMSSG) in
+            DispatchQueue.main.async {
+                self?.stopLoading()
+                self?.showAlertWithMessage(message: errorMSSG)
+            }
+        }
+    }
+    
+    private func showAlertWithMessage(message: String) {
+        let alert = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
     private func editOrigin(){

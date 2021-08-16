@@ -41,7 +41,7 @@ class FAQDetailsViewController: UIViewController {
         let image = UIImageView()
         image.image = UIImage(named: imageName)
         image.contentMode = .scaleAspectFill
-        image.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        image.heightAnchor.constraint(equalToConstant: CGFloat(viewModel.getImageHeight(index: index))).isActive = true
         clearStack()
         stack.addArrangedSubview(image)
     }
