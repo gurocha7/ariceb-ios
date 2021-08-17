@@ -52,6 +52,10 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             showFAQDetails2()
         case 2:
             showFAQDetails3()
+        case 3:
+            showFAQDetails4()
+        case 4:
+            showFAQDetails5()
         default:
             break
         }
@@ -69,6 +73,16 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func showFAQDetails3() {
         let controler = FAQDetails3ViewController()
+        navigationController?.pushViewController(controler, animated: true)
+    }
+    
+    func showFAQDetails4() {
+        let controler = FAQDetails4ViewController()
+        navigationController?.pushViewController(controler, animated: true)
+    }
+    
+    func showFAQDetails5() {
+        let controler = FAQDetails5ViewController()
         navigationController?.pushViewController(controler, animated: true)
     }
 }

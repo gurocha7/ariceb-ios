@@ -13,5 +13,4 @@ class FAQDetails4ViewController: UIViewController {
         super.viewDidLoad()
         title = "Como escanear um qrcode?"
     }
-
 }

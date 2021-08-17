@@ -9,8 +9,11 @@ import Foundation
 
 class FAQViewModel{
     
-    let itemsQuestions:[String] = ["COMO USAR O APP?","COMO INSERIR MINHA ORIGEM?","COMO INSERIR MEU DESTINO?"]
-    let itemsAnswers:[String] = ["Lorem Ipsum dolor","Lorem Ipsum dolor","Lorem Ipsum dolor"]
+    let itemsQuestions:[String] = ["COMO USAR O APP?",
+                                   "COMO INSERIR MINHA ORIGEM?",
+                                   "COMO INSERIR MEU DESTINO?",
+                                   "COMO ESCANEAR UM QRCODE?",
+                                   "INTERPRETANDO AS SETAS"]
     
     
     func getNumberOfQuestions() -> Int {
@@ -21,7 +24,4 @@ class FAQViewModel{
         return itemsQuestions[index]
     }
     
-    func getItemAnswersAtIndex(index: Int) -> String {
-        return itemsAnswers[index]
-    }
 }
