@@ -128,9 +128,19 @@ class TravelLiveViewController: BaseViewController {
         }
         
         customView.didFinishTravel = { [weak self] in
-            DispatchQueue.main.async {
-                self?.navigationController?.popToRootViewController(animated: true)
-            }
+            self?.showAlertToConfirmFinalized()
+        }
+    }
+    
+    private func showAlertToConfirmFinalized() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Atenção!", message: "Tem certeza que deseja finalizar o trajeto ?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "SIM", style: .default, handler: { (_) in
+                self.navigationController?.popToRootViewController(animated: true)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "NÃ0", style: .destructive, handler: { (_) in }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

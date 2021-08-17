@@ -105,27 +105,17 @@ class TravelLiveView: UIView, NibLoadable {
     }
     
     func addFirstSteps() {
-//        sceneView.session.run(arConfig,options: .resetTracking)
         guard let step = viewModel?.getFirstSteps() else {return}
         setStepsAndParams(step)
-//        drawStepsForUser()
-//        startDeviceMotion()
     }
     
     func addStepsByIndex(_ index: Int) {
-//        sceneView.session.run(arConfig,options: .resetTracking)
         guard let step = viewModel?.getStepsByIndex(index) else {return}
         setStepsAndParams(step)
-//        drawStepsForUser()
-//        startDeviceMotion()
     }
     
     private func setStepsAndParams(_ step: StepsModel) {
-//        guard let angle = step.angle else {return}
-//        guard let direction = step.rotatePhone else {return}
         guard let distance = step.distance else {return}
-//        rotateDegrees = angle
-//        needRotateToRight = direction.lowercased() == "r"
         distanceToDraw = distance
         if let lastIndicator = step.lastIndicator {
             switch lastIndicator.lowercased() {
