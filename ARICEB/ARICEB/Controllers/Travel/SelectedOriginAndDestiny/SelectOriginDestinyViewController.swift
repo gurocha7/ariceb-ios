@@ -46,7 +46,7 @@ class SelectOriginDestinyViewController: BaseViewController {
         }
         
         customView.shouldShowTravelLive = { [weak self] in
-            self?.viewModel.getRoute()
+            self?.showAlertConfirmTravel()
         }
         
         viewModel.updateOriginLayout = { [weak self] in
@@ -71,6 +71,22 @@ class SelectOriginDestinyViewController: BaseViewController {
                 self?.stopLoading()
                 self?.showAlertWithMessage(message: errorMSSG)
             }
+        }
+    }
+    
+    private func showAlertConfirmTravel() {
+        guard let origin = viewModel.modelOrigin else {return}
+        guard let destiny = viewModel.modelDestiny else {return}
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Atenção", message: "Tem certeza que deseja confirmar o trajeto de \(String(describing: origin)) para \(String(describing: destiny)) ?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "SIM", style: .default, handler: { (_) in
+                self.viewModel.getRoute()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "CANCELAR", style: .destructive, handler: { (_) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

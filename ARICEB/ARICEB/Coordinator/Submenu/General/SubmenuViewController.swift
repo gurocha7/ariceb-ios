@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class SubmenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     enum SubmenuTypeController: String{
         case classes = "aulas"
