@@ -103,6 +103,10 @@
 		36E9DAFC26CB66B100B0B4BE /* FAQDetails2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E9DAFA26CB66B100B0B4BE /* FAQDetails2ViewController.xib */; };
 		36E9DB0226CB6AF800B0B4BE /* FAQDetails3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9DB0026CB6AF800B0B4BE /* FAQDetails3ViewController.swift */; };
 		36E9DB0326CB6AF800B0B4BE /* FAQDetails3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E9DB0126CB6AF800B0B4BE /* FAQDetails3ViewController.xib */; };
+		36E9DB0926CB6D1200B0B4BE /* FAQDetails4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9DB0726CB6D1200B0B4BE /* FAQDetails4ViewController.swift */; };
+		36E9DB0A26CB6D1200B0B4BE /* FAQDetails4ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E9DB0826CB6D1200B0B4BE /* FAQDetails4ViewController.xib */; };
+		36E9DB1026CB6D2A00B0B4BE /* FAQDetails5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9DB0E26CB6D2A00B0B4BE /* FAQDetails5ViewController.swift */; };
+		36E9DB1126CB6D2A00B0B4BE /* FAQDetails5ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E9DB0F26CB6D2A00B0B4BE /* FAQDetails5ViewController.xib */; };
 		36EEE3B026B22D6A0098DEC1 /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */; };
 		36EEE3B126B22D6A0098DEC1 /* RotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */; };
 		36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */; };
@@ -233,6 +237,10 @@
 		36E9DAFA26CB66B100B0B4BE /* FAQDetails2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQDetails2ViewController.xib; sourceTree = "<group>"; };
 		36E9DB0026CB6AF800B0B4BE /* FAQDetails3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetails3ViewController.swift; sourceTree = "<group>"; };
 		36E9DB0126CB6AF800B0B4BE /* FAQDetails3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQDetails3ViewController.xib; sourceTree = "<group>"; };
+		36E9DB0726CB6D1200B0B4BE /* FAQDetails4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetails4ViewController.swift; sourceTree = "<group>"; };
+		36E9DB0826CB6D1200B0B4BE /* FAQDetails4ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQDetails4ViewController.xib; sourceTree = "<group>"; };
+		36E9DB0E26CB6D2A00B0B4BE /* FAQDetails5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetails5ViewController.swift; sourceTree = "<group>"; };
+		36E9DB0F26CB6D2A00B0B4BE /* FAQDetails5ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQDetails5ViewController.xib; sourceTree = "<group>"; };
 		36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
 		36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotateViewController.xib; sourceTree = "<group>"; };
 		36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewModel.swift; sourceTree = "<group>"; };
@@ -444,6 +452,10 @@
 				36E9DAFA26CB66B100B0B4BE /* FAQDetails2ViewController.xib */,
 				36E9DB0026CB6AF800B0B4BE /* FAQDetails3ViewController.swift */,
 				36E9DB0126CB6AF800B0B4BE /* FAQDetails3ViewController.xib */,
+				36E9DB0726CB6D1200B0B4BE /* FAQDetails4ViewController.swift */,
+				36E9DB0826CB6D1200B0B4BE /* FAQDetails4ViewController.xib */,
+				36E9DB0E26CB6D2A00B0B4BE /* FAQDetails5ViewController.swift */,
+				36E9DB0F26CB6D2A00B0B4BE /* FAQDetails5ViewController.xib */,
 			);
 			path = FAQDetails;
 			sourceTree = "<group>";
@@ -817,6 +829,7 @@
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
 				36205D24262D249B00BF0D3B /* FAQTableViewCell.xib in Resources */,
 				36E9DAFC26CB66B100B0B4BE /* FAQDetails2ViewController.xib in Resources */,
+				36E9DB0A26CB6D1200B0B4BE /* FAQDetails4ViewController.xib in Resources */,
 				36205D0B262CD8D900BF0D3B /* SubmenuTableViewCell.xib in Resources */,
 				36B7F05A262BD4A600CCFDEB /* SheetOptionsViewController.xib in Resources */,
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
@@ -835,6 +848,7 @@
 				3670FC1A25D9A8F30022AF8F /* Assets.xcassets in Resources */,
 				3670FC8225D9C5E40022AF8F /* MainViewController.xib in Resources */,
 				36205D14262D22EC00BF0D3B /* FAQViewController.xib in Resources */,
+				36E9DB1126CB6D2A00B0B4BE /* FAQDetails5ViewController.xib in Resources */,
 				36B7EFF0262B829200CCFDEB /* HeaderMenuView.xib in Resources */,
 				36B7EFE3262B7C7C00CCFDEB /* SideMenuTableViewCell.xib in Resources */,
 			);
@@ -983,6 +997,7 @@
 				365409AC26B6217D00E8928E /* QRCodeScannerService.swift in Sources */,
 				36B7EFBF262B5BD800CCFDEB /* MenuView.swift in Sources */,
 				36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */,
+				36E9DB1026CB6D2A00B0B4BE /* FAQDetails5ViewController.swift in Sources */,
 				36205D00262CD22B00BF0D3B /* SubmenuViewModel.swift in Sources */,
 				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,
 				36EEE3B026B22D6A0098DEC1 /* RotateViewController.swift in Sources */,
@@ -1027,6 +1042,7 @@
 				36D1420D26A7AA2700E72F97 /* SubsectorModel.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,
 				368FDC3526C06BBA00515A42 /* FAQDetailsViewController.swift in Sources */,
+				36E9DB0926CB6D1200B0B4BE /* FAQDetails4ViewController.swift in Sources */,
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
