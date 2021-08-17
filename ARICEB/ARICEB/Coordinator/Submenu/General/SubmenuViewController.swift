@@ -50,8 +50,6 @@ class SubmenuViewController: BaseViewController, UITableViewDelegate, UITableVie
         tableView.rowHeight = 70
         tableView.register(cellType: SubmenuTableViewCell.self)
         tableView.applyBorder(borderWidth: 0.5, borderColor: UIColor.darkGray.cgColor)
-        searchBar.delegate = self
-        searchBar.placeholder = "Procurar"
     }
     
     private func setupDescription(){

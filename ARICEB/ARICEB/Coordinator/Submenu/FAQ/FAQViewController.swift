@@ -31,7 +31,7 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        showFAQDetails(index: indexPath.row)
+        choiceFQA(index: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,8 +44,31 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
-    func showFAQDetails(index: Int) {
-        let controler = FAQDetailsViewController(index)
+    private func choiceFQA(index: Int) {
+        switch index {
+        case 0:
+            showFAQDetails()
+        case 1:
+            showFAQDetails2()
+        case 2:
+            showFAQDetails3()
+        default:
+            break
+        }
+    }
+    
+    func showFAQDetails() {
+        let controler = FAQDetailsViewController()
+        navigationController?.pushViewController(controler, animated: true)
+    }
+    
+    func showFAQDetails2() {
+        let controler = FAQDetails2ViewController()
+        navigationController?.pushViewController(controler, animated: true)
+    }
+    
+    func showFAQDetails3() {
+        let controler = FAQDetails3ViewController()
         navigationController?.pushViewController(controler, animated: true)
     }
 }

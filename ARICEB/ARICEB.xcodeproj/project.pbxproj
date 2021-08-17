@@ -99,6 +99,10 @@
 		36E47E2C26A64E36003CA92D /* ManualLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E2B26A64E36003CA92D /* ManualLocationService.swift */; };
 		36E47E3C26A65869003CA92D /* BuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E3B26A65869003CA92D /* BuildingsModel.swift */; };
 		36E47E4126A658D2003CA92D /* ListBuildingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */; };
+		36E9DAFB26CB66B100B0B4BE /* FAQDetails2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9DAF926CB66B100B0B4BE /* FAQDetails2ViewController.swift */; };
+		36E9DAFC26CB66B100B0B4BE /* FAQDetails2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E9DAFA26CB66B100B0B4BE /* FAQDetails2ViewController.xib */; };
+		36E9DB0226CB6AF800B0B4BE /* FAQDetails3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E9DB0026CB6AF800B0B4BE /* FAQDetails3ViewController.swift */; };
+		36E9DB0326CB6AF800B0B4BE /* FAQDetails3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36E9DB0126CB6AF800B0B4BE /* FAQDetails3ViewController.xib */; };
 		36EEE3B026B22D6A0098DEC1 /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */; };
 		36EEE3B126B22D6A0098DEC1 /* RotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */; };
 		36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */; };
@@ -225,6 +229,10 @@
 		36E47E2B26A64E36003CA92D /* ManualLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualLocationService.swift; sourceTree = "<group>"; };
 		36E47E3B26A65869003CA92D /* BuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsModel.swift; sourceTree = "<group>"; };
 		36E47E4026A658D2003CA92D /* ListBuildingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuildingsModel.swift; sourceTree = "<group>"; };
+		36E9DAF926CB66B100B0B4BE /* FAQDetails2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetails2ViewController.swift; sourceTree = "<group>"; };
+		36E9DAFA26CB66B100B0B4BE /* FAQDetails2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQDetails2ViewController.xib; sourceTree = "<group>"; };
+		36E9DB0026CB6AF800B0B4BE /* FAQDetails3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQDetails3ViewController.swift; sourceTree = "<group>"; };
+		36E9DB0126CB6AF800B0B4BE /* FAQDetails3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQDetails3ViewController.xib; sourceTree = "<group>"; };
 		36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
 		36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotateViewController.xib; sourceTree = "<group>"; };
 		36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewModel.swift; sourceTree = "<group>"; };
@@ -432,6 +440,10 @@
 				368FDC3326C06BBA00515A42 /* FAQDetailsViewController.swift */,
 				368FDC3426C06BBA00515A42 /* FAQDetailsViewController.xib */,
 				368FDC3D26C06F6C00515A42 /* FAQDetailsViewModel.swift */,
+				36E9DAF926CB66B100B0B4BE /* FAQDetails2ViewController.swift */,
+				36E9DAFA26CB66B100B0B4BE /* FAQDetails2ViewController.xib */,
+				36E9DB0026CB6AF800B0B4BE /* FAQDetails3ViewController.swift */,
+				36E9DB0126CB6AF800B0B4BE /* FAQDetails3ViewController.xib */,
 			);
 			path = FAQDetails;
 			sourceTree = "<group>";
@@ -799,10 +811,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				36205CFB262CD09900BF0D3B /* SubmenuViewController.xib in Resources */,
+				36E9DB0326CB6AF800B0B4BE /* FAQDetails3ViewController.xib in Resources */,
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
 				36B7F03F262BB93000CCFDEB /* AddressView.xib in Resources */,
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
 				36205D24262D249B00BF0D3B /* FAQTableViewCell.xib in Resources */,
+				36E9DAFC26CB66B100B0B4BE /* FAQDetails2ViewController.xib in Resources */,
 				36205D0B262CD8D900BF0D3B /* SubmenuTableViewCell.xib in Resources */,
 				36B7F05A262BD4A600CCFDEB /* SheetOptionsViewController.xib in Resources */,
 				36D594052617EED70034BC69 /* QRCodeView.xib in Resources */,
@@ -1006,6 +1020,7 @@
 				36205D23262D249B00BF0D3B /* FAQTableViewCell.swift in Sources */,
 				36D1420526A7A9FF00E72F97 /* ListSubsectorsModel.swift in Sources */,
 				36E47E3C26A65869003CA92D /* BuildingsModel.swift in Sources */,
+				36E9DB0226CB6AF800B0B4BE /* FAQDetails3ViewController.swift in Sources */,
 				36B7EFA8262B2F1000CCFDEB /* LocationOptionView.swift in Sources */,
 				3693A4F3268AB492002903FD /* TravelLiveView.swift in Sources */,
 				369375BD26A8F6C500F3F9E1 /* SelectOriginDestinyService.swift in Sources */,
@@ -1015,6 +1030,7 @@
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
+				36E9DAFB26CB66B100B0B4BE /* FAQDetails2ViewController.swift in Sources */,
 				36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */,
 				36B7F002262BA4E700CCFDEB /* SideContainmentSegue.swift in Sources */,
 			);

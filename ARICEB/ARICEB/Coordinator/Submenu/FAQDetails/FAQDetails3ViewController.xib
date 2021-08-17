@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FAQDetails3ViewController" customModule="ARICEB" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afD-I9-Mxh">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxq-49-l3f">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="586"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uy-Mk-jHE">
+                                    <rect key="frame" x="15" y="15" width="384" height="61"/>
+                                    <string key="text">Selecione o prédio, o setor dentro deste prédio (departamento, andar ou corredor) e por fim o destino final como salas ou laboratórios.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-uV-fAS">
+                                    <rect key="frame" x="10" y="96" width="394" height="490"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="print-3" translatesAutoresizingMaskIntoConstraints="NO" id="MYh-HI-P7o">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="490"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="490" id="1Sp-TJ-IaD"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="z3J-uV-fAS" firstAttribute="top" secondItem="5Uy-Mk-jHE" secondAttribute="bottom" constant="20" id="2u9-S5-Fxq"/>
+                                <constraint firstAttribute="bottom" secondItem="z3J-uV-fAS" secondAttribute="bottom" id="PCt-0z-ZhR"/>
+                                <constraint firstItem="5Uy-Mk-jHE" firstAttribute="leading" secondItem="lxq-49-l3f" secondAttribute="leading" constant="15" id="XBc-KL-Oop"/>
+                                <constraint firstItem="z3J-uV-fAS" firstAttribute="leading" secondItem="lxq-49-l3f" secondAttribute="leading" constant="10" id="a6q-Et-2Ya"/>
+                                <constraint firstAttribute="trailing" secondItem="5Uy-Mk-jHE" secondAttribute="trailing" constant="15" id="ecD-cD-6jg"/>
+                                <constraint firstItem="5Uy-Mk-jHE" firstAttribute="top" secondItem="lxq-49-l3f" secondAttribute="top" constant="15" id="h0U-Jx-cgE"/>
+                                <constraint firstAttribute="trailing" secondItem="z3J-uV-fAS" secondAttribute="trailing" constant="10" id="qDK-HY-gl4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="lxq-49-l3f" firstAttribute="top" secondItem="afD-I9-Mxh" secondAttribute="top" id="KYG-kA-Nll"/>
+                        <constraint firstAttribute="trailing" secondItem="lxq-49-l3f" secondAttribute="trailing" id="dxZ-MK-1Io"/>
+                        <constraint firstAttribute="bottom" secondItem="lxq-49-l3f" secondAttribute="bottom" id="e0k-LA-SPi"/>
+                        <constraint firstItem="lxq-49-l3f" firstAttribute="leading" secondItem="afD-I9-Mxh" secondAttribute="leading" id="kq4-FQ-uml"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="afD-I9-Mxh" secondAttribute="bottom" id="8dL-IR-nZ4"/>
+                <constraint firstItem="afD-I9-Mxh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FyA-Xg-m0w"/>
+                <constraint firstItem="afD-I9-Mxh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OQR-e6-pzl"/>
+                <constraint firstAttribute="trailing" secondItem="afD-I9-Mxh" secondAttribute="trailing" id="cvn-TX-zYa"/>
+                <constraint firstItem="lxq-49-l3f" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="fkY-e6-xzv"/>
+                <constraint firstItem="lxq-49-l3f" firstAttribute="height" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="250" id="zXl-fb-tbb"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="127.98913043478262"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="print-3" width="316" height="321"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
