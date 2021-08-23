@@ -10,7 +10,7 @@ import Foundation
 
 class QRCodeLocationService {
     
-    func getQrCodeDetails(qrCode: String = "",completion: @escaping ((NextStepsModel) -> Void), failure: Failure?) {
+    func getQrCodeDetails(qrCode: String = "",completion: @escaping ((QRCodeLocationModel) -> Void), failure: Failure?) {
         let url = "\(baseURL)/qrcode"
         let params: [String:Any] = ["name":qrCode]
         debugPrint("==> URL:", url)
@@ -19,7 +19,7 @@ class QRCodeLocationService {
             print("###RESPONSE: ", response)
             guard let data = response.data else {return}
             do {
-                let model = try JSONDecoder().decode(NextStepsModel.self, from: data)
+                let model = try JSONDecoder().decode(QRCodeLocationModel.self, from: data)
                 completion(model)
             }catch {
                 failure?("Ocorreu um erro inesperado, tente novamente mais tarde.")

@@ -16,6 +16,19 @@ class SelectOriginDestinyViewController: BaseViewController {
     private var destinationTag: String = ""
     private var model: NextStepsModel? = nil
     
+    var isFromQrCode: Bool = false
+    var locationModel: QRCodeLocationModel?
+    
+    init(isFromQrCode: Bool = false,locationModel: QRCodeLocationModel? = nil) {
+        self.isFromQrCode = isFromQrCode
+        self.locationModel = locationModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         super.loadView()
         title = "Caminho"
@@ -26,6 +39,14 @@ class SelectOriginDestinyViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindEvents()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if isFromQrCode {
+            customView.isFromQrCode = true
+            updateOriginModel()
+        }
     }
     
     private func bindEvents(){
@@ -72,6 +93,15 @@ class SelectOriginDestinyViewController: BaseViewController {
                 self?.showAlertWithMessage(message: errorMSSG)
             }
         }
+    }
+    
+    private func updateOriginModel() {
+        let buildingID = locationModel?.buildingID
+        let sectorID = locationModel?.sectorID
+        let subsectorID = locationModel?.subsectorID
+        let model: String = "\(locationModel?.buildingName ?? "") - \(locationModel?.sectorName ?? "") -  \(locationModel?.subsectorName ?? "")"
+        viewModel.insertOriginIds(buildingID, sectorID: sectorID, subsectorID: subsectorID)
+        viewModel.insertModelOrigin(model: model)
     }
     
     private func showAlertConfirmTravel() {

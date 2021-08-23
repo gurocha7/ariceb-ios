@@ -14,6 +14,8 @@ class QRCodeLocationViewController: BaseViewController,AVCaptureMetadataOutputOb
     
     private var viewModel: QRCodeLocationViewModel
     
+    private var originLocation: QRCodeLocationModel?
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -64,6 +66,19 @@ class QRCodeLocationViewController: BaseViewController,AVCaptureMetadataOutputOb
                 self?.showAlertWithMessage(message: errorMSG)
             }
         }
+        
+        viewModel.showQrcode = {[weak self] (location) in
+            self?.originLocation = location
+            DispatchQueue.main.async {
+                self?.stopLoading()
+                self?.showSelectTravel()
+            }
+        }
+    }
+    
+    func showSelectTravel(){
+        let vc = SelectOriginDestinyViewController(isFromQrCode: true, locationModel: originLocation)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func showAlertWithMessage(message: String) {
@@ -128,8 +143,9 @@ class QRCodeLocationViewController: BaseViewController,AVCaptureMetadataOutputOb
     }
     
     func found(code: String) {
-        playLoading()
-        viewModel.getSteps(qrCode: code)
+        DispatchQueue.main.async {
+            self.playLoading()
+            self.viewModel.getSteps(qrCode: code)
+        }
     }
-
 }

@@ -11,7 +11,7 @@ class QRCodeLocationViewModel {
     
     private var service: QRCodeLocationService = QRCodeLocationService()
     
-    var showQrcode: ((NextStepsModel) -> Void)?
+    var showQrcode: ((QRCodeLocationModel) -> Void)?
     var shouldShowError: ((String) -> Void)?
     
     func getSteps(qrCode: String = "") {

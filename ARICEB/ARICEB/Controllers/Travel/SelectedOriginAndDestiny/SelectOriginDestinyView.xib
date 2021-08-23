@@ -195,6 +195,7 @@
                 <outlet property="buttonArrowDestiny" destination="iRF-dI-FqC" id="5VI-yX-N7c"/>
                 <outlet property="buttonArrowOrigin" destination="U5F-PI-Dk3" id="tfn-EK-SBg"/>
                 <outlet property="buttonConfirmTravel" destination="zw8-sx-YKp" id="4Wv-NZ-T4l"/>
+                <outlet property="buttonSelectOrigin" destination="saQ-6i-asT" id="C0o-bH-29Y"/>
                 <outlet property="constDestinyViewHeight" destination="d8Z-cE-CG7" id="F1F-FT-pi6"/>
                 <outlet property="constLineViewDestinyHeight" destination="YXx-vE-FKi" id="W05-HF-Cuu"/>
                 <outlet property="constLineViewOriginHeight" destination="0sC-F4-vsC" id="nqf-S9-Xxp"/>

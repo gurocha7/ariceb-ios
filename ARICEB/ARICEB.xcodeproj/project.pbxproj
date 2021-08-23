@@ -28,6 +28,7 @@
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
 		364E92CF26D3215100BA3F0F /* QRCodeLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364E92CE26D3215100BA3F0F /* QRCodeLocationViewModel.swift */; };
 		364E92D426D3219700BA3F0F /* QRCodeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364E92D326D3219700BA3F0F /* QRCodeLocationService.swift */; };
+		364E92DA26D3291300BA3F0F /* QRCodeLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364E92D926D3291300BA3F0F /* QRCodeLocationModel.swift */; };
 		3654099D26B620E000E8928E /* InternalRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654099C26B620E000E8928E /* InternalRouteModel.swift */; };
 		365409A226B620FE00E8928E /* NextStepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365409A126B620FE00E8928E /* NextStepsModel.swift */; };
 		365409A726B6211A00E8928E /* StepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365409A626B6211A00E8928E /* StepsModel.swift */; };
@@ -158,6 +159,7 @@
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		364E92CE26D3215100BA3F0F /* QRCodeLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeLocationViewModel.swift; sourceTree = "<group>"; };
 		364E92D326D3219700BA3F0F /* QRCodeLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeLocationService.swift; sourceTree = "<group>"; };
+		364E92D926D3291300BA3F0F /* QRCodeLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeLocationModel.swift; sourceTree = "<group>"; };
 		3654099C26B620E000E8928E /* InternalRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalRouteModel.swift; sourceTree = "<group>"; };
 		365409A126B620FE00E8928E /* NextStepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepsModel.swift; sourceTree = "<group>"; };
 		365409A626B6211A00E8928E /* StepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsModel.swift; sourceTree = "<group>"; };
@@ -361,6 +363,14 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		364E92D826D328F100BA3F0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				364E92D926D3291300BA3F0F /* QRCodeLocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3654099B26B620D000E8928E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +569,7 @@
 		36B7F026262BB1A700CCFDEB /* QrCodeLocation */ = {
 			isa = PBXGroup;
 			children = (
+				364E92D826D328F100BA3F0F /* Model */,
 				36B7F027262BB1CC00CCFDEB /* QRCodeLocationViewController.swift */,
 				364E92CE26D3215100BA3F0F /* QRCodeLocationViewModel.swift */,
 				364E92D326D3219700BA3F0F /* QRCodeLocationService.swift */,
@@ -1054,6 +1065,7 @@
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
 				364E92CF26D3215100BA3F0F /* QRCodeLocationViewModel.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
+				364E92DA26D3291300BA3F0F /* QRCodeLocationModel.swift in Sources */,
 				36E9DAFB26CB66B100B0B4BE /* FAQDetails2ViewController.swift in Sources */,
 				36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */,
 				36B7F002262BA4E700CCFDEB /* SideContainmentSegue.swift in Sources */,

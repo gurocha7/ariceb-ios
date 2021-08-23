@@ -29,12 +29,15 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     @IBOutlet weak var imageOrigin: UIImageView!
     @IBOutlet weak var labelOriginTitle: UILabel!
     @IBOutlet weak var buttonArrowOrigin: UIButton!
+    @IBOutlet weak var buttonSelectOrigin: UIButton!
     @IBAction func didTapButtonArrowOrigin(_ sender: Any) {
         updateOriginView()
     }
     
     @IBAction func didTapToSelectOrigin(_ sender: Any) {
-        viewModel?.modelOrigin  != nil ? shouldEditOrigin?() : shouldSelectOrigin?()
+        if !isFromQrCode {
+            viewModel?.modelOrigin  != nil ? shouldEditOrigin?() : shouldSelectOrigin?()
+        }
     }
     
     @IBOutlet weak var lineOriginView: UIView!
@@ -73,6 +76,8 @@ class SelectOriginDestinyView: UIView, NibLoadable{
     @IBOutlet weak var lineDestinyView: UIView!
     @IBOutlet weak var labelDescriptionDestinyView: UILabel!
     @IBOutlet weak var constLineViewDestinyHeight: NSLayoutConstraint!
+    
+    var isFromQrCode: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
