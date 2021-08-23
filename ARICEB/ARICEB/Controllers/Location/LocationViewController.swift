@@ -29,13 +29,18 @@ class LocationViewController: BaseViewController {
             
         }
         
-        customView.didTapQRCodeOption = {
-            
+        customView.didTapQRCodeOption = {[weak self] in
+            self?.goToQrCode()
         }
         
         customView.didTapManualOption = {[weak self] in
             self?.goToManual()
         }
+    }
+    
+    private func goToQrCode() {
+        let vc = QRCodeLocationViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func goToManual(){
