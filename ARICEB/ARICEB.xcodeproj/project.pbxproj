@@ -26,6 +26,8 @@
 		36205D24262D249B00BF0D3B /* FAQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36205D22262D249B00BF0D3B /* FAQTableViewCell.xib */; };
 		36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */; };
 		36355CE4261E8D7B0081BAD9 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */; };
+		364E92CF26D3215100BA3F0F /* QRCodeLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364E92CE26D3215100BA3F0F /* QRCodeLocationViewModel.swift */; };
+		364E92D426D3219700BA3F0F /* QRCodeLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364E92D326D3219700BA3F0F /* QRCodeLocationService.swift */; };
 		3654099D26B620E000E8928E /* InternalRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3654099C26B620E000E8928E /* InternalRouteModel.swift */; };
 		365409A226B620FE00E8928E /* NextStepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365409A126B620FE00E8928E /* NextStepsModel.swift */; };
 		365409A726B6211A00E8928E /* StepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365409A626B6211A00E8928E /* StepsModel.swift */; };
@@ -154,6 +156,8 @@
 		36205D22262D249B00BF0D3B /* FAQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQTableViewCell.xib; sourceTree = "<group>"; };
 		36355CDA261E87790081BAD9 /* SideMenuRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRootVC.swift; sourceTree = "<group>"; };
 		36355CE3261E8D7B0081BAD9 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
+		364E92CE26D3215100BA3F0F /* QRCodeLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeLocationViewModel.swift; sourceTree = "<group>"; };
+		364E92D326D3219700BA3F0F /* QRCodeLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeLocationService.swift; sourceTree = "<group>"; };
 		3654099C26B620E000E8928E /* InternalRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalRouteModel.swift; sourceTree = "<group>"; };
 		365409A126B620FE00E8928E /* NextStepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepsModel.swift; sourceTree = "<group>"; };
 		365409A626B6211A00E8928E /* StepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsModel.swift; sourceTree = "<group>"; };
@@ -556,6 +560,8 @@
 			isa = PBXGroup;
 			children = (
 				36B7F027262BB1CC00CCFDEB /* QRCodeLocationViewController.swift */,
+				364E92CE26D3215100BA3F0F /* QRCodeLocationViewModel.swift */,
+				364E92D326D3219700BA3F0F /* QRCodeLocationService.swift */,
 			);
 			path = QrCodeLocation;
 			sourceTree = "<group>";
@@ -1008,6 +1014,7 @@
 				36B929AD25DC4FCD00133E65 /* BannerView.swift in Sources */,
 				36B7EFB7262B5B8700CCFDEB /* MenuViewController.swift in Sources */,
 				368FDC3E26C06F6C00515A42 /* FAQDetailsViewModel.swift in Sources */,
+				364E92D426D3219700BA3F0F /* QRCodeLocationService.swift in Sources */,
 				36205CFA262CD09900BF0D3B /* SubmenuViewController.swift in Sources */,
 				36205D13262D22EC00BF0D3B /* FAQViewController.swift in Sources */,
 				36205CF0262C7C3000BF0D3B /* SelectOriginDestinyViewModel.swift in Sources */,
@@ -1045,6 +1052,7 @@
 				36E9DB0926CB6D1200B0B4BE /* FAQDetails4ViewController.swift in Sources */,
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
+				364E92CF26D3215100BA3F0F /* QRCodeLocationViewModel.swift in Sources */,
 				36B7F004262BA4E700CCFDEB /* UIKitExtensions.swift in Sources */,
 				36E9DAFB26CB66B100B0B4BE /* FAQDetails2ViewController.swift in Sources */,
 				36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */,
