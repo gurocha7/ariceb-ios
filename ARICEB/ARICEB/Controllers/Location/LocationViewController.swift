@@ -25,8 +25,8 @@ class LocationViewController: BaseViewController {
     }
     
     private func bindEvents(){
-        customView.didTapGPSOption = {
-            
+        customView.didTapGPSOption = {[weak self] in
+            self?.goToGPS()
         }
         
         customView.didTapQRCodeOption = {[weak self] in
@@ -36,6 +36,11 @@ class LocationViewController: BaseViewController {
         customView.didTapManualOption = {[weak self] in
             self?.goToManual()
         }
+    }
+    
+    private func goToGPS() {
+        let vc = GPSLocationViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func goToQrCode() {

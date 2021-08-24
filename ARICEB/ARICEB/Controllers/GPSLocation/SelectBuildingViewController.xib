@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectBuildingViewController" customModule="ARICEB" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonBuilding" destination="kjw-da-3qr" id="kRm-4A-mzr"/>
+                <outlet property="buttonConfirm" destination="neh-Rz-f0C" id="UBo-d5-laq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neh-Rz-f0C">
+                    <rect key="frame" x="70" y="646" width="274" height="40"/>
+                    <color key="backgroundColor" red="0.3803921569" green="0.77647058820000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Obw-T6-InC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="CONFIRMAR">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonConfirmAction:" destination="-1" eventType="touchUpInside" id="kFk-Ma-egr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjw-da-3qr">
+                    <rect key="frame" x="30" y="30" width="354" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="dKH-L8-g9S"/>
+                    </constraints>
+                    <state key="normal" title="Prédio">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonBuildingAction:" destination="-1" eventType="touchUpInside" id="9Zs-is-SHf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="kjw-da-3qr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="LmI-62-a1E"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kjw-da-3qr" secondAttribute="trailing" constant="30" id="NHF-jT-w6b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="neh-Rz-f0C" secondAttribute="bottom" constant="50" id="Oh9-yN-K31"/>
+                <constraint firstItem="kjw-da-3qr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="b2N-mv-Nvl"/>
+                <constraint firstItem="neh-Rz-f0C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="d98-Td-5gn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="neh-Rz-f0C" secondAttribute="trailing" constant="70" id="tbf-fT-DsW"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="92"/>
+        </view>
+    </objects>
+</document>

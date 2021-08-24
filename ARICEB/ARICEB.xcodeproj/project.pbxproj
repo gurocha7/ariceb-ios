@@ -34,6 +34,8 @@
 		365409A726B6211A00E8928E /* StepsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365409A626B6211A00E8928E /* StepsModel.swift */; };
 		365409AC26B6217D00E8928E /* QRCodeScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365409AB26B6217D00E8928E /* QRCodeScannerService.swift */; };
 		365409B126B621A700E8928E /* QRCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365409B026B621A700E8928E /* QRCodeScannerViewModel.swift */; };
+		36679DC426D46DA8007B7154 /* SelectBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36679DC226D46DA8007B7154 /* SelectBuildingViewController.swift */; };
+		36679DC526D46DA8007B7154 /* SelectBuildingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36679DC326D46DA8007B7154 /* SelectBuildingViewController.xib */; };
 		3670FC1125D9A8F00022AF8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670FC1025D9A8F00022AF8F /* AppDelegate.swift */; };
 		3670FC1325D9A8F00022AF8F /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1225D9A8F00022AF8F /* art.scnassets */; };
 		3670FC1A25D9A8F30022AF8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670FC1925D9A8F30022AF8F /* Assets.xcassets */; };
@@ -113,6 +115,8 @@
 		36EEE3B026B22D6A0098DEC1 /* RotateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */; };
 		36EEE3B126B22D6A0098DEC1 /* RotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */; };
 		36FA9D05269284AD008016DC /* TravelLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */; };
+		36FEC63126D45D9B00FC220B /* GPSLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEC62F26D45D9B00FC220B /* GPSLocationViewController.swift */; };
+		36FEC63226D45D9B00FC220B /* GPSLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FEC63026D45D9B00FC220B /* GPSLocationViewController.xib */; };
 		6CFF8B36DC81241C48F07EA0 /* Pods_ARICEB_ARICEBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E599E2F494735B42148663B /* Pods_ARICEB_ARICEBUITests.framework */; };
 		C9F199ECEEBA5A9D0A3F5F1D /* Pods_ARICEB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295AB90184DD43A48BC4D15E /* Pods_ARICEB.framework */; };
 /* End PBXBuildFile section */
@@ -165,6 +169,8 @@
 		365409A626B6211A00E8928E /* StepsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsModel.swift; sourceTree = "<group>"; };
 		365409AB26B6217D00E8928E /* QRCodeScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerService.swift; sourceTree = "<group>"; };
 		365409B026B621A700E8928E /* QRCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewModel.swift; sourceTree = "<group>"; };
+		36679DC226D46DA8007B7154 /* SelectBuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBuildingViewController.swift; sourceTree = "<group>"; };
+		36679DC326D46DA8007B7154 /* SelectBuildingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectBuildingViewController.xib; sourceTree = "<group>"; };
 		3670FC0D25D9A8EF0022AF8F /* ARICEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARICEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3670FC1025D9A8F00022AF8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3670FC1225D9A8F00022AF8F /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -250,6 +256,8 @@
 		36EEE3AE26B22D6A0098DEC1 /* RotateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateViewController.swift; sourceTree = "<group>"; };
 		36EEE3AF26B22D6A0098DEC1 /* RotateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotateViewController.xib; sourceTree = "<group>"; };
 		36FA9D04269284AD008016DC /* TravelLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelLiveViewModel.swift; sourceTree = "<group>"; };
+		36FEC62F26D45D9B00FC220B /* GPSLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSLocationViewController.swift; sourceTree = "<group>"; };
+		36FEC63026D45D9B00FC220B /* GPSLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GPSLocationViewController.xib; sourceTree = "<group>"; };
 		54A626C4D311CCD0E5C2035B /* Pods-ARICEB-ARICEBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEB-ARICEBUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEB-ARICEBUITests/Pods-ARICEB-ARICEBUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789B2A56BFD26190A866BEF5 /* Pods-ARICEBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARICEBTests.debug.xcconfig"; path = "Target Support Files/Pods-ARICEBTests/Pods-ARICEBTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC83FB37FA437FACA2C3FBD /* Pods_ARICEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARICEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -614,6 +622,7 @@
 				3693A4E4268AB442002903FD /* TravelLive */,
 				36B929B725DC518100133E65 /* Travel */,
 				3619B5B9262A82B70094CEA6 /* Location */,
+				36FEC62E26D45D6400FC220B /* GPSLocation */,
 				36B7F026262BB1A700CCFDEB /* QrCodeLocation */,
 				36B7F020262BB16000CCFDEB /* ManualLocation */,
 				36B7F04B262BCDF100CCFDEB /* SheetOptionsController */,
@@ -706,6 +715,17 @@
 				3619B5B3262A337F0094CEA6 /* SelectOriginDestinyView.xib */,
 			);
 			path = SelectedOriginAndDestiny;
+			sourceTree = "<group>";
+		};
+		36FEC62E26D45D6400FC220B /* GPSLocation */ = {
+			isa = PBXGroup;
+			children = (
+				36FEC62F26D45D9B00FC220B /* GPSLocationViewController.swift */,
+				36FEC63026D45D9B00FC220B /* GPSLocationViewController.xib */,
+				36679DC226D46DA8007B7154 /* SelectBuildingViewController.swift */,
+				36679DC326D46DA8007B7154 /* SelectBuildingViewController.xib */,
+			);
+			path = GPSLocation;
 			sourceTree = "<group>";
 		};
 		924D230B0AB1D985DA2BDF71 /* Frameworks */ = {
@@ -839,6 +859,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FEC63226D45D9B00FC220B /* GPSLocationViewController.xib in Resources */,
 				36205CFB262CD09900BF0D3B /* SubmenuViewController.xib in Resources */,
 				36E9DB0326CB6AF800B0B4BE /* FAQDetails3ViewController.xib in Resources */,
 				3619B5B4262A337F0094CEA6 /* SelectOriginDestinyView.xib in Resources */,
@@ -846,6 +867,7 @@
 				36B7EFC4262B5BDF00CCFDEB /* MenuView.xib in Resources */,
 				36205D24262D249B00BF0D3B /* FAQTableViewCell.xib in Resources */,
 				36E9DAFC26CB66B100B0B4BE /* FAQDetails2ViewController.xib in Resources */,
+				36679DC526D46DA8007B7154 /* SelectBuildingViewController.xib in Resources */,
 				36E9DB0A26CB6D1200B0B4BE /* FAQDetails4ViewController.xib in Resources */,
 				36205D0B262CD8D900BF0D3B /* SubmenuTableViewCell.xib in Resources */,
 				36B7F05A262BD4A600CCFDEB /* SheetOptionsViewController.xib in Resources */,
@@ -1016,6 +1038,7 @@
 				36B7EF99262B29A300CCFDEB /* LocationView.swift in Sources */,
 				36E9DB1026CB6D2A00B0B4BE /* FAQDetails5ViewController.swift in Sources */,
 				36205D00262CD22B00BF0D3B /* SubmenuViewModel.swift in Sources */,
+				36FEC63126D45D9B00FC220B /* GPSLocationViewController.swift in Sources */,
 				36D593EE2617E07F0034BC69 /* Extensions+UIView.swift in Sources */,
 				36EEE3B026B22D6A0098DEC1 /* RotateViewController.swift in Sources */,
 				3654099D26B620E000E8928E /* InternalRouteModel.swift in Sources */,
@@ -1060,6 +1083,7 @@
 				36D1420D26A7AA2700E72F97 /* SubsectorModel.swift in Sources */,
 				36355CDB261E87790081BAD9 /* SideMenuRootVC.swift in Sources */,
 				368FDC3526C06BBA00515A42 /* FAQDetailsViewController.swift in Sources */,
+				36679DC426D46DA8007B7154 /* SelectBuildingViewController.swift in Sources */,
 				36E9DB0926CB6D1200B0B4BE /* FAQDetails4ViewController.swift in Sources */,
 				36B7F007262BA4E700CCFDEB /* SideMenuController.swift in Sources */,
 				36A5B9B7261D39F700A4EACB /* FastButtonsView.swift in Sources */,
